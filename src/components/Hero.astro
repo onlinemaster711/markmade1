@@ -15,21 +15,10 @@ const {
 <section class="hero">
   <div class="hero-inner">
 
-    <div class="hero-text">
+    <div class="hero-top">
       <p class="eyebrow">{eyebrow}</p>
       <h1>{heading}</h1>
       <p class="subtext">{subtext}</p>
-
-      <div class="hero-buttons">
-        <a href="/#cta" class="btn-primary">Kostenlosen Entwurf sichern</a>
-        <a href="/#rechner" class="btn-ghost">Zeitersparnis berechnen →</a>
-      </div>
-
-      <ul class="trust-list">
-        <li><span class="check">✓</span> Kein Auftrag nötig</li>
-        <li><span class="check">✓</span> 10 Minuten genügen</li>
-        <li><span class="check">✓</span> Entwurf zuerst – dann entscheiden</li>
-      </ul>
     </div>
 
     <div class="hero-visual">
@@ -44,6 +33,19 @@ const {
           <img src="/screenshot-mobile.webp" alt="Website Vorschau Mobile" loading="eager" />
         </div>
       </div>
+    </div>
+
+    <div class="hero-bottom">
+      <div class="hero-buttons">
+        <a href="/#cta" class="btn-primary">Kostenlosen Entwurf sichern</a>
+        <a href="/#rechner" class="btn-ghost">Zeitersparnis berechnen →</a>
+      </div>
+
+      <ul class="trust-list">
+        <li><span class="check">✓</span> Kein Auftrag nötig</li>
+        <li><span class="check">✓</span> 10 Minuten genügen</li>
+        <li><span class="check">✓</span> Entwurf zuerst – dann entscheiden</li>
+      </ul>
     </div>
 
   </div>
@@ -62,7 +64,20 @@ const {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: start;
+  }
+
+  .hero-top {
+    grid-column: 1;
+  }
+
+  .hero-bottom {
+    grid-column: 1;
+  }
+
+  .hero-visual {
+    grid-column: 2;
+    grid-row: 1 / 3;
   }
 
   /* --- Text --- */
@@ -206,17 +221,22 @@ const {
   /* --- Responsive --- */
   @media (max-width: 767px) {
     .hero-inner {
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
       gap: 2.5rem;
       padding-top: 6rem;
     }
 
-    .hero-text {
+    .hero-top {
       order: 1;
     }
 
     .hero-visual {
       order: 2;
+    }
+
+    .hero-bottom {
+      order: 3;
     }
 
     .mockup-phone {
