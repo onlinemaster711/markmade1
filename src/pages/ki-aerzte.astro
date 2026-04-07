@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Rechner from '../components/Rechner.astro';
+import Cta from '../components/Cta.astro';
+---
+
+<BaseLayout
+  title="KI für Ärzte – Was künstliche Intelligenz für Arztpraxen bringt | MarkMade"
+  description="KI spart Arztpraxen Zeit – bei Patientenanfragen, Terminbuchungen und Kommunikation. Kein Technik-Wissen nötig."
+>
+  <Hero
+    eyebrow="KI für Ärzte – einfach erklärt"
+    heading="KI ist kein Roboter. KI ist Zeit für Ihre Patienten."
+    subtext="Künstliche Intelligenz klingt kompliziert. Ist es nicht. Für Arztpraxen bedeutet KI: Weniger Telefonate. Weniger Papierkram. Mehr Zeit für die Behandlung."
+  />
+
+  <!-- Was KI konkret macht -->
+  <section class="ki-macht-section">
+    <div class="ki-macht-inner">
+      <h2>Was KI konkret macht</h2>
+
+      <div class="ki-macht-grid">
+        <div class="ki-item">
+          <div class="ki-icon">💬</div>
+          <h3>Patientenfragen beantworten</h3>
+          <p>Ohne dass Ihr Team dran ist</p>
+        </div>
+
+        <div class="ki-item">
+          <div class="ki-icon">📅</div>
+          <h3>Termine buchen</h3>
+          <p>Automatisch, direkt in den Kalender</p>
+        </div>
+
+        <div class="ki-item">
+          <div class="ki-icon">📋</div>
+          <h3>Anliegen vorqualifizieren</h3>
+          <p>Nur passende Anfragen kommen durch</p>
+        </div>
+
+        <div class="ki-item">
+          <div class="ki-icon">🔍</div>
+          <h3>Gefunden werden</h3>
+          <p>Bei Google und KI-Suchen wie ChatGPT</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Was KI nicht ersetzt -->
+  <section class="ki-grenzen-section">
+    <div class="ki-grenzen-inner">
+      <h2>Was KI nicht ersetzt</h2>
+
+      <blockquote class="ki-quote">
+        "KI kennt nicht Ihre Patienten. Nicht Ihre Fachrichtung. Nicht was Sie wirklich gut können."
+      </blockquote>
+
+      <p class="ki-grenzen-text">Sie macht gute Ärzte besser – aber sie ersetzt nicht das Vertrauen das Sie sich aufgebaut haben. Deshalb steckt hinter jedem MarkMade-Projekt ein Mensch der Marketing versteht.</p>
+    </div>
+  </section>
+
+  <Rechner />
+  <Cta />
+</BaseLayout>
+
+<style>
+  /* --- Was KI macht Section --- */
+  .ki-macht-section {
+    background: var(--surface-low);
+    padding: 5rem 1.5rem;
+  }
+
+  .ki-macht-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ki-macht-section h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .ki-macht-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+  }
+
+  .ki-item {
+    text-align: center;
+  }
+
+  .ki-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .ki-item h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 0.75rem;
+  }
+
+  .ki-item p {
+    font-size: 0.95rem;
+    color: var(--on-surface-muted);
+    line-height: 1.6;
+  }
+
+  /* --- Was KI nicht ersetzt --- */
+  .ki-grenzen-section {
+    background: var(--primary);
+    color: #fff;
+    padding: 5rem 1.5rem;
+  }
+
+  .ki-grenzen-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .ki-grenzen-section h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+  }
+
+  .ki-quote {
+    font-size: 1.3rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    margin: 0 0 2rem 0;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  .ki-grenzen-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    opacity: 0.9;
+    max-width: 65ch;
+    margin: 0 auto;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 767px) {
+    .ki-macht-section,
+    .ki-grenzen-section {
+      padding: 3.5rem 1.5rem;
+    }
+
+    .ki-quote {
+      font-size: 1.1rem;
+    }
+  }
+</style>

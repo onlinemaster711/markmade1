@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Rechner from '../components/Rechner.astro';
+import Cta from '../components/Cta.astro';
+---
+
+<BaseLayout
+  title="Online Terminbuchung Arztpraxis – Patienten buchen direkt | MarkMade"
+  description="Patienten buchen direkt in Ihren Kalender – kein Telefonieren, kein Hin-und-Her. Sie werden nur noch informiert."
+>
+  <Hero
+    eyebrow="Online-Terminbuchung für Arztpraxen"
+    heading="Patienten buchen selbst. Sie werden informiert."
+    subtext="Kein Hin-und-Her, kein 'Ich ruf zurück'. Patienten wählen sich direkt einen freien Termin. Sie bekommen eine Nachricht – und wissen sofort wer kommt und warum."
+  />
+
+  <!-- Vorteile Section -->
+  <section class="vorteile-section">
+    <div class="vorteile-inner">
+      <h2>Warum Online-Terminbuchung?</h2>
+
+      <div class="vorteile-grid">
+        <div class="vorteil-item">
+          <div class="vorteil-icon">📅</div>
+          <h3>Keine Telefonate für Terminabsprachen</h3>
+          <p>Patienten buchen selbst – sofort, rund um die Uhr.</p>
+        </div>
+
+        <div class="vorteil-item">
+          <div class="vorteil-icon">✅</div>
+          <h3>Nur gebuchte Termine – kein Vergessen</h3>
+          <p>Alle Termine sind sofort in Ihrem Kalender.</p>
+        </div>
+
+        <div class="vorteil-item">
+          <div class="vorteil-icon">🔔</div>
+          <h3>Sie werden automatisch benachrichtigt</h3>
+          <p>Neue Buchung = sofort eine Nachricht bei Ihnen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wie es funktioniert -->
+  <section class="prozess-section">
+    <div class="prozess-inner">
+      <h2>Wie Online-Terminbuchung funktioniert</h2>
+
+      <div class="prozess-grid">
+        <div class="prozess-step">
+          <div class="step-number">1</div>
+          <h3>Patient besucht Ihre Website</h3>
+          <p>Einfacher Terminbuchung-Button – direkt sichtbar.</p>
+        </div>
+
+        <div class="prozess-step">
+          <div class="step-number">2</div>
+          <h3>Wählt einen freien Termin im Kalender</h3>
+          <p>Alle freien Slots sichtbar – sofort buchen.</p>
+        </div>
+
+        <div class="prozess-step">
+          <div class="step-number">3</div>
+          <h3>Sie bekommen eine Bestätigung – fertig</h3>
+          <p>Neuer Termin ist sofort in Ihrem Kalender.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Rechner />
+  <Cta />
+</BaseLayout>
+
+<style>
+  /* --- Vorteile Section --- */
+  .vorteile-section {
+    background: var(--surface-low);
+    padding: 5rem 1.5rem;
+  }
+
+  .vorteile-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .vorteile-section h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .vorteile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+  }
+
+  .vorteil-item {
+    text-align: center;
+  }
+
+  .vorteil-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    line-height: 1;
+  }
+
+  .vorteil-item h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 0.75rem;
+  }
+
+  .vorteil-item p {
+    font-size: 0.95rem;
+    color: var(--on-surface-muted);
+    line-height: 1.6;
+  }
+
+  /* --- Prozess Section --- */
+  .prozess-section {
+    background: var(--surface);
+    padding: 5rem 1.5rem;
+  }
+
+  .prozess-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .prozess-section h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .prozess-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .prozess-step {
+    position: relative;
+  }
+
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: white;
+    border-radius: 50%;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .prozess-step h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 0.75rem;
+  }
+
+  .prozess-step p {
+    font-size: 0.95rem;
+    color: var(--on-surface-muted);
+    line-height: 1.6;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 767px) {
+    .vorteile-section,
+    .prozess-section {
+      padding: 3.5rem 1.5rem;
+    }
+
+    .step-number {
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+    }
+  }
+</style>

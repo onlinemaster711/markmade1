@@ -1,0 +1,265 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Beweis from '../components/Beweis.astro';
+import Cta from '../components/Cta.astro';
+---
+
+<BaseLayout
+  title="Webdesign für Ärzte – Website & Chatbot für Arztpraxen | MarkMade"
+  description="Professionelle Website für Arztpraxen ab 1.000 € inkl. MwSt. Mit Chatbot der Patientenfragen automatisch beantwortet. Entwurf zuerst, dann entscheiden."
+>
+  <Hero
+    eyebrow="Webdesign für Ärzte & Arztpraxen"
+    heading="Ihre Praxis verdient eine Website die Patienten überzeugt."
+    subtext="Wir bauen Ihnen eine Website die klar zeigt was Sie anbieten – und einen Chatbot der Patientenfragen automatisch beantwortet. Das Ergebnis: Weniger Telefonate, mehr passende Patienten."
+  />
+
+  <!-- Probleme Section -->
+  <section class="probleme-section">
+    <div class="probleme-inner">
+      <h2>Rufen bei Ihnen täglich Patienten an – für Fragen die Ihre Website beantworten könnte?</h2>
+
+      <div class="probleme-pills">
+        <div class="pill">Öffnungszeiten</div>
+        <div class="pill">Terminvergabe</div>
+        <div class="pill">Kassenärztliche Zulassung</div>
+      </div>
+
+      <p class="probleme-text">Das sind keine schlechten Patienten. Das ist eine Website die zu wenig erklärt. Eine gute Praxis-Website beantwortet das automatisch – bevor jemand anruft.</p>
+    </div>
+  </section>
+
+  <!-- Leistungen Section -->
+  <section class="leistungen-section">
+    <div class="leistungen-inner">
+      <h2>Was wir für Ihre Praxis bauen</h2>
+
+      <div class="leistungen-grid">
+        <div class="leistungen-item">
+          <div class="leistungen-icon">🌐</div>
+          <h3>Professionelle Praxis-Website</h3>
+          <p>Klar, modern, auf allen Geräten</p>
+        </div>
+
+        <div class="leistungen-item">
+          <div class="leistungen-icon">🤖</div>
+          <h3>KI-Chatbot</h3>
+          <p>Beantwortet Patientenfragen rund um die Uhr</p>
+        </div>
+
+        <div class="leistungen-item">
+          <div class="leistungen-icon">📅</div>
+          <h3>Online-Terminbuchung</h3>
+          <p>Patienten buchen direkt in Ihren Kalender</p>
+        </div>
+
+        <div class="leistungen-item">
+          <div class="leistungen-icon">🔍</div>
+          <h3>Google-Optimierung</h3>
+          <p>Neue Patienten finden Sie bei Google</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Unterseiten Links -->
+  <section class="unterseiten-section">
+    <div class="unterseiten-inner">
+      <h2>Lösungen für Ihre Praxis</h2>
+
+      <div class="unterseiten-grid">
+        <a href="/chatbot-aerzte" class="unterseiten-card">
+          <h3>Chatbot für Arztpraxen</h3>
+          <p>Automatische Patientenbetreuung rund um die Uhr</p>
+        </a>
+
+        <a href="/terminbuchung-arztpraxis" class="unterseiten-card">
+          <h3>Online-Terminbuchung</h3>
+          <p>Patienten buchen Termine direkt in Ihren Kalender</p>
+        </a>
+
+        <a href="/mehr-patienten-arztpraxis" class="unterseiten-card">
+          <h3>Mehr Patienten gewinnen</h3>
+          <p>Neue Patienten durch bessere Online-Sichtbarkeit</p>
+        </a>
+
+        <a href="/ki-aerzte" class="unterseiten-card">
+          <h3>KI für Ärzte</h3>
+          <p>Künstliche Intelligenz für Ihre Arztpraxis</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Beweis />
+  <Cta />
+</BaseLayout>
+
+<style>
+  /* --- Probleme Section --- */
+  .probleme-section {
+    background: var(--primary);
+    color: #fff;
+    padding: 5rem 1.5rem;
+  }
+
+  .probleme-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .probleme-section h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    line-height: 1.3;
+    margin-bottom: 3rem;
+    font-family: 'Noto Serif', serif;
+    font-weight: 600;
+  }
+
+  .probleme-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .pill {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.75rem 1.5rem;
+    border-radius: 100px;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .probleme-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    opacity: 0.95;
+    max-width: 65ch;
+    margin: 0 auto;
+  }
+
+  /* --- Leistungen Section --- */
+  .leistungen-section {
+    background: var(--surface-low);
+    padding: 5rem 1.5rem;
+  }
+
+  .leistungen-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .leistungen-section h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .leistungen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+  }
+
+  .leistungen-item {
+    text-align: center;
+  }
+
+  .leistungen-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .leistungen-item h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 0.75rem;
+  }
+
+  .leistungen-item p {
+    font-size: 0.95rem;
+    color: var(--on-surface-muted);
+    line-height: 1.6;
+  }
+
+  /* --- Unterseiten Cards --- */
+  .unterseiten-section {
+    background: var(--surface);
+    padding: 5rem 1.5rem;
+  }
+
+  .unterseiten-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .unterseiten-section h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .unterseiten-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+  }
+
+  .unterseiten-card {
+    background: rgba(63, 69, 48, 0.04);
+    border: 1px solid rgba(63, 69, 48, 0.1);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .unterseiten-card:hover {
+    background: rgba(184, 0, 73, 0.05);
+    border-color: var(--secondary);
+    transform: translateY(-2px);
+  }
+
+  .unterseiten-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .unterseiten-card p {
+    font-size: 0.95rem;
+    color: var(--on-surface-muted);
+    line-height: 1.6;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 767px) {
+    .probleme-section,
+    .leistungen-section,
+    .unterseiten-section {
+      padding: 3.5rem 1.5rem;
+    }
+
+    .probleme-pills {
+      gap: 0.75rem;
+    }
+
+    .pill {
+      padding: 0.625rem 1.25rem;
+      font-size: 0.875rem;
+    }
+  }
+</style>

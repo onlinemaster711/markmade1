@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Beweis from '../components/Beweis.astro';
+import Cta from '../components/Cta.astro';
+---
+
+<BaseLayout
+  title="Mehr Patienten für Arztpraxen – Website die überzeugt | MarkMade"
+  description="Mehr Patienten durch eine klare Praxis-Website. Bessere Kommunikation bringt mehr passende Patienten – ohne mehr Werbung."
+>
+  <Hero
+    eyebrow="Mehr Patienten für Ihre Praxis"
+    heading="Mehr Patienten – ohne mehr Werbung."
+    subtext="Die meisten Praxen brauchen keine Werbung. Sie brauchen eine Website die klar sagt was sie anbieten – und warum Patienten genau zu Ihnen kommen sollten."
+  />
+
+  <!-- Warum wenige Anfragen kommen -->
+  <section class="probleme-section">
+    <div class="probleme-inner">
+      <h2>Warum wenige Anfragen kommen</h2>
+
+      <div class="probleme-grid">
+        <div class="problem-item">
+          <div class="problem-icon">❌</div>
+          <h3>Unklare Leistungen</h3>
+          <p>Die Website sagt nicht welche Behandlungen Sie anbieten</p>
+        </div>
+
+        <div class="problem-item">
+          <div class="problem-icon">❌</div>
+          <h3>Kein Vertrauen</h3>
+          <p>Kein Foto, kein Team, keine Bewertungen</p>
+        </div>
+
+        <div class="problem-item">
+          <div class="problem-icon">❌</div>
+          <h3>Kein nächster Schritt</h3>
+          <p>Der Patient weiß nicht wie er einen Termin bekommt</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Was eine gute Website ändert -->
+  <section class="losung-section">
+    <div class="losung-inner">
+      <h2>Was eine gute Website ändert</h2>
+
+      <div class="losung-grid">
+        <div class="losung-item">
+          <div class="losung-icon">✓</div>
+          <h3>Klare Leistungen</h3>
+          <p>Richtige Patienten kommen</p>
+        </div>
+
+        <div class="losung-item">
+          <div class="losung-icon">✓</div>
+          <h3>Vertrauen</h3>
+          <p>Besucher werden zu Patienten</p>
+        </div>
+
+        <div class="losung-item">
+          <div class="losung-icon">✓</div>
+          <h3>Klarer nächster Schritt</h3>
+          <p>Patienten buchen direkt</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Beweis />
+  <Cta />
+</BaseLayout>
+
+<style>
+  /* --- Probleme Section --- */
+  .probleme-section {
+    background: var(--surface-low);
+    padding: 5rem 1.5rem;
+  }
+
+  .probleme-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .probleme-section h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .probleme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+  }
+
+  .problem-item {
+    text-align: center;
+  }
+
+  .problem-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    line-height: 1;
+  }
+
+  .problem-item h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 0.75rem;
+  }
+
+  .problem-item p {
+    font-size: 0.95rem;
+    color: var(--on-surface-muted);
+    line-height: 1.6;
+  }
+
+  /* --- Lösung Section --- */
+  .losung-section {
+    background: var(--surface);
+    padding: 5rem 1.5rem;
+  }
+
+  .losung-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .losung-section h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .losung-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+  }
+
+  .losung-item {
+    text-align: center;
+  }
+
+  .losung-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: white;
+    border-radius: 50%;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .losung-item h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 0.75rem;
+  }
+
+  .losung-item p {
+    font-size: 0.95rem;
+    color: var(--on-surface-muted);
+    line-height: 1.6;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 767px) {
+    .probleme-section,
+    .losung-section {
+      padding: 3.5rem 1.5rem;
+    }
+
+    .losung-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+    }
+  }
+</style>
