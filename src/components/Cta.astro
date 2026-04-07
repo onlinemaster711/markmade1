@@ -1,0 +1,96 @@
+---
+---
+
+<section class="cta-section" id="cta">
+  <div class="inner">
+    <p class="eyebrow">Kostenlos &amp; unverbindlich</p>
+    <h2>10 Minuten Gespräch. Kostenloser Entwurf. Du entscheidest.</h2>
+    <p class="subtext">
+      Du erzählst uns was du machst – wir bauen dir einen Entwurf. Gefällt er dir, geht deine Seite für 1.000 € inkl. MwSt. online. Gefällt er nicht – kein Risiko.
+    </p>
+    <a href="/#cta" class="btn-cta">Jetzt Termin buchen &amp; kostenlosen Entwurf sichern</a>
+    <p class="cta-hint">📅 Direkt in den Kalender – kein Telefonat nötig</p>
+  </div>
+
+  <div class="cta-deco" aria-hidden="true"></div>
+</section>
+
+<style>
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary), var(--primary-container));
+    padding: 6rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+  }
+
+  .inner {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--primary-fixed);
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    line-height: 1.25;
+    color: #fff;
+  }
+
+  .subtext {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 54ch;
+  }
+
+  .btn-cta {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: var(--on-secondary);
+    font-size: 1.0625rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: opacity 0.2s, transform 0.2s;
+    box-shadow: 0 8px 32px rgba(184, 0, 73, 0.35);
+    margin-top: 0.5rem;
+  }
+
+  .btn-cta:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+
+  .cta-hint {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  /* Decorative blurred circle */
+  .cta-deco {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(223, 230, 200, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    top: -100px;
+    right: -100px;
+    pointer-events: none;
+  }
+</style>

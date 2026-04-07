@@ -1,0 +1,154 @@
+---
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-grid">
+
+      <div class="footer-col">
+        <span class="footer-logo">markmade</span>
+        <p class="footer-tagline">
+          Websites die klar kommunizieren.<br />Chatbots die Zeit sparen.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <span class="footer-col-title">Leistungen</span>
+        <ul>
+          <li><a href="/#angebot">Website 1.000&nbsp;€</a></li>
+          <li><a href="/#angebot">Website &amp; Chatbot 1.500&nbsp;€</a></li>
+          <li><a href="/#rechner">Zeitersparnis berechnen</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <span class="footer-col-title">Seiten</span>
+        <ul>
+          <li><a href="/chatbot-handwerker">Chatbot Handwerker</a></li>
+          <li><a href="/terminbuchung-handwerk">Terminbuchung Handwerk</a></li>
+          <li><a href="/mehr-anfragen-handwerk">Mehr Anfragen Handwerk</a></li>
+          <li><a href="/ki-handwerker">KI Handwerker</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <span class="footer-col-title">Rechtliches</span>
+        <ul>
+          <li><a href="/impressum">Impressum</a></li>
+          <li><a href="/datenschutz">Datenschutz</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 MarkMade</span>
+      <span class="footer-bottom-center">
+        <a href="/impressum">Impressum</a>&nbsp;·&nbsp;<a href="/datenschutz">Datenschutz</a>
+      </span>
+      <span>Webdesign von MarkMade</span>
+    </div>
+
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--primary);
+    color: rgba(255, 255, 255, 0.55);
+    padding-top: 4rem;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .footer-logo {
+    display: block;
+    font-family: 'Noto Serif', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .footer-col-title {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 1rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .footer-col a {
+    font-size: 0.9375rem;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.55);
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover {
+    color: #fff;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 1.25rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    gap: 1rem;
+  }
+
+  .footer-bottom a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.55);
+    transition: color 0.2s;
+  }
+
+  .footer-bottom a:hover {
+    color: #fff;
+  }
+
+  .footer-bottom-center {
+    text-align: center;
+  }
+
+  @media (max-width: 767px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
+</style>

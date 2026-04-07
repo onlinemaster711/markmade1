@@ -1,0 +1,322 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Beweis from '../components/Beweis.astro';
+import Cta from '../components/Cta.astro';
+---
+
+<BaseLayout
+  title="Mehr Anfragen für Handwerker – Website die verkauft | MarkMade"
+  description="Mehr Anfragen durch eine klare Website. Wir zeigen dir wie du mit besserer Kommunikation mehr passende Kunden gewinnst – ohne mehr Werbung."
+>
+
+  {/* --- HERO --- */}
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Mehr Anfragen für Handwerker</p>
+      <h1>Mehr Anfragen für Handwerker – ohne mehr Werbung</h1>
+      <p class="hero-text">
+        Die meisten Handwerker brauchen keine mehr Werbung. Sie brauchen eine Website die klar sagt was sie machen – und warum man genau sie anrufen sollte.
+      </p>
+      <a href="https://markmade.de/#cta" class="btn-primary">Kostenlosen Entwurf sichern</a>
+    </div>
+  </section>
+
+  {/* --- WARUM WENIGE ANFRAGEN KOMMEN --- */}
+  <section class="probleme">
+    <div class="probleme-inner">
+      <h2>Warum wenige Anfragen kommen</h2>
+      <div class="probleme-grid">
+        <div class="problem-card fade-in">
+          <div class="problem-number">1</div>
+          <h3>Unklare Botschaft</h3>
+          <p>Die Website sagt nicht was du besser machst als andere</p>
+        </div>
+        <div class="problem-card fade-in">
+          <div class="problem-number">2</div>
+          <h3>Kein Vertrauen</h3>
+          <p>Kein Foto, kein Name, keine echten Bewertungen</p>
+        </div>
+        <div class="problem-card fade-in">
+          <div class="problem-number">3</div>
+          <h3>Kein nächster Schritt</h3>
+          <p>Der Besucher weiß nicht was er tun soll</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* --- WAS EINE GUTE WEBSITE ÄNDERT --- */}
+  <section class="loesungen">
+    <div class="loesungen-inner">
+      <h2>Was eine gute Website ändert</h2>
+      <div class="transformation">
+        <div class="transform-pair fade-in">
+          <div class="transform-von">
+            <span class="transform-label">Problem:</span>
+            <p>Unklare Botschaft</p>
+          </div>
+          <div class="transform-arrow">→</div>
+          <div class="transform-zu">
+            <span class="transform-label">Lösung:</span>
+            <p><strong>Klare Botschaft</strong><br />richtige Kunden kommen</p>
+          </div>
+        </div>
+
+        <div class="transform-pair fade-in">
+          <div class="transform-von">
+            <span class="transform-label">Problem:</span>
+            <p>Kein Vertrauen</p>
+          </div>
+          <div class="transform-arrow">→</div>
+          <div class="transform-zu">
+            <span class="transform-label">Lösung:</span>
+            <p><strong>Vertrauen</strong><br />Besucher werden zu Anrufern</p>
+          </div>
+        </div>
+
+        <div class="transform-pair fade-in">
+          <div class="transform-von">
+            <span class="transform-label">Problem:</span>
+            <p>Kein nächster Schritt</p>
+          </div>
+          <div class="transform-arrow">→</div>
+          <div class="transform-zu">
+            <span class="transform-label">Lösung:</span>
+            <p><strong>Klarer CTA</strong><br />Anrufer werden zu Kunden</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* --- BEWEIS --- */}
+  <Beweis />
+
+  {/* --- CTA --- */}
+  <Cta />
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    background: var(--surface);
+    padding-top: 9rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    color: var(--on-surface);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--on-surface-muted);
+    margin-bottom: 2rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.8125rem 1.5rem;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: var(--on-secondary);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.88;
+  }
+
+  /* Probleme */
+  .probleme {
+    background: var(--surface-low);
+    padding: 5rem 0;
+  }
+
+  .probleme-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .probleme h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    line-height: 1.25;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .probleme-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .problem-card {
+    background: var(--surface-lowest);
+    border: 1px solid var(--outline-variant);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .problem-number {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: var(--on-secondary);
+    font-family: 'Noto Serif', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .problem-card h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--on-surface);
+  }
+
+  .problem-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+  }
+
+  /* Lösungen */
+  .loesungen {
+    background: var(--surface);
+    padding: 5rem 0;
+  }
+
+  .loesungen-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .loesungen h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    line-height: 1.25;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .transformation {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .transform-pair {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .transform-von,
+  .transform-zu {
+    background: var(--surface-low);
+    border: 1px solid var(--outline-variant);
+    border-radius: 0.875rem;
+    padding: 1.5rem;
+  }
+
+  .transform-zu {
+    background: var(--primary-fixed);
+  }
+
+  .transform-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+  }
+
+  .transform-zu .transform-label {
+    color: var(--primary-container);
+  }
+
+  .transform-von p,
+  .transform-zu p {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--on-surface-muted);
+  }
+
+  .transform-zu p {
+    color: var(--primary);
+  }
+
+  .transform-arrow {
+    font-size: 1.5rem;
+    color: var(--secondary);
+    font-weight: 700;
+    text-align: center;
+    line-height: 1;
+  }
+
+  /* Responsive */
+  @media (max-width: 767px) {
+    .hero {
+      padding-top: 6.5rem;
+    }
+
+    .probleme-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .transform-pair {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .transform-arrow {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+      margin: 0.5rem 0;
+    }
+  }
+</style>

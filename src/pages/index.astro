@@ -1,17 +1,25 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import VierFragen from '../components/VierFragen.astro';
+import Rechner from '../components/Rechner.astro';
+import Angebot from '../components/Angebot.astro';
+import Beweis from '../components/Beweis.astro';
+import Prozess from '../components/Prozess.astro';
+import Cta from '../components/Cta.astro';
+import Faq from '../components/Faq.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="MarkMade – Webdesign & Chatbot für Handwerker | ab 1.000 €"
+  description="Professionelle Website ab 1.000 € inkl. MwSt. Wir bauen dir eine Website die Kunden überzeugt – und einen Chatbot der Zeit spart. Entwurf zuerst, dann entscheiden."
+>
+  <Hero />
+  <VierFragen />
+  <Rechner />
+  <Angebot />
+  <Beweis />
+  <Prozess />
+  <Cta />
+  <Faq />
+</BaseLayout>

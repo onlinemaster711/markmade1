@@ -1,0 +1,101 @@
+---
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo" aria-label="MarkMade – Startseite">
+      mark<span>made</span>
+    </a>
+
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="/#wie-es-funktioniert">Wie es funktioniert</a>
+      <a href="/#angebot">Angebot</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+
+    <a href="/#cta" class="cta-button">Entwurf sichern</a>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid var(--outline-variant);
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .logo {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--on-surface);
+    flex-shrink: 0;
+  }
+
+  .logo span {
+    color: var(--secondary);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    margin-left: auto;
+  }
+
+  .nav a {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--on-surface-muted);
+    transition: color 0.2s;
+  }
+
+  .nav a:hover {
+    color: var(--on-surface);
+  }
+
+  .cta-button {
+    flex-shrink: 0;
+    display: inline-block;
+    padding: 0.625rem 1.25rem;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: var(--on-secondary);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: opacity 0.2s;
+  }
+
+  .cta-button:hover {
+    opacity: 0.88;
+  }
+
+  @media (max-width: 767px) {
+    .nav {
+      display: none;
+    }
+
+    .header-inner {
+      justify-content: space-between;
+    }
+  }
+</style>

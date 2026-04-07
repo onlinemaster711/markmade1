@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Impressum | MarkMade"
+  description="Impressum von MarkMade – Webdesign und Chatbot für Handwerker."
+>
+  <div class="legal-page">
+    <a href="/" class="back-link">← Zurück zur Startseite</a>
+
+    <main>
+      <h1>Impressum</h1>
+
+      {/* INHALT HIER EINFÜGEN */}
+
+      <p class="placeholder">
+        <em>Dieser Bereich wird noch befüllt. Bitte trage hier deinen rechtlichen Text ein.</em>
+      </p>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .legal-page {
+    background: var(--surface);
+    min-height: 100vh;
+    padding: 9rem 2rem 6rem;
+  }
+
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 3rem;
+    color: var(--primary-container);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover {
+    color: var(--secondary);
+  }
+
+  h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-top: 2.5rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9375rem;
+    color: var(--on-surface-muted);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .placeholder {
+    color: var(--secondary);
+    font-style: italic;
+  }
+</style>

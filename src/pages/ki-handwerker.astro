@@ -1,0 +1,210 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Rechner from '../components/Rechner.astro';
+import Cta from '../components/Cta.astro';
+---
+
+<BaseLayout
+  title="KI für Handwerker – Was künstliche Intelligenz wirklich bringt | MarkMade"
+  description="KI spart Handwerkern Zeit – bei Anfragen, Terminbuchungen und Kundenkommunikation. Kein Technik-Wissen nötig."
+>
+
+  {/* --- HERO --- */}
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">KI für Handwerker – einfach erklärt</p>
+      <h1>KI für Handwerker – Intelligenz die Zeit spart</h1>
+      <p class="hero-text">
+        Künstliche Intelligenz klingt kompliziert. Ist es nicht. Für Handwerker bedeutet KI: Weniger Telefonate. Weniger Papierkram. Mehr Zeit für die Arbeit die du wirklich machst.
+      </p>
+    </div>
+  </section>
+
+  {/* --- WAS KI KONKRET MACHT --- */}
+  <section class="ki-funktionen">
+    <div class="inner">
+      <h2>Was KI für Handwerker konkret macht</h2>
+      <div class="funktionen-list">
+        <div class="funktion-item fade-in">
+          <span class="funktion-icon">💬</span>
+          <div class="funktion-body">
+            <h3>Fragen beantworten</h3>
+            <p>Ohne dass du dran bist</p>
+          </div>
+        </div>
+        <div class="funktion-item fade-in">
+          <span class="funktion-icon">📅</span>
+          <div class="funktion-body">
+            <h3>Termine buchen</h3>
+            <p>Automatisch, direkt im Kalender</p>
+          </div>
+        </div>
+        <div class="funktion-item fade-in">
+          <span class="funktion-icon">✍️</span>
+          <div class="funktion-body">
+            <h3>Texte schreiben</h3>
+            <p>Angebote, Mails, Beschreibungen</p>
+          </div>
+        </div>
+        <div class="funktion-item fade-in">
+          <span class="funktion-icon">📊</span>
+          <div class="funktion-body">
+            <h3>Auswerten</h3>
+            <p>Welche Anfragen kommen, was wird gefragt</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* --- WAS KI NICHT KANN --- */}
+  <section class="ki-grenzen">
+    <div class="inner">
+      <h2>Was KI nicht ersetzt.</h2>
+      <p class="grenzen-text">
+        KI kennt nicht deine Kunden. Nicht deine Branche. Nicht was du wirklich gut kannst. Sie macht gute Leute besser – aber sie macht niemanden gut der sich nicht auskennt. Deshalb steckt hinter jedem MarkMade-Projekt ein Mensch der Marketing versteht.
+      </p>
+    </div>
+  </section>
+
+  {/* --- RECHNER --- */}
+  <Rechner />
+
+  {/* --- CTA --- */}
+  <Cta />
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    background: var(--surface);
+    padding-top: 9rem;
+    padding-bottom: 4rem;
+  }
+
+  .hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    color: var(--on-surface);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--on-surface-muted);
+  }
+
+  /* KI Funktionen */
+  .ki-funktionen {
+    background: var(--surface-low);
+    padding: 5rem 0;
+  }
+
+  .inner {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .ki-funktionen h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    line-height: 1.25;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .funktionen-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .funktion-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2.25rem 0;
+    border-bottom: 1px solid var(--outline-variant);
+    align-items: flex-start;
+  }
+
+  .funktion-item:first-child {
+    border-top: 1px solid var(--outline-variant);
+  }
+
+  .funktion-icon {
+    font-size: 1.875rem;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 0.125rem;
+  }
+
+  .funktion-body {
+    flex: 1;
+  }
+
+  .funktion-body h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.375rem;
+    color: var(--on-surface);
+  }
+
+  .funktion-body p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+  }
+
+  /* KI Grenzen */
+  .ki-grenzen {
+    background: var(--primary);
+    color: #fff;
+    padding: 5rem 0;
+  }
+
+  .ki-grenzen h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    line-height: 1.25;
+    margin-bottom: 1.75rem;
+    text-align: center;
+  }
+
+  .grenzen-text {
+    max-width: 65ch;
+    margin: 0 auto;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+  }
+
+  /* Responsive */
+  @media (max-width: 767px) {
+    .hero {
+      padding-top: 6.5rem;
+    }
+  }
+</style>

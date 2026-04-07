@@ -1,0 +1,273 @@
+---
+---
+
+<section class="hero">
+  <div class="hero-inner">
+
+    <div class="hero-text">
+      <p class="eyebrow">Webdesign · Chatbot · Zeitersparnis</p>
+      <h1>Webdesign für Handwerker – warum beantwortest du noch selbst?</h1>
+      <p class="subtext">Was machst du? Für wen? Was kostet es? Was nicht? – Deine Website sagt das klar. Dein Chatbot klärt den Rest. Automatisch. Bevor du auch nur ans Telefon gehst.</p>
+
+      <div class="hero-buttons">
+        <a href="/#cta" class="btn-primary">Kostenlosen Entwurf sichern</a>
+        <a href="/#rechner" class="btn-ghost">Zeitersparnis berechnen →</a>
+      </div>
+
+      <ul class="trust-list">
+        <li><span class="check">✓</span> Kein Auftrag nötig</li>
+        <li><span class="check">✓</span> 10 Minuten genügen</li>
+        <li><span class="check">✓</span> Entwurf zuerst – dann entscheiden</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual">
+      <div class="mockup-laptop">
+        <div class="laptop-screen">
+          <img src="/screenshot-desktop.png" alt="Website Vorschau Desktop" loading="eager" />
+        </div>
+        <div class="laptop-base"></div>
+      </div>
+      <div class="mockup-phone">
+        <div class="phone-screen">
+          <img src="/screenshot-mobile.png" alt="Website Vorschau Mobile" loading="eager" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hero-testimonial">
+    <div class="testimonial-inner">
+      <span class="stars" aria-label="5 von 5 Sternen">★★★★★</span>
+      <p class="quote"><em>"Jetzt finden mich Patienten bei Google – und melden sich direkt."</em></p>
+      <p class="attribution">Elke Reinke · Osteopathin · Stuttgart</p>
+      <a href="https://osteopath-stuttgart.com" target="_blank" rel="noopener" class="ref-link">osteopath-stuttgart.com →</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: var(--surface);
+    padding-top: 5rem;
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  /* --- Text --- */
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    line-height: 1.2;
+    color: var(--on-surface);
+    margin-bottom: 1.25rem;
+  }
+
+  .subtext {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--on-surface-muted);
+    margin-bottom: 2rem;
+    max-width: 52ch;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.75rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.8125rem 1.5rem;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: var(--on-secondary);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.88; }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8125rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--on-surface-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .btn-ghost:hover { color: var(--on-surface); }
+
+  .trust-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .trust-list li {
+    font-size: 0.9375rem;
+    color: var(--on-surface-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .check {
+    color: var(--secondary);
+    font-weight: 700;
+  }
+
+  /* --- Visual --- */
+  .hero-visual {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .mockup-laptop {
+    width: 100%;
+    max-width: 460px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .laptop-screen {
+    background: var(--primary);
+    border-radius: 0.75rem 0.75rem 0 0;
+    border: 8px solid var(--primary);
+    overflow: hidden;
+    aspect-ratio: 16/10;
+  }
+
+  .laptop-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .laptop-base {
+    height: 14px;
+    background: var(--primary-container);
+    border-radius: 0 0 0.5rem 0.5rem;
+    margin: 0 -8px;
+  }
+
+  .mockup-phone {
+    position: absolute;
+    bottom: -1rem;
+    right: -1.5rem;
+    width: 28%;
+    max-width: 130px;
+    z-index: 2;
+    background: var(--primary);
+    border-radius: 1rem;
+    border: 5px solid var(--primary);
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(27, 28, 26, 0.25);
+    aspect-ratio: 9/19;
+  }
+
+  .mockup-phone img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  /* --- Testimonial bar --- */
+  .hero-testimonial {
+    border-top: 1px solid var(--surface-high);
+    background: var(--surface-low);
+  }
+
+  .testimonial-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .stars {
+    color: #f5a623;
+    font-size: 1.125rem;
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+  }
+
+  .quote {
+    font-size: 0.9375rem;
+    color: var(--on-surface);
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .attribution {
+    font-size: 0.8125rem;
+    color: var(--on-surface-muted);
+    flex-shrink: 0;
+  }
+
+  .ref-link {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--secondary);
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+  }
+
+  .ref-link:hover { opacity: 0.75; }
+
+  /* --- Responsive --- */
+  @media (max-width: 767px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding-top: 6rem;
+    }
+
+    .hero-visual {
+      order: -1;
+    }
+
+    .mockup-phone {
+      right: 0;
+    }
+
+    .testimonial-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
+</style>

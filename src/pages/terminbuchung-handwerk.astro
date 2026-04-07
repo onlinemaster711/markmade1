@@ -1,0 +1,285 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Rechner from '../components/Rechner.astro';
+import Cta from '../components/Cta.astro';
+---
+
+<BaseLayout
+  title="Online Terminbuchung für Handwerker – Kunden buchen direkt | MarkMade"
+  description="Kunden buchen direkt in deinen Kalender – kein Telefonieren, kein Hin-und-Her. Du wirst nur noch informiert."
+>
+
+  {/* --- HERO --- */}
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Online-Terminbuchung</p>
+      <h1>Terminbuchung für Handwerker – Kunden buchen selbst, du wirst informiert</h1>
+      <p class="hero-text">
+        Kein Hin-und-Her, kein "Ich ruf zurück". Interessenten wählen sich direkt einen freien Termin in deinen Kalender. Du bekommst eine Nachricht – und weißt sofort wer kommt und warum.
+      </p>
+      <a href="https://markmade.de/#cta" class="btn-primary">Kostenlosen Entwurf sichern</a>
+    </div>
+  </section>
+
+  {/* --- VORTEILE --- */}
+  <section class="vorteile">
+    <div class="vorteile-inner">
+      <h2>Was sich sofort ändert</h2>
+      <div class="vorteile-grid">
+        <div class="vorteil-card fade-in">
+          <span class="vorteil-icon">📅</span>
+          <h3>Keine Telefonate mehr</h3>
+          <p>Kein Hin-und-Her für Terminabsprachen. Der Kalender macht das.</p>
+        </div>
+        <div class="vorteil-card fade-in">
+          <span class="vorteil-icon">✅</span>
+          <h3>Nur gebuchte Termine</h3>
+          <p>Kein Vergessen, kein Nachfragen. Alles steht fest.</p>
+        </div>
+        <div class="vorteil-card fade-in">
+          <span class="vorteil-icon">🔔</span>
+          <h3>Du wirst informiert</h3>
+          <p>Sobald jemand bucht, bekommst du automatisch eine Nachricht.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* --- WIE ES FUNKTIONIERT --- */}
+  <section class="prozess">
+    <div class="prozess-inner">
+      <h2>So einfach funktioniert's</h2>
+      <div class="prozess-grid">
+        <div class="prozess-schritt fade-in">
+          <div class="schritt-nr">1</div>
+          <h3>Kunde besucht deine Website</h3>
+          <p>Er sieht den Kalender direkt auf der Seite.</p>
+        </div>
+        <div class="prozess-schritt fade-in">
+          <div class="schritt-nr">2</div>
+          <h3>Wählt einen freien Termin</h3>
+          <p>Selbstständig, ohne Telefonat, ohne Wartezeit.</p>
+        </div>
+        <div class="prozess-schritt fade-in">
+          <div class="schritt-nr">3</div>
+          <h3>Du bekommst eine Bestätigung</h3>
+          <p>Per E-Mail oder direkt ins Handy. Fertig.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* --- RECHNER --- */}
+  <Rechner />
+
+  {/* --- CTA --- */}
+  <Cta />
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    background: var(--surface);
+    padding-top: 9rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    color: var(--on-surface);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--on-surface-muted);
+    margin-bottom: 2rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.8125rem 1.5rem;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: var(--on-secondary);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.88;
+  }
+
+  /* Vorteile */
+  .vorteile {
+    background: var(--primary);
+    color: #fff;
+    padding: 5rem 0;
+  }
+
+  .vorteile-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .vorteile h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    line-height: 1.3;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .vorteile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .vorteil-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .vorteil-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  .vorteil-card h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #fff;
+  }
+
+  .vorteil-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  /* Prozess */
+  .prozess {
+    background: var(--surface-low);
+    padding: 5rem 0;
+  }
+
+  .prozess-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .prozess h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    line-height: 1.25;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .prozess-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    position: relative;
+  }
+
+  .prozess-grid::before {
+    content: '';
+    position: absolute;
+    top: 2.5rem;
+    left: calc(16.67% + 2rem);
+    right: calc(16.67% + 2rem);
+    height: 1px;
+    background: var(--outline-variant);
+    z-index: 0;
+  }
+
+  .prozess-schritt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .schritt-nr {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: var(--on-secondary);
+    font-family: 'Noto Serif', serif;
+    font-size: 1.375rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(184, 0, 73, 0.25);
+  }
+
+  .prozess-schritt h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--on-surface);
+  }
+
+  .prozess-schritt p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+  }
+
+  /* Responsive */
+  @media (max-width: 767px) {
+    .hero {
+      padding-top: 6.5rem;
+    }
+
+    .vorteile-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .prozess-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .prozess-grid::before {
+      display: none;
+    }
+  }
+</style>

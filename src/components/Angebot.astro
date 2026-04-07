@@ -1,0 +1,237 @@
+---
+---
+
+<section class="angebot" id="angebot">
+  <div class="inner">
+
+    <div class="section-head">
+      <h2>Ein Preis. Alles drin. Kein Kleingedrucktes.</h2>
+    </div>
+
+    <div class="karten">
+
+      <div class="karte fade-in">
+        <h3>Website</h3>
+        <div class="preis">
+          <span class="preis-zahl">1.000 €</span>
+          <span class="preis-hint">inkl. MwSt. · Festpreis</span>
+        </div>
+        <p class="karte-desc">Professionelle Website die klar kommuniziert wer du bist und warum Kunden zu dir kommen sollten.</p>
+        <ul class="feature-list">
+          <li>Strategie &amp; Texte</li>
+          <li>Design &amp; Technik</li>
+          <li>Google-Optimierung</li>
+          <li>Mobil &amp; schnell</li>
+          <li>Entwurf zuerst</li>
+        </ul>
+        <a href="/#cta" class="btn-secondary">Kostenlosen Entwurf sichern</a>
+      </div>
+
+      <div class="karte karte-featured fade-in">
+        <div class="badge">Empfohlen</div>
+        <h3>Website &amp; Chatbot</h3>
+        <div class="preis">
+          <span class="preis-zahl">1.500 €</span>
+          <span class="preis-hint">inkl. MwSt. · Festpreis</span>
+        </div>
+        <p class="karte-desc">Alles aus dem Website-Paket – plus ein Chatbot der Fragen beantwortet und Gespräche vorqualifiziert.</p>
+        <ul class="feature-list">
+          <li>Alles aus Paket 1</li>
+          <li>Chatbot individuell konfiguriert</li>
+          <li>Beantwortet Fragen 24/7</li>
+          <li>Nur passende Anfragen kommen durch</li>
+          <li>Kalender-Buchung oder WhatsApp optional</li>
+        </ul>
+        <a href="/#cta" class="btn-primary">Kostenlosen Entwurf sichern</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .angebot {
+    background: var(--surface);
+    padding: 5rem 0;
+  }
+
+  .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section-head {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    line-height: 1.25;
+  }
+
+  .karten {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .karte {
+    background: var(--surface-lowest);
+    border-radius: 1.25rem;
+    padding: 2.5rem;
+    border: 1px solid var(--outline-variant);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    position: relative;
+  }
+
+  .karte-featured {
+    background: var(--primary);
+    border-color: transparent;
+    margin-top: -1.5rem;
+    color: #fff;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--secondary);
+    color: var(--on-secondary);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.75rem;
+    border-radius: 2rem;
+    align-self: flex-start;
+  }
+
+  h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: var(--on-surface);
+  }
+
+  .karte-featured h3 {
+    color: #fff;
+  }
+
+  .preis {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .preis-zahl {
+    font-family: 'Noto Serif', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--on-surface);
+  }
+
+  .karte-featured .preis-zahl {
+    color: var(--primary-fixed);
+  }
+
+  .preis-hint {
+    font-size: 0.875rem;
+    color: var(--on-surface-muted);
+  }
+
+  .karte-featured .preis-hint {
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  .karte-desc {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+  }
+
+  .karte-featured .karte-desc {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    flex: 1;
+  }
+
+  .feature-list li {
+    font-size: 0.9375rem;
+    color: var(--on-surface-muted);
+    padding-left: 1.375rem;
+    position: relative;
+  }
+
+  .feature-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--secondary);
+    font-weight: 700;
+  }
+
+  .karte-featured .feature-list li {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .karte-featured .feature-list li::before {
+    color: var(--primary-fixed);
+  }
+
+  .btn-secondary {
+    display: block;
+    text-align: center;
+    padding: 0.8125rem 1.25rem;
+    border: 1.5px solid var(--outline-variant);
+    border-radius: 1rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--on-surface);
+    transition: border-color 0.2s, background 0.2s;
+    margin-top: auto;
+  }
+
+  .btn-secondary:hover {
+    background: var(--surface-low);
+  }
+
+  .btn-primary {
+    display: block;
+    text-align: center;
+    padding: 0.8125rem 1.25rem;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: var(--on-secondary);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: opacity 0.2s;
+    margin-top: auto;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.88;
+  }
+
+  @media (max-width: 767px) {
+    .karten {
+      grid-template-columns: 1fr;
+    }
+
+    .karte-featured {
+      margin-top: 0;
+    }
+  }
+</style>

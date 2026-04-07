@@ -1,0 +1,303 @@
+---
+---
+
+<section class="rechner" id="rechner">
+  <div class="inner">
+
+    <div class="section-head">
+      <p class="eyebrow">Was spart dir das wirklich?</p>
+      <h2>Jeden Tag ein bisschen weniger Telefon.<br />Im Jahr richtig viel Zeit.</h2>
+    </div>
+
+    <div class="rechner-grid">
+
+      <div class="regler-seite">
+        <div class="regler-gruppe">
+          <div class="regler-label-row">
+            <label for="anrufe">Wie viele Anrufe bekommst du pro Tag?</label>
+            <span class="regler-wert" id="anrufe-wert">3</span>
+          </div>
+          <input
+            type="range"
+            id="anrufe"
+            min="1"
+            max="20"
+            value="3"
+            class="slider"
+            aria-label="Anrufe pro Tag"
+          />
+          <div class="regler-range-labels">
+            <span>1</span><span>20</span>
+          </div>
+        </div>
+
+        <div class="regler-gruppe">
+          <div class="regler-label-row">
+            <label for="dauer">Wie lange dauert so ein Gespräch?</label>
+            <span class="regler-wert" id="dauer-wert">10 Min.</span>
+          </div>
+          <input
+            type="range"
+            id="dauer"
+            min="5"
+            max="45"
+            step="5"
+            value="10"
+            class="slider"
+            aria-label="Gesprächsdauer in Minuten"
+          />
+          <div class="regler-range-labels">
+            <span>5 Min.</span><span>45 Min.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ergebnis-box">
+        <div class="ergebnis-grid">
+          <div class="ergebnis-item">
+            <span class="ergebnis-zahl" id="erg-tag">30</span>
+            <span class="ergebnis-label">Min. pro Tag</span>
+          </div>
+          <div class="ergebnis-item">
+            <span class="ergebnis-zahl" id="erg-woche">2,5</span>
+            <span class="ergebnis-label">Std. pro Woche</span>
+          </div>
+          <div class="ergebnis-item">
+            <span class="ergebnis-zahl" id="erg-monat">10</span>
+            <span class="ergebnis-label">Std. pro Monat</span>
+          </div>
+          <div class="ergebnis-item highlight">
+            <span class="ergebnis-zahl" id="erg-jahr">130</span>
+            <span class="ergebnis-label">Std. pro Jahr</span>
+          </div>
+        </div>
+        <div class="ergebnis-frage">
+          <p>Was machst du mit <strong id="erg-jahr-text">130</strong>&nbsp;Stunden mehr im Jahr?</p>
+        </div>
+        <p class="rechner-disclaimer">Das sind keine Versprechen. Das ist Mathematik.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const anrufeInput = document.getElementById('anrufe') as HTMLInputElement;
+  const dauerInput = document.getElementById('dauer') as HTMLInputElement;
+  const anrufeWert = document.getElementById('anrufe-wert')!;
+  const dauerWert = document.getElementById('dauer-wert')!;
+  const ergTag = document.getElementById('erg-tag')!;
+  const ergWoche = document.getElementById('erg-woche')!;
+  const ergMonat = document.getElementById('erg-monat')!;
+  const ergJahr = document.getElementById('erg-jahr')!;
+  const ergJahrText = document.getElementById('erg-jahr-text')!;
+
+  function berechne() {
+    const anrufe = Number(anrufeInput.value);
+    const dauer = Number(dauerInput.value);
+
+    const minTag = anrufe * dauer;
+    const stdWoche = (minTag * 5) / 60;
+    const stdMonat = stdWoche * 4;
+    const stdJahr = Math.round(stdWoche * 52);
+
+    anrufeWert.textContent = String(anrufe);
+    dauerWert.textContent = `${dauer} Min.`;
+    ergTag.textContent = String(minTag);
+    ergWoche.textContent = stdWoche % 1 === 0 ? String(stdWoche) : stdWoche.toFixed(1);
+    ergMonat.textContent = stdMonat % 1 === 0 ? String(stdMonat) : stdMonat.toFixed(1);
+    ergJahr.textContent = String(stdJahr);
+    ergJahrText.textContent = String(stdJahr);
+  }
+
+  anrufeInput?.addEventListener('input', berechne);
+  dauerInput?.addEventListener('input', berechne);
+  berechne();
+</script>
+
+<style>
+  .rechner {
+    background: var(--primary);
+    color: #fff;
+    padding: 5rem 0;
+  }
+
+  .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section-head {
+    margin-bottom: 3rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--primary-fixed);
+    margin-bottom: 0.75rem;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    line-height: 1.3;
+    color: #fff;
+  }
+
+  .rechner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* Sliders */
+  .regler-seite {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .regler-gruppe {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .regler-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  label {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.4;
+  }
+
+  .regler-wert {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--primary-fixed);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    background: var(--primary-fixed);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.15s;
+  }
+
+  .slider::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+  }
+
+  .slider::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    background: var(--primary-fixed);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }
+
+  .regler-range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.45);
+  }
+
+  /* Results */
+  .ergebnis-box {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 1.25rem;
+    padding: 2rem;
+  }
+
+  .ergebnis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .ergebnis-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .ergebnis-zahl {
+    font-family: 'Noto Serif', serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+  }
+
+  .ergebnis-label {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  .ergebnis-item.highlight .ergebnis-zahl {
+    font-size: 3rem;
+    color: var(--primary-fixed);
+  }
+
+  .ergebnis-item.highlight .ergebnis-label {
+    color: var(--primary-fixed);
+    font-weight: 600;
+  }
+
+  .ergebnis-frage {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .ergebnis-frage p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .ergebnis-frage strong {
+    color: var(--primary-fixed);
+  }
+
+  .rechner-disclaimer {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.35);
+    font-style: italic;
+  }
+
+  @media (max-width: 767px) {
+    .rechner-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

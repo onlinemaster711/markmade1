@@ -1,0 +1,23 @@
+---
+---
+
+<script>
+  const CHATBOT_SRC = ''; // CHATBOT EMBED CODE HIER EINFÜGEN
+  const SCRIPT_ID = 'chatbot-script';
+
+  function loadChatbot() {
+    if (!CHATBOT_SRC || document.getElementById(SCRIPT_ID)) return;
+
+    const script = document.createElement('script');
+    script.id = SCRIPT_ID;
+    script.src = CHATBOT_SRC;
+    script.async = true;
+    document.body.appendChild(script);
+  }
+
+  if (localStorage.getItem('cookies_accepted') === 'true') {
+    loadChatbot();
+  } else {
+    window.addEventListener('cookiesAccepted', loadChatbot, { once: true });
+  }
+</script>
