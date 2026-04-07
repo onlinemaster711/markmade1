@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ChatDemo from '../components/ChatDemo.astro';
 import Rechner from '../components/Rechner.astro';
 import Cta from '../components/Cta.astro';
 ---
@@ -31,6 +32,24 @@ import Cta from '../components/Cta.astro';
         <span class="pill">Ablauf</span>
       </div>
       <p class="problem-text">Das sind keine schlechten Kunden. Das ist eine schlechte Website. Eine gute Website beantwortet das bevor jemand anruft.</p>
+    </div>
+  </section>
+
+  {/* --- DEMO --- */}
+  <section class="demo-section">
+    <div class="demo-inner">
+      <h2>Ein Gespräch – automatisch geführt.</h2>
+      <p class="demo-text">Dein Chatbot kennt deinen Betrieb. Er beantwortet die Fragen die täglich kommen – bevor dein Telefon klingelt.</p>
+      <ChatDemo
+        messages={[
+          {role: 'user', text: 'Machen Sie auch Notfall-Einsätze?'},
+          {role: 'bot', text: 'Ja, für dringende Fälle sind wir auch am Wochenende oder abends erreichbar. Nennen Sie uns einfach die Situation.'},
+          {role: 'user', text: 'Was kostet ein Erstbesuch ungefähr?'},
+          {role: 'bot', text: 'Das hängt vom Aufwand ab. Geben Sie uns mehr Infos, dann können wir eine bessere Schätzung machen.'},
+          {role: 'user', text: 'Arbeiten Sie auch am Wochenende?'},
+          {role: 'bot', text: 'Für normale Aufträge unter der Woche, für Notfälle auch am Wochenende. Schreiben Sie uns, worum es geht.'}
+        ]}
+      />
     </div>
   </section>
 
@@ -180,6 +199,36 @@ import Cta from '../components/Cta.astro';
     font-size: 1.0625rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.8);
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Demo Section */
+  .demo-section {
+    background: var(--surface-low);
+    padding: 5rem 1.5rem;
+  }
+
+  .demo-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .demo-section h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  .demo-text {
+    font-size: 1.0625rem;
+    color: var(--on-surface-muted);
+    line-height: 1.7;
+    margin-bottom: 3rem;
     max-width: 65ch;
     margin-left: auto;
     margin-right: auto;

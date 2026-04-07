@@ -3,12 +3,16 @@ interface Props {
   eyebrow?: string;
   heading?: string;
   subtext?: string;
+  desktopScreenshot?: string;
+  mobileScreenshot?: string;
 }
 
 const {
   eyebrow = 'Webdesign · Chatbot · Zeitersparnis',
   heading = 'Deine Website erklärt was du machst. Dein Chatbot klärt den Rest.',
   subtext = 'Wir bauen dir eine Website die klar zeigt was du anbietest – und einen Chatbot der Kundenfragen automatisch beantwortet. Das Ergebnis: Weniger Telefonate, bessere Anfragen.',
+  desktopScreenshot = 'screenshot-desktop.webp',
+  mobileScreenshot = 'screenshot-mobile.webp',
 } = Astro.props;
 ---
 

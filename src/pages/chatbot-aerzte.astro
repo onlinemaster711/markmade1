@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import ChatDemo from '../components/ChatDemo.astro';
 import Rechner from '../components/Rechner.astro';
 import Cta from '../components/Cta.astro';
 ---
@@ -27,6 +28,24 @@ import Cta from '../components/Cta.astro';
       </div>
 
       <p class="problem-text">Ihr Team verbringt wertvolle Zeit mit Fragen die eine gute Website bereits beantwortet hätte.</p>
+    </div>
+  </section>
+
+  <!-- So sieht das in der Praxis aus -->
+  <section class="demo-section">
+    <div class="demo-inner">
+      <h2>Ein Gespräch – automatisch geführt.</h2>
+      <p class="demo-text">Ihr Chatbot kennt Ihre Praxis. Er beantwortet die Fragen die täglich kommen – bevor Ihr Team ans Telefon geht.</p>
+      <ChatDemo
+        messages={[
+          {role: 'user', text: 'Nehmen Sie Kassenpatienten an?'},
+          {role: 'bot', text: 'Ja, wir sind kassenärztlich zugelassen – sowohl gesetzlich als auch privat versicherte Patienten sind herzlich willkommen.'},
+          {role: 'user', text: 'Wie schnell bekomme ich einen Termin?'},
+          {role: 'bot', text: 'Für Neupatienten meist innerhalb von 3–5 Tagen. Bei akuten Beschwerden versuchen wir Ihnen noch am selben Tag zu helfen.'},
+          {role: 'user', text: 'Kann ich online buchen?'},
+          {role: 'bot', text: 'Ja! Klicken Sie einfach auf "Termin buchen" oben rechts und wählen Sie einen freien Slot – das dauert nur 2 Minuten.'}
+        ]}
+      />
     </div>
   </section>
 
@@ -160,6 +179,36 @@ import Cta from '../components/Cta.astro';
     font-size: 0.95rem;
     color: var(--on-surface-muted);
     line-height: 1.6;
+  }
+
+  /* --- Demo Section --- */
+  .demo-section {
+    background: var(--surface-low);
+    padding: 5rem 1.5rem;
+  }
+
+  .demo-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .demo-section h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  .demo-text {
+    font-size: 1.0625rem;
+    color: var(--on-surface-muted);
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* --- Responsive --- */
