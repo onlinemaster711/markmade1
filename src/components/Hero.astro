@@ -1,13 +1,24 @@
 ---
+interface Props {
+  eyebrow?: string;
+  heading?: string;
+  subtext?: string;
+}
+
+const {
+  eyebrow = 'Webdesign · Chatbot · Zeitersparnis',
+  heading = 'Webdesign für Handwerker – warum beantwortest du noch selbst?',
+  subtext = 'Was machst du? Für wen? Was kostet es? Was nicht? – Deine Website sagt das klar. Dein Chatbot klärt den Rest. Automatisch. Bevor du auch nur ans Telefon gehst.',
+} = Astro.props;
 ---
 
 <section class="hero">
   <div class="hero-inner">
 
     <div class="hero-text">
-      <p class="eyebrow">Webdesign · Chatbot · Zeitersparnis</p>
-      <h1>Webdesign für Handwerker – warum beantwortest du noch selbst?</h1>
-      <p class="subtext">Was machst du? Für wen? Was kostet es? Was nicht? – Deine Website sagt das klar. Dein Chatbot klärt den Rest. Automatisch. Bevor du auch nur ans Telefon gehst.</p>
+      <p class="eyebrow">{eyebrow}</p>
+      <h1>{heading}</h1>
+      <p class="subtext">{subtext}</p>
 
       <div class="hero-buttons">
         <a href="/#cta" class="btn-primary">Kostenlosen Entwurf sichern</a>
