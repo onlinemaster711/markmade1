@@ -6,25 +6,20 @@ interface Message {
 
 interface Props {
   messages: Message[];
+  title?: string;
 }
 
-const { messages } = Astro.props;
+const { messages, title = 'So funktioniert Ihr Chatbot' } = Astro.props;
 ---
 
-<div class="chat-demo">
+<div class="chat-demo-wrapper">
+  <div class="chat-label">Beispiel</div>
+  <h3 class="chat-title">{title}</h3>
+
   <div class="chat-container">
     <!-- Header -->
     <div class="chat-header">
-      <div class="header-content">
-        <div class="avatar">M</div>
-        <div class="header-info">
-          <h3>MarkMade Assistent</h3>
-          <div class="online-status">
-            <span class="online-dot"></span>
-            <span class="online-text">Online</span>
-          </div>
-        </div>
-      </div>
+      <span class="online-indicator">● Online</span>
     </div>
 
     <!-- Messages -->
@@ -39,33 +34,43 @@ const { messages } = Astro.props;
 
   function createUserMessage(text) {
     const div = document.createElement('div');
-    div.className = 'message-group user-group';
-    div.innerHTML = `<div class="bubble user-bubble">${text}</div>`;
+    div.className = 'msg user';
+    div.style.opacity = '0';
+    div.style.transition = 'opacity 0.3s ease';
+    div.innerHTML = `<div class="bubble user">${text}</div>`;
     return div;
   }
 
   function createBotMessage(text) {
     const div = document.createElement('div');
-    div.className = 'message-group bot-group';
+    div.className = 'msg bot';
+    div.style.opacity = '0';
+    div.style.transition = 'opacity 0.3s ease';
     div.innerHTML = `
-      <div class="avatar-small">M</div>
-      <div class="bubble bot-bubble">${text}</div>
+      <div class="bot-av">M</div>
+      <div class="bubble bot">${text}</div>
     `;
     return div;
   }
 
   function createTypingIndicator() {
     const div = document.createElement('div');
-    div.className = 'message-group bot-group';
+    div.className = 'msg bot';
     div.innerHTML = `
-      <div class="avatar-small">M</div>
-      <div class="bubble bot-bubble typing">
-        <span class="typing-dot"></span>
-        <span class="typing-dot"></span>
-        <span class="typing-dot"></span>
+      <div class="bot-av">M</div>
+      <div class="typing">
+        <span></span><span></span><span></span>
       </div>
     `;
     return div;
+  }
+
+  async function showMessage(element) {
+    chatMessagesContainer.appendChild(element);
+    // Trigger reflow to ensure transition works
+    element.offsetHeight;
+    element.style.opacity = '1';
+    await new Promise(resolve => setTimeout(resolve, 300));
   }
 
   async function playConversation() {
@@ -74,19 +79,19 @@ const { messages } = Astro.props;
 
       if (message.role === 'user') {
         const userMsg = createUserMessage(message.text);
-        chatMessagesContainer.appendChild(userMsg);
-        await new Promise(resolve => setTimeout(resolve, 1200));
+        await showMessage(userMsg);
+        await new Promise(resolve => setTimeout(resolve, 800));
       } else {
         // Show typing indicator
         const typingMsg = createTypingIndicator();
         chatMessagesContainer.appendChild(typingMsg);
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        await new Promise(resolve => setTimeout(resolve, 1500));
         chatMessagesContainer.removeChild(typingMsg);
 
         // Show bot message
         const botMsg = createBotMessage(message.text);
-        chatMessagesContainer.appendChild(botMsg);
-        await new Promise(resolve => setTimeout(resolve, 1200));
+        await showMessage(botMsg);
+        await new Promise(resolve => setTimeout(resolve, 800));
       }
 
       // Scroll to latest message
@@ -98,7 +103,7 @@ const { messages } = Astro.props;
     while (true) {
       await playConversation();
       // Pause before restarting
-      await new Promise(resolve => setTimeout(resolve, 2500));
+      await new Promise(resolve => setTimeout(resolve, 3000));
       // Clear messages
       chatMessagesContainer.innerHTML = '';
     }
@@ -109,17 +114,35 @@ const { messages } = Astro.props;
 </script>
 
 <style>
-  .chat-demo {
+  .chat-demo-wrapper {
     padding: 3rem 1.5rem;
   }
 
+  .chat-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .chat-title {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin: 0 0 2rem 0;
+    line-height: 1.3;
+  }
+
   .chat-container {
-    max-width: 500px;
+    max-width: 480px;
     margin: 0 auto;
-    background: white;
+    background: #f5f3f0;
     border-radius: 1.2rem;
+    box-shadow: 0 8px 32px rgba(27, 28, 26, 0.1);
     overflow: hidden;
-    box-shadow: 0 24px 48px rgba(27, 28, 26, 0.12);
     display: flex;
     flex-direction: column;
     height: 420px;
@@ -129,60 +152,15 @@ const { messages } = Astro.props;
   .chat-header {
     background: var(--primary);
     padding: 1rem 1.25rem;
-    display: flex;
-    align-items: center;
-  }
-
-  .header-content {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    width: 100%;
-  }
-
-  .avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
-    font-size: 1rem;
-    flex-shrink: 0;
   }
 
-  .header-info {
-    flex: 1;
-  }
-
-  .header-info h3 {
-    margin: 0;
-    color: white;
-    font-size: 0.95rem;
-    font-weight: 600;
-    line-height: 1.2;
-  }
-
-  .online-status {
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
-    margin-top: 0.15rem;
-  }
-
-  .online-dot {
-    width: 0.4rem;
-    height: 0.4rem;
-    border-radius: 50%;
-    background: #34d399;
-  }
-
-  .online-text {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.75rem;
+  .online-indicator {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
   }
 
   /* Messages */
@@ -190,123 +168,96 @@ const { messages } = Astro.props;
     flex: 1;
     overflow-y: auto;
     padding: 1rem;
-    background: #f5f3f0;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
 
-  .message-group {
+  .msg {
     display: flex;
-    animation: messageSlideIn 0.3s ease;
+    margin-bottom: 12px;
   }
 
-  @keyframes messageSlideIn {
-    from {
-      opacity: 0;
-      transform: translateY(8px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .user-group {
+  .msg.user {
     justify-content: flex-end;
   }
 
-  .bot-group {
+  .msg.bot {
     justify-content: flex-start;
     align-items: flex-end;
-    gap: 0.5rem;
+    gap: 8px;
   }
 
-  .avatar-small {
+  /* Bot Avatar */
+  .bot-av {
     width: 28px;
     height: 28px;
     border-radius: 50%;
     background: var(--primary);
     color: white;
+    font-size: 11px;
+    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 600;
-    font-size: 0.75rem;
     flex-shrink: 0;
   }
 
   /* Bubbles */
   .bubble {
-    padding: 0.625rem 0.875rem;
-    border-radius: 18px;
-    font-size: 0.9375rem;
+    padding: 10px 14px;
+    font-size: 14px;
     line-height: 1.4;
     max-width: 75%;
     word-wrap: break-word;
-    animation: bubbleFadeIn 0.2s ease 0.05s both;
   }
 
-  @keyframes bubbleFadeIn {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  .user-bubble {
-    background: var(--secondary);
+  .bubble.user {
+    background: #b80049;
     color: white;
     border-radius: 18px 18px 4px 18px;
   }
 
-  .bot-bubble {
+  .bubble.bot {
     background: white;
-    color: var(--on-surface);
+    color: #1b1c1a;
     border-radius: 18px 18px 18px 4px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
   }
 
   /* Typing Indicator */
   .typing {
+    background: white;
+    padding: 10px 14px;
+    border-radius: 18px 18px 18px 4px;
     display: flex;
-    gap: 0.3rem;
-    padding: 0.625rem 0.875rem;
-    min-width: 50px;
+    gap: 4px;
+    align-items: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
   }
 
-  .typing-dot {
-    width: 0.45rem;
-    height: 0.45rem;
-    border-radius: 50%;
+  .typing span {
+    width: 7px;
+    height: 7px;
     background: #999;
-    animation: typingBounce 1.4s infinite;
+    border-radius: 50%;
+    animation: bounce 1.2s infinite;
   }
 
-  .typing-dot:nth-child(1) {
-    animation-delay: 0s;
-  }
-
-  .typing-dot:nth-child(2) {
+  .typing span:nth-child(2) {
     animation-delay: 0.2s;
   }
 
-  .typing-dot:nth-child(3) {
+  .typing span:nth-child(3) {
     animation-delay: 0.4s;
   }
 
-  @keyframes typingBounce {
+  @keyframes bounce {
     0%, 60%, 100% {
       transform: translateY(0);
-      opacity: 0.7;
     }
     30% {
-      transform: translateY(-4px);
-      opacity: 1;
+      transform: translateY(-6px);
     }
   }
 
@@ -324,34 +275,19 @@ const { messages } = Astro.props;
     border-radius: 2px;
   }
 
-  .chat-messages::-webkit-scrollbar-thumb:hover {
-    background: rgba(63, 69, 48, 0.25);
-  }
-
   /* Responsive */
   @media (max-width: 767px) {
     .chat-container {
       height: 400px;
-      max-width: 100%;
-      border-radius: 0.8rem;
     }
 
     .bubble {
       max-width: 85%;
-      font-size: 0.875rem;
+      font-size: 13px;
     }
 
-    .chat-header {
-      padding: 0.875rem 1rem;
-    }
-
-    .header-info h3 {
-      font-size: 0.9rem;
-    }
-
-    .avatar {
-      width: 36px;
-      height: 36px;
+    .chat-title {
+      font-size: 1.25rem;
     }
   }
 </style>
