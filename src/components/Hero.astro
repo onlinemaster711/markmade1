@@ -47,15 +47,6 @@ const {
     </div>
 
   </div>
-
-  <div class="hero-testimonial">
-    <div class="testimonial-inner">
-      <span class="stars" aria-label="5 von 5 Sternen">★★★★★</span>
-      <p class="quote"><em>"Jetzt finden mich Patienten bei Google – und melden sich direkt."</em></p>
-      <p class="attribution">Elke Reinke · Osteopathin · Stuttgart</p>
-      <a href="https://osteopath-stuttgart.com" target="_blank" rel="noopener" class="ref-link">osteopath-stuttgart.com →</a>
-    </div>
-  </div>
 </section>
 
 <style>
@@ -212,53 +203,6 @@ const {
     object-position: top;
   }
 
-  /* --- Testimonial bar --- */
-  .hero-testimonial {
-    border-top: 1px solid var(--surface-high);
-    background: var(--surface-low);
-  }
-
-  .testimonial-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-
-  .stars {
-    color: #f5a623;
-    font-size: 1.125rem;
-    letter-spacing: 0.1em;
-    flex-shrink: 0;
-  }
-
-  .quote {
-    font-size: 0.9375rem;
-    color: var(--on-surface);
-    flex: 1;
-    min-width: 200px;
-  }
-
-  .attribution {
-    font-size: 0.8125rem;
-    color: var(--on-surface-muted);
-    flex-shrink: 0;
-  }
-
-  .ref-link {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--secondary);
-    text-decoration: none;
-    flex-shrink: 0;
-    transition: opacity 0.2s;
-  }
-
-  .ref-link:hover { opacity: 0.75; }
-
   /* --- Responsive --- */
   @media (max-width: 767px) {
     .hero-inner {
@@ -267,18 +211,16 @@ const {
       padding-top: 6rem;
     }
 
+    .hero-text {
+      order: 1;
+    }
+
     .hero-visual {
-      order: -1;
+      order: 2;
     }
 
     .mockup-phone {
       right: 0;
-    }
-
-    .testimonial-inner {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
     }
   }
 </style>
