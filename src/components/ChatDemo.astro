@@ -6,18 +6,28 @@ interface Message {
 
 interface Props {
   messages: Message[];
-  title?: string;
 }
 
-const { messages, title = 'So funktioniert Ihr Chatbot' } = Astro.props;
+const { messages } = Astro.props;
 ---
 
 <div class="chat-demo">
   <div class="chat-container">
+    <!-- Header -->
     <div class="chat-header">
-      <h3>{title}</h3>
+      <div class="header-content">
+        <div class="avatar">M</div>
+        <div class="header-info">
+          <h3>MarkMade Assistent</h3>
+          <div class="online-status">
+            <span class="online-dot"></span>
+            <span class="online-text">Online</span>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <!-- Messages -->
     <div class="chat-messages" id="chat-messages">
       <!-- Messages will be inserted here by JavaScript -->
     </div>
@@ -26,28 +36,35 @@ const { messages, title = 'So funktioniert Ihr Chatbot' } = Astro.props;
 
 <script define:vars={{ messages }}>
   const chatMessagesContainer = document.getElementById('chat-messages');
-  let currentIndex = 0;
 
   function createUserMessage(text) {
     const div = document.createElement('div');
-    div.className = 'message-wrapper user-wrapper';
-    div.innerHTML = `<div class="message user-message">${text}</div>`;
+    div.className = 'message-group user-group';
+    div.innerHTML = `<div class="bubble user-bubble">${text}</div>`;
     return div;
   }
 
   function createBotMessage(text) {
     const div = document.createElement('div');
-    div.className = 'message-wrapper bot-wrapper';
-    div.innerHTML = `<div class="message bot-message">${text}</div>`;
+    div.className = 'message-group bot-group';
+    div.innerHTML = `
+      <div class="avatar-small">M</div>
+      <div class="bubble bot-bubble">${text}</div>
+    `;
     return div;
   }
 
   function createTypingIndicator() {
     const div = document.createElement('div');
-    div.className = 'message-wrapper bot-wrapper';
-    div.innerHTML = `<div class="message bot-message typing">
-      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-    </div>`;
+    div.className = 'message-group bot-group';
+    div.innerHTML = `
+      <div class="avatar-small">M</div>
+      <div class="bubble bot-bubble typing">
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+      </div>
+    `;
     return div;
   }
 
@@ -58,18 +75,18 @@ const { messages, title = 'So funktioniert Ihr Chatbot' } = Astro.props;
       if (message.role === 'user') {
         const userMsg = createUserMessage(message.text);
         chatMessagesContainer.appendChild(userMsg);
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        await new Promise(resolve => setTimeout(resolve, 1200));
       } else {
         // Show typing indicator
         const typingMsg = createTypingIndicator();
         chatMessagesContainer.appendChild(typingMsg);
-        await new Promise(resolve => setTimeout(resolve, 800));
+        await new Promise(resolve => setTimeout(resolve, 1000));
         chatMessagesContainer.removeChild(typingMsg);
 
         // Show bot message
         const botMsg = createBotMessage(message.text);
         chatMessagesContainer.appendChild(botMsg);
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        await new Promise(resolve => setTimeout(resolve, 1200));
       }
 
       // Scroll to latest message
@@ -81,7 +98,7 @@ const { messages, title = 'So funktioniert Ihr Chatbot' } = Astro.props;
     while (true) {
       await playConversation();
       // Pause before restarting
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise(resolve => setTimeout(resolve, 2500));
       // Clear messages
       chatMessagesContainer.innerHTML = '';
     }
@@ -97,44 +114,94 @@ const { messages, title = 'So funktioniert Ihr Chatbot' } = Astro.props;
   }
 
   .chat-container {
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
-    background: var(--surface-lowest);
+    background: white;
     border-radius: 1.2rem;
     overflow: hidden;
     box-shadow: 0 24px 48px rgba(27, 28, 26, 0.12);
     display: flex;
     flex-direction: column;
-    height: 500px;
+    height: 420px;
   }
 
+  /* Header */
   .chat-header {
     background: var(--primary);
-    padding: 1.5rem;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
     color: white;
-  }
-
-  .chat-header h3 {
-    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
     font-size: 1rem;
-    font-weight: 600;
+    flex-shrink: 0;
   }
 
+  .header-info {
+    flex: 1;
+  }
+
+  .header-info h3 {
+    margin: 0;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .online-status {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.15rem;
+  }
+
+  .online-dot {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background: #34d399;
+  }
+
+  .online-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.75rem;
+  }
+
+  /* Messages */
   .chat-messages {
     flex: 1;
     overflow-y: auto;
-    padding: 1.5rem;
+    padding: 1rem;
+    background: #f5f3f0;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
   }
 
-  .message-wrapper {
+  .message-group {
     display: flex;
-    animation: fadeIn 0.3s ease;
+    animation: messageSlideIn 0.3s ease;
   }
 
-  @keyframes fadeIn {
+  @keyframes messageSlideIn {
     from {
       opacity: 0;
       transform: translateY(8px);
@@ -145,74 +212,105 @@ const { messages, title = 'So funktioniert Ihr Chatbot' } = Astro.props;
     }
   }
 
-  .message {
-    padding: 0.75rem 1rem;
-    border-radius: 0.75rem;
-    font-size: 0.9375rem;
-    line-height: 1.5;
-    max-width: 80%;
-    word-wrap: break-word;
-  }
-
-  .user-wrapper {
+  .user-group {
     justify-content: flex-end;
   }
 
-  .user-message {
+  .bot-group {
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+
+  .avatar-small {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  /* Bubbles */
+  .bubble {
+    padding: 0.625rem 0.875rem;
+    border-radius: 18px;
+    font-size: 0.9375rem;
+    line-height: 1.4;
+    max-width: 75%;
+    word-wrap: break-word;
+    animation: bubbleFadeIn 0.2s ease 0.05s both;
+  }
+
+  @keyframes bubbleFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .user-bubble {
     background: var(--secondary);
     color: white;
-    border-radius: 0.75rem 0.25rem 0.75rem 0.75rem;
+    border-radius: 18px 18px 4px 18px;
   }
 
-  .bot-wrapper {
-    justify-content: flex-start;
-  }
-
-  .bot-message {
-    background: var(--surface-low);
+  .bot-bubble {
+    background: white;
     color: var(--on-surface);
-    border-radius: 0.25rem 0.75rem 0.75rem 0.75rem;
+    border-radius: 18px 18px 18px 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
   }
 
-  /* Typing indicator */
+  /* Typing Indicator */
   .typing {
     display: flex;
-    gap: 0.35rem;
-    padding: 0.75rem 1rem;
+    gap: 0.3rem;
+    padding: 0.625rem 0.875rem;
+    min-width: 50px;
   }
 
-  .dot {
-    width: 0.5rem;
-    height: 0.5rem;
+  .typing-dot {
+    width: 0.45rem;
+    height: 0.45rem;
     border-radius: 50%;
-    background: var(--on-surface-muted);
-    animation: bounce 1.4s infinite;
+    background: #999;
+    animation: typingBounce 1.4s infinite;
   }
 
-  .dot:nth-child(1) {
+  .typing-dot:nth-child(1) {
     animation-delay: 0s;
   }
 
-  .dot:nth-child(2) {
+  .typing-dot:nth-child(2) {
     animation-delay: 0.2s;
   }
 
-  .dot:nth-child(3) {
+  .typing-dot:nth-child(3) {
     animation-delay: 0.4s;
   }
 
-  @keyframes bounce {
+  @keyframes typingBounce {
     0%, 60%, 100% {
       transform: translateY(0);
       opacity: 0.7;
     }
     30% {
-      transform: translateY(-6px);
+      transform: translateY(-4px);
       opacity: 1;
     }
   }
 
-  /* Scrollbar styling */
+  /* Scrollbar */
   .chat-messages::-webkit-scrollbar {
     width: 4px;
   }
@@ -222,22 +320,38 @@ const { messages, title = 'So funktioniert Ihr Chatbot' } = Astro.props;
   }
 
   .chat-messages::-webkit-scrollbar-thumb {
-    background: rgba(63, 69, 48, 0.2);
-    border-radius: 4px;
+    background: rgba(63, 69, 48, 0.15);
+    border-radius: 2px;
   }
 
+  .chat-messages::-webkit-scrollbar-thumb:hover {
+    background: rgba(63, 69, 48, 0.25);
+  }
+
+  /* Responsive */
   @media (max-width: 767px) {
     .chat-container {
       height: 400px;
+      max-width: 100%;
+      border-radius: 0.8rem;
     }
 
-    .message {
-      max-width: 90%;
+    .bubble {
+      max-width: 85%;
       font-size: 0.875rem;
     }
 
-    .chat-header h3 {
-      font-size: 0.95rem;
+    .chat-header {
+      padding: 0.875rem 1rem;
+    }
+
+    .header-info h3 {
+      font-size: 0.9rem;
+    }
+
+    .avatar {
+      width: 36px;
+      height: 36px;
     }
   }
 </style>
