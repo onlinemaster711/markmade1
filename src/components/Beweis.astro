@@ -1,4 +1,13 @@
 ---
+interface Props {
+  screenshotSrc?: string;
+  screenshotAlt?: string;
+}
+
+const {
+  screenshotSrc = 'elke-reinke-screenshot.webp',
+  screenshotAlt = 'Screenshot osteopath-stuttgart.com',
+} = Astro.props;
 ---
 
 <section class="beweis">
@@ -18,8 +27,8 @@
 
     <div class="beweis-screenshot fade-in">
       <img
-        src="/elke-reinke-screenshot.webp"
-        alt="Screenshot osteopath-stuttgart.com"
+        src={`/${screenshotSrc}`}
+        alt={screenshotAlt}
         loading="lazy"
         width="640"
         height="400"
