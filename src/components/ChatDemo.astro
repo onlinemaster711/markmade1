@@ -34,31 +34,31 @@ const { messages, title = 'So funktioniert Ihr Chatbot' } = Astro.props;
 
   function createUserMessage(text) {
     const div = document.createElement('div');
-    div.className = 'msg user';
+    div.className = 'chat-demo-msg user';
     div.style.opacity = '0';
     div.style.transition = 'opacity 0.3s ease';
-    div.innerHTML = `<div class="bubble user">${text}</div>`;
+    div.innerHTML = `<div class="chat-demo-bubble user">${text}</div>`;
     return div;
   }
 
   function createBotMessage(text) {
     const div = document.createElement('div');
-    div.className = 'msg bot';
+    div.className = 'chat-demo-msg bot';
     div.style.opacity = '0';
     div.style.transition = 'opacity 0.3s ease';
     div.innerHTML = `
-      <div class="bot-av">M</div>
-      <div class="bubble bot">${text}</div>
+      <div class="chat-demo-bot-av">M</div>
+      <div class="chat-demo-bubble bot">${text}</div>
     `;
     return div;
   }
 
   function createTypingIndicator() {
     const div = document.createElement('div');
-    div.className = 'msg bot';
+    div.className = 'chat-demo-msg bot';
     div.innerHTML = `
-      <div class="bot-av">M</div>
-      <div class="typing">
+      <div class="chat-demo-bot-av">M</div>
+      <div class="chat-demo-typing">
         <span></span><span></span><span></span>
       </div>
     `;
@@ -113,7 +113,7 @@ const { messages, title = 'So funktioniert Ihr Chatbot' } = Astro.props;
   loop();
 </script>
 
-<style>
+<style is:global>
   .chat-demo-wrapper {
     padding: 3rem 1.5rem;
   }
@@ -173,23 +173,23 @@ const { messages, title = 'So funktioniert Ihr Chatbot' } = Astro.props;
     gap: 0.75rem;
   }
 
-  .msg {
+  .chat-demo-msg {
     display: flex;
     margin-bottom: 12px;
   }
 
-  .msg.user {
+  .chat-demo-msg.user {
     justify-content: flex-end;
   }
 
-  .msg.bot {
+  .chat-demo-msg.bot {
     justify-content: flex-start;
     align-items: flex-end;
     gap: 8px;
   }
 
   /* Bot Avatar */
-  .bot-av {
+  .chat-demo-bot-av {
     width: 28px;
     height: 28px;
     border-radius: 50%;
@@ -204,7 +204,7 @@ const { messages, title = 'So funktioniert Ihr Chatbot' } = Astro.props;
   }
 
   /* Bubbles */
-  .bubble {
+  .chat-demo-bubble {
     padding: 10px 14px;
     font-size: 14px;
     line-height: 1.4;
@@ -212,13 +212,13 @@ const { messages, title = 'So funktioniert Ihr Chatbot' } = Astro.props;
     word-wrap: break-word;
   }
 
-  .bubble.user {
+  .chat-demo-bubble.user {
     background: #b80049;
     color: white;
     border-radius: 18px 18px 4px 18px;
   }
 
-  .bubble.bot {
+  .chat-demo-bubble.bot {
     background: white;
     color: #1b1c1a;
     border-radius: 18px 18px 18px 4px;
@@ -226,7 +226,7 @@ const { messages, title = 'So funktioniert Ihr Chatbot' } = Astro.props;
   }
 
   /* Typing Indicator */
-  .typing {
+  .chat-demo-typing {
     background: white;
     padding: 10px 14px;
     border-radius: 18px 18px 18px 4px;
@@ -236,7 +236,7 @@ const { messages, title = 'So funktioniert Ihr Chatbot' } = Astro.props;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
   }
 
-  .typing span {
+  .chat-demo-typing span {
     width: 7px;
     height: 7px;
     background: #999;
@@ -244,11 +244,11 @@ const { messages, title = 'So funktioniert Ihr Chatbot' } = Astro.props;
     animation: bounce 1.2s infinite;
   }
 
-  .typing span:nth-child(2) {
+  .chat-demo-typing span:nth-child(2) {
     animation-delay: 0.2s;
   }
 
-  .typing span:nth-child(3) {
+  .chat-demo-typing span:nth-child(3) {
     animation-delay: 0.4s;
   }
 
@@ -281,7 +281,7 @@ const { messages, title = 'So funktioniert Ihr Chatbot' } = Astro.props;
       height: 400px;
     }
 
-    .bubble {
+    .chat-demo-bubble {
       max-width: 85%;
       font-size: 13px;
     }
