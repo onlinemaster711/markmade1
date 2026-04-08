@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import Rechner from '../components/Rechner.astro';
+import CalendarDemo from '../components/CalendarDemo.astro';
 import Cta from '../components/Cta.astro';
 ---
 
@@ -71,7 +71,13 @@ import Cta from '../components/Cta.astro';
     </div>
   </section>
 
-  <Rechner />
+  <!-- CalendarDemo Section -->
+  <section class="cal-demo-section">
+    <div class="cal-demo-inner">
+      <CalendarDemo title="So funktioniert die Online-Terminbuchung" />
+    </div>
+  </section>
+
   <Cta />
 </BaseLayout>
 
@@ -181,6 +187,17 @@ import Cta from '../components/Cta.astro';
     font-size: 0.95rem;
     color: var(--on-surface-muted);
     line-height: 1.6;
+  }
+
+  /* --- CalendarDemo Section --- */
+  .cal-demo-section {
+    background: var(--surface-low);
+    padding: 0;
+  }
+
+  .cal-demo-inner {
+    max-width: 960px;
+    margin: 0 auto;
   }
 
   /* --- Responsive --- */
