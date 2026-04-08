@@ -14,6 +14,7 @@
     </nav>
 
     <a href="/#cta" class="cta-button">Entwurf sichern</a>
+    <a href="/#angebot" class="btn-mobile-angebot">Angebot</a>
   </div>
 </header>
 
@@ -89,6 +90,23 @@
     opacity: 0.88;
   }
 
+  .btn-mobile-angebot {
+    display: none;
+    flex-shrink: 0;
+    padding: 0.625rem 1.25rem;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: var(--on-secondary);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: opacity 0.2s;
+  }
+
+  .btn-mobile-angebot:hover {
+    opacity: 0.88;
+  }
+
   @media (max-width: 767px) {
     .nav {
       display: none;
@@ -96,6 +114,14 @@
 
     .header-inner {
       justify-content: space-between;
+    }
+
+    .cta-button {
+      display: none;
+    }
+
+    .btn-mobile-angebot {
+      display: inline-block;
     }
   }
 </style>
