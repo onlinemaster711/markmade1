@@ -2,226 +2,364 @@
 ---
 
 <footer class="site-footer">
-  <div class="footer-inner">
 
-    <div class="footer-grid">
+  <!-- Hauptbereich -->
+  <div class="footer-main">
+    <div class="footer-main-inner">
 
-      <!-- Spalte 1: Brand -->
-      <div class="footer-col footer-col--brand">
+      <!-- Logo + Tagline -->
+      <div class="footer-brand">
         <a href="/" class="footer-logo" aria-label="MarkMade – Startseite">mark<span>made</span></a>
         <p class="footer-tagline">KI übernimmt, was dich aufhält.</p>
-        <p class="footer-sub">KI-Agentur für kleine und mittelständische Betriebe – Chatbots, Telefonassistenten, Automatisierung.</p>
       </div>
 
-      <!-- Spalte 2: KI-Services -->
-      <div class="footer-col">
-        <span class="footer-col-title">KI-Services</span>
-        <ul>
-          <li><a href="/ki-fuer-unternehmen">KI-Chatbot &amp; Übersicht</a></li>
-          <li><a href="/ki-telefonassistent">Telefonassistent</a></li>
-          <li><a href="/ki-email">E-Mail-Automatisierung</a></li>
-          <li><a href="/ki-social-media">Social Media mit KI</a></li>
-          <li><a href="/ki-automatisierung">Prozessautomatisierung</a></li>
-        </ul>
-      </div>
+      <!-- Desktop: 4 Spalten -->
+      <nav class="footer-cols" aria-label="Footer-Navigation">
 
-      <!-- Spalte 3: Webdesign -->
-      <div class="footer-col">
-        <span class="footer-col-title">Webdesign</span>
-        <ul>
-          <li><a href="/webdesign-selbststaendige">Für Selbstständige</a></li>
-          <li><a href="/webdesign-handwerker">Für Handwerker</a></li>
-          <li><a href="/webdesign-aerzte">Für Ärzte</a></li>
-        </ul>
-      </div>
+        <div class="footer-col">
+          <span class="footer-col-title">KI-Services</span>
+          <a href="/ki-fuer-unternehmen">KI-Chatbot</a>
+          <a href="/ki-telefonassistent">Telefonassistent</a>
+          <a href="/ki-email">E-Mail</a>
+          <a href="/ki-social-media">Social Media</a>
+          <a href="/ki-automatisierung">Automatisierung</a>
+        </div>
 
-      <!-- Spalte 4: KI für Branchen -->
-      <div class="footer-col">
-        <span class="footer-col-title">KI für Branchen</span>
-        <ul>
-          <li><a href="/ki-handwerker">KI für Handwerker</a></li>
-          <li><a href="/ki-aerzte">KI für Ärzte &amp; Praxen</a></li>
-          <li><a href="/ki-restaurant">KI für Restaurants</a></li>
-          <li><a href="/ki-kanzlei">KI für Kanzleien</a></li>
-          <li><a href="/ki-immobilienmakler">KI für Immobilienmakler</a></li>
-        </ul>
-      </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Webdesign</span>
+          <a href="/webdesign-selbststaendige">Selbstständige</a>
+          <a href="/webdesign-handwerker">Handwerker</a>
+          <a href="/webdesign-aerzte">Ärzte</a>
+        </div>
 
-      <!-- Spalte 5: Ratgeber & Rechtliches -->
-      <div class="footer-col">
-        <span class="footer-col-title">Ratgeber</span>
-        <ul>
-          <li><a href="/ratgeber/ki-im-unternehmen-nutzen">KI im Unternehmen nutzen</a></li>
-          <li><a href="/ratgeber/ki-fuer-handwerker">KI für Handwerker</a></li>
-          <li><a href="/ratgeber/ki-fuer-aerzte">KI für Ärzte</a></li>
-          <li><a href="/ratgeber/ki-fuer-restaurants">KI für Restaurants</a></li>
-          <li><a href="/ratgeber/ki-fuer-kanzleien">KI für Kanzleien</a></li>
-          <li><a href="/ratgeber/ki-fuer-immobilienmakler">KI für Immobilienmakler</a></li>
-          <li><a href="/ratgeber/ki-fuer-selbststaendige">KI für Selbstständige</a></li>
-          <li class="footer-divider"></li>
-        </ul>
+        <div class="footer-col">
+          <span class="footer-col-title">KI für Branchen</span>
+          <a href="/ki-handwerker">Handwerker</a>
+          <a href="/ki-aerzte">Ärzte</a>
+          <a href="/ki-restaurant">Restaurants</a>
+          <a href="/ki-kanzlei">Kanzleien</a>
+          <a href="/ki-immobilienmakler">Makler</a>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-title">Ratgeber</span>
+          <a href="/ratgeber/ki-im-unternehmen-nutzen">KI im Unternehmen</a>
+          <a href="/ratgeber/ki-fuer-handwerker">Handwerker</a>
+          <a href="/ratgeber/ki-fuer-aerzte">Ärzte</a>
+          <a href="/ratgeber/ki-fuer-restaurants">Restaurants</a>
+        </div>
+
+      </nav>
+
+      <!-- Mobile: Akkordeon -->
+      <div class="footer-accordion" aria-label="Footer-Navigation">
+
+        <div class="acc-block">
+          <button class="acc-header" aria-expanded="false">
+            <span>KI-Services</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-body" hidden>
+            <a href="/ki-fuer-unternehmen">KI-Chatbot</a>
+            <a href="/ki-telefonassistent">Telefonassistent</a>
+            <a href="/ki-email">E-Mail</a>
+            <a href="/ki-social-media">Social Media</a>
+            <a href="/ki-automatisierung">Automatisierung</a>
+          </div>
+        </div>
+
+        <div class="acc-block">
+          <button class="acc-header" aria-expanded="false">
+            <span>Webdesign</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-body" hidden>
+            <a href="/webdesign-selbststaendige">Selbstständige</a>
+            <a href="/webdesign-handwerker">Handwerker</a>
+            <a href="/webdesign-aerzte">Ärzte</a>
+          </div>
+        </div>
+
+        <div class="acc-block">
+          <button class="acc-header" aria-expanded="false">
+            <span>KI für Branchen</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-body" hidden>
+            <a href="/ki-handwerker">Handwerker</a>
+            <a href="/ki-aerzte">Ärzte</a>
+            <a href="/ki-restaurant">Restaurants</a>
+            <a href="/ki-kanzlei">Kanzleien</a>
+            <a href="/ki-immobilienmakler">Makler</a>
+          </div>
+        </div>
+
+        <div class="acc-block">
+          <button class="acc-header" aria-expanded="false">
+            <span>Ratgeber</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-body" hidden>
+            <a href="/ratgeber/ki-im-unternehmen-nutzen">KI im Unternehmen</a>
+            <a href="/ratgeber/ki-fuer-handwerker">Handwerker</a>
+            <a href="/ratgeber/ki-fuer-aerzte">Ärzte</a>
+            <a href="/ratgeber/ki-fuer-restaurants">Restaurants</a>
+          </div>
+        </div>
+
       </div>
 
     </div>
+  </div>
 
-    <div class="footer-bottom">
-      <span>© 2026 MarkMade – KI-Agentur für KMU</span>
-      <div class="footer-bottom-links">
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span class="footer-copy">© 2026 MarkMade – KI-Agentur für KMU</span>
+      <div class="footer-legal">
         <a href="/impressum">Impressum</a>
+        <span aria-hidden="true">·</span>
         <a href="/datenschutz">Datenschutz</a>
+        <span aria-hidden="true">·</span>
         <a href="/agb">AGB</a>
       </div>
     </div>
-
   </div>
+
 </footer>
+
+<script>
+  document.querySelectorAll('.acc-header').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const body = btn.nextElementSibling as HTMLElement;
+      const icon = btn.querySelector('.acc-icon') as HTMLElement;
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      if (isOpen) {
+        body.hidden = true;
+        btn.setAttribute('aria-expanded', 'false');
+        icon.textContent = '+';
+      } else {
+        body.hidden = false;
+        btn.setAttribute('aria-expanded', 'true');
+        icon.textContent = '−';
+      }
+    });
+  });
+</script>
 
 <style>
   .site-footer {
     background: var(--primary);
-    color: rgba(255, 255, 255, 0.55);
-    padding-top: 4rem;
+    color: rgba(255, 255, 255, 0.65);
   }
 
-  .footer-inner {
+  /* ── HAUPTBEREICH ── */
+  .footer-main {
+    padding: 48px 24px 32px;
+  }
+
+  .footer-main-inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1.25fr;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
     gap: 3rem;
-    padding-bottom: 3rem;
   }
 
-  /* Brand column */
-  .footer-col--brand .footer-logo {
+  /* Brand */
+  .footer-brand {
+    flex-shrink: 0;
+  }
+
+  .footer-logo {
     display: inline-block;
     font-family: 'Noto Serif', serif;
     font-size: 1.25rem;
     font-weight: 700;
     color: #fff;
     text-decoration: none;
-    margin-bottom: 0.875rem;
+    margin-bottom: 0.5rem;
   }
 
-  .footer-col--brand .footer-logo span {
+  .footer-logo span {
     color: var(--secondary);
   }
 
   .footer-tagline {
-    font-family: 'Noto Serif', serif;
-    font-size: 1rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.85);
-    line-height: 1.4;
-    margin-bottom: 0.625rem;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.5;
+    max-width: 18ch;
   }
 
-  .footer-sub {
-    font-size: 0.875rem;
-    line-height: 1.65;
-    color: rgba(255, 255, 255, 0.45);
+  /* Desktop 4 Spalten */
+  .footer-cols {
+    display: flex;
+    gap: 48px;
+    flex-shrink: 0;
   }
 
-  /* Generic column */
-  .footer-col-title {
-    display: block;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
-    margin-bottom: 1rem;
-  }
-
-  .footer-col ul {
-    list-style: none;
+  .footer-col {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+  }
+
+  .footer-col-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 12px;
   }
 
   .footer-col a {
-    font-size: 0.9375rem;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.65);
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.55);
-    transition: color 0.2s;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.15s;
   }
 
   .footer-col a:hover {
-    color: #fff;
+    color: rgba(255, 255, 255, 0.95);
   }
 
-  /* Divider between ratgeber and legal links */
-  .footer-divider {
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    margin: 0.5rem 0;
+  /* Mobile Akkordeon — standardmäßig versteckt */
+  .footer-accordion {
+    display: none;
   }
 
-  /* Bottom bar */
+  /* ── BOTTOM BAR ── */
   .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 1.25rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 24px;
+  }
+
+  .footer-bottom-inner {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 0.875rem;
     gap: 1rem;
   }
 
-  .footer-bottom-links {
+  .footer-copy {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .footer-legal {
     display: flex;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
   }
 
-  .footer-bottom a {
+  .footer-legal a {
+    color: rgba(255, 255, 255, 0.4);
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.45);
-    transition: color 0.2s;
+    transition: color 0.15s;
   }
 
-  .footer-bottom a:hover {
-    color: #fff;
+  .footer-legal a:hover {
+    color: rgba(255, 255, 255, 0.8);
   }
 
-  @media (max-width: 1023px) {
-    .footer-grid {
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 2rem;
-    }
-
-    .footer-col--brand {
-      grid-column: 1 / -1;
-    }
-  }
-
+  /* ── MOBILE ── */
   @media (max-width: 767px) {
-    .footer-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+
+    .footer-main {
+      padding: 0;
     }
 
-    .footer-col--brand {
-      grid-column: 1 / -1;
-    }
-
-    .footer-bottom {
+    .footer-main-inner {
       flex-direction: column;
-      align-items: flex-start;
-      gap: 0.75rem;
+      gap: 0;
     }
 
-    .footer-bottom-links {
-      gap: 1rem;
+    .footer-brand {
+      padding: 32px 24px 16px;
     }
-  }
 
-  @media (max-width: 480px) {
-    .footer-grid {
-      grid-template-columns: 1fr;
+    .footer-tagline {
+      max-width: none;
+    }
+
+    /* Desktop-Spalten ausblenden */
+    .footer-cols {
+      display: none;
+    }
+
+    /* Akkordeon einblenden */
+    .footer-accordion {
+      display: block;
+      width: 100%;
+    }
+
+    .acc-block {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .acc-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .acc-icon {
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .acc-body {
+      padding: 0 24px 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .acc-body a {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+      transition: color 0.15s;
+    }
+
+    .acc-body a:hover {
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    /* Bottom Bar Mobile */
+    .footer-bottom-inner {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.5rem;
     }
   }
 </style>
