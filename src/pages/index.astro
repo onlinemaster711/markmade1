@@ -219,6 +219,62 @@ import Cta from '../components/Cta.astro';
 
 <style>
   /* ─────────────────────────────────────────
+     ANIMATIONS
+  ───────────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .leistungen-grid.in-view .lk,
+  .branchen-grid.in-view .branche-karte {
+    animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  /* Staggered delays — service cards */
+  .leistungen-grid.in-view .lk:nth-child(1) { animation-delay:   0ms; }
+  .leistungen-grid.in-view .lk:nth-child(2) { animation-delay:  80ms; }
+  .leistungen-grid.in-view .lk:nth-child(3) { animation-delay: 160ms; }
+  .leistungen-grid.in-view .lk:nth-child(4) { animation-delay: 240ms; }
+  .leistungen-grid.in-view .lk:nth-child(5) { animation-delay: 320ms; }
+  .leistungen-grid.in-view .lk:nth-child(6) { animation-delay: 400ms; }
+
+  /* Staggered delays — branche cards */
+  .branchen-grid.in-view .branche-karte:nth-child(1) { animation-delay:   0ms; }
+  .branchen-grid.in-view .branche-karte:nth-child(2) { animation-delay:  90ms; }
+  .branchen-grid.in-view .branche-karte:nth-child(3) { animation-delay: 180ms; }
+  .branchen-grid.in-view .branche-karte:nth-child(4) { animation-delay: 270ms; }
+  .branchen-grid.in-view .branche-karte:nth-child(5) { animation-delay: 360ms; }
+
+  /* Pre-animation state — hide until in-view */
+  .leistungen-grid:not(.in-view) .lk,
+  .branchen-grid:not(.in-view) .branche-karte {
+    opacity: 0;
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION DIVIDERS
+  ───────────────────────────────────────── */
+  .leistungen,
+  .branchen,
+  .faq {
+    position: relative;
+  }
+
+  .leistungen::before,
+  .branchen::before,
+  .faq::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--dust), transparent);
+  }
+
+  /* ─────────────────────────────────────────
      HERO
   ───────────────────────────────────────── */
   .hero {
@@ -232,38 +288,55 @@ import Cta from '../components/Cta.astro';
     margin: 0 auto;
   }
 
+  /* Eyebrow mit roter Akzentlinie davor */
   .eyebrow {
     font-family: 'Manrope', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--secondary);
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
   }
 
+  .eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 3px;
+    background: var(--secondary);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* H1 — mehr Gewicht, engerer Zeilenabstand */
   h1 {
     font-family: 'Noto Serif', serif;
-    font-size: clamp(2.25rem, 5vw, 3.5rem);
-    line-height: 1.15;
+    font-size: clamp(2.75rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
     color: var(--on-surface);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.375rem;
   }
 
   .subtext {
     font-family: 'Manrope', sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.7;
+    font-size: 1.0625rem;
+    line-height: 1.75;
     color: var(--on-surface-muted);
-    margin-bottom: 2rem;
-    max-width: 56ch;
+    margin-bottom: 2.25rem;
+    max-width: 52ch;
     margin-left: auto;
     margin-right: auto;
   }
 
+  /* CTA — Spring-Hover + Schatten */
   .btn-primary {
     display: inline-block;
-    padding: 0.9375rem 2rem;
+    padding: 0.9375rem 2.125rem;
     background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
     color: #fff;
     font-family: 'Manrope', sans-serif;
@@ -271,11 +344,21 @@ import Cta from '../components/Cta.astro';
     font-weight: 600;
     text-decoration: none;
     border-radius: 1rem;
-    transition: opacity 0.2s;
+    box-shadow: 0 4px 20px rgba(184, 0, 73, 0.25);
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.25s ease;
     white-space: nowrap;
   }
 
-  .btn-primary:hover { opacity: 0.88; }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(184, 0, 73, 0.35);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(184, 0, 73, 0.2);
+  }
 
   .haekchen-liste {
     list-style: none;
@@ -283,13 +366,13 @@ import Cta from '../components/Cta.astro';
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.5rem 1.5rem;
-    margin-top: 1.5rem;
+    margin-top: 1.75rem;
     margin-bottom: 3rem;
   }
 
   .haekchen-liste li {
     font-family: 'Manrope', sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     color: var(--on-surface-muted);
     display: flex;
     align-items: center;
@@ -301,39 +384,56 @@ import Cta from '../components/Cta.astro';
     font-weight: 700;
   }
 
+  /* Use-Case Cards — minimal, nur Border */
   .use-case-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    gap: 10px;
   }
 
   .uc-card {
-    background: var(--surface-low);
+    background: transparent;
     border: 1px solid var(--dust);
-    border-radius: 1rem;
-    padding: 1.25rem 0.75rem;
+    border-radius: 0.875rem;
+    padding: 1.125rem 0.625rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.625rem;
     text-decoration: none;
     color: var(--on-surface-muted);
     font-family: 'Manrope', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 500;
+    font-size: 0.8rem;
+    font-weight: 600;
     line-height: 1.3;
     text-align: center;
-    transition: border-color 0.2s, color 0.2s;
+    transition: border-color 0.2s ease,
+                color 0.2s ease,
+                transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .uc-card:hover {
     border-color: var(--secondary);
     color: var(--secondary);
+    transform: translateY(-4px);
   }
 
+  /* Icon — kleiner Kreis-Container */
   .uc-icon {
-    font-size: 1.5rem;
-    line-height: 1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface-low);
+    border-radius: 10px;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+
+  .uc-card:hover .uc-icon {
+    background: rgba(184, 0, 73, 0.07);
   }
 
   /* ─────────────────────────────────────────
@@ -349,19 +449,34 @@ import Cta from '../components/Cta.astro';
     margin: 0 auto;
   }
 
+  /* Linksbündig mit roter Akzentlinie */
   .leistungen h2 {
     font-family: 'Noto Serif', serif;
     font-size: clamp(1.75rem, 3vw, 2.5rem);
     color: var(--on-surface);
-    text-align: center;
-    margin-bottom: 0.75rem;
+    text-align: left;
+    margin-bottom: 0.625rem;
+    padding-bottom: 1.25rem;
+    position: relative;
+  }
+
+  .leistungen h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 3rem;
+    height: 2px;
+    background: var(--secondary);
+    border-radius: 2px;
   }
 
   .leistungen-sub {
     font-family: 'Manrope', sans-serif;
     font-size: 1.05rem;
     color: var(--on-surface-muted);
-    text-align: center;
+    text-align: left;
+    margin-top: 1rem;
     margin-bottom: 3.5rem;
   }
 
@@ -371,42 +486,59 @@ import Cta from '../components/Cta.astro';
     gap: 20px;
   }
 
+  /* Karten — Inset-Shadow Akzent oben, Spring-Hover */
   .lk {
     background: var(--surface-lowest);
     border: 1px solid var(--dust);
     border-radius: 1rem;
-    padding: 2.5rem;
+    padding: 2.75rem;
     display: flex;
     flex-direction: column;
     text-decoration: none;
     color: inherit;
-    box-shadow: 0px 12px 32px rgba(27, 28, 26, 0.06);
-    transition: transform 0.3s ease;
+    box-shadow: 0 8px 28px rgba(27, 28, 26, 0.06),
+                inset 0 3px 0 transparent;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.3s ease;
   }
 
   .lk:hover {
     transform: translateY(-8px);
+    box-shadow: 0 20px 48px rgba(27, 28, 26, 0.11),
+                inset 0 3px 0 var(--secondary);
   }
 
   .lk:hover .lk-line {
     width: 3rem;
   }
 
+  /* Emoji — gerundeter Quadrat-Container */
   .lk-emoji {
-    font-size: 2.5rem;
-    line-height: 1;
-    color: var(--secondary);
-    margin-bottom: 2rem;
-    display: block;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface-low);
+    border-radius: 14px;
+    font-size: 1.5rem;
+    margin-bottom: 1.75rem;
+    flex-shrink: 0;
+    transition: background 0.25s ease;
+  }
+
+  .lk:hover .lk-emoji {
+    background: rgba(184, 0, 73, 0.07);
   }
 
   .lk-titel {
     font-family: 'Noto Serif', serif;
-    font-size: 1.5rem;
+    font-size: 1.375rem;
     font-weight: 700;
     color: var(--primary);
-    margin-bottom: 1rem;
+    margin-bottom: 0.875rem;
     display: block;
+    line-height: 1.25;
   }
 
   .lk-text {
@@ -424,7 +556,7 @@ import Cta from '../components/Cta.astro';
     gap: 8px;
     color: var(--primary);
     font-family: 'Manrope', sans-serif;
-    font-size: 0.9375rem;
+    font-size: 0.9rem;
     font-weight: 700;
     margin-top: auto;
   }
@@ -479,18 +611,20 @@ import Cta from '../components/Cta.astro';
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-radius: 1rem;
+    border-radius: 1.125rem;
     padding: 2rem;
-    transition: transform 0.3s ease;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .branche-karte:hover {
     transform: translateY(-8px);
   }
 
-  /* Dunkle Karten (1, 3, 5) */
+  /* Dunkle Karten — Dot-Pattern Textur */
   .branche-dunkel {
-    background: var(--primary-container);
+    background-color: var(--primary-container);
+    background-image: radial-gradient(circle, rgba(255,255,255,0.065) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 
   .branche-dunkel .branche-emoji {
@@ -509,11 +643,11 @@ import Cta from '../components/Cta.astro';
     opacity: 0.8;
   }
 
-  /* Helle Karten (2, 4) */
+  /* Helle Karten */
   .branche-hell {
     background: var(--surface-lowest);
     border: 1px solid var(--dust);
-    box-shadow: 0px 12px 32px rgba(27, 28, 26, 0.06);
+    box-shadow: 0 12px 36px rgba(27, 28, 26, 0.07);
     margin-top: 3rem;
   }
 
@@ -546,11 +680,12 @@ import Cta from '../components/Cta.astro';
     display: block;
   }
 
+  /* Größerer Titel */
   .branche-titel {
     font-family: 'Noto Serif', serif;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 700;
-    line-height: 1.25;
+    line-height: 1.2;
     margin-bottom: 0;
   }
 
@@ -591,21 +726,42 @@ import Cta from '../components/Cta.astro';
     margin: 0 auto;
   }
 
+  /* Linksbündig mit Akzentlinie */
   .faq h2 {
     font-family: 'Noto Serif', serif;
     font-size: clamp(1.75rem, 3vw, 2.5rem);
     color: var(--on-surface);
-    margin-bottom: 3rem;
+    margin-bottom: 0.625rem;
+    padding-bottom: 1.25rem;
+    position: relative;
   }
 
-  /* Normales FAQ-Item: 2-spaltig */
+  .faq h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 3rem;
+    height: 2px;
+    background: var(--secondary);
+    border-radius: 2px;
+  }
+
+  /* FAQ-Items — 2-spaltig, Hover-Highlight */
   .faq-item {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 2rem;
     align-items: start;
-    padding: 2.5rem 0;
+    padding: 2.5rem 1rem;
     border-bottom: 1px solid var(--dust);
+    border-radius: 0.75rem;
+    margin-top: 0.25rem;
+    transition: background 0.2s ease;
+  }
+
+  .faq-item:not(.faq-highlight):hover {
+    background: var(--surface-lowest);
   }
 
   .faq-item--last {
@@ -637,6 +793,10 @@ import Cta from '../components/Cta.astro';
     padding: 2.5rem 3rem;
     margin: 0.5rem 0;
     border-bottom: none;
+  }
+
+  .faq-highlight:hover {
+    background: var(--primary) !important;
   }
 
   .faq-highlight h3 {
@@ -696,10 +856,17 @@ import Cta from '../components/Cta.astro';
     .faq-item {
       grid-template-columns: 1fr;
       gap: 0.75rem;
+      padding: 2rem 0.75rem;
     }
 
     .faq-highlight {
       padding: 2rem 1.5rem;
+    }
+
+    /* Skalierung auf Mobile */
+    .leistungen-grid:not(.in-view) .lk,
+    .branchen-grid:not(.in-view) .branche-karte {
+      opacity: 1; /* Kein verstecken auf Mobile falls JS langsam */
     }
   }
 
@@ -709,7 +876,26 @@ import Cta from '../components/Cta.astro';
     }
 
     .lk {
-      padding: 1.75rem;
+      padding: 1.875rem;
     }
   }
 </style>
+
+<script>
+  // Staggered scroll-reveal via IntersectionObserver
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  document.querySelectorAll('.leistungen-grid, .branchen-grid').forEach((el) => {
+    observer.observe(el);
+  });
+</script>
