@@ -1,39 +1,474 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
-import VierFragen from '../components/VierFragen.astro';
-import ChatDemo from '../components/ChatDemo.astro';
-import Angebot from '../components/Angebot.astro';
 import Beweis from '../components/Beweis.astro';
-import Prozess from '../components/Prozess.astro';
 import Cta from '../components/Cta.astro';
-import Faq from '../components/Faq.astro';
 ---
 
 <BaseLayout
-  title="MarkMade – Webdesign & Chatbot | ab 1.000 €"
-  description="Professionelle Website ab 1.000 € inkl. MwSt. Mit optionalem Chatbot der Fragen beantwortet und Zeit spart. Entwurf zuerst, dann entscheiden."
+  title="MarkMade – KI-Agentur für kleine und mittelständische Betriebe"
+  description="KI für KMU – Websites, Chatbots, Automatisierung, Marketing. Praktisch umsetzbar. Einmal bezahlt. Für kleine und mittelständische Betriebe."
 >
-  <Hero
-    eyebrow="Webdesign · Chatbot · Zeitersparnis"
-    heading="Deine Website erklärt was du machst. Dein Chatbot klärt den Rest."
-    subtext="Wir bauen dir eine Website die klar zeigt was du anbietest – und einen Chatbot der Kundenfragen automatisch beantwortet. Das Ergebnis: Weniger Telefonate, bessere Anfragen."
-  />
-  <VierFragen />
-  <ChatDemo
-    title="So läuft ein Gespräch mit uns ab"
-    messages={[
-      {role: 'user', text: 'Was kostet eine Website bei euch?'},
-      {role: 'bot', text: 'Eine professionelle Website kostet 1.000 € inkl. MwSt. – Festpreis, alles inklusive. Texte, Design, SEO, alles drin.'},
-      {role: 'user', text: 'Muss ich Texte selbst schreiben?'},
-      {role: 'bot', text: 'Nein! Du erzählst uns in 10 Minuten was du machst – wir schreiben alles. Du musst nichts liefern.'},
-      {role: 'user', text: 'Und wenn mir der Entwurf nicht gefällt?'},
-      {role: 'bot', text: 'Dann zahlst du nichts. Kein Vertrag, keine Rechnung. Du siehst den Entwurf zuerst – und entscheidest danach.'}
-    ]}
-  />
-  <Angebot />
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">KI-Agentur für kleine &amp; mittelständische Betriebe</p>
+      <h1>KI für deinen Betrieb.<br />Praktisch. Umsetzbar.</h1>
+      <p class="hero-text">
+        Wir zeigen kleinen und mittelständischen Betrieben wie KI konkret Zeit spart, Prozesse vereinfacht und Kunden überzeugt – ohne monatliche Abokosten.
+      </p>
+      <div class="hero-buttons">
+        <a href="https://calendly.com/onlinemaster711/new-meeting" class="btn-primary" target="_blank" rel="noopener noreferrer">Kostenloses Erstgespräch buchen</a>
+        <a href="/#leistungen" class="btn-ghost">Leistungen entdecken →</a>
+      </div>
+      <ul class="trust-list">
+        <li><span class="check">✓</span> Einmal bezahlt – kein Abo</li>
+        <li><span class="check">✓</span> Für KMU gemacht</li>
+        <li><span class="check">✓</span> Umsetzbar in Tagen</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2. LEISTUNGEN -->
+  <section class="leistungen" id="leistungen">
+    <div class="leistungen-inner">
+      <p class="eyebrow-dark">Was wir für dich umsetzen</p>
+      <h2>KI die wirklich hilft – nicht nur beeindruckt.</h2>
+      <div class="leistungen-grid">
+
+        <a href="/webdesign-selbststaendige" class="leistung-card">
+          <span class="leistung-icon">🌐</span>
+          <h3>Website &amp; Chatbot</h3>
+          <p>Professionelle Website mit KI-Chatbot der Kundenfragen automatisch beantwortet.</p>
+          <span class="leistung-link">Mehr erfahren →</span>
+        </a>
+
+        <a href="/ki-social-media" class="leistung-card">
+          <span class="leistung-icon">📱</span>
+          <h3>Social Media mit KI</h3>
+          <p>Skripte, Posts und Kampagnen – KI erstellt den Content, du genehmigst ihn.</p>
+          <span class="leistung-link">Mehr erfahren →</span>
+        </a>
+
+        <a href="/ki-email" class="leistung-card">
+          <span class="leistung-icon">✉️</span>
+          <h3>E-Mail-Automatisierung</h3>
+          <p>Eingehende E-Mails automatisch beantworten, weiterleiten und priorisieren.</p>
+          <span class="leistung-link">Mehr erfahren →</span>
+        </a>
+
+        <a href="/ki-dashboard" class="leistung-card">
+          <span class="leistung-icon">📊</span>
+          <h3>Dashboard &amp; Auswertung</h3>
+          <p>Eigenes Dashboard das deine wichtigsten Kennzahlen übersichtlich darstellt.</p>
+          <span class="leistung-link">Mehr erfahren →</span>
+        </a>
+
+        <a href="/ki-crm" class="leistung-card">
+          <span class="leistung-icon">📋</span>
+          <h3>CRM auf Maß</h3>
+          <p>Kundenverwaltung die zu deinem Betrieb passt – einmal bezahlt, kein Abo.</p>
+          <span class="leistung-link">Mehr erfahren →</span>
+        </a>
+
+        <a href="/ki-automatisierung" class="leistung-card">
+          <span class="leistung-icon">⚙️</span>
+          <h3>Prozess-Automatisierung</h3>
+          <p>Wiederkehrende Aufgaben automatisieren – mehr Zeit für das Wesentliche.</p>
+          <span class="leistung-link">Mehr erfahren →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. BRANCHEN -->
+  <section class="branchen">
+    <div class="branchen-inner">
+      <p class="eyebrow-dark">Für wen wir arbeiten</p>
+      <h2>Jede Branche hat eigene Bedürfnisse.</h2>
+      <p class="branchen-text">Wir kennen die Fragen die täglich kommen – und bauen Lösungen die genau passen.</p>
+      <div class="branchen-grid">
+
+        <a href="/webdesign-handwerker" class="branchen-card">
+          <h3>Handwerker &amp; Gewerbe</h3>
+          <p>Website, Chatbot und Terminbuchung für Handwerksbetriebe.</p>
+          <span class="branchen-link">Zur Branchenseite →</span>
+        </a>
+
+        <a href="/webdesign-aerzte" class="branchen-card">
+          <h3>Ärzte &amp; Praxen</h3>
+          <p>Professioneller Webauftritt und Patientenkommunikation.</p>
+          <span class="branchen-link">Zur Branchenseite →</span>
+        </a>
+
+        <a href="/webdesign-selbststaendige" class="branchen-card">
+          <h3>Selbstständige &amp; Coaches</h3>
+          <p>Klare Positionierung und automatisierte Kundenkommunikation.</p>
+          <span class="branchen-link">Zur Branchenseite →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WARUM MARKMADE -->
+  <section class="warum">
+    <div class="warum-inner">
+      <h2>KI die für dich arbeitet – nicht gegen dich.</h2>
+      <div class="warum-grid">
+
+        <div class="warum-punkt">
+          <span class="warum-icon">💰</span>
+          <h3>Einmal bezahlt – kein Abo</h3>
+          <p>Keine monatlichen Lizenzkosten. Du bezahlst einmal und behältst die Lösung.</p>
+        </div>
+
+        <div class="warum-punkt">
+          <span class="warum-icon">🎯</span>
+          <h3>Für KMU gemacht</h3>
+          <p>Keine Enterprise-Lösungen die niemand versteht. Alles ist auf kleine Betriebe zugeschnitten.</p>
+        </div>
+
+        <div class="warum-punkt">
+          <span class="warum-icon">⚡</span>
+          <h3>Umsetzbar in Tagen</h3>
+          <p>Keine monatelangen Projekte. Die meisten Lösungen sind in wenigen Tagen live.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. BEWEIS -->
   <Beweis />
-  <Prozess />
+
+  <!-- 6. CTA -->
   <Cta />
-  <Faq />
+
 </BaseLayout>
+
+<style>
+  /* ── HERO ── */
+  .hero {
+    background: var(--surface);
+    padding-top: 9rem;
+    padding-bottom: 5rem;
+  }
+
+  .hero-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary);
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    line-height: 1.15;
+    color: var(--on-surface);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--on-surface-muted);
+    margin-bottom: 2.5rem;
+    max-width: 58ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: var(--on-secondary);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.88; }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.875rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--on-surface-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .btn-ghost:hover { color: var(--on-surface); }
+
+  .trust-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .trust-list li {
+    font-size: 0.9375rem;
+    color: var(--on-surface-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .check { color: var(--secondary); font-weight: 700; }
+
+  /* ── LEISTUNGEN ── */
+  .leistungen {
+    background: var(--surface-low);
+    padding: 5rem 0;
+  }
+
+  .leistungen-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .eyebrow-dark {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary);
+    margin-bottom: 0.75rem;
+    display: block;
+    text-align: center;
+  }
+
+  .leistungen h2,
+  .branchen h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--on-surface);
+    text-align: center;
+    margin-bottom: 3rem;
+    line-height: 1.25;
+  }
+
+  .leistungen-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .leistung-card {
+    background: var(--surface-lowest, white);
+    border: 1px solid var(--outline-variant);
+    border-radius: 1rem;
+    padding: 1.75rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+
+  .leistung-card:hover {
+    box-shadow: 0 8px 24px rgba(27, 28, 26, 0.1);
+    border-color: var(--primary-fixed, #3f4530);
+  }
+
+  .leistung-icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .leistung-card h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--on-surface);
+  }
+
+  .leistung-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+    flex: 1;
+  }
+
+  .leistung-link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--secondary);
+    margin-top: auto;
+  }
+
+  /* ── BRANCHEN ── */
+  .branchen {
+    background: var(--surface);
+    padding: 5rem 0;
+  }
+
+  .branchen-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .branchen-text {
+    font-size: 1.0625rem;
+    color: var(--on-surface-muted);
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    max-width: 55ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .branchen-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .branchen-card {
+    background: var(--surface-low);
+    border: 1px solid var(--outline-variant);
+    border-radius: 1rem;
+    padding: 2rem 1.5rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: left;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+
+  .branchen-card:hover {
+    box-shadow: 0 8px 24px rgba(27, 28, 26, 0.1);
+    border-color: var(--primary-fixed, #3f4530);
+  }
+
+  .branchen-card h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--on-surface);
+  }
+
+  .branchen-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+    flex: 1;
+  }
+
+  .branchen-link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--secondary);
+  }
+
+  /* ── WARUM ── */
+  .warum {
+    background: var(--primary);
+    padding: 5rem 0;
+    color: white;
+  }
+
+  .warum-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .warum h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: white;
+    text-align: center;
+    margin-bottom: 3rem;
+    line-height: 1.25;
+  }
+
+  .warum-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
+  .warum-punkt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .warum-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  .warum-punkt h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  .warum-punkt p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .leistungen-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hero {
+      padding-top: 6.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .trust-list {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .leistungen-grid,
+    .branchen-grid,
+    .warum-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
