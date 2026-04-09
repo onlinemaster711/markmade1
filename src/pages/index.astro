@@ -12,30 +12,64 @@ import Cta from '../components/Cta.astro';
   <!-- 1. HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">KI-Agentur für kleine &amp; mittelständische Betriebe</p>
-      <h1>Welches Problem kostet dich täglich die meiste Zeit?</h1>
-      <p class="hero-text">
-        KI übernimmt die Zuarbeit – damit du dich auf das konzentrierst was wirklich zählt. Wir helfen dir herauszufinden wo KI in deinem Betrieb wirklich Sinn ergibt.
-      </p>
-      <div class="problem-buttons">
-        <a href="/ki-telefonassistent" class="problem-btn">
-          <span class="pb-text">📞 Ich verpasse Anrufe und Anfragen</span>
-          <span class="pb-arrow">→</span>
-        </a>
-        <a href="/ki-email" class="problem-btn">
-          <span class="pb-text">✉️ Ich verbringe zu viel Zeit mit E-Mails</span>
-          <span class="pb-arrow">→</span>
-        </a>
-        <a href="/ratgeber/ki-im-unternehmen-nutzen" class="problem-btn">
-          <span class="pb-text">❓ Ich weiß nicht wo ich mit KI anfangen soll</span>
-          <span class="pb-arrow">→</span>
+
+      <!-- LEFT: Text -->
+      <div class="hero-text-col">
+        <p class="eyebrow">KI-Agentur für kleine &amp; mittelständische Betriebe</p>
+        <h1>Welches Problem kostet dich täglich die meiste Zeit?</h1>
+        <p class="hero-sub">
+          KI übernimmt die Zuarbeit – damit du dich auf das konzentrierst was wirklich zählt. Wir helfen dir herauszufinden wo KI in deinem Betrieb wirklich Sinn ergibt.
+        </p>
+        <div class="problem-buttons">
+          <a href="/ki-telefonassistent" class="problem-btn">
+            <span class="pb-text">📞 Ich verpasse Anrufe und Anfragen</span>
+            <span class="pb-arrow">→</span>
+          </a>
+          <a href="/ki-email" class="problem-btn">
+            <span class="pb-text">✉️ Ich verbringe zu viel Zeit mit E-Mails</span>
+            <span class="pb-arrow">→</span>
+          </a>
+          <a href="/ratgeber/ki-im-unternehmen-nutzen" class="problem-btn">
+            <span class="pb-text">❓ Ich weiß nicht wo ich mit KI anfangen soll</span>
+            <span class="pb-arrow">→</span>
+          </a>
+        </div>
+        <a href="https://calendly.com/onlinemaster711/new-meeting" class="hero-direct-link" target="_blank" rel="noopener noreferrer">
+          Oder direkt Gespräch buchen →
         </a>
       </div>
-      <a href="https://calendly.com/onlinemaster711/new-meeting" class="hero-direct-link" target="_blank" rel="noopener noreferrer">
-        Oder direkt Gespräch buchen →
-      </a>
+
+      <!-- RIGHT: Chat Preview -->
+      <div class="hero-visual-col">
+        <div class="hero-chat" id="hero-chat">
+          <div class="hero-chat-header">
+            <span class="hero-chat-dot">●</span>
+            <span class="hero-chat-name">MarkMade KI</span>
+          </div>
+          <div class="hero-chat-body" id="hero-chat-body"></div>
+        </div>
+      </div>
+
     </div>
   </section>
+
+  <!-- ZÄHLER-LEISTE -->
+  <div class="counter-bar" id="counter-bar">
+    <div class="counter-inner">
+      <div class="counter-item">
+        <span class="counter-num" data-target="847" id="cnt-0">0</span>
+        <span class="counter-label">Stunden gespart</span>
+      </div>
+      <div class="counter-item">
+        <span class="counter-num" data-target="30" id="cnt-1">0</span>
+        <span class="counter-label">KI-Lösungen umgesetzt</span>
+      </div>
+      <div class="counter-item">
+        <span class="counter-num" data-target="6" id="cnt-2">0</span>
+        <span class="counter-label">Branchen bedient</span>
+      </div>
+    </div>
+  </div>
 
   <!-- 2. ZEITFRESSER -->
   <section class="zeitfresser" id="leistungen">
@@ -272,17 +306,29 @@ import Cta from '../components/Cta.astro';
   /* ── HERO ── */
   .hero {
     background: var(--surface);
-    padding-top: 9rem;
-    padding-bottom: 5rem;
-    text-align: center;
+    padding-top: 7rem;
+    padding-bottom: 4rem;
   }
 
   .hero-inner {
-    max-width: 600px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero-text-col {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-visual-col {
+    display: flex;
+    justify-content: center;
     align-items: center;
   }
 
@@ -297,18 +343,18 @@ import Cta from '../components/Cta.astro';
 
   h1 {
     font-family: 'Noto Serif', serif;
-    font-size: clamp(1.875rem, 4.5vw, 3rem);
+    font-size: clamp(1.625rem, 3vw, 2.5rem);
     line-height: 1.2;
     color: var(--on-surface);
     margin-bottom: 1.25rem;
   }
 
-  .hero-text {
+  .hero-sub {
     font-size: 1.0625rem;
     line-height: 1.7;
     color: var(--on-surface-muted);
-    margin-bottom: 2.5rem;
-    max-width: 52ch;
+    margin-bottom: 2rem;
+    max-width: 48ch;
   }
 
   .problem-buttons {
@@ -316,7 +362,6 @@ import Cta from '../components/Cta.astro';
     flex-direction: column;
     gap: 0.75rem;
     width: 100%;
-    max-width: 520px;
     margin-bottom: 1.5rem;
   }
 
@@ -366,6 +411,29 @@ import Cta from '../components/Cta.astro';
 
   .hero-direct-link:hover {
     color: var(--secondary);
+  }
+
+  /* ── COUNTER BAR ── */
+  .counter-bar {
+    background: var(--primary);
+    padding: 1.5rem 0;
+  }
+
+  .counter-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+
+  .counter-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
   }
 
   /* ── SHARED ── */
@@ -826,17 +894,33 @@ import Cta from '../components/Cta.astro';
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-visual-col {
+      order: -1;
+    }
+
     .zeitfresser-grid,
     .branchen-grid,
     .ratgeber-grid {
       grid-template-columns: repeat(2, 1fr);
     }
+
+    .counter-inner {
+      gap: 2rem;
+    }
   }
 
   @media (max-width: 767px) {
     .hero {
-      padding-top: 6.5rem;
-      padding-bottom: 3.5rem;
+      padding-top: 6rem;
+      padding-bottom: 3rem;
+    }
+
+    .hero-text-col {
+      align-items: flex-start;
     }
 
     .zeitfresser-grid,
@@ -854,5 +938,277 @@ import Cta from '../components/Cta.astro';
     .rf-icon {
       font-size: 2.25rem;
     }
+
+    .counter-inner {
+      gap: 1.5rem;
+    }
   }
 </style>
+
+<style is:global>
+  /* ── HERO CHAT PREVIEW ── */
+  .hero-chat {
+    width: 100%;
+    max-width: 360px;
+    background: white;
+    border-radius: 1.2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(63, 69, 48, 0.12);
+    overflow: hidden;
+    font-family: 'Manrope', system-ui, sans-serif;
+  }
+
+  .hero-chat-header {
+    background: #3f4530;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 13px;
+    color: white;
+    font-weight: 600;
+  }
+
+  .hero-chat-dot {
+    color: #34d399;
+    font-size: 10px;
+  }
+
+  .hero-chat-name {
+    letter-spacing: 0.01em;
+  }
+
+  .hero-chat-body {
+    background: #f5f3f0;
+    padding: 1rem;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* User bubble */
+  .hero-chat-user {
+    align-self: flex-end;
+    background: #b80049;
+    color: white;
+    padding: 0.625rem 0.875rem;
+    border-radius: 16px 16px 4px 16px;
+    font-size: 13px;
+    line-height: 1.5;
+    max-width: 85%;
+    animation: hcFadeIn 0.3s ease;
+  }
+
+  /* Bot row */
+  .hero-chat-bot-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    max-width: 90%;
+    animation: hcFadeIn 0.3s ease;
+  }
+
+  .hero-chat-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #3f4530;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .hero-chat-bot {
+    background: white;
+    color: #1b1c1a;
+    padding: 0.625rem 0.875rem;
+    border-radius: 16px 16px 16px 4px;
+    font-size: 13px;
+    line-height: 1.5;
+    border: 1px solid rgba(63, 69, 48, 0.08);
+  }
+
+  /* Typing indicator */
+  .hero-chat-typing {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+
+  .hero-chat-typing-bubble {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    background: white;
+    padding: 0.625rem 0.875rem;
+    border-radius: 16px 16px 16px 4px;
+    border: 1px solid rgba(63, 69, 48, 0.08);
+  }
+
+  .hero-chat-dot-anim {
+    width: 6px;
+    height: 6px;
+    background: rgba(63, 69, 48, 0.35);
+    border-radius: 50%;
+    animation: hcBounce 1.2s infinite;
+  }
+
+  .hero-chat-dot-anim:nth-child(2) { animation-delay: 0.15s; }
+  .hero-chat-dot-anim:nth-child(3) { animation-delay: 0.3s; }
+
+  @keyframes hcBounce {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-4px); }
+  }
+
+  @keyframes hcFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── COUNTER ── */
+  .counter-num {
+    font-family: 'Noto Serif', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+  }
+
+  .counter-label {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+  }
+</style>
+
+<script>
+  // ── HERO CHAT ANIMATION ──
+  (function() {
+    var messages = [
+      { role: 'user', text: 'Ich verpasse täglich Anrufe.' },
+      { role: 'bot',  text: 'Das kennen wir. Ein KI-Assistent nimmt Anrufe entgegen – auch wenn du auf der Baustelle bist. 📞' },
+      { role: 'user', text: 'Was kostet das?' },
+      { role: 'bot',  text: 'Ab 1.000 € – einmal bezahlt, kein Abo. Soll ich dir zeigen was für deinen Betrieb passt?' }
+    ];
+
+    var body = document.getElementById('hero-chat-body');
+    if (!body) return;
+
+    var idx = 0;
+    var timer: ReturnType<typeof setTimeout>;
+
+    function makeAvatar() {
+      var av = document.createElement('div');
+      av.className = 'hero-chat-avatar';
+      av.textContent = 'M';
+      return av;
+    }
+
+    function showTyping() {
+      var row = document.createElement('div');
+      row.className = 'hero-chat-typing';
+      row.id = 'hc-typing';
+      row.innerHTML = '<div class="hero-chat-avatar">M</div><div class="hero-chat-typing-bubble"><div class="hero-chat-dot-anim"></div><div class="hero-chat-dot-anim"></div><div class="hero-chat-dot-anim"></div></div>';
+      body!.appendChild(row);
+      body!.scrollTop = body!.scrollHeight;
+    }
+
+    function removeTyping() {
+      var el = document.getElementById('hc-typing');
+      if (el) el.remove();
+    }
+
+    function addMessage(msg: { role: string; text: string }) {
+      if (msg.role === 'user') {
+        var el = document.createElement('div');
+        el.className = 'hero-chat-user';
+        el.textContent = msg.text;
+        body!.appendChild(el);
+      } else {
+        var row = document.createElement('div');
+        row.className = 'hero-chat-bot-row';
+        var av = document.createElement('div');
+        av.className = 'hero-chat-avatar';
+        av.textContent = 'M';
+        var bubble = document.createElement('div');
+        bubble.className = 'hero-chat-bot';
+        bubble.textContent = msg.text;
+        row.appendChild(av);
+        row.appendChild(bubble);
+        body!.appendChild(row);
+      }
+      body!.scrollTop = body!.scrollHeight;
+    }
+
+    function step() {
+      if (idx >= messages.length) {
+        // pause then reset
+        timer = setTimeout(function() {
+          body!.innerHTML = '';
+          idx = 0;
+          step();
+        }, 4000);
+        return;
+      }
+
+      var msg = messages[idx];
+      idx++;
+
+      if (msg.role === 'user') {
+        addMessage(msg);
+        timer = setTimeout(step, 1200);
+      } else {
+        showTyping();
+        timer = setTimeout(function() {
+          removeTyping();
+          addMessage(msg);
+          timer = setTimeout(step, 1000);
+        }, 1400);
+      }
+    }
+
+    step();
+  })();
+
+  // ── COUNTER ANIMATION ──
+  (function() {
+    var counters = document.querySelectorAll<HTMLElement>('.counter-num');
+    var started = false;
+
+    function easeOut(t: number): number {
+      return 1 - Math.pow(1 - t, 3);
+    }
+
+    function animateCounter(el: HTMLElement, target: number, duration: number) {
+      var start = performance.now();
+      function tick(now: number) {
+        var elapsed = now - start;
+        var progress = Math.min(elapsed / duration, 1);
+        el.textContent = String(Math.round(easeOut(progress) * target));
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    var bar = document.getElementById('counter-bar');
+    if (!bar) return;
+
+    var observer = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting && !started) {
+        started = true;
+        counters.forEach(function(el) {
+          var target = parseInt(el.dataset.target || '0', 10);
+          animateCounter(el, target, 1500);
+        });
+      }
+    }, { threshold: 0.5 });
+
+    observer.observe(bar);
+  })();
+</script>
