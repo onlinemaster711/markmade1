@@ -10,47 +10,64 @@
 
     <nav class="nav" aria-label="Hauptnavigation">
 
+      <!-- Dropdown 1: KI-Services -->
       <div class="dropdown">
         <button class="nav-trigger" aria-haspopup="true">
-          Leistungen
+          KI-Services
           <svg class="chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="dropdown-menu">
-          <a href="/ki-fuer-unternehmen" class="dropdown-link">KI für Unternehmen – Übersicht</a>
-          <a href="/webdesign-selbststaendige" class="dropdown-link">KI-Website &amp; Chatbot</a>
-          <a href="/ki-telefonassistent" class="dropdown-link">KI-Telefonassistent</a>
-          <a href="/ki-social-media" class="dropdown-link">Social Media mit KI</a>
+          <a href="/ki-fuer-unternehmen" class="dropdown-link">KI-Chatbot &amp; Übersicht</a>
+          <a href="/ki-telefonassistent" class="dropdown-link">Telefonassistent</a>
           <a href="/ki-email" class="dropdown-link">E-Mail-Automatisierung</a>
-          <a href="/ki-automatisierung" class="dropdown-link">Prozess-Automatisierung</a>
+          <a href="/ki-social-media" class="dropdown-link">Social Media mit KI</a>
+          <a href="/ki-automatisierung" class="dropdown-link">Prozessautomatisierung</a>
         </div>
       </div>
 
+      <!-- Dropdown 2: Webdesign -->
+      <div class="dropdown">
+        <button class="nav-trigger" aria-haspopup="true">
+          Webdesign
+          <svg class="chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dropdown-menu">
+          <a href="/webdesign-selbststaendige" class="dropdown-link">Website für Selbstständige</a>
+          <a href="/webdesign-handwerker" class="dropdown-link">Website für Handwerker</a>
+          <a href="/webdesign-aerzte" class="dropdown-link">Website für Ärzte</a>
+        </div>
+      </div>
+
+      <!-- Dropdown 3: Branchen -->
       <div class="dropdown">
         <button class="nav-trigger" aria-haspopup="true">
           Branchen
           <svg class="chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="dropdown-menu dropdown-menu--wide">
-          <p class="dropdown-category">Handwerk &amp; Gewerbe</p>
+          <p class="dropdown-category">Handwerk &amp; Gesundheit</p>
           <a href="/webdesign-handwerker" class="dropdown-link">Handwerker &amp; Betriebe</a>
-          <p class="dropdown-category">Gesundheit</p>
           <a href="/webdesign-aerzte" class="dropdown-link">Ärzte &amp; Praxen</a>
-          <p class="dropdown-category">Business &amp; Recht</p>
-          <a href="/ki-kanzlei" class="dropdown-link">Kanzleien &amp; Steuerberater</a>
-          <a href="/ki-immobilienmakler" class="dropdown-link">Immobilienmakler</a>
-          <p class="dropdown-category">Gastronomie</p>
-          <a href="/ki-restaurant" class="dropdown-link">Restaurants &amp; Cafés</a>
-          <p class="dropdown-category">Selbstständige</p>
-          <a href="/ki-fuer-unternehmen" class="dropdown-link">KI-Übersicht</a>
+          <p class="dropdown-category">KI für Branchen</p>
+          <a href="/ki-handwerker" class="dropdown-link">KI für Handwerker</a>
+          <a href="/ki-aerzte" class="dropdown-link">KI für Ärzte &amp; Praxen</a>
+          <a href="/ki-restaurant" class="dropdown-link">KI für Restaurants</a>
+          <a href="/ki-kanzlei" class="dropdown-link">KI für Kanzleien</a>
+          <a href="/ki-immobilienmakler" class="dropdown-link">KI für Immobilienmakler</a>
         </div>
       </div>
 
     </nav>
 
+    <a href="/ratgeber/ki-im-unternehmen-nutzen" class="ratgeber-link">Ratgeber</a>
     <a href="https://calendly.com/onlinemaster711/new-meeting" class="cta-button" target="_blank" rel="noopener noreferrer">Gespräch buchen</a>
 
     <button class="burger" id="burger" aria-label="Menü öffnen">
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
     </button>
 
   </div>
@@ -58,20 +75,30 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobile-menu">
     <div class="mobile-menu-inner">
-      <p class="mobile-section-label">Leistungen</p>
-      <a href="/webdesign-selbststaendige" class="mobile-link">KI-Website &amp; Chatbot</a>
-      <a href="/ki-telefonassistent" class="mobile-link">KI-Telefonassistent</a>
-      <a href="/ki-social-media" class="mobile-link">Social Media mit KI</a>
+
+      <p class="mobile-section-label">KI-Services</p>
+      <a href="/ki-fuer-unternehmen" class="mobile-link">KI-Chatbot &amp; Übersicht</a>
+      <a href="/ki-telefonassistent" class="mobile-link">Telefonassistent</a>
       <a href="/ki-email" class="mobile-link">E-Mail-Automatisierung</a>
-      <a href="/ki-automatisierung" class="mobile-link">Prozess-Automatisierung</a>
+      <a href="/ki-social-media" class="mobile-link">Social Media mit KI</a>
+      <a href="/ki-automatisierung" class="mobile-link">Prozessautomatisierung</a>
+
+      <p class="mobile-section-label">Webdesign</p>
+      <a href="/webdesign-selbststaendige" class="mobile-link">Website für Selbstständige</a>
+      <a href="/webdesign-handwerker" class="mobile-link">Website für Handwerker</a>
+      <a href="/webdesign-aerzte" class="mobile-link">Website für Ärzte</a>
 
       <p class="mobile-section-label">Branchen</p>
       <a href="/webdesign-handwerker" class="mobile-link">Handwerker &amp; Betriebe</a>
       <a href="/webdesign-aerzte" class="mobile-link">Ärzte &amp; Praxen</a>
-      <a href="/ki-kanzlei" class="mobile-link">Kanzleien &amp; Steuerberater</a>
-      <a href="/ki-immobilienmakler" class="mobile-link">Immobilienmakler</a>
-      <a href="/ki-restaurant" class="mobile-link">Restaurants &amp; Cafés</a>
-      <span class="mobile-link mobile-link--soon" aria-disabled="true">Coaches &amp; Berater <span class="soon-badge">Bald</span></span>
+      <a href="/ki-handwerker" class="mobile-link">KI für Handwerker</a>
+      <a href="/ki-aerzte" class="mobile-link">KI für Ärzte &amp; Praxen</a>
+      <a href="/ki-restaurant" class="mobile-link">KI für Restaurants</a>
+      <a href="/ki-kanzlei" class="mobile-link">KI für Kanzleien</a>
+      <a href="/ki-immobilienmakler" class="mobile-link">KI für Immobilienmakler</a>
+
+      <p class="mobile-section-label">Ratgeber</p>
+      <a href="/ratgeber/ki-im-unternehmen-nutzen" class="mobile-link">KI im Unternehmen nutzen</a>
 
       <a href="https://calendly.com/onlinemaster711/new-meeting" class="mobile-cta" target="_blank" rel="noopener noreferrer">Gespräch buchen</a>
     </div>
@@ -85,23 +112,23 @@
   burger?.addEventListener('click', () => {
     mobileMenu?.classList.toggle('open');
   });
-  // Close mobile menu on link click
   mobileMenu?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => mobileMenu.classList.remove('open'));
   });
 </script>
 
 <style>
+  /* ── HEADER ── */
   .site-header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.82);
+    background: rgba(251, 249, 246, 0.92);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border-bottom: 1px solid var(--outline-variant);
+    border-bottom: 1px solid var(--dust);
   }
 
   .header-inner {
@@ -111,10 +138,10 @@
     height: 64px;
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 0.25rem;
   }
 
-  /* Logo */
+  /* ── LOGO ── */
   .logo {
     font-family: 'Noto Serif', serif;
     font-size: 1.25rem;
@@ -122,25 +149,26 @@
     text-decoration: none;
     color: var(--on-surface);
     flex-shrink: 0;
+    margin-right: 0.5rem;
   }
 
   .logo span {
     color: var(--secondary);
   }
 
-  /* Nav */
+  /* ── NAV ── */
   .nav {
     display: flex;
     align-items: center;
-    gap: 0.25rem;
-    margin-left: auto;
+    gap: 0.125rem;
   }
 
-  /* Dropdown trigger */
+  /* ── DROPDOWN TRIGGER ── */
   .nav-trigger {
     display: flex;
     align-items: center;
     gap: 0.3rem;
+    font-family: 'Manrope', sans-serif;
     font-size: 0.9375rem;
     font-weight: 500;
     color: var(--on-surface-muted);
@@ -161,13 +189,14 @@
   .chevron {
     opacity: 0.5;
     transition: transform 0.2s;
+    flex-shrink: 0;
   }
 
   .dropdown:hover .chevron {
     transform: rotate(180deg);
   }
 
-  /* Dropdown */
+  /* ── DROPDOWN ── */
   .dropdown {
     position: relative;
   }
@@ -176,15 +205,15 @@
     position: absolute;
     top: calc(100% + 0.5rem);
     left: 0;
-    background: white;
-    border-radius: 1rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04);
-    padding: 0.5rem;
+    background: var(--surface-lowest);
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+    padding: 8px;
+    min-width: 220px;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease, transform 0.2s ease;
     transform: translateY(-4px);
-    min-width: 220px;
     z-index: 100;
   }
 
@@ -199,56 +228,80 @@
   }
 
   .dropdown-category {
-    font-size: 11px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.7rem;
     font-weight: 600;
-    color: var(--on-surface-muted);
-    letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding: 0.5rem 0.75rem 0.25rem;
+    letter-spacing: 0.08em;
+    color: var(--on-surface-muted);
+    padding: 8px 12px 4px;
     margin: 0;
   }
 
   .dropdown-category:not(:first-child) {
     margin-top: 0.25rem;
-    border-top: 1px solid var(--outline-variant);
-    padding-top: 0.625rem;
+    border-top: 1px solid var(--dust);
+    padding-top: 8px;
   }
 
   .dropdown-link {
     display: block;
-    padding: 0.5rem 0.75rem;
-    font-size: 14px;
+    padding: 8px 12px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
     color: var(--on-surface);
     text-decoration: none;
     border-radius: 0.5rem;
-    transition: background 0.15s, color 0.15s;
+    transition: background 0.15s;
   }
 
   .dropdown-link:hover {
     background: var(--surface-low);
-    color: var(--secondary);
   }
 
-  /* CTA Button */
+  /* ── RATGEBER LINK ── */
+  .ratgeber-link {
+    margin-left: auto;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--on-surface-muted);
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: color 0.2s, background 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .ratgeber-link:hover {
+    color: var(--on-surface);
+    background: var(--surface-low);
+  }
+
+  /* ── CTA BUTTON ── */
   .cta-button {
     flex-shrink: 0;
     display: inline-block;
-    padding: 0.625rem 1.25rem;
+    padding: 0.75rem 1.5rem;
     background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
-    color: white;
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
     font-size: 0.9375rem;
     font-weight: 600;
     text-decoration: none;
     border-radius: 1rem;
+    border: none;
     transition: opacity 0.2s;
     white-space: nowrap;
+    margin-left: 0.5rem;
   }
 
   .cta-button:hover {
     opacity: 0.88;
   }
 
-  /* Burger */
+  /* ── BURGER ── */
   .burger {
     display: none;
     background: none;
@@ -257,13 +310,14 @@
     padding: 0.25rem;
     color: var(--on-surface);
     flex-shrink: 0;
+    margin-left: 0.5rem;
   }
 
-  /* Mobile Menu */
+  /* ── MOBILE MENU ── */
   .mobile-menu {
     display: none;
-    background: white;
-    border-top: 1px solid var(--outline-variant);
+    background: var(--surface-lowest);
+    border-top: 1px solid var(--dust);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
@@ -272,6 +326,7 @@
   .mobile-menu.open {
     display: block;
     max-height: 100vh;
+    overflow-y: auto;
   }
 
   .mobile-menu-inner {
@@ -282,24 +337,26 @@
   }
 
   .mobile-section-label {
-    font-size: 11px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.7rem;
     font-weight: 600;
-    color: var(--on-surface-muted);
-    letter-spacing: 0.08em;
     text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--on-surface-muted);
     padding: 0.75rem 0 0.25rem;
     margin: 0;
   }
 
   .mobile-section-label:not(:first-child) {
     margin-top: 0.5rem;
-    border-top: 1px solid var(--outline-variant);
+    border-top: 1px solid var(--dust);
     padding-top: 1rem;
   }
 
   .mobile-link {
     display: block;
     padding: 0.5rem 0.25rem;
+    font-family: 'Manrope', sans-serif;
     font-size: 0.9375rem;
     color: var(--on-surface);
     text-decoration: none;
@@ -316,7 +373,8 @@
     margin-top: 1.25rem;
     padding: 0.875rem 1.5rem;
     background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
-    color: white;
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
     font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
@@ -329,29 +387,13 @@
     opacity: 0.88;
   }
 
-  .mobile-link--soon {
-    opacity: 0.4;
-    cursor: default;
-    pointer-events: none;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .soon-badge {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    background: var(--outline-variant);
-    color: var(--on-surface-muted);
-    padding: 0.1rem 0.4rem;
-    border-radius: 4px;
-  }
-
-  /* Responsive */
+  /* ── RESPONSIVE ── */
   @media (max-width: 767px) {
     .nav {
+      display: none;
+    }
+
+    .ratgeber-link {
       display: none;
     }
 
@@ -362,6 +404,30 @@
     .burger {
       display: block;
       margin-left: auto;
+    }
+  }
+
+  /* Burger + CTA nebeneinander auf Mobile */
+  @media (max-width: 767px) {
+    .header-inner {
+      justify-content: space-between;
+    }
+
+    .logo {
+      margin-right: 0;
+    }
+
+    .mobile-cta-header {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+      color: #fff;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 0.75rem;
+      white-space: nowrap;
     }
   }
 </style>

@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Beweis from '../components/Beweis.astro';
-import Prozess from '../components/Prozess.astro';
 import Cta from '../components/Cta.astro';
 ---
 
@@ -14,30 +13,44 @@ import Cta from '../components/Cta.astro';
   <section class="hero">
     <div class="hero-inner">
 
-      <div class="hero-left">
-        <p class="eyebrow">KI-Agentur für KMU</p>
-        <h1>Welches Problem kostet dich täglich die meiste Zeit?</h1>
-        <p class="subtext">
-          Wir analysieren deinen Betrieb – und zeigen dir wo KI konkret Zeit spart.
-          Kein Tech-Wissen nötig. Kein Abo. Einmal gebaut, dauerhaft im Einsatz.
-        </p>
-        <div class="hero-buttons">
-          <a
-            href="https://calendly.com/onlinemaster711/new-meeting"
-            class="btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Kostenloses Erstgespräch buchen</a>
-          <a href="#leistungen" class="btn-ghost">Leistungen entdecken</a>
-        </div>
-        <ul class="haekchen-liste">
-          <li><span class="check">✓</span> Kostenlose Erstanalyse</li>
-          <li><span class="check">✓</span> Keine laufenden Kosten</li>
-          <li><span class="check">✓</span> Umsetzung in 1–2 Wochen</li>
-        </ul>
-      </div>
+      <p class="eyebrow">KI-Agentur für KMU</p>
+      <h1>KI übernimmt, was dich aufhält.</h1>
+      <p class="subtext">
+        Wir bauen KI-Lösungen die in deinem Betrieb tatsächlich Zeit sparen –
+        Chatbots, Telefonassistenten, E-Mail-Automatisierung. Kein Abo. Einmal gebaut.
+      </p>
 
-      <div class="hero-right" aria-hidden="true"></div>
+      <a
+        href="https://calendly.com/onlinemaster711/new-meeting"
+        class="btn-primary"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Kostenloses Erstgespräch buchen</a>
+
+      <ul class="haekchen-liste">
+        <li><span class="check">✓</span> Kostenlose Erstanalyse</li>
+        <li><span class="check">✓</span> Keine laufenden Kosten</li>
+        <li><span class="check">✓</span> Umsetzung in 1–2 Wochen</li>
+      </ul>
+
+      <div class="use-case-cards">
+        <a href="/ki-telefonassistent" class="uc-card">
+          <span class="uc-icon">📞</span>
+          <span class="uc-label">Telefon&shy;assistent</span>
+        </a>
+        <a href="/ki-email" class="uc-card">
+          <span class="uc-icon">✉️</span>
+          <span class="uc-label">E-Mail-Auto&shy;matisierung</span>
+        </a>
+        <a href="/ki-fuer-unternehmen" class="uc-card">
+          <span class="uc-icon">💬</span>
+          <span class="uc-label">KI-Chatbot</span>
+        </a>
+        <a href="/ki-automatisierung" class="uc-card">
+          <span class="uc-icon">⚙️</span>
+          <span class="uc-label">Prozess&shy;automatisierung</span>
+        </a>
+      </div>
 
     </div>
   </section>
@@ -102,43 +115,59 @@ import Cta from '../components/Cta.astro';
       <p class="branchen-sub">Jede Lösung wird auf die echten Abläufe deiner Branche zugeschnitten.</p>
       <div class="branchen-grid">
 
-        <a href="/webdesign-handwerker" class="branche-karte">
+        <div class="branche-karte">
           <span class="branche-emoji">🔨</span>
           <strong class="branche-titel">Handwerksbetriebe</strong>
-        </a>
+          <div class="branche-links">
+            <a href="/webdesign-handwerker">Website für Handwerker</a>
+            <a href="/ki-handwerker">KI für Handwerker</a>
+          </div>
+        </div>
 
-        <a href="/webdesign-aerzte" class="branche-karte">
+        <div class="branche-karte">
           <span class="branche-emoji">🏥</span>
-          <strong class="branche-titel">Arztpraxen &amp; Praxen</strong>
-        </a>
+          <strong class="branche-titel">Arztpraxen</strong>
+          <div class="branche-links">
+            <a href="/webdesign-aerzte">Website für Ärzte</a>
+            <a href="/ki-aerzte">KI für Ärzte &amp; Praxen</a>
+          </div>
+        </div>
 
-        <a href="/ki-restaurant" class="branche-karte">
+        <div class="branche-karte">
           <span class="branche-emoji">🍽️</span>
-          <strong class="branche-titel">Restaurants &amp; Gastronomie</strong>
-        </a>
+          <strong class="branche-titel">Restaurants</strong>
+          <div class="branche-links">
+            <a href="/ki-restaurant">KI für Restaurants</a>
+          </div>
+        </div>
 
-        <a href="/ki-kanzlei" class="branche-karte">
+        <div class="branche-karte">
           <span class="branche-emoji">⚖️</span>
-          <strong class="branche-titel">Kanzleien &amp; Steuerberater</strong>
-        </a>
+          <strong class="branche-titel">Kanzleien</strong>
+          <div class="branche-links">
+            <a href="/ki-kanzlei">KI für Kanzleien</a>
+          </div>
+        </div>
+
+        <div class="branche-karte">
+          <span class="branche-emoji">🏠</span>
+          <strong class="branche-titel">Immobilienmakler</strong>
+          <div class="branche-links">
+            <a href="/ki-immobilienmakler">KI für Immobilienmakler</a>
+          </div>
+        </div>
 
       </div>
-      <a href="/ki-fuer-unternehmen" class="branchen-mehr">
-        Immobilienmakler, Coaches und weitere Branchen →
-      </a>
     </div>
   </section>
 
   <!-- 4. BEWEIS -->
   <Beweis />
 
-  <!-- 5. PROZESS -->
-  <Prozess />
-
-  <!-- 6. CTA -->
+  <!-- 5. CTA -->
   <Cta />
 
-  <!-- 7. FAQ (inline) -->
+  <!-- 6. FAQ (inline) -->
   <section class="faq">
     <div class="faq-inner">
       <h2>Was dich vielleicht noch beschäftigt.</h2>
@@ -185,26 +214,19 @@ import Cta from '../components/Cta.astro';
   .hero {
     background: var(--surface);
     padding: 9rem 1.5rem 6rem;
+    text-align: center;
   }
 
   .hero-inner {
-    max-width: 1200px;
+    max-width: 720px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-
-  .hero-right {
-    min-height: 300px;
   }
 
   .eyebrow {
     font-family: 'Manrope', sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--secondary);
     margin-bottom: 1rem;
@@ -212,8 +234,8 @@ import Cta from '../components/Cta.astro';
 
   h1 {
     font-family: 'Noto Serif', serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.2;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    line-height: 1.15;
     color: var(--on-surface);
     margin-bottom: 1.25rem;
   }
@@ -224,17 +246,14 @@ import Cta from '../components/Cta.astro';
     line-height: 1.7;
     color: var(--on-surface-muted);
     margin-bottom: 2rem;
-  }
-
-  .hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+    max-width: 56ch;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .btn-primary {
     display: inline-block;
-    padding: 0.875rem 1.75rem;
+    padding: 0.9375rem 2rem;
     background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
     color: #fff;
     font-family: 'Manrope', sans-serif;
@@ -242,40 +261,20 @@ import Cta from '../components/Cta.astro';
     font-weight: 600;
     text-decoration: none;
     border-radius: 1rem;
-    border: none;
-    cursor: pointer;
     transition: opacity 0.2s;
     white-space: nowrap;
   }
 
   .btn-primary:hover { opacity: 0.88; }
 
-  .btn-ghost {
-    display: inline-block;
-    padding: 0.875rem 1.75rem;
-    background: transparent;
-    color: var(--primary);
-    border: 2px solid var(--primary);
-    font-family: 'Manrope', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 1rem;
-    transition: background 0.2s, color 0.2s;
-    white-space: nowrap;
-  }
-
-  .btn-ghost:hover {
-    background: var(--primary);
-    color: #fff;
-  }
-
   .haekchen-liste {
     list-style: none;
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
   }
 
   .haekchen-liste li {
@@ -284,12 +283,48 @@ import Cta from '../components/Cta.astro';
     color: var(--on-surface-muted);
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
   }
 
   .check {
     color: var(--secondary);
     font-weight: 700;
+  }
+
+  /* Use-case cards in hero */
+  .use-case-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .uc-card {
+    background: var(--surface-low);
+    border: 1px solid var(--dust);
+    border-radius: 1rem;
+    padding: 1.25rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--on-surface-muted);
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.3;
+    text-align: center;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .uc-card:hover {
+    border-color: var(--secondary);
+    color: var(--secondary);
+  }
+
+  .uc-icon {
+    font-size: 1.5rem;
+    line-height: 1;
   }
 
   /* ─────────────────────────────────────────
@@ -403,7 +438,7 @@ import Cta from '../components/Cta.astro';
 
   .branchen-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 16px;
   }
 
@@ -411,19 +446,12 @@ import Cta from '../components/Cta.astro';
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 1rem;
-    padding: 1.5rem 1.25rem;
+    padding: 1.5rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.625rem;
     text-align: center;
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.9);
-    transition: background 0.2s;
-  }
-
-  .branche-karte:hover {
-    background: rgba(255, 255, 255, 0.14);
   }
 
   .branche-emoji {
@@ -434,23 +462,33 @@ import Cta from '../components/Cta.astro';
   .branche-titel {
     font-family: 'Manrope', sans-serif;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1.3;
   }
 
-  .branchen-mehr {
-    display: block;
-    text-align: center;
-    margin-top: 2rem;
-    font-family: 'Manrope', sans-serif;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.55);
-    text-decoration: none;
-    transition: color 0.2s;
+  .branche-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    margin-top: 0.25rem;
+    width: 100%;
   }
 
-  .branchen-mehr:hover {
-    color: rgba(255, 255, 255, 0.9);
+  .branche-links a {
+    display: block;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    padding: 0.3rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transition: color 0.2s;
+    line-height: 1.3;
+  }
+
+  .branche-links a:hover {
+    color: rgba(255, 255, 255, 0.95);
   }
 
   /* ─────────────────────────────────────────
@@ -495,20 +533,26 @@ import Cta from '../components/Cta.astro';
   /* ─────────────────────────────────────────
      RESPONSIVE
   ───────────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .branchen-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
   @media (max-width: 900px) {
     .leistungen-grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  @media (max-width: 768px) {
-    .hero-inner {
-      grid-template-columns: 1fr;
-      gap: 0;
+  @media (max-width: 767px) {
+    .hero {
+      padding-top: 6.5rem;
+      padding-bottom: 4rem;
     }
 
-    .hero-right {
-      display: none;
+    .use-case-cards {
+      grid-template-columns: repeat(2, 1fr);
     }
 
     .branchen-grid {
@@ -517,12 +561,14 @@ import Cta from '../components/Cta.astro';
   }
 
   @media (max-width: 600px) {
-    .hero {
-      padding-top: 6.5rem;
-    }
-
     .leistungen-grid {
       grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .branchen-grid {
+      grid-template-columns: 1fr 1fr;
     }
   }
 </style>
