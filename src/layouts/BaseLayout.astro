@@ -27,12 +27,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content="https://www.markmade.de/og-default.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://www.markmade.de/" />
+    <meta property="og:locale" content="de_DE" />
     <meta property="og:type" content="website" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://www.markmade.de/og-default.jpg" />
 
     <link rel="canonical" href={canonicalURL} />
 
@@ -46,16 +51,48 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700&display=swap">
     </noscript>
 
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "MarkMade",
-      "description": "KI-Agentur für kleine und mittelständische Betriebe – Chatbots, Telefonassistenten, Prozessautomatisierung",
-      "url": "https://markmade.de",
-      "priceRange": "€€",
-      "areaServed": "DE",
-      "serviceType": "KI-Agentur"
-    })} />
+    <script type="application/ld+json">{`{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "MarkMade",
+  "description": "KI-Agentur für kleine und mittelständische Betriebe – Chatbots, Telefonassistenten, E-Mail-Automatisierung und Prozessoptimierung.",
+  "url": "https://www.markmade.de",
+  "logo": "https://www.markmade.de/logo.png",
+  "priceRange": "€€",
+  "areaServed": {"@type": "Country", "name": "DE"},
+  "serviceType": ["KI-Agentur", "Webdesign", "Prozessautomatisierung"],
+  "founder": {
+    "@type": "Person",
+    "name": "Mark Bergenthal",
+    "jobTitle": "Gründer & KI-Stratege",
+    "url": "https://www.markmade.de"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "url": "https://calendly.com/onlinemaster711/new-meeting",
+    "availableLanguage": "German"
+  }
+}`}</script>
+
+    <script type="application/ld+json">{`{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MarkMade",
+  "url": "https://www.markmade.de",
+  "inLanguage": "de",
+  "description": "KI-Agentur für kleine und mittelständische Betriebe"
+}`}</script>
+
+    <script type="application/ld+json">{`{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "MarkMade – KI-Agentur für kleine und mittelständische Betriebe",
+  "url": "https://www.markmade.de/",
+  "description": "Chatbots, Telefonassistenten und KI-Automatisierung für KMU.",
+  "inLanguage": "de",
+  "isPartOf": {"@type": "WebSite", "url": "https://www.markmade.de"}
+}`}</script>
   </head>
   <body>
     <Header />

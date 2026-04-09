@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://markmade.de',
+  site: 'https://www.markmade.de',
   output: 'static',
   integrations: [sitemap()],
 });
