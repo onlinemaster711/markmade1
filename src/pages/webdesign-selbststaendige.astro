@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import VierFragen from '../components/VierFragen.astro';
+import ChatDemo from '../components/ChatDemo.astro';
+import Angebot from '../components/Angebot.astro';
+import Beweis from '../components/Beweis.astro';
+import Prozess from '../components/Prozess.astro';
+import Cta from '../components/Cta.astro';
+import Faq from '../components/Faq.astro';
+---
+
+<BaseLayout
+  title="Webdesign für Selbstständige – ab 1.000€ | MarkMade"
+  description="Professionelle Website für Selbstständige ab 1.000 € inkl. MwSt. Entwurf zuerst, dann entscheiden."
+>
+  <Hero
+    eyebrow="Webdesign · Chatbot · Zeitersparnis"
+    heading="Deine Website erklärt was du machst. Dein Chatbot klärt den Rest."
+    subtext="Wir bauen dir eine Website die klar zeigt was du anbietest – und einen Chatbot der Kundenfragen automatisch beantwortet. Das Ergebnis: Weniger Telefonate, bessere Anfragen."
+  />
+  <VierFragen />
+  <ChatDemo
+    title="So läuft ein Gespräch mit uns ab"
+    messages={[
+      {role: 'user', text: 'Was kostet eine Website bei euch?'},
+      {role: 'bot', text: 'Eine professionelle Website kostet 1.000 € inkl. MwSt. – Festpreis, alles inklusive. Texte, Design, SEO, alles drin.'},
+      {role: 'user', text: 'Muss ich Texte selbst schreiben?'},
+      {role: 'bot', text: 'Nein! Du erzählst uns in 10 Minuten was du machst – wir schreiben alles. Du musst nichts liefern.'},
+      {role: 'user', text: 'Und wenn mir der Entwurf nicht gefällt?'},
+      {role: 'bot', text: 'Dann zahlst du nichts. Kein Vertrag, keine Rechnung. Du siehst den Entwurf zuerst – und entscheidest danach.'}
+    ]}
+  />
+  <Angebot />
+  <Beweis />
+  <Prozess />
+  <Cta />
+  <Faq />
+</BaseLayout>
