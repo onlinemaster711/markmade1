@@ -1,25 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Beweis from '../components/Beweis.astro';
-import Cta from '../components/Cta.astro';
 ---
 
 <BaseLayout
   title="MarkMade – KI-Agentur für kleine und mittelständische Betriebe"
-  description="KI für KMU – Websites, Chatbots, Automatisierung, Marketing. Praktisch umsetzbar. Einmal bezahlt."
+  description="KI für KMU – Chatbots, Telefonassistenten, E-Mail-Automatisierung, Social Media. Praktisch umsetzbar. Für Handwerker, Ärzte, Restaurants und mehr."
 >
 
   <!-- 1. HERO -->
   <section class="hero">
     <div class="hero-inner">
 
-      <!-- LEFT: Text -->
       <div class="hero-text-col">
         <p class="eyebrow">KI-Agentur für kleine &amp; mittelständische Betriebe</p>
         <h1>Welches Problem kostet dich täglich die meiste Zeit?</h1>
-        <p class="hero-sub">
-          KI übernimmt die Zuarbeit – damit du dich auf das konzentrierst was wirklich zählt. Wir helfen dir herauszufinden wo KI in deinem Betrieb wirklich Sinn ergibt.
-        </p>
+        <p class="hero-sub">KI übernimmt die Zuarbeit – damit du dich auf das konzentrierst was wirklich zählt. Wir helfen dir herauszufinden wo KI in deinem Betrieb wirklich Sinn ergibt.</p>
         <div class="problem-buttons">
           <a href="/ki-telefonassistent" class="problem-btn">
             <span class="pb-text">📞 Ich verpasse Anrufe und Anfragen</span>
@@ -34,16 +30,14 @@ import Cta from '../components/Cta.astro';
             <span class="pb-arrow">→</span>
           </a>
         </div>
-        <a href="https://calendly.com/onlinemaster711/new-meeting" class="hero-direct-link" target="_blank" rel="noopener noreferrer">
-          Oder direkt Gespräch buchen →
-        </a>
+        <a href="https://calendly.com/onlinemaster711/new-meeting" class="hero-direct-link" target="_blank" rel="noopener noreferrer">Oder direkt Gespräch buchen →</a>
       </div>
 
-      <!-- RIGHT: Chat Preview -->
       <div class="hero-visual-col">
         <div class="hero-chat" id="hero-chat">
           <div class="hero-chat-header">
             <span class="hero-chat-dot">●</span>
+            <span class="hero-chat-status">Online</span>
             <span class="hero-chat-name">MarkMade KI</span>
           </div>
           <div class="hero-chat-body" id="hero-chat-body"></div>
@@ -53,7 +47,7 @@ import Cta from '../components/Cta.astro';
     </div>
   </section>
 
-  <!-- ZÄHLER-LEISTE -->
+  <!-- 2. COUNTER -->
   <div class="counter-bar" id="counter-bar">
     <div class="counter-inner">
       <div class="counter-item">
@@ -71,123 +65,218 @@ import Cta from '../components/Cta.astro';
     </div>
   </div>
 
-  <!-- 2. WAS KI ÜBERNIMMT -->
-  <section class="ki-liste" id="leistungen">
-    <div class="ki-liste-inner">
+  <!-- 3. WAS KI ÜBERNIMMT -->
+  <section class="leistungen" id="leistungen">
+    <div class="leistungen-inner">
       <p class="eyebrow-section">Was KI übernimmt</p>
       <h2>KI arbeitet. Du auch – aber das Richtige.</h2>
-      <nav class="ki-zeilen">
-        <a href="/ki-email" class="ki-zeile fade-in">
-          <span class="kz-text">KI beantwortet deine E-Mails.</span>
-          <span class="kz-arrow">→</span>
+      <div class="leistungen-grid">
+        <a href="/ki-email" class="lk">
+          <span class="lk-icon">✉️</span>
+          <p class="lk-text">KI beantwortet deine E-Mails.</p>
+          <span class="lk-mehr">Mehr erfahren →</span>
         </a>
-        <a href="/ki-telefonassistent" class="ki-zeile fade-in">
-          <span class="kz-text">KI nimmt deine Anrufe entgegen.</span>
-          <span class="kz-arrow">→</span>
+        <a href="/ki-telefonassistent" class="lk">
+          <span class="lk-icon">📞</span>
+          <p class="lk-text">KI nimmt deine Anrufe entgegen.</p>
+          <span class="lk-mehr">Mehr erfahren →</span>
         </a>
-        <a href="/terminbuchung-handwerk" class="ki-zeile fade-in">
-          <span class="kz-text">KI vergibt Termine in deinen Kalender.</span>
-          <span class="kz-arrow">→</span>
+        <a href="/terminbuchung-handwerk" class="lk">
+          <span class="lk-icon">📅</span>
+          <p class="lk-text">KI vergibt Termine in deinen Kalender.</p>
+          <span class="lk-mehr">Mehr erfahren →</span>
         </a>
-        <a href="/chatbot-handwerker" class="ki-zeile fade-in">
-          <span class="kz-text">KI beantwortet Kundenfragen – rund um die Uhr.</span>
-          <span class="kz-arrow">→</span>
+        <a href="/chatbot-handwerker" class="lk">
+          <span class="lk-icon">💬</span>
+          <p class="lk-text">KI beantwortet Kundenfragen – rund um die Uhr.</p>
+          <span class="lk-mehr">Mehr erfahren →</span>
         </a>
-        <a href="/ki-social-media" class="ki-zeile fade-in">
-          <span class="kz-text">KI erstellt deinen Social Media Content.</span>
-          <span class="kz-arrow">→</span>
+        <a href="/ki-social-media" class="lk">
+          <span class="lk-icon">📱</span>
+          <p class="lk-text">KI erstellt deinen Social Media Content.</p>
+          <span class="lk-mehr">Mehr erfahren →</span>
         </a>
-        <a href="/ki-automatisierung" class="ki-zeile fade-in">
-          <span class="kz-text">KI hilft dir die richtigen Anfragen zu erkennen.</span>
-          <span class="kz-arrow">→</span>
+        <a href="/ki-automatisierung" class="lk">
+          <span class="lk-icon">⚙️</span>
+          <p class="lk-text">KI automatisiert deine Prozesse.</p>
+          <span class="lk-mehr">Mehr erfahren →</span>
         </a>
-      </nav>
-    </div>
-  </section>
-
-  <!-- 3. BRANCHEN -->
-  <section class="branchen-pills">
-    <div class="bp-inner">
-      <p class="eyebrow-section">Unsere Branchen</p>
-      <h2>KI-Lösungen für diese Branchen – und individuelle Lösungen für alle anderen.</h2>
-      <div class="bp-zeile">
-        <a href="/webdesign-handwerker" class="bp-pill">🔧 Handwerker</a>
-        <a href="/webdesign-aerzte" class="bp-pill">🏥 Ärzte &amp; Praxen</a>
-        <a href="/ki-restaurant" class="bp-pill">🍕 Restaurants</a>
-        <a href="/ki-immobilienmakler" class="bp-pill">🏠 Immobilienmakler</a>
-        <a href="/ki-kanzlei" class="bp-pill">⚖️ Kanzleien &amp; Steuerberater</a>
-        <a href="/webdesign-selbststaendige" class="bp-pill">💼 Selbstständige &amp; Coaches</a>
       </div>
-      <p class="bp-hinweis">
-        Deine Branche nicht dabei? Wir entwickeln individuelle KI-Lösungen für jeden Betrieb.
-        <a href="https://calendly.com/onlinemaster711/new-meeting" class="bp-link" target="_blank" rel="noopener noreferrer">Sprich uns an →</a>
-      </p>
     </div>
   </section>
 
-  <!-- 4. RATGEBER -->
+  <!-- 4. BRANCHEN -->
+  <section class="branchen" id="branchen">
+    <div class="branchen-inner">
+      <p class="eyebrow-section">Branchenlösungen</p>
+      <h2>KI-Lösungen für deine Branche.</h2>
+      <p class="section-sub">Jede Branche hat eigene Zeitfresser. Wir kennen sie – und haben konkrete KI-Lösungen.</p>
+      <div class="branchen-grid">
+
+        <div class="bk">
+          <span class="bk-icon">🔧</span>
+          <h3 class="bk-name">Handwerker &amp; Betriebe</h3>
+          <div class="bk-pills">
+            <span class="bk-pill">Chatbot</span>
+            <span class="bk-pill">Terminbuchung</span>
+            <span class="bk-pill">Telefonassistent</span>
+          </div>
+          <div class="bk-links">
+            <a href="/webdesign-handwerker" class="bk-link-main">KI-Lösungen →</a>
+            <a href="/ratgeber/ki-fuer-handwerker" class="bk-link-rat">Ratgeber lesen →</a>
+          </div>
+        </div>
+
+        <div class="bk">
+          <span class="bk-icon">🏥</span>
+          <h3 class="bk-name">Ärzte &amp; Praxen</h3>
+          <div class="bk-pills">
+            <span class="bk-pill">Patientenkommunikation</span>
+            <span class="bk-pill">Terminbuchung</span>
+          </div>
+          <div class="bk-links">
+            <a href="/chatbot-aerzte" class="bk-link-main">KI-Lösungen →</a>
+            <a href="/ratgeber/ki-fuer-aerzte" class="bk-link-rat">Ratgeber lesen →</a>
+          </div>
+        </div>
+
+        <div class="bk">
+          <span class="bk-icon">🍕</span>
+          <h3 class="bk-name">Restaurants &amp; Gastronomie</h3>
+          <div class="bk-pills">
+            <span class="bk-pill">Reservierungen</span>
+            <span class="bk-pill">Speisekarten</span>
+            <span class="bk-pill">Bewertungen</span>
+          </div>
+          <div class="bk-links">
+            <a href="/ki-restaurant" class="bk-link-main">KI-Lösungen →</a>
+            <a href="/ratgeber/ki-fuer-restaurants" class="bk-link-rat">Ratgeber lesen →</a>
+          </div>
+        </div>
+
+        <div class="bk">
+          <span class="bk-icon">🏠</span>
+          <h3 class="bk-name">Immobilienmakler</h3>
+          <div class="bk-pills">
+            <span class="bk-pill">Exposés</span>
+            <span class="bk-pill">Interessenten</span>
+            <span class="bk-pill">Besichtigungen</span>
+          </div>
+          <div class="bk-links">
+            <a href="/ki-immobilienmakler" class="bk-link-main">KI-Lösungen →</a>
+            <a href="/ratgeber/ki-fuer-immobilienmakler" class="bk-link-rat">Ratgeber lesen →</a>
+          </div>
+        </div>
+
+        <div class="bk">
+          <span class="bk-icon">⚖️</span>
+          <h3 class="bk-name">Kanzleien &amp; Steuerberater</h3>
+          <div class="bk-pills">
+            <span class="bk-pill">Mandantenanfragen</span>
+            <span class="bk-pill">Termine</span>
+            <span class="bk-pill">Schreiben</span>
+          </div>
+          <div class="bk-links">
+            <a href="/ki-kanzlei" class="bk-link-main">KI-Lösungen →</a>
+            <a href="/ratgeber/ki-fuer-kanzleien" class="bk-link-rat">Ratgeber lesen →</a>
+          </div>
+        </div>
+
+        <div class="bk">
+          <span class="bk-icon">💼</span>
+          <h3 class="bk-name">Selbstständige &amp; Coaches</h3>
+          <div class="bk-pills">
+            <span class="bk-pill">Website</span>
+            <span class="bk-pill">Social Media</span>
+            <span class="bk-pill">E-Mails</span>
+          </div>
+          <div class="bk-links">
+            <a href="/ki-fuer-unternehmen" class="bk-link-main">KI-Lösungen →</a>
+            <a href="/ratgeber/ki-fuer-selbststaendige" class="bk-link-rat">Ratgeber lesen →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="branchen-hinweis">
+        <p class="branchen-hinweis-text">Deine Branche nicht dabei?</p>
+        <a href="https://calendly.com/onlinemaster711/new-meeting" class="branchen-hinweis-link" target="_blank" rel="noopener noreferrer">Wir entwickeln individuelle KI-Lösungen → Sprich uns an</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. RATGEBER -->
   <section class="ratgeber">
     <div class="ratgeber-inner">
       <p class="eyebrow-section">Kostenlose Ratgeber</p>
       <h2>Versteh zuerst. Dann entscheide.</h2>
-      <p class="section-text">Kein Verkaufsgespräch. Erst verstehen wie KI in deinem Betrieb helfen kann – dann entscheiden ob du weitermachst.</p>
+      <p class="section-sub">Kein Verkaufsgespräch. Erst verstehen wie KI in deinem Betrieb helfen kann.</p>
 
-      <!-- Featured Artikel -->
-      <a href="/ratgeber/ki-im-unternehmen-nutzen" class="ratgeber-featured fade-in">
+      <a href="/ratgeber/ki-im-unternehmen-nutzen" class="rf">
         <div class="rf-left">
+          <span class="rf-badge">Empfohlen</span>
           <span class="rf-icon">📖</span>
         </div>
         <div class="rf-right">
-          <span class="rf-badge">Empfohlen</span>
           <h3>Wie du erkennst welche Prozesse KI lösen kann</h3>
           <p>Die ehrliche Anleitung – nicht welche Tools du kaufen sollst, sondern wie du die richtigen Fragen stellst.</p>
-          <span class="rf-cta">Artikel lesen →</span>
+          <span class="rf-btn">Artikel lesen →</span>
         </div>
       </a>
-
     </div>
   </section>
 
-  <!-- 5. WARUM MARKMADE -->
+  <!-- 6. KI MACHT DICH BESSER -->
   <section class="warum">
     <div class="warum-inner">
-      <h2>KI macht dich besser. Nicht überflüssig.</h2>
-      <div class="warum-punkte">
-        <div class="warum-punkt fade-in">
+      <h2>KI macht dich besser.</h2>
+      <div class="warum-grid">
+        <div class="wp">
           <h3>Du gibst die Zuarbeit ab.</h3>
-          <p>Anfragen beantworten, Termine koordinieren, immer wieder dieselben Fragen – das übernimmt KI. Du konzentrierst dich auf das was wirklich zählt: deine Kunden, dein Handwerk, deine Expertise.</p>
+          <p>Anfragen beantworten, Termine koordinieren, immer wieder dieselben Fragen – das übernimmt KI. Du konzentrierst dich auf deine Kunden und dein Handwerk.</p>
         </div>
-        <div class="warum-punkt fade-in">
+        <div class="wp">
           <h3>Du bleibst der Mensch im Mittelpunkt.</h3>
-          <p>KI ersetzt nicht was dich ausmacht – die Beziehung zu deinen Kunden, dein Fachwissen, dein Urteil. Sie übernimmt die Dinge die sich wiederholen damit du mehr Zeit für die Dinge hast die wirklich Menschlichkeit brauchen.</p>
+          <p>KI ersetzt nicht was dich ausmacht – die Beziehung zu deinen Kunden, dein Fachwissen, dein Urteil. Sie übernimmt die Dinge die sich wiederholen.</p>
         </div>
-        <div class="warum-punkt fade-in">
+        <div class="wp">
           <h3>Wir bauen es für dich – in wenigen Tagen.</h3>
-          <p>Kein monatelanges Projekt. Kein Technik-Wissen nötig. Du erzählst uns was dich täglich Zeit kostet – wir bauen die Lösung. Schnell, konkret, auf dich zugeschnitten.</p>
+          <p>Kein monatelanges Projekt. Kein Technik-Wissen nötig. Du erzählst uns was dich täglich Zeit kostet – wir bauen die Lösung.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 6. BEWEIS -->
+  <!-- 7. BEWEIS -->
   <Beweis />
 
-  <!-- 7. CTA CUSTOM -->
-  <section class="cta-custom">
+  <!-- 8. WEBDESIGN HINWEIS -->
+  <section class="webdesign-hinweis">
+    <div class="wh-inner">
+      <p class="wh-label">Auch als vollständige Website-Lösung verfügbar:</p>
+      <div class="wh-links">
+        <a href="/webdesign-handwerker" class="wh-link">Webdesign für Handwerker</a>
+        <a href="/webdesign-aerzte" class="wh-link">Webdesign für Ärzte</a>
+        <a href="/webdesign-selbststaendige" class="wh-link">Webdesign für Selbstständige</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. CTA -->
+  <section class="cta-final">
     <div class="cta-inner">
       <p class="cta-eyebrow">Kostenlos &amp; unverbindlich</p>
-      <h2>Du hast ein konkretes Problem im Kopf?</h2>
-      <p class="cta-text">15 Minuten Gespräch – wir sagen dir ehrlich ob und wie KI es lösen kann. Kein Fachjargon. Kein Verkaufsgespräch.</p>
+      <h2>Sprich mit uns über deine KI-Lösung.</h2>
+      <p class="cta-text">Erzähl uns was dich täglich Zeit kostet. Wir sagen dir ehrlich was KI lösen kann – und bauen es in wenigen Tagen.</p>
       <a href="https://calendly.com/onlinemaster711/new-meeting" class="cta-btn" target="_blank" rel="noopener noreferrer">Jetzt Gespräch buchen</a>
       <p class="cta-sub">📅 Direkt in den Kalender – kein Telefonat nötig</p>
     </div>
   </section>
 
-  <!-- VORSPRUNG-STREIFEN -->
-  <section class="vorsprung">
-    <div class="vorsprung-inner">
-      <p class="vorsprung-headline">Wer ohne KI arbeitet, wird durch KI ersetzt.</p>
-      <p class="vorsprung-sub">Die Frage ist nicht ob KI kommt – sondern ob du sie für dich nutzt oder gegen dich arbeiten lässt.</p>
+  <!-- 10. ABSCHLUSS STREIFEN -->
+  <section class="abschluss">
+    <div class="abschluss-inner">
+      <p class="abschluss-text">Wer ohne KI arbeitet, wird durch KI ersetzt.</p>
     </div>
   </section>
 
@@ -266,9 +355,8 @@ import Cta from '../components/Cta.astro';
     border: 1.5px solid var(--outline-variant);
     border-radius: 1rem;
     text-decoration: none;
-    text-align: left;
-    transition: border-color 0.2s, color 0.2s;
     color: var(--on-surface);
+    transition: border-color 0.2s, color 0.2s;
   }
 
   .problem-btn:hover {
@@ -304,7 +392,7 @@ import Cta from '../components/Cta.astro';
     color: var(--secondary);
   }
 
-  /* ── COUNTER BAR ── */
+  /* ── COUNTER ── */
   .counter-bar {
     background: var(--primary);
     padding: 1.5rem 0;
@@ -327,6 +415,20 @@ import Cta from '../components/Cta.astro';
     gap: 0.2rem;
   }
 
+  .counter-num {
+    font-family: 'Noto Serif', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+  }
+
+  .counter-label {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+  }
+
   /* ── SHARED ── */
   .eyebrow-section {
     font-size: 0.75rem;
@@ -339,15 +441,6 @@ import Cta from '../components/Cta.astro';
     text-align: center;
   }
 
-  .section-text {
-    font-size: 1.0625rem;
-    line-height: 1.7;
-    color: var(--on-surface-muted);
-    text-align: center;
-    max-width: 55ch;
-    margin: 0 auto 3rem;
-  }
-
   h2 {
     font-family: 'Noto Serif', serif;
     font-size: clamp(1.5rem, 3vw, 2.25rem);
@@ -357,219 +450,199 @@ import Cta from '../components/Cta.astro';
     line-height: 1.25;
   }
 
-  /* ── KI-LISTE ── */
-  .ki-liste {
-    background: var(--surface);
-    padding: 5rem 0;
-  }
-
-  .ki-liste-inner {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
-  .ki-zeilen {
-    display: flex;
-    flex-direction: column;
-    margin-top: 0.5rem;
-  }
-
-  .ki-zeile {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 1.25rem 0;
-    border-bottom: 0.5px solid var(--outline-variant);
-    text-decoration: none;
-    color: var(--on-surface);
-    transition: color 0.2s;
-  }
-
-  .ki-zeile:first-child {
-    border-top: 0.5px solid var(--outline-variant);
-  }
-
-  .ki-zeile:hover {
-    color: var(--secondary);
-  }
-
-  .kz-text {
-    font-family: 'Noto Serif', serif;
-    font-size: clamp(1.1rem, 2vw, 1.3rem);
-    font-weight: 600;
-    line-height: 1.3;
-  }
-
-  .kz-arrow {
-    font-size: 1.25rem;
-    flex-shrink: 0;
-    opacity: 0.4;
-    transition: opacity 0.2s, transform 0.2s;
-  }
-
-  .ki-zeile:hover .kz-arrow {
-    opacity: 1;
-    transform: translateX(4px);
-  }
-
-  /* ── BRANCHEN PILLS ── */
-  .branchen-pills {
-    background: var(--surface-low);
-    padding: 3rem 1.5rem;
-  }
-
-  .bp-inner {
-    max-width: 860px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .bp-inner h2 {
-    margin-bottom: 1.75rem;
-  }
-
-  .bp-zeile {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    justify-content: center;
-    margin-bottom: 2rem;
-  }
-
-  .bp-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.5rem 1.25rem;
-    background: var(--surface);
-    border: 1px solid var(--outline-variant);
-    border-radius: 2rem;
-    font-size: 0.9375rem;
-    font-weight: 500;
-    color: var(--on-surface);
-    text-decoration: none;
-    transition: border-color 0.2s, color 0.2s;
-  }
-
-  .bp-pill:hover {
-    border-color: var(--secondary);
-    color: var(--secondary);
-  }
-
-  .bp-hinweis {
-    font-size: 0.9375rem;
+  .section-sub {
+    font-size: 1.0625rem;
+    line-height: 1.7;
     color: var(--on-surface-muted);
-    line-height: 1.6;
-    margin: 0;
-    max-width: 56ch;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4rem;
+    text-align: center;
+    max-width: 55ch;
+    margin: 0 auto 3rem;
   }
 
-  .bp-link {
-    font-size: 0.9375rem;
-    font-weight: 600;
-    color: var(--secondary);
-    text-decoration: none;
-    transition: opacity 0.2s;
-  }
-
-  .bp-link:hover {
-    opacity: 0.75;
-  }
-
-  /* ── BRANCHEN TABS ── */
-  .branchen-tabs {
+  /* ── LEISTUNGEN ── */
+  .leistungen {
     background: var(--surface-low);
     padding: 5rem 0;
   }
 
-  .branchen-tabs-inner {
+  .leistungen-inner {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 1.5rem;
   }
 
-  /* ── ZEITFRESSER (kept for grid reuse) ── */
-  .zeitfresser {
-    background: var(--surface-low);
-    padding: 5rem 0;
+  .leistungen-inner h2 {
+    margin-bottom: 2.5rem;
   }
 
-  .zeitfresser-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
-  .zeitfresser-grid {
+  .leistungen-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
   }
 
-  .zf-karte {
-    background: white;
+  .lk {
+    background: var(--surface);
+    border: 1px solid var(--outline-variant);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+
+  .lk:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border-color: var(--primary);
+  }
+
+  .lk-icon {
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .lk-text {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    line-height: 1.4;
+    margin: 0;
+    flex: 1;
+  }
+
+  .lk-mehr {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--secondary);
+    margin-top: 0.5rem;
+  }
+
+  /* ── BRANCHEN ── */
+  .branchen {
+    background: var(--surface);
+    padding: 5rem 0;
+  }
+
+  .branchen-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .branchen-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .bk {
+    background: var(--surface-low);
     border: 1px solid var(--outline-variant);
     border-radius: 1rem;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.625rem;
-    transition: box-shadow 0.2s;
+    gap: 0.75rem;
+    transition: box-shadow 0.2s, border-color 0.2s;
   }
 
-  .zf-karte:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  .bk:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border-color: var(--primary);
   }
 
-  .zf-label {
-    font-size: 0.6875rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--secondary);
-    margin: 0;
+  .bk-icon {
+    font-size: 1.8rem;
+    line-height: 1;
   }
 
-  .zf-zitat {
+  .bk-name {
     font-family: 'Noto Serif', serif;
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 1.0625rem;
+    font-weight: 600;
     color: var(--on-surface);
     margin: 0;
-    flex: 1;
+    line-height: 1.3;
   }
 
-  .zf-loesung {
-    font-size: 0.875rem;
-    line-height: 1.5;
+  .bk-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  .bk-pill {
+    font-size: 0.75rem;
+    color: var(--on-surface-muted);
+    border: 1px solid var(--outline-variant);
+    border-radius: 2rem;
+    padding: 3px 10px;
+    white-space: nowrap;
+  }
+
+  .bk-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--outline-variant);
+  }
+
+  .bk-link-main {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--on-surface);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .bk-link-main:hover {
+    color: var(--primary);
+  }
+
+  .bk-link-rat {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--secondary);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .bk-link-rat:hover {
+    opacity: 0.75;
+  }
+
+  .branchen-hinweis {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .branchen-hinweis-text {
+    font-size: 0.9375rem;
     color: var(--on-surface-muted);
     margin: 0;
   }
 
-  .zf-link {
-    font-size: 0.875rem;
+  .branchen-hinweis-link {
+    font-size: 0.9375rem;
     font-weight: 600;
     color: var(--secondary);
     text-decoration: none;
-    margin-top: auto;
     transition: opacity 0.2s;
   }
 
-  .zf-link:hover {
+  .branchen-hinweis-link:hover {
     opacity: 0.75;
   }
-
-  /* ── BRANCHEN (old selectors kept in case referenced elsewhere) ── */
-  .branchen { background: var(--surface); padding: 5rem 0; }
 
   /* ── RATGEBER ── */
   .ratgeber {
@@ -583,7 +656,7 @@ import Cta from '../components/Cta.astro';
     padding: 0 1.5rem;
   }
 
-  .ratgeber-featured {
+  .rf {
     display: flex;
     gap: 2rem;
     align-items: center;
@@ -591,28 +664,19 @@ import Cta from '../components/Cta.astro';
     border-radius: 1.2rem;
     padding: 2rem;
     text-decoration: none;
-    margin-bottom: 1.5rem;
     transition: opacity 0.2s;
   }
 
-  .ratgeber-featured:hover {
+  .rf:hover {
     opacity: 0.92;
   }
 
   .rf-left {
     flex-shrink: 0;
-  }
-
-  .rf-icon {
-    font-size: 3rem;
-    line-height: 1;
-  }
-
-  .rf-right {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    align-items: center;
+    gap: 0.75rem;
   }
 
   .rf-badge {
@@ -625,7 +689,19 @@ import Cta from '../components/Cta.astro';
     color: white;
     padding: 0.2rem 0.6rem;
     border-radius: 100px;
-    width: fit-content;
+    white-space: nowrap;
+  }
+
+  .rf-icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .rf-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
   }
 
   .rf-right h3 {
@@ -644,7 +720,8 @@ import Cta from '../components/Cta.astro';
     margin: 0;
   }
 
-  .rf-cta {
+  .rf-btn {
+    display: inline-block;
     font-size: 0.875rem;
     font-weight: 700;
     color: white;
@@ -656,174 +733,6 @@ import Cta from '../components/Cta.astro';
     margin-top: 0.25rem;
   }
 
-  .ratgeber-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-    margin-bottom: 2rem;
-  }
-
-  .rg-karte {
-    background: white;
-    border: 1px solid var(--outline-variant);
-    border-radius: 1rem;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.625rem;
-    text-decoration: none;
-    transition: box-shadow 0.2s;
-  }
-
-  .rg-karte:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  }
-
-  .rg-icon {
-    font-size: 1.75rem;
-    line-height: 1;
-  }
-
-  .rg-karte h3 {
-    font-family: 'Noto Serif', serif;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--on-surface);
-    margin: 0;
-  }
-
-  .rg-karte p {
-    font-size: 0.875rem;
-    line-height: 1.6;
-    color: var(--on-surface-muted);
-    flex: 1;
-    margin: 0;
-  }
-
-  .rg-link {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--secondary);
-    margin-top: auto;
-  }
-
-  .ratgeber-alle {
-    text-align: center;
-  }
-
-  .ratgeber-alle-link {
-    font-size: 0.9375rem;
-    font-weight: 600;
-    color: var(--on-surface-muted);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .ratgeber-alle-link:hover {
-    color: var(--secondary);
-  }
-
-  /* ── BRANCHEN OFFEN ── */
-  .branchen-offen {
-    background: var(--surface-low);
-    padding: 5rem 0;
-  }
-
-  .branchen-offen-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
-  .bo-list {
-    display: flex;
-    flex-direction: column;
-    margin-top: 0.5rem;
-  }
-
-  .bo-branche {
-    padding: 2.5rem 0;
-    border-top: 1px solid var(--outline-variant);
-  }
-
-  .bo-branche--last {
-    border-bottom: 1px solid var(--outline-variant);
-  }
-
-  .bo-name {
-    font-family: 'Noto Serif', serif;
-    font-size: clamp(1.125rem, 2vw, 1.375rem);
-    font-weight: 600;
-    color: var(--on-surface);
-    margin-bottom: 1.25rem;
-  }
-
-  .bo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .bo-karte {
-    background: white;
-    border: 0.5px solid var(--outline-variant);
-    border-radius: 1rem;
-    padding: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
-  .bo-icon {
-    font-size: 1.5rem;
-    line-height: 1;
-  }
-
-  .bo-titel {
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--on-surface);
-    margin: 0;
-  }
-
-  .bo-text {
-    font-size: 13px;
-    line-height: 1.55;
-    color: var(--on-surface-muted);
-    margin: 0;
-  }
-
-  .bo-hinweis {
-    margin-top: 2rem;
-    background: white;
-    border: 1px solid var(--outline-variant);
-    border-radius: 1rem;
-    padding: 1.5rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 0.625rem;
-    align-items: center;
-  }
-
-  .bo-hinweis-text {
-    font-size: 0.9375rem;
-    color: var(--on-surface-muted);
-    margin: 0;
-  }
-
-  .bo-hinweis-link {
-    font-size: 0.9375rem;
-    font-weight: 600;
-    color: var(--secondary);
-    text-decoration: none;
-    transition: opacity 0.2s;
-  }
-
-  .bo-hinweis-link:hover {
-    opacity: 0.75;
-  }
-
   /* ── WARUM ── */
   .warum {
     background: var(--primary);
@@ -832,7 +741,7 @@ import Cta from '../components/Cta.astro';
   }
 
   .warum-inner {
-    max-width: 760px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 1.5rem;
   }
@@ -842,65 +751,76 @@ import Cta from '../components/Cta.astro';
     margin-bottom: 3rem;
   }
 
-  .warum-punkte {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+  .warum-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
 
-  .warum-punkt {
-    border-left: 2px solid rgba(255, 255, 255, 0.2);
-    padding-left: 1.5rem;
+  .wp {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1.5rem;
   }
 
-  .warum-punkt h3 {
+  .wp h3 {
     font-family: 'Noto Serif', serif;
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
     font-weight: 700;
     color: white;
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.75rem;
+    line-height: 1.3;
   }
 
-  .warum-punkt p {
+  .wp p {
     font-size: 0.9375rem;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.75);
     margin: 0;
   }
 
-  /* ── VORSPRUNG ── */
-  .vorsprung {
-    background: var(--surface-low);
+  /* ── WEBDESIGN HINWEIS ── */
+  .webdesign-hinweis {
+    background: var(--surface);
     padding: 2rem 1.5rem;
     text-align: center;
   }
 
-  .vorsprung-inner {
-    max-width: 640px;
+  .wh-inner {
+    max-width: 700px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    align-items: center;
+    gap: 0.75rem;
   }
 
-  .vorsprung-headline {
-    font-family: 'Noto Serif', serif;
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--primary);
-    margin: 0;
-  }
-
-  .vorsprung-sub {
-    font-family: 'Manrope', system-ui, sans-serif;
-    font-size: 0.9375rem;
+  .wh-label {
+    font-size: 0.875rem;
     color: var(--on-surface-muted);
     margin: 0;
   }
 
-  /* ── CTA CUSTOM ── */
-  .cta-custom {
-    background: linear-gradient(135deg, var(--primary), var(--primary-container, #5a6040));
+  .wh-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: center;
+  }
+
+  .wh-link {
+    font-size: 0.875rem;
+    color: var(--on-surface-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .wh-link:hover {
+    color: var(--secondary);
+  }
+
+  /* ── CTA FINAL ── */
+  .cta-final {
+    background: var(--surface-low);
     padding: 6rem 0;
     text-align: center;
   }
@@ -920,20 +840,19 @@ import Cta from '../components/Cta.astro';
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--secondary);
     margin: 0;
   }
 
-  .cta-custom h2 {
-    color: white;
+  .cta-final h2 {
+    color: var(--on-surface);
     margin: 0;
-    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
   }
 
   .cta-text {
     font-size: 1.0625rem;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--on-surface-muted);
     max-width: 52ch;
     margin: 0;
   }
@@ -941,8 +860,8 @@ import Cta from '../components/Cta.astro';
   .cta-btn {
     display: inline-block;
     padding: 1rem 2.25rem;
-    background: white;
-    color: var(--primary);
+    background: var(--secondary);
+    color: white;
     font-size: 1.0625rem;
     font-weight: 700;
     text-decoration: none;
@@ -952,13 +871,35 @@ import Cta from '../components/Cta.astro';
   }
 
   .cta-btn:hover {
-    opacity: 0.9;
+    opacity: 0.88;
   }
 
   .cta-sub {
     font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--on-surface-muted);
     margin: 0;
+  }
+
+  /* ── ABSCHLUSS ── */
+  .abschluss {
+    background: var(--surface-low);
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--outline-variant);
+  }
+
+  .abschluss-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .abschluss-text {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 0;
+    line-height: 1.4;
   }
 
   /* ── RESPONSIVE ── */
@@ -967,12 +908,9 @@ import Cta from '../components/Cta.astro';
       grid-template-columns: 1fr;
     }
 
-    .hero-visual-col {
-      order: -1;
-    }
-
-    .ratgeber-grid,
-    .bo-grid {
+    .leistungen-grid,
+    .branchen-grid,
+    .warum-grid {
       grid-template-columns: repeat(2, 1fr);
     }
 
@@ -987,130 +925,34 @@ import Cta from '../components/Cta.astro';
       padding-bottom: 3rem;
     }
 
-    .hero-text-col {
-      align-items: flex-start;
+    .hero-visual-col {
+      display: none !important;
     }
 
-    .ratgeber-grid,
-    .bo-grid {
+    .leistungen-grid,
+    .branchen-grid,
+    .warum-grid {
       grid-template-columns: 1fr;
     }
 
-    .ratgeber-featured {
+    .rf {
       flex-direction: column;
       gap: 1rem;
-    }
-
-    .rf-icon {
-      font-size: 2.25rem;
     }
 
     .counter-inner {
       gap: 1.5rem;
     }
 
-    .kz-text {
-      font-size: 1rem;
-    }
-
-    .hero-visual-col {
-      display: none !important;
+    .wh-links {
+      flex-direction: column;
+      gap: 0.75rem;
     }
   }
 </style>
 
 <style is:global>
-  /* ── KI-TABS ── */
-  .ki-tabs-bar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 2rem;
-    margin-top: 0.25rem;
-  }
-
-  .ki-tabs-btn {
-    padding: 6px 16px;
-    border-radius: 2rem;
-    border: 1px solid var(--outline-variant);
-    background: white;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--on-surface-muted);
-    cursor: pointer;
-    transition: border-color 0.15s, color 0.15s, background 0.15s;
-    font-family: 'Manrope', system-ui, sans-serif;
-  }
-
-  .ki-tabs-btn:hover {
-    border-color: var(--secondary);
-    color: var(--secondary);
-  }
-
-  .ki-tabs-active {
-    background: #3f4530 !important;
-    color: white !important;
-    border-color: #3f4530 !important;
-  }
-
-  .ki-tabs-content {
-    display: block;
-  }
-
-  .ki-tabs-hidden {
-    display: none !important;
-  }
-
-  .ki-tabs-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-  }
-
-  .ki-tabs-karte {
-    background: white;
-    border: 0.5px solid var(--outline-variant);
-    border-radius: 1rem;
-    padding: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .ki-tabs-icon {
-    font-size: 1.5rem;
-    line-height: 1;
-  }
-
-  .ki-tabs-titel {
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--on-surface);
-    margin: 0;
-  }
-
-  .ki-tabs-text {
-    font-size: 13px;
-    line-height: 1.55;
-    color: var(--on-surface-muted);
-    margin: 0;
-  }
-
-  @media (max-width: 767px) {
-    .ki-tabs-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  @media (max-width: 900px) and (min-width: 768px) {
-    .ki-tabs-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-</style>
-
-<style is:global>
-  /* ── HERO CHAT PREVIEW ── */
+  /* ── HERO CHAT ── */
   .hero-chat {
     width: 100%;
     max-width: 360px;
@@ -1128,272 +970,175 @@ import Cta from '../components/Cta.astro';
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 13px;
-    color: white;
-    font-weight: 600;
   }
 
   .hero-chat-dot {
-    color: #34d399;
-    font-size: 10px;
+    color: #6fdb6f;
+    font-size: 0.6rem;
+  }
+
+  .hero-chat-status {
+    font-size: 0.6875rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
   }
 
   .hero-chat-name {
-    letter-spacing: 0.01em;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: white;
   }
 
   .hero-chat-body {
-    background: #f5f3f0;
     padding: 1rem;
-    min-height: 280px;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.625rem;
+    min-height: 200px;
   }
 
-  /* User bubble */
-  .hero-chat-user {
+  .hero-chat-msg {
+    max-width: 80%;
+    padding: 0.5rem 0.875rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.45;
+    animation: hero-chat-fadein 0.3s ease;
+  }
+
+  .hero-chat-msg--user {
+    background: #f0ece4;
+    color: #3f4530;
     align-self: flex-end;
-    background: #b80049;
-    color: white;
-    padding: 0.625rem 0.875rem;
-    border-radius: 16px 16px 4px 16px;
-    font-size: 13px;
-    line-height: 1.5;
-    max-width: 85%;
-    animation: hcFadeIn 0.3s ease;
+    border-bottom-right-radius: 0.25rem;
   }
 
-  /* Bot row */
-  .hero-chat-bot-row {
-    display: flex;
-    align-items: flex-end;
-    gap: 0.5rem;
-    max-width: 90%;
-    animation: hcFadeIn 0.3s ease;
-  }
-
-  .hero-chat-avatar {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
+  .hero-chat-msg--bot {
     background: #3f4530;
     color: white;
-    font-size: 11px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    align-self: flex-start;
+    border-bottom-left-radius: 0.25rem;
   }
 
-  .hero-chat-bot {
-    background: white;
-    color: #1b1c1a;
-    padding: 0.625rem 0.875rem;
-    border-radius: 16px 16px 16px 4px;
-    font-size: 13px;
-    line-height: 1.5;
-    border: 1px solid rgba(63, 69, 48, 0.08);
-  }
-
-  /* Typing indicator */
   .hero-chat-typing {
-    display: flex;
-    align-items: flex-end;
-    gap: 0.5rem;
-  }
-
-  .hero-chat-typing-bubble {
+    align-self: flex-start;
+    background: #3f4530;
+    border-radius: 1rem;
+    border-bottom-left-radius: 0.25rem;
+    padding: 0.5rem 0.875rem;
     display: flex;
     gap: 4px;
     align-items: center;
-    background: white;
-    padding: 0.625rem 0.875rem;
-    border-radius: 16px 16px 16px 4px;
-    border: 1px solid rgba(63, 69, 48, 0.08);
   }
 
-  .hero-chat-dot-anim {
+  .hero-chat-typing span {
     width: 6px;
     height: 6px;
-    background: rgba(63, 69, 48, 0.35);
     border-radius: 50%;
-    animation: hcBounce 1.2s infinite;
+    background: rgba(255, 255, 255, 0.6);
+    animation: hero-chat-bounce 1s infinite;
   }
 
-  .hero-chat-dot-anim:nth-child(2) { animation-delay: 0.15s; }
-  .hero-chat-dot-anim:nth-child(3) { animation-delay: 0.3s; }
+  .hero-chat-typing span:nth-child(2) { animation-delay: 0.15s; }
+  .hero-chat-typing span:nth-child(3) { animation-delay: 0.3s; }
 
-  @keyframes hcBounce {
-    0%, 60%, 100% { transform: translateY(0); }
-    30% { transform: translateY(-4px); }
+  @keyframes hero-chat-bounce {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.6; }
+    30% { transform: translateY(-4px); opacity: 1; }
   }
 
-  @keyframes hcFadeIn {
-    from { opacity: 0; transform: translateY(6px); }
+  @keyframes hero-chat-fadein {
+    from { opacity: 0; transform: translateY(4px); }
     to   { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ── COUNTER ── */
-  .counter-num {
-    font-family: 'Noto Serif', serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: white;
-    line-height: 1;
-  }
-
-  .counter-label {
-    font-size: 0.8125rem;
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 500;
   }
 </style>
 
 <script>
-  // ── HERO CHAT ANIMATION ──
-  (function() {
-    var messages = [
-      { role: 'user', text: 'Ich verpasse täglich Anrufe wenn ich arbeite.' },
-      { role: 'bot',  text: 'Das kennen viele Betriebe. Wie viele Anrufe verpasst du ungefähr pro Tag? 📞' },
-      { role: 'user', text: 'So 3 bis 5 – manchmal mehr.' },
-      { role: 'bot',  text: 'Das sind pro Jahr über 1.000 potenzielle Kunden. KI kann das lösen – soll ich dir zeigen wie?' }
-    ];
+(function() {
+  var messages = [
+    { role: 'user', text: 'Ich verpasse täglich Anrufe wenn ich arbeite.' },
+    { role: 'bot',  text: 'Das kennen viele Betriebe. Wie viele Anrufe verpasst du ungefähr pro Tag? 📞' },
+    { role: 'user', text: 'So 3 bis 5 – manchmal mehr.' },
+    { role: 'bot',  text: 'Das sind pro Jahr über 1.000 potenzielle Kunden. KI kann das lösen – soll ich dir zeigen wie?' }
+  ];
 
-    var body = document.getElementById('hero-chat-body');
-    if (!body) return;
+  var body = document.getElementById('hero-chat-body');
+  if (!body) return;
 
-    var idx = 0;
-    var timer: ReturnType<typeof setTimeout>;
+  var timer;
 
-    function makeAvatar() {
-      var av = document.createElement('div');
-      av.className = 'hero-chat-avatar';
-      av.textContent = 'M';
-      return av;
+  function clearBody() {
+    while (body.firstChild) body.removeChild(body.firstChild);
+  }
+
+  function addMsg(role, text, cb) {
+    if (role === 'bot') {
+      var typing = document.createElement('div');
+      typing.className = 'hero-chat-typing';
+      typing.innerHTML = '<span></span><span></span><span></span>';
+      body.appendChild(typing);
+      timer = setTimeout(function() {
+        body.removeChild(typing);
+        var msg = document.createElement('div');
+        msg.className = 'hero-chat-msg hero-chat-msg--bot';
+        msg.textContent = text;
+        body.appendChild(msg);
+        if (cb) timer = setTimeout(cb, 1200);
+      }, 1200);
+    } else {
+      var msg = document.createElement('div');
+      msg.className = 'hero-chat-msg hero-chat-msg--user';
+      msg.textContent = text;
+      body.appendChild(msg);
+      if (cb) timer = setTimeout(cb, 800);
     }
+  }
 
-    function showTyping() {
-      var row = document.createElement('div');
-      row.className = 'hero-chat-typing';
-      row.id = 'hc-typing';
-      row.innerHTML = '<div class="hero-chat-avatar">M</div><div class="hero-chat-typing-bubble"><div class="hero-chat-dot-anim"></div><div class="hero-chat-dot-anim"></div><div class="hero-chat-dot-anim"></div></div>';
-      body!.appendChild(row);
-      body!.scrollTop = body!.scrollHeight;
+  function runSequence(index) {
+    if (index >= messages.length) {
+      timer = setTimeout(function() {
+        clearBody();
+        runSequence(0);
+      }, 4000);
+      return;
     }
-
-    function removeTyping() {
-      var el = document.getElementById('hc-typing');
-      if (el) el.remove();
-    }
-
-    function addMessage(msg: { role: string; text: string }) {
-      if (msg.role === 'user') {
-        var el = document.createElement('div');
-        el.className = 'hero-chat-user';
-        el.textContent = msg.text;
-        body!.appendChild(el);
-      } else {
-        var row = document.createElement('div');
-        row.className = 'hero-chat-bot-row';
-        var av = document.createElement('div');
-        av.className = 'hero-chat-avatar';
-        av.textContent = 'M';
-        var bubble = document.createElement('div');
-        bubble.className = 'hero-chat-bot';
-        bubble.textContent = msg.text;
-        row.appendChild(av);
-        row.appendChild(bubble);
-        body!.appendChild(row);
-      }
-      body!.scrollTop = body!.scrollHeight;
-    }
-
-    function step() {
-      if (idx >= messages.length) {
-        // pause then reset
-        timer = setTimeout(function() {
-          body!.innerHTML = '';
-          idx = 0;
-          step();
-        }, 4000);
-        return;
-      }
-
-      var msg = messages[idx];
-      idx++;
-
-      if (msg.role === 'user') {
-        addMessage(msg);
-        timer = setTimeout(step, 1200);
-      } else {
-        showTyping();
-        timer = setTimeout(function() {
-          removeTyping();
-          addMessage(msg);
-          timer = setTimeout(step, 1000);
-        }, 1400);
-      }
-    }
-
-    step();
-  })();
-
-  // ── TABS ──
-  (function() {
-    var buttons = document.querySelectorAll<HTMLElement>('.ki-tabs-btn');
-    var contents = document.querySelectorAll<HTMLElement>('.ki-tabs-content');
-
-    buttons.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var target = btn.dataset.tab;
-
-        // Update buttons
-        buttons.forEach(function(b) { b.classList.remove('ki-tabs-active'); });
-        btn.classList.add('ki-tabs-active');
-
-        // Update content
-        contents.forEach(function(c) { c.classList.add('ki-tabs-hidden'); });
-        var show = document.getElementById('tab-' + target);
-        if (show) show.classList.remove('ki-tabs-hidden');
-      });
+    var m = messages[index];
+    addMsg(m.role, m.text, function() {
+      runSequence(index + 1);
     });
-  })();
+  }
 
-  // ── COUNTER ANIMATION ──
-  (function() {
-    var counters = document.querySelectorAll<HTMLElement>('.counter-num');
-    var started = false;
+  runSequence(0);
+})();
+</script>
 
-    function easeOut(t: number): number {
-      return 1 - Math.pow(1 - t, 3);
+<script>
+(function() {
+  var bar = document.getElementById('counter-bar');
+  if (!bar) return;
+  var started = false;
+  var counters = bar.querySelectorAll('.counter-num');
+
+  function animateCounter(el, target, duration) {
+    var start = performance.now();
+    function step(now) {
+      var p = Math.min((now - start) / duration, 1);
+      var ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(ease * target);
+      if (p < 1) requestAnimationFrame(step);
     }
+    requestAnimationFrame(step);
+  }
 
-    function animateCounter(el: HTMLElement, target: number, duration: number) {
-      var start = performance.now();
-      function tick(now: number) {
-        var elapsed = now - start;
-        var progress = Math.min(elapsed / duration, 1);
-        el.textContent = String(Math.round(easeOut(progress) * target));
-        if (progress < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
+  var observer = new IntersectionObserver(function(entries) {
+    if (entries[0].isIntersecting && !started) {
+      started = true;
+      counters.forEach(function(el) {
+        animateCounter(el, parseInt(el.dataset.target || '0', 10), 1500);
+      });
     }
+  }, { threshold: 0.5 });
 
-    var bar = document.getElementById('counter-bar');
-    if (!bar) return;
-
-    var observer = new IntersectionObserver(function(entries) {
-      if (entries[0].isIntersecting && !started) {
-        started = true;
-        counters.forEach(function(el) {
-          var target = parseInt(el.dataset.target || '0', 10);
-          animateCounter(el, target, 1500);
-        });
-      }
-    }, { threshold: 0.5 });
-
-    observer.observe(bar);
-  })();
+  observer.observe(bar);
+})();
 </script>
