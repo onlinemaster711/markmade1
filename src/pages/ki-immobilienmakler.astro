@@ -5,7 +5,7 @@ import Cta from '../components/Cta.astro';
 ---
 
 <BaseLayout
-  title="KI für Immobilienmakler – Exposés, Anfragen & Besichtigungen | MarkMade"
+  title="KI für Immobilienmakler | MarkMade"
   description="KI erstellt Exposés automatisch, qualifiziert Anfragen vor und bucht Besichtigungstermine. Für Immobilienmakler die Zeit sparen wollen."
 >
 
@@ -106,6 +106,30 @@ import Cta from '../components/Cta.astro';
 
   <!-- 5. CTA -->
   <Cta />
+
+  <!-- AUCH INTERESSANT -->
+  <section class="auch-interessant">
+    <div class="ai-inner">
+      <h3>Das könnte dich auch interessieren</h3>
+      <div class="ai-grid">
+        <a href="/ki-telefonassistent" class="ai-karte">
+          <span class="ai-icon">📞</span>
+          <span class="ai-titel">KI-Telefonassistent</span>
+          <span class="ai-arrow">→</span>
+        </a>
+        <a href="/ki-email" class="ai-karte">
+          <span class="ai-icon">✉️</span>
+          <span class="ai-titel">E-Mail-Automatisierung</span>
+          <span class="ai-arrow">→</span>
+        </a>
+        <a href="/ratgeber/ki-fuer-immobilienmakler" class="ai-karte">
+          <span class="ai-icon">📖</span>
+          <span class="ai-titel">Ratgeber: KI für Immobilienmakler</span>
+          <span class="ai-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
 </BaseLayout>
 
@@ -303,6 +327,80 @@ import Cta from '../components/Cta.astro';
     }
 
     .punkte-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<style>
+  .auch-interessant {
+    background: var(--surface-low);
+    padding: 3rem 0;
+  }
+
+  .ai-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .ai-inner h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 1.25rem;
+  }
+
+  .ai-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .ai-karte {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: white;
+    border: 1px solid var(--outline-variant);
+    border-radius: 1rem;
+    text-decoration: none;
+    color: var(--on-surface);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .ai-karte:hover {
+    border-color: var(--secondary);
+    color: var(--secondary);
+  }
+
+  .ai-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .ai-titel {
+    flex: 1;
+    line-height: 1.3;
+  }
+
+  .ai-arrow {
+    font-size: 1rem;
+    opacity: 0.4;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+  }
+
+  .ai-karte:hover .ai-arrow {
+    opacity: 1;
+  }
+
+  @media (max-width: 767px) {
+    .ai-grid {
       grid-template-columns: 1fr;
     }
   }
