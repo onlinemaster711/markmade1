@@ -71,141 +71,175 @@ import Cta from '../components/Cta.astro';
     </div>
   </div>
 
-  <!-- 2. ZEITFRESSER -->
-  <section class="zeitfresser" id="leistungen">
-    <div class="zeitfresser-inner">
-      <p class="eyebrow-section">Häufige Zeitfresser</p>
-      <h2>Erkennst du dich wieder?</h2>
-      <p class="section-text">Das sind die Probleme die wir täglich von Unternehmern hören – und die KI lösen kann.</p>
-      <div class="zeitfresser-grid">
-
-        <div class="zf-karte fade-in">
-          <p class="zf-label">Verpasste Anrufe</p>
-          <p class="zf-zitat">"Ich bin auf der Baustelle und verpasse ständig Anrufe."</p>
-          <p class="zf-loesung">KI-Telefonassistent nimmt Anrufe 24/7 entgegen.</p>
-          <a href="/ki-telefonassistent" class="zf-link">Lösung ansehen →</a>
-        </div>
-
-        <div class="zf-karte fade-in">
-          <p class="zf-label">E-Mail-Flut</p>
-          <p class="zf-zitat">"Ich beantworte täglich dieselben E-Mails immer wieder."</p>
-          <p class="zf-loesung">KI beantwortet Standardanfragen automatisch.</p>
-          <a href="/ki-email" class="zf-link">Lösung ansehen →</a>
-        </div>
-
-        <div class="zf-karte fade-in">
-          <p class="zf-label">Kundenfragen</p>
-          <p class="zf-zitat">"Kunden stellen immer dieselben Fragen – Preise, Ablauf, Zeiten."</p>
-          <p class="zf-loesung">KI-Chatbot beantwortet das rund um die Uhr.</p>
-          <a href="/chatbot-handwerker" class="zf-link">Lösung ansehen →</a>
-        </div>
-
-        <div class="zf-karte fade-in">
-          <p class="zf-label">Terminbuchung</p>
-          <p class="zf-zitat">"Terminvereinbarungen kosten mich jeden Tag wertvolle Zeit."</p>
-          <p class="zf-loesung">Kunden buchen direkt online – ohne Telefonat.</p>
-          <a href="/terminbuchung-handwerk" class="zf-link">Lösung ansehen →</a>
-        </div>
-
-        <div class="zf-karte fade-in">
-          <p class="zf-label">Social Media</p>
-          <p class="zf-zitat">"Ich weiß ich sollte präsenter sein – aber ich hab keine Zeit."</p>
-          <p class="zf-loesung">KI erstellt Content, du genehmigst in Minuten.</p>
-          <a href="/ki-social-media" class="zf-link">Lösung ansehen →</a>
-        </div>
-
-        <div class="zf-karte fade-in">
-          <p class="zf-label">Wo anfangen?</p>
-          <p class="zf-zitat">"Ich höre überall von KI – aber weiß nicht was für mich passt."</p>
-          <p class="zf-loesung">Unser Ratgeber zeigt dir wie du vorgehst.</p>
-          <a href="/ratgeber/ki-im-unternehmen-nutzen" class="zf-link">Ratgeber lesen →</a>
-        </div>
-
-      </div>
+  <!-- 2. WAS KI ÜBERNIMMT -->
+  <section class="ki-liste" id="leistungen">
+    <div class="ki-liste-inner">
+      <p class="eyebrow-section">Was KI übernimmt</p>
+      <h2>KI arbeitet. Du auch – aber das Richtige.</h2>
+      <nav class="ki-zeilen">
+        <a href="/ki-email" class="ki-zeile fade-in">
+          <span class="kz-text">KI beantwortet deine E-Mails.</span>
+          <span class="kz-arrow">→</span>
+        </a>
+        <a href="/ki-telefonassistent" class="ki-zeile fade-in">
+          <span class="kz-text">KI nimmt deine Anrufe entgegen.</span>
+          <span class="kz-arrow">→</span>
+        </a>
+        <a href="/terminbuchung-handwerk" class="ki-zeile fade-in">
+          <span class="kz-text">KI vergibt Termine in deinen Kalender.</span>
+          <span class="kz-arrow">→</span>
+        </a>
+        <a href="/chatbot-handwerker" class="ki-zeile fade-in">
+          <span class="kz-text">KI beantwortet Kundenfragen – rund um die Uhr.</span>
+          <span class="kz-arrow">→</span>
+        </a>
+        <a href="/ki-social-media" class="ki-zeile fade-in">
+          <span class="kz-text">KI erstellt deinen Social Media Content.</span>
+          <span class="kz-arrow">→</span>
+        </a>
+        <a href="/ki-automatisierung" class="ki-zeile fade-in">
+          <span class="kz-text">KI hilft dir die richtigen Anfragen zu erkennen.</span>
+          <span class="kz-arrow">→</span>
+        </a>
+      </nav>
     </div>
   </section>
 
-  <!-- 3. BRANCHEN -->
-  <section class="branchen" id="branchen">
-    <div class="branchen-inner">
+  <!-- 3. BRANCHEN TABS -->
+  <section class="branchen-tabs" id="branchen">
+    <div class="branchen-tabs-inner">
       <p class="eyebrow-section">Branchenlösungen</p>
-      <h2>Deine Branche hat eigene Herausforderungen.</h2>
-      <p class="section-text">Wir kennen die typischen Zeitfresser in deiner Branche – und haben konkrete Lösungen.</p>
-      <div class="branchen-grid">
+      <h2>Was KI in deiner Branche löst.</h2>
 
-        <div class="branchen-karte fade-in">
-          <span class="b-icon">🔧</span>
-          <h3>Handwerker &amp; Betriebe</h3>
-          <div class="pills">
-            <span class="pill">Verpasste Anrufe</span>
-            <span class="pill">Terminbuchung</span>
-            <span class="pill">Kundenfragen</span>
-          </div>
-          <a href="/webdesign-handwerker" class="b-link-main">Zur Branchenseite →</a>
-          <a href="/ratgeber/ki-fuer-handwerker" class="b-link-ratgeber">Ratgeber lesen →</a>
-        </div>
-
-        <div class="branchen-karte fade-in">
-          <span class="b-icon">🏥</span>
-          <h3>Ärzte &amp; Praxen</h3>
-          <div class="pills">
-            <span class="pill">Patientenanfragen</span>
-            <span class="pill">Terminbuchung</span>
-            <span class="pill">Öffnungszeiten</span>
-          </div>
-          <a href="/webdesign-aerzte" class="b-link-main">Zur Branchenseite →</a>
-          <a href="/ratgeber/ki-fuer-aerzte" class="b-link-ratgeber">Ratgeber lesen →</a>
-        </div>
-
-        <div class="branchen-karte fade-in">
-          <span class="b-icon">🍕</span>
-          <h3>Restaurants &amp; Gastronomie</h3>
-          <div class="pills">
-            <span class="pill">Reservierungen</span>
-            <span class="pill">Speisekarten</span>
-            <span class="pill">Gästeanfragen</span>
-          </div>
-          <a href="/ki-restaurant" class="b-link-main">Zur Branchenseite →</a>
-          <a href="/ratgeber/ki-fuer-restaurants" class="b-link-ratgeber">Ratgeber lesen →</a>
-        </div>
-
-        <div class="branchen-karte fade-in">
-          <span class="b-icon">🏠</span>
-          <h3>Immobilienmakler</h3>
-          <div class="pills">
-            <span class="pill">Exposés</span>
-            <span class="pill">Interessenten</span>
-            <span class="pill">Besichtigungen</span>
-          </div>
-          <a href="/ki-immobilienmakler" class="b-link-main">Zur Branchenseite →</a>
-          <a href="/ratgeber/ki-fuer-immobilienmakler" class="b-link-ratgeber">Ratgeber lesen →</a>
-        </div>
-
-        <div class="branchen-karte fade-in">
-          <span class="b-icon">⚖️</span>
-          <h3>Kanzleien &amp; Steuerberater</h3>
-          <div class="pills">
-            <span class="pill">Mandantenanfragen</span>
-            <span class="pill">Termine</span>
-            <span class="pill">Schreiben</span>
-          </div>
-          <a href="/ki-kanzlei" class="b-link-main">Zur Branchenseite →</a>
-          <a href="/ratgeber/ki-fuer-kanzleien" class="b-link-ratgeber">Ratgeber lesen →</a>
-        </div>
-
-        <div class="branchen-karte fade-in">
-          <span class="b-icon">💼</span>
-          <h3>Selbstständige &amp; Coaches</h3>
-          <div class="pills">
-            <span class="pill">Website</span>
-            <span class="pill">Social Media</span>
-            <span class="pill">E-Mails</span>
-          </div>
-          <a href="/webdesign-selbststaendige" class="b-link-main">Zur Branchenseite →</a>
-          <a href="/ratgeber/ki-fuer-selbststaendige" class="b-link-ratgeber">Ratgeber lesen →</a>
-        </div>
-
+      <div class="ki-tabs-bar">
+        <button class="ki-tabs-btn ki-tabs-active" data-tab="handwerker">Handwerker</button>
+        <button class="ki-tabs-btn" data-tab="aerzte">Ärzte</button>
+        <button class="ki-tabs-btn" data-tab="restaurant">Restaurant</button>
+        <button class="ki-tabs-btn" data-tab="immobilien">Immobilien</button>
+        <button class="ki-tabs-btn" data-tab="kanzlei">Kanzlei</button>
+        <button class="ki-tabs-btn" data-tab="selbststaendige">Selbstständige</button>
       </div>
+
+      <div class="ki-tabs-content" id="tab-handwerker">
+        <div class="ki-tabs-grid">
+          <div class="ki-tabs-karte">
+            <span class="ki-tabs-icon">📞</span>
+            <p class="ki-tabs-titel">Verpasste Anrufe</p>
+            <p class="ki-tabs-text">KI nimmt Anrufe entgegen wenn du auf der Baustelle bist.</p>
+          </div>
+          <div class="ki-tabs-karte">
+            <span class="ki-tabs-icon">📅</span>
+            <p class="ki-tabs-titel">Terminvergabe</p>
+            <p class="ki-tabs-text">Kunden buchen direkt – KI trägt den Termin automatisch ein.</p>
+          </div>
+          <div class="ki-tabs-karte">
+            <span class="ki-tabs-icon">💬</span>
+            <p class="ki-tabs-titel">Kundenfragen</p>
+            <p class="ki-tabs-text">Preise, Ablauf, Verfügbarkeit – KI beantwortet das automatisch.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ki-tabs-content ki-tabs-hidden" id="tab-aerzte">
+        <div class="ki-tabs-grid">
+          <div class="ki-tabs-karte">
+            <span class="ki-tabs-icon">👥</span>
+            <p class="ki-tabs-titel">Patientenanfragen</p>
+            <p class="ki-tabs-text">Öffnungszeiten, Kassenärztlich, Ablauf – automatisch beantwortet.</p>
+          </div>
+          <div class="ki-tabs-karte">
+            <span class="ki-tabs-icon">📅</span>
+            <p class="ki-tabs-titel">Terminvergabe</p>
+            <p class="ki-tabs-text">Patienten buchen direkt online – kein Telefonaufwand.</p>
+          </div>
+          <div class="ki-tabs-karte">
+            <span class="ki-tabs-icon">📞</span>
+            <p class="ki-tabs-titel">Telefonassistent</p>
+            <p class="ki-tabs-text">Nimmt Anrufe entgegen wenn die Praxis beschäftigt ist.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ki-tabs-content ki-tabs-hidden" id="tab-restaurant">
+        <div class="ki-tabs-grid">
+          <div class="ki-tabs-karte">
+            <span class="ki-tabs-icon">🍽️</span>
+            <p class="ki-tabs-titel">Reservierungen</p>
+            <p class="ki-tabs-text">Gäste buchen direkt – auch abends wenn niemand ans Telefon geht.</p>
+          </div>
+          <div class="ki-tabs-karte">
+            <span class="ki-tabs-icon">📋</span>
+            <p class="ki-tabs-titel">Speisekarten</p>
+            <p class="ki-tabs-text">Schnell aktualisieren – saisonal, täglich, spontan.</p>
+          </div>
+          <div class="ki-tabs-karte">
+            <span class="ki-tabs-icon">⭐</span>
+            <p class="ki-tabs-titel">Bewertungen</p>
+            <p class="ki-tabs-text">KI antwortet professionell auf Google-Bewertungen.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ki-tabs-content ki-tabs-hidden" id="tab-immobilien">
+        <div class="ki-tabs-grid">
+          <div class="ki-tabs-karte">
+            <span class="ki-tabs-icon">📄</span>
+            <p class="ki-tabs-titel">Exposés</p>
+            <p class="ki-tabs-text">Aus Eckdaten wird automatisch ein professionelles Exposé erstellt.</p>
+          </div>
+          <div class="ki-tabs-karte">
+            <span class="ki-tabs-icon">✅</span>
+            <p class="ki-tabs-titel">Vorqualifizierung</p>
+            <p class="ki-tabs-text">KI hilft ernsthafte Interessenten von Gelegenheitssuchenden zu unterscheiden.</p>
+          </div>
+          <div class="ki-tabs-karte">
+            <span class="ki-tabs-icon">📅</span>
+            <p class="ki-tabs-titel">Besichtigungen</p>
+            <p class="ki-tabs-text">Interessenten buchen direkt in deinen Kalender.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ki-tabs-content ki-tabs-hidden" id="tab-kanzlei">
+        <div class="ki-tabs-grid">
+          <div class="ki-tabs-karte">
+            <span class="ki-tabs-icon">💬</span>
+            <p class="ki-tabs-titel">Mandantenanfragen</p>
+            <p class="ki-tabs-text">Anliegen und Dringlichkeit vorklären bevor der Termin.</p>
+          </div>
+          <div class="ki-tabs-karte">
+            <span class="ki-tabs-icon">📅</span>
+            <p class="ki-tabs-titel">Terminvergabe</p>
+            <p class="ki-tabs-text">Mandanten buchen direkt – ohne Telefonat.</p>
+          </div>
+          <div class="ki-tabs-karte">
+            <span class="ki-tabs-icon">📄</span>
+            <p class="ki-tabs-titel">Standardschreiben</p>
+            <p class="ki-tabs-text">Vorlagen automatisch befüllen – du prüfst und unterschreibst.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ki-tabs-content ki-tabs-hidden" id="tab-selbststaendige">
+        <div class="ki-tabs-grid">
+          <div class="ki-tabs-karte">
+            <span class="ki-tabs-icon">🌐</span>
+            <p class="ki-tabs-titel">Website &amp; Chatbot</p>
+            <p class="ki-tabs-text">Klarer Auftritt der kommuniziert was du anbietest.</p>
+          </div>
+          <div class="ki-tabs-karte">
+            <span class="ki-tabs-icon">📱</span>
+            <p class="ki-tabs-titel">Social Media</p>
+            <p class="ki-tabs-text">KI erstellt Content-Vorschläge – du entscheidest was gepostet wird.</p>
+          </div>
+          <div class="ki-tabs-karte">
+            <span class="ki-tabs-icon">✉️</span>
+            <p class="ki-tabs-titel">E-Mail-Kommunikation</p>
+            <p class="ki-tabs-text">Standardanfragen automatisch beantworten.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -466,7 +500,76 @@ import Cta from '../components/Cta.astro';
     line-height: 1.25;
   }
 
-  /* ── ZEITFRESSER ── */
+  /* ── KI-LISTE ── */
+  .ki-liste {
+    background: var(--surface);
+    padding: 5rem 0;
+  }
+
+  .ki-liste-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .ki-zeilen {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+  }
+
+  .ki-zeile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    border-bottom: 0.5px solid var(--outline-variant);
+    text-decoration: none;
+    color: var(--on-surface);
+    transition: color 0.2s;
+  }
+
+  .ki-zeile:first-child {
+    border-top: 0.5px solid var(--outline-variant);
+  }
+
+  .ki-zeile:hover {
+    color: var(--secondary);
+  }
+
+  .kz-text {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .kz-arrow {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    opacity: 0.4;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .ki-zeile:hover .kz-arrow {
+    opacity: 1;
+    transform: translateX(4px);
+  }
+
+  /* ── BRANCHEN TABS ── */
+  .branchen-tabs {
+    background: var(--surface-low);
+    padding: 5rem 0;
+  }
+
+  .branchen-tabs-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* ── ZEITFRESSER (kept for grid reuse) ── */
   .zeitfresser {
     background: var(--surface-low);
     padding: 5rem 0;
@@ -537,93 +640,8 @@ import Cta from '../components/Cta.astro';
     opacity: 0.75;
   }
 
-  /* ── BRANCHEN ── */
-  .branchen {
-    background: var(--surface);
-    padding: 5rem 0;
-  }
-
-  .branchen-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
-  .branchen-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-  }
-
-  .branchen-karte {
-    background: var(--surface-low);
-    border: 1px solid var(--outline-variant);
-    border-radius: 1rem;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    transition: box-shadow 0.2s;
-  }
-
-  .branchen-karte:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  }
-
-  .b-icon {
-    font-size: 2rem;
-    line-height: 1;
-  }
-
-  .branchen-karte h3 {
-    font-family: 'Noto Serif', serif;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--on-surface);
-    margin: 0;
-  }
-
-  .pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.375rem;
-  }
-
-  .pill {
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--on-surface-muted);
-    background: var(--surface);
-    border: 1px solid var(--outline-variant);
-    border-radius: 100px;
-    padding: 0.2rem 0.6rem;
-    white-space: nowrap;
-  }
-
-  .b-link-main {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--on-surface);
-    text-decoration: none;
-    margin-top: auto;
-    transition: color 0.2s;
-  }
-
-  .b-link-main:hover {
-    color: var(--secondary);
-  }
-
-  .b-link-ratgeber {
-    font-size: 0.8125rem;
-    font-weight: 500;
-    color: var(--secondary);
-    text-decoration: none;
-    transition: opacity 0.2s;
-  }
-
-  .b-link-ratgeber:hover {
-    opacity: 0.75;
-  }
+  /* ── BRANCHEN (old selectors kept in case referenced elsewhere) ── */
+  .branchen { background: var(--surface); padding: 5rem 0; }
 
   /* ── RATGEBER ── */
   .ratgeber {
@@ -902,8 +920,6 @@ import Cta from '../components/Cta.astro';
       order: -1;
     }
 
-    .zeitfresser-grid,
-    .branchen-grid,
     .ratgeber-grid {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -923,8 +939,6 @@ import Cta from '../components/Cta.astro';
       align-items: flex-start;
     }
 
-    .zeitfresser-grid,
-    .branchen-grid,
     .ratgeber-grid,
     .warum-grid {
       grid-template-columns: 1fr;
@@ -941,6 +955,100 @@ import Cta from '../components/Cta.astro';
 
     .counter-inner {
       gap: 1.5rem;
+    }
+
+    .kz-text {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<style is:global>
+  /* ── KI-TABS ── */
+  .ki-tabs-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    margin-top: 0.25rem;
+  }
+
+  .ki-tabs-btn {
+    padding: 6px 16px;
+    border-radius: 2rem;
+    border: 1px solid var(--outline-variant);
+    background: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--on-surface-muted);
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+    font-family: 'Manrope', system-ui, sans-serif;
+  }
+
+  .ki-tabs-btn:hover {
+    border-color: var(--secondary);
+    color: var(--secondary);
+  }
+
+  .ki-tabs-active {
+    background: #3f4530 !important;
+    color: white !important;
+    border-color: #3f4530 !important;
+  }
+
+  .ki-tabs-content {
+    display: block;
+  }
+
+  .ki-tabs-hidden {
+    display: none !important;
+  }
+
+  .ki-tabs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .ki-tabs-karte {
+    background: white;
+    border: 0.5px solid var(--outline-variant);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .ki-tabs-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .ki-tabs-titel {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--on-surface);
+    margin: 0;
+  }
+
+  .ki-tabs-text {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--on-surface-muted);
+    margin: 0;
+  }
+
+  @media (max-width: 767px) {
+    .ki-tabs-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 900px) and (min-width: 768px) {
+    .ki-tabs-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 </style>
@@ -1174,6 +1282,27 @@ import Cta from '../components/Cta.astro';
     }
 
     step();
+  })();
+
+  // ── TABS ──
+  (function() {
+    var buttons = document.querySelectorAll<HTMLElement>('.ki-tabs-btn');
+    var contents = document.querySelectorAll<HTMLElement>('.ki-tabs-content');
+
+    buttons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var target = btn.dataset.tab;
+
+        // Update buttons
+        buttons.forEach(function(b) { b.classList.remove('ki-tabs-active'); });
+        btn.classList.add('ki-tabs-active');
+
+        // Update content
+        contents.forEach(function(c) { c.classList.add('ki-tabs-hidden'); });
+        var show = document.getElementById('tab-' + target);
+        if (show) show.classList.remove('ki-tabs-hidden');
+      });
+    });
   })();
 
   // ── COUNTER ANIMATION ──
