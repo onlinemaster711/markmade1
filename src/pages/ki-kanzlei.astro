@@ -1,0 +1,322 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ChatDemo from '../components/ChatDemo.astro';
+import Cta from '../components/Cta.astro';
+---
+
+<BaseLayout
+  title="KI für Kanzleien & Steuerberater – Mandanten & Dokumente automatisieren | MarkMade"
+  description="KI qualifiziert Mandantenanfragen vor, erstellt Standardschreiben automatisch und spart täglich wertvolle Zeit. Für Anwälte und Steuerberater."
+>
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">KI für Kanzleien &amp; Steuerberater</p>
+      <h1>Weniger Verwaltung. Mehr Zeit für Mandanten.</h1>
+      <p class="hero-text">
+        KI übernimmt Standardaufgaben in deiner Kanzlei – Anfragen vorqualifizieren, Termine buchen, Schreiben vorbereiten. Du konzentrierst dich auf die Beratung.
+      </p>
+      <a href="https://calendly.com/onlinemaster711/new-meeting" class="btn-primary" target="_blank" rel="noopener noreferrer">Kostenloses Erstgespräch</a>
+    </div>
+  </section>
+
+  <!-- 2. WAS KI KONKRET MACHT -->
+  <section class="was-ki-macht">
+    <div class="was-ki-inner">
+      <h2>Was KI konkret für deine Kanzlei übernimmt.</h2>
+      <div class="ki-grid">
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">💬</span>
+          <div>
+            <h3>Mandantenanfragen vorqualifizieren</h3>
+            <p>Welches Anliegen, welche Dringlichkeit? KI klärt vorab – du siehst nur was wirklich zu dir passt.</p>
+          </div>
+        </div>
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">📅</span>
+          <div>
+            <h3>Termine automatisch buchen</h3>
+            <p>Mandanten buchen direkt in deinen Kalender – kein Telefon, kein Hin-und-Her.</p>
+          </div>
+        </div>
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">📄</span>
+          <div>
+            <h3>Standardschreiben vorbereiten</h3>
+            <p>Vorlagen automatisch befüllen – du prüfst kurz und schickst ab.</p>
+          </div>
+        </div>
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">✉️</span>
+          <div>
+            <h3>E-Mail-Kommunikation</h3>
+            <p>Standardanfragen automatisch beantworten – dein Postfach bleibt überschaubar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. CHATDEMO -->
+  <section class="demo-section">
+    <div class="demo-inner">
+      <ChatDemo
+        title="So qualifiziert KI Mandantenanfragen vor"
+        messages={[
+          {role: 'user', text: 'Ich brauche dringend rechtliche Beratung wegen einer Kündigung.'},
+          {role: 'bot', text: 'Das klingt nach einem dringenden Anliegen. Handelt es sich um eine eigene Kündigung oder die eines Mitarbeiters?'},
+          {role: 'user', text: 'Ich wurde selbst gekündigt – heute erhalten.'},
+          {role: 'bot', text: 'Verstanden. Bei einer fristlosen Kündigung sind die ersten Tage entscheidend. Ich reserviere Ihnen direkt einen Termin – am besten noch diese Woche?'}
+        ]}
+      />
+    </div>
+  </section>
+
+  <!-- 4. WICHTIGER HINWEIS -->
+  <section class="hinweis">
+    <div class="hinweis-inner">
+      <h2>KI berät nicht – sie organisiert.</h2>
+      <p>Wir ersetzen keine rechtliche oder steuerliche Beratung. KI übernimmt die Verwaltung und Organisation – damit du mehr Zeit für echte Beratung hast.</p>
+    </div>
+  </section>
+
+  <!-- 5. FÜR WEN DAS PASST -->
+  <section class="fuer-wen">
+    <div class="fuer-wen-inner">
+      <h2>Für wen das passt.</h2>
+      <div class="fuer-wen-grid">
+        <div class="fuer-wen-karte fade-in">
+          <span class="fw-icon">⚖️</span>
+          <p>Rechtsanwaltskanzleien</p>
+        </div>
+        <div class="fuer-wen-karte fade-in">
+          <span class="fw-icon">🧾</span>
+          <p>Steuerberatungsbüros</p>
+        </div>
+        <div class="fuer-wen-karte fade-in">
+          <span class="fw-icon">📋</span>
+          <p>Notariate &amp; Wirtschaftsprüfer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CTA -->
+  <Cta />
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    background: var(--surface);
+    padding-top: 9rem;
+    padding-bottom: 5rem;
+    text-align: center;
+  }
+
+  .hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary);
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    line-height: 1.2;
+    color: var(--on-surface);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--on-surface-muted);
+    margin-bottom: 2rem;
+    max-width: 54ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: var(--on-secondary);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.88; }
+
+  /* Was KI macht */
+  .was-ki-macht {
+    background: var(--surface-low);
+    padding: 5rem 0;
+  }
+
+  .was-ki-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .was-ki-macht h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--on-surface);
+    margin-bottom: 3rem;
+    line-height: 1.25;
+  }
+
+  .ki-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .ki-punkt {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .ki-icon {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .ki-punkt h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 0.4rem;
+  }
+
+  .ki-punkt p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+  }
+
+  /* Demo */
+  .demo-section {
+    background: var(--surface);
+    padding: 0;
+  }
+
+  .demo-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  /* Hinweis */
+  .hinweis {
+    background: var(--primary);
+    padding: 5rem 0;
+    text-align: center;
+    color: white;
+  }
+
+  .hinweis-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .hinweis h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .hinweis p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  /* Für wen */
+  .fuer-wen {
+    background: var(--surface);
+    padding: 5rem 0;
+  }
+
+  .fuer-wen-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .fuer-wen h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--on-surface);
+    margin-bottom: 3rem;
+    line-height: 1.3;
+  }
+
+  .fuer-wen-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .fuer-wen-karte {
+    background: var(--surface-low);
+    border: 1px solid var(--outline-variant);
+    border-radius: 1rem;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .fw-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  .fuer-wen-karte p {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--on-surface);
+    line-height: 1.4;
+  }
+
+  /* Responsive */
+  @media (max-width: 767px) {
+    .hero {
+      padding-top: 6.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .ki-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .fuer-wen-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

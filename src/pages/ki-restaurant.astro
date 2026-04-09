@@ -1,0 +1,271 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ChatDemo from '../components/ChatDemo.astro';
+import Cta from '../components/Cta.astro';
+---
+
+<BaseLayout
+  title="KI für Restaurants – Reservierungen, Speisekarten & mehr | MarkMade"
+  description="KI automatisiert Reservierungen, erstellt Speisekarten und beantwortet Gästeanfragen automatisch. Für Restaurants und Gastronomiebetriebe."
+>
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">KI für Restaurants &amp; Gastronomie</p>
+      <h1>Mehr Gäste. Weniger Verwaltung.</h1>
+      <p class="hero-text">
+        KI übernimmt Reservierungen, beantwortet Anfragen und hilft bei Speisekarten und Angeboten – damit du dich auf deine Gäste konzentrieren kannst.
+      </p>
+      <a href="https://calendly.com/onlinemaster711/new-meeting" class="btn-primary" target="_blank" rel="noopener noreferrer">Kostenloses Erstgespräch</a>
+    </div>
+  </section>
+
+  <!-- 2. WAS KI KONKRET MACHT -->
+  <section class="was-ki-macht">
+    <div class="was-ki-inner">
+      <h2>Was KI konkret für dein Restaurant übernimmt.</h2>
+      <div class="ki-grid">
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">📅</span>
+          <div>
+            <h3>Reservierungen automatisch verwalten</h3>
+            <p>Gäste buchen direkt online – du wirst informiert und musst nicht ans Telefon.</p>
+          </div>
+        </div>
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">🍽️</span>
+          <div>
+            <h3>Speisekarten erstellen</h3>
+            <p>Professionelle Karten schnell und einfach aktualisieren – saisonal, digital oder zum Drucken.</p>
+          </div>
+        </div>
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">💬</span>
+          <div>
+            <h3>Gästeanfragen beantworten</h3>
+            <p>Öffnungszeiten, Allergene, Sondermenüs – KI antwortet automatisch, rund um die Uhr.</p>
+          </div>
+        </div>
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">⭐</span>
+          <div>
+            <h3>Bewertungen beantworten</h3>
+            <p>KI antwortet auf Google-Bewertungen professionell und zeigt deinen Gästen, dass du zuhörst.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. CHATDEMO -->
+  <section class="demo-section">
+    <div class="demo-inner">
+      <ChatDemo
+        title="So beantwortet KI Anfragen deiner Gäste"
+        messages={[
+          {role: 'user', text: 'Habt ihr heute Abend noch Tische frei?'},
+          {role: 'bot', text: 'Ja, heute Abend haben wir noch Tische verfügbar! Für wie viele Personen darf ich reservieren und um wie viel Uhr?'},
+          {role: 'user', text: 'Für 4 Personen um 19:30 Uhr.'},
+          {role: 'bot', text: 'Perfekt – 4 Personen um 19:30 Uhr ist reserviert! Darf ich noch einen Namen für die Reservierung notieren?'}
+        ]}
+      />
+    </div>
+  </section>
+
+  <!-- 4. FÜR WEN -->
+  <section class="fuer-wen">
+    <div class="fuer-wen-inner">
+      <h2>Für jeden Gastronomiebetrieb der Zeit sparen will.</h2>
+      <ul class="fuer-wen-liste">
+        <li><span class="haekchen">✓</span> Restaurants &amp; Bistros</li>
+        <li><span class="haekchen">✓</span> Cafés &amp; Bars</li>
+        <li><span class="haekchen">✓</span> Catering-Unternehmen</li>
+        <li><span class="haekchen">✓</span> Hotels &amp; Pensionen</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. CTA -->
+  <Cta />
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    background: var(--surface);
+    padding-top: 9rem;
+    padding-bottom: 5rem;
+    text-align: center;
+  }
+
+  .hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary);
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    line-height: 1.2;
+    color: var(--on-surface);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--on-surface-muted);
+    margin-bottom: 2rem;
+    max-width: 54ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: var(--on-secondary);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.88; }
+
+  /* Was KI macht */
+  .was-ki-macht {
+    background: var(--surface-low);
+    padding: 5rem 0;
+  }
+
+  .was-ki-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .was-ki-macht h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--on-surface);
+    margin-bottom: 3rem;
+    line-height: 1.25;
+  }
+
+  .ki-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .ki-punkt {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .ki-icon {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .ki-punkt h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 0.4rem;
+  }
+
+  .ki-punkt p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+  }
+
+  /* Demo */
+  .demo-section {
+    background: var(--surface);
+    padding: 0;
+  }
+
+  .demo-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  /* Für wen */
+  .fuer-wen {
+    background: var(--primary);
+    padding: 5rem 0;
+    color: white;
+  }
+
+  .fuer-wen-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .fuer-wen h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: white;
+    margin-bottom: 2.5rem;
+    line-height: 1.3;
+  }
+
+  .fuer-wen-liste {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .fuer-wen-liste li {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .haekchen {
+    color: #34d399;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 767px) {
+    .hero {
+      padding-top: 6.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .ki-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

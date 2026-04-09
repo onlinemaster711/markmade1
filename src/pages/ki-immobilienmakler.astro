@@ -1,0 +1,309 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ChatDemo from '../components/ChatDemo.astro';
+import Cta from '../components/Cta.astro';
+---
+
+<BaseLayout
+  title="KI für Immobilienmakler – Exposés, Anfragen & Besichtigungen | MarkMade"
+  description="KI erstellt Exposés automatisch, qualifiziert Anfragen vor und bucht Besichtigungstermine. Für Immobilienmakler die Zeit sparen wollen."
+>
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">KI für Immobilienmakler</p>
+      <h1>Mehr Abschlüsse. Weniger Papierkram.</h1>
+      <p class="hero-text">
+        KI erstellt professionelle Exposés, beantwortet Interessentenanfragen automatisch und bucht Besichtigungstermine – damit du dich auf den Verkauf konzentrierst.
+      </p>
+      <a href="https://calendly.com/onlinemaster711/new-meeting" class="btn-primary" target="_blank" rel="noopener noreferrer">Kostenloses Erstgespräch</a>
+    </div>
+  </section>
+
+  <!-- 2. WAS KI KONKRET MACHT -->
+  <section class="was-ki-macht">
+    <div class="was-ki-inner">
+      <h2>Was KI konkret für dein Maklerbüro übernimmt.</h2>
+      <div class="ki-grid">
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">📄</span>
+          <div>
+            <h3>Exposés automatisch erstellen</h3>
+            <p>Aus Eckdaten wird ein professionelles Exposé – schnell, konsistent, überzeugend.</p>
+          </div>
+        </div>
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">💬</span>
+          <div>
+            <h3>Anfragen vorqualifizieren</h3>
+            <p>Nur ernsthafte Interessenten kommen zu dir – unpassende Anfragen werden automatisch aussortiert.</p>
+          </div>
+        </div>
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">📅</span>
+          <div>
+            <h3>Besichtigungen buchen</h3>
+            <p>Interessenten buchen direkt in deinen Kalender – ohne Telefonate, ohne Hin-und-Her.</p>
+          </div>
+        </div>
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">✉️</span>
+          <div>
+            <h3>Follow-up automatisieren</h3>
+            <p>Nach der Besichtigung automatisch nachhaken – kein Interessent geht verloren.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. CHATDEMO -->
+  <section class="demo-section">
+    <div class="demo-inner">
+      <ChatDemo
+        title="So qualifiziert KI deine Interessenten vor"
+        messages={[
+          {role: 'user', text: 'Ich interessiere mich für die Wohnung in Stuttgart Mitte.'},
+          {role: 'bot', text: 'Sehr gerne! Die Wohnung hat 85m², 3 Zimmer und ist ab Juni verfügbar. Suchen Sie zur Miete oder zum Kauf?'},
+          {role: 'user', text: 'Zum Kauf. Was ist der Preis?'},
+          {role: 'bot', text: 'Der Kaufpreis beträgt 485.000 € inkl. Stellplatz. Soll ich direkt einen Besichtigungstermin für Sie reservieren?'}
+        ]}
+      />
+    </div>
+  </section>
+
+  <!-- 4. WARUM DAS WICHTIG IST -->
+  <section class="warum">
+    <div class="warum-inner">
+      <h2>Jede verpasste Anfrage ist ein verlorener Auftrag.</h2>
+      <p class="warum-text">Interessenten suchen oft abends oder am Wochenende. Ein KI-Assistent beantwortet sofort – bevor der Interessent zur Konkurrenz geht.</p>
+      <div class="punkte-grid">
+        <div class="punkt fade-in">
+          <span class="punkt-icon">🕐</span>
+          <div>
+            <h3>24/7 erreichbar</h3>
+            <p>Auch nachts und am Wochenende – kein Interessent wartet vergeblich.</p>
+          </div>
+        </div>
+        <div class="punkt fade-in">
+          <span class="punkt-icon">⚡</span>
+          <div>
+            <h3>Sofortige Antwort</h3>
+            <p>Kein Warten, kein Verlust – Interessenten bekommen sofort was sie brauchen.</p>
+          </div>
+        </div>
+        <div class="punkt fade-in">
+          <span class="punkt-icon">🎯</span>
+          <div>
+            <h3>Vorqualifiziert</h3>
+            <p>Nur ernsthafte Käufer kommen zu dir – du verschwendest keine Zeit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. CTA -->
+  <Cta />
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    background: var(--surface);
+    padding-top: 9rem;
+    padding-bottom: 5rem;
+    text-align: center;
+  }
+
+  .hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary);
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    line-height: 1.2;
+    color: var(--on-surface);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--on-surface-muted);
+    margin-bottom: 2rem;
+    max-width: 54ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: var(--on-secondary);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.88; }
+
+  /* Was KI macht */
+  .was-ki-macht {
+    background: var(--surface-low);
+    padding: 5rem 0;
+  }
+
+  .was-ki-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .was-ki-macht h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--on-surface);
+    margin-bottom: 3rem;
+    line-height: 1.25;
+  }
+
+  .ki-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .ki-punkt {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .ki-icon {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .ki-punkt h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 0.4rem;
+  }
+
+  .ki-punkt p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+  }
+
+  /* Demo */
+  .demo-section {
+    background: var(--surface);
+    padding: 0;
+  }
+
+  .demo-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  /* Warum */
+  .warum {
+    background: var(--primary);
+    padding: 5rem 0;
+    color: white;
+  }
+
+  .warum-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .warum h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: white;
+    margin-bottom: 1.25rem;
+    line-height: 1.3;
+  }
+
+  .warum-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 60ch;
+    margin: 0 auto 3rem;
+  }
+
+  .punkte-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: left;
+  }
+
+  .punkt {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .punkt-icon {
+    font-size: 1.75rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .punkt h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.4rem;
+  }
+
+  .punkt p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  /* Responsive */
+  @media (max-width: 767px) {
+    .hero {
+      padding-top: 6.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .ki-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .punkte-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
