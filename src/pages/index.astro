@@ -53,9 +53,11 @@ import Cta from '../components/Cta.astro';
 
         <!-- Rechte Spalte (4/12) -->
         <div class="hero-right">
-          <div class="hero-image-placeholder">
-            <span class="hero-image-label">Bild folgt</span>
-          </div>
+          <img
+            src="/hero-main.webp"
+            alt="KI-Agentur MarkMade – KI-Lösungen für kleine Betriebe"
+            style="width:100%; height:100%; object-fit:cover; border-radius:0.5rem; display:block;"
+          />
         </div>
 
       </div>
@@ -173,6 +175,7 @@ import Cta from '../components/Cta.astro';
       <div class="branchen-grid">
 
         <div class="branche-karte branche-handwerk">
+          <img src="/branche-handwerk.webp" alt="KI für Handwerksbetriebe" class="branche-bg-img" />
           <div class="branche-overlay"></div>
           <div class="branche-inhalt">
             <h3>Handwerksbetriebe</h3>
@@ -182,6 +185,7 @@ import Cta from '../components/Cta.astro';
         </div>
 
         <div class="branche-karte branche-aerzte">
+          <img src="/branche-aerzte.webp" alt="KI für Arztpraxen" class="branche-bg-img" />
           <div class="branche-overlay"></div>
           <div class="branche-inhalt">
             <h3>Arztpraxen</h3>
@@ -191,6 +195,7 @@ import Cta from '../components/Cta.astro';
         </div>
 
         <div class="branche-karte branche-restaurants">
+          <img src="/branche-restaurant.webp" alt="KI für Restaurants" class="branche-bg-img" />
           <div class="branche-overlay"></div>
           <div class="branche-inhalt">
             <h3>Restaurants</h3>
@@ -199,6 +204,7 @@ import Cta from '../components/Cta.astro';
         </div>
 
         <div class="branche-karte branche-kanzleien">
+          <img src="/branche-kanzlei.webp" alt="KI für Kanzleien" class="branche-bg-img" />
           <div class="branche-overlay"></div>
           <div class="branche-inhalt">
             <h3>Kanzleien</h3>
@@ -207,6 +213,7 @@ import Cta from '../components/Cta.astro';
         </div>
 
         <div class="branche-karte branche-immobilien">
+          <img src="/branche-immobilien.webp" alt="KI für Immobilienmakler" class="branche-bg-img" />
           <div class="branche-overlay"></div>
           <div class="branche-inhalt">
             <h3>Immobilienmakler</h3>
@@ -675,16 +682,28 @@ import Cta from '../components/Cta.astro';
     cursor: default;
   }
 
-  .branche-handwerk  { background: linear-gradient(135deg, #3f4530 0%, #565d46 100%); }
-  .branche-aerzte    { background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%); }
-  .branche-restaurants { background: linear-gradient(135deg, #742a2a 0%, #9b2c2c 100%); }
-  .branche-kanzleien { background: linear-gradient(135deg, #1a365d 0%, #2a4365 100%); }
-  .branche-immobilien { background: linear-gradient(135deg, #22543d 0%, #276749 100%); }
+  /* Fallback-Farben falls Bilder nicht geladen */
+  .branche-handwerk    { background: #3f4530; }
+  .branche-aerzte      { background: #2d3748; }
+  .branche-restaurants { background: #742a2a; }
+  .branche-kanzleien   { background: #1a365d; }
+  .branche-immobilien  { background: #22543d; }
+
+  /* Hintergrundbild */
+  .branche-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
 
   /* Overlay */
   .branche-overlay {
     position: absolute;
     inset: 0;
+    z-index: 1;
     background: linear-gradient(
       to top,
       rgba(0, 0, 0, 0.75) 0%,
@@ -710,7 +729,7 @@ import Cta from '../components/Cta.astro';
     left: 0;
     right: 0;
     padding: 2rem;
-    z-index: 1;
+    z-index: 2;
   }
 
   .branche-inhalt h3 {
