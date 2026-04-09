@@ -125,11 +125,6 @@ import Cta from '../components/Cta.astro';
         </div>
       </a>
 
-      <div class="bo-hinweis">
-        <p class="bo-hinweis-text">Deine Branche nicht dabei – oder du weißt nicht wo du anfangen sollst?</p>
-        <a href="/ratgeber/ki-im-unternehmen-nutzen" class="bo-hinweis-link">Ratgeber lesen: Wie du herausfindest was KI für dich tun kann →</a>
-      </div>
-
     </div>
   </section>
 
@@ -156,6 +151,14 @@ import Cta from '../components/Cta.astro';
 
   <!-- 6. BEWEIS -->
   <Beweis />
+
+  <!-- VORSPRUNG-STREIFEN -->
+  <section class="vorsprung">
+    <div class="vorsprung-inner">
+      <p class="vorsprung-headline">Sei deiner Konkurrenz einen Schritt voraus.</p>
+      <p class="vorsprung-sub">KI gibt dir den Vorsprung – heute, nicht morgen.</p>
+    </div>
+  </section>
 
   <!-- 7. CTA CUSTOM -->
   <section class="cta-custom">
@@ -771,6 +774,36 @@ import Cta from '../components/Cta.astro';
     font-size: 0.9375rem;
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+  }
+
+  /* ── VORSPRUNG ── */
+  .vorsprung {
+    background: var(--surface-low);
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  .vorsprung-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .vorsprung-headline {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 0;
+  }
+
+  .vorsprung-sub {
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 0.9375rem;
+    color: var(--on-surface-muted);
     margin: 0;
   }
 
