@@ -1,0 +1,348 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ChatDemo from '../components/ChatDemo.astro';
+import Cta from '../components/Cta.astro';
+---
+
+<BaseLayout
+  title="KI-Telefonassistent – Anrufe automatisch entgegennehmen | MarkMade"
+  description="Dein KI-Empfang nimmt Anrufe rund um die Uhr entgegen, beantwortet Fragen und bucht Termine direkt in deinen Kalender. Kein verpasster Anruf mehr."
+>
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">KI-Telefonassistent &amp; Empfangsdienst</p>
+      <h1>Kein Anruf bleibt unbeantwortet.<br />Auch nachts.</h1>
+      <p class="hero-text">
+        Dein KI-Assistent nimmt Anrufe entgegen, beantwortet Fragen und bucht Termine – rund um die Uhr, auch am Wochenende. Du verpasst keinen potenziellen Kunden mehr.
+      </p>
+      <a href="https://calendly.com/onlinemaster711/new-meeting" class="btn-primary" target="_blank" rel="noopener noreferrer">Kostenloses Erstgespräch</a>
+    </div>
+  </section>
+
+  <!-- 2. DAS PROBLEM -->
+  <section class="problem">
+    <div class="problem-inner">
+      <h2>Wie viele Anrufe verpasst du täglich?</h2>
+      <div class="pills">
+        <span class="pill">Während der Arbeit</span>
+        <span class="pill">Mittags</span>
+        <span class="pill">Nach Feierabend</span>
+      </div>
+      <p class="problem-text">Jeder verpasste Anruf ist ein potenzieller Kunde der zur Konkurrenz geht. Ein KI-Empfang löst das – ohne Personalkosten.</p>
+    </div>
+  </section>
+
+  <!-- 3. WAS DER ASSISTENT MACHT -->
+  <section class="was-ki-macht">
+    <div class="was-ki-inner">
+      <h2>Was dein KI-Telefonassistent übernimmt.</h2>
+      <div class="ki-grid">
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">📞</span>
+          <div>
+            <h3>Anrufe entgegennehmen</h3>
+            <p>24/7 erreichbar – auch wenn du auf der Baustelle bist, in der Behandlung oder einfach frei hast.</p>
+          </div>
+        </div>
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">❓</span>
+          <div>
+            <h3>Fragen beantworten</h3>
+            <p>Öffnungszeiten, Preise, Ablauf – dein KI-Assistent kennt deinen Betrieb und antwortet korrekt.</p>
+          </div>
+        </div>
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">📅</span>
+          <div>
+            <h3>Termine buchen</h3>
+            <p>Direkt in deinen Kalender – ohne dein Zutun. Der Anrufer bekommt sofort eine Bestätigung.</p>
+          </div>
+        </div>
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">📋</span>
+          <div>
+            <h3>Weiterleiten</h3>
+            <p>Dringende Anliegen kommen sofort zu dir – alles andere wird sauber dokumentiert und weitergeleitet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CHATDEMO -->
+  <section class="demo-section">
+    <div class="demo-inner">
+      <ChatDemo
+        title="So klingt dein KI-Empfang"
+        messages={[
+          {role: 'user', text: 'Guten Tag, ich würde gerne einen Termin vereinbaren.'},
+          {role: 'bot', text: 'Guten Tag! Gerne. Wann passt es Ihnen – haben Sie einen bevorzugten Tag oder eine Uhrzeit?'},
+          {role: 'user', text: 'Am besten Donnerstag Vormittag.'},
+          {role: 'bot', text: 'Donnerstag um 10:00 Uhr wäre frei. Darf ich kurz Ihren Namen und Ihr Anliegen notieren?'}
+        ]}
+      />
+    </div>
+  </section>
+
+  <!-- 5. FÜR WEN -->
+  <section class="fuer-wen">
+    <div class="fuer-wen-inner">
+      <h2>Ideal für lokale Dienstleister die keine Anrufe verpassen wollen.</h2>
+      <div class="fuer-wen-grid">
+        <div class="fuer-wen-karte fade-in">
+          <span class="fw-icon">🦷</span>
+          <p>Zahnarztpraxen &amp; MedSpas</p>
+        </div>
+        <div class="fuer-wen-karte fade-in">
+          <span class="fw-icon">🔧</span>
+          <p>Klempner &amp; Handwerksbetriebe</p>
+        </div>
+        <div class="fuer-wen-karte fade-in">
+          <span class="fw-icon">💆</span>
+          <p>Physiotherapeuten &amp; Praxen</p>
+        </div>
+        <div class="fuer-wen-karte fade-in">
+          <span class="fw-icon">🏠</span>
+          <p>Immobilienmakler &amp; Berater</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CTA -->
+  <Cta />
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    background: var(--surface);
+    padding-top: 9rem;
+    padding-bottom: 5rem;
+    text-align: center;
+  }
+
+  .hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary);
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    line-height: 1.2;
+    color: var(--on-surface);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--on-surface-muted);
+    margin-bottom: 2rem;
+    max-width: 54ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: var(--on-secondary);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.88; }
+
+  /* Problem */
+  .problem {
+    background: var(--primary);
+    padding: 5rem 0;
+    text-align: center;
+    color: white;
+  }
+
+  .problem-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .problem h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.375rem, 3vw, 2rem);
+    line-height: 1.3;
+    color: white;
+    margin-bottom: 2rem;
+  }
+
+  .pills {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .pill {
+    padding: 0.5rem 1.25rem;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border-radius: 2rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+  }
+
+  .problem-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  /* Was KI macht */
+  .was-ki-macht {
+    background: var(--surface-low);
+    padding: 5rem 0;
+  }
+
+  .was-ki-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .was-ki-macht h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--on-surface);
+    margin-bottom: 3rem;
+    line-height: 1.25;
+  }
+
+  .ki-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .ki-punkt {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .ki-icon {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .ki-punkt h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 0.4rem;
+  }
+
+  .ki-punkt p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+  }
+
+  /* Demo */
+  .demo-section {
+    background: var(--surface);
+    padding: 0;
+  }
+
+  .demo-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  /* Für wen */
+  .fuer-wen {
+    background: var(--surface);
+    padding: 5rem 0;
+  }
+
+  .fuer-wen-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .fuer-wen h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--on-surface);
+    margin-bottom: 3rem;
+    line-height: 1.3;
+  }
+
+  .fuer-wen-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+
+  .fuer-wen-karte {
+    background: var(--surface-low);
+    border: 1px solid var(--outline-variant);
+    border-radius: 1rem;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .fw-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  .fuer-wen-karte p {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--on-surface);
+    line-height: 1.4;
+  }
+
+  /* Responsive */
+  @media (max-width: 767px) {
+    .hero {
+      padding-top: 6.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .ki-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .fuer-wen-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
