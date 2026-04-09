@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ChatDemo from '../components/ChatDemo.astro';
 import Cta from '../components/Cta.astro';
 ---
 
@@ -71,18 +70,75 @@ import Cta from '../components/Cta.astro';
     </div>
   </section>
 
-  <!-- 4. CHATDEMO -->
-  <section class="demo-section">
-    <div class="demo-inner">
-      <ChatDemo
-        title="So beantwortet KI deine E-Mails"
-        messages={[
-          {role: 'user', text: 'Was kostet eine Inspektion bei euch?'},
-          {role: 'bot', text: 'Eine Standardinspektion kostet bei uns 89 € inkl. MwSt. Termine gibt es dienstags und donnerstags. Soll ich direkt einen Slot reservieren?'},
-          {role: 'user', text: 'Habt ihr auch samstags geöffnet?'},
-          {role: 'bot', text: 'Ja, samstags sind wir von 9 bis 13 Uhr für Sie da – ohne Voranmeldung für kleine Reparaturen, für größere Arbeiten bitte kurz Termin buchen.'}
-        ]}
-      />
+  <!-- 4. E-MAIL DEMO -->
+  <section class="email-demo-section">
+    <div class="email-demo-wrap">
+      <p class="email-demo-label">So funktioniert KI-E-Mail-Automatisierung</p>
+
+      <div class="email-demo-client" id="email-demo">
+
+        <!-- Client header -->
+        <div class="email-demo-header">
+          <div class="email-demo-dots">
+            <span class="ed-dot ed-dot--red"></span>
+            <span class="ed-dot ed-dot--yellow"></span>
+            <span class="ed-dot ed-dot--green"></span>
+          </div>
+          <span class="email-demo-title">Posteingang</span>
+          <span></span>
+        </div>
+
+        <!-- E-Mail 1: Eingehend -->
+        <div class="email-demo-mail" id="ed-mail-1">
+          <div class="ed-mail-meta">
+            <div class="ed-mail-fields">
+              <div class="ed-field"><span class="ed-field-label">Von:</span><span class="ed-field-val">kunde@beispiel.de</span></div>
+              <div class="ed-field"><span class="ed-field-label">An:</span><span class="ed-field-val">info@deinbetrieb.de</span></div>
+              <div class="ed-field"><span class="ed-field-label">Betreff:</span><span class="ed-field-val ed-subject">Anfrage: Termin für Inspektion</span></div>
+              <div class="ed-field"><span class="ed-field-label">Datum:</span><span class="ed-field-val">Heute, 18:43 Uhr</span></div>
+            </div>
+            <span class="ed-badge ed-badge--incoming">KI antwortet automatisch</span>
+          </div>
+          <div class="ed-mail-body">
+            <p>Guten Tag,</p>
+            <p>ich würde gerne einen Termin für eine Standardinspektion vereinbaren. Was sind Ihre Preise und haben Sie nächste Woche Termine verfügbar?</p>
+            <p>Mit freundlichen Grüßen<br />Thomas Müller</p>
+          </div>
+        </div>
+
+        <!-- Trennlinie -->
+        <div class="ed-divider" id="ed-divider">
+          <div class="ed-divider-line"></div>
+          <span class="ed-divider-text">KI erkennt die Anfrage und antwortet in Sekunden ↓</span>
+          <div class="ed-divider-line"></div>
+        </div>
+
+        <!-- E-Mail 2: KI-Antwort -->
+        <div class="email-demo-mail email-demo-mail--reply" id="ed-mail-2">
+          <div class="ed-mail-meta">
+            <div class="ed-mail-fields">
+              <div class="ed-field"><span class="ed-field-label">Von:</span><span class="ed-field-val">info@deinbetrieb.de <span class="ed-ki-tag">(KI-Assistent)</span></span></div>
+              <div class="ed-field"><span class="ed-field-label">An:</span><span class="ed-field-val">kunde@beispiel.de</span></div>
+              <div class="ed-field"><span class="ed-field-label">Betreff:</span><span class="ed-field-val ed-subject">Re: Anfrage: Termin für Inspektion</span></div>
+              <div class="ed-field"><span class="ed-field-label">Datum:</span><span class="ed-field-val">Heute, 18:43 Uhr</span></div>
+            </div>
+            <span class="ed-badge ed-badge--reply">Automatisch beantwortet</span>
+          </div>
+          <div class="ed-mail-body">
+            <p>Guten Tag Herr Müller,</p>
+            <p>vielen Dank für Ihre Anfrage.</p>
+            <p>Eine Standardinspektion kostet bei uns 89 € inkl. MwSt. Für nächste Woche haben wir noch folgende Termine verfügbar:</p>
+            <ul>
+              <li>Dienstag, 15. April – 9:00 oder 14:00 Uhr</li>
+              <li>Donnerstag, 17. April – 10:00 Uhr</li>
+            </ul>
+            <p>Sie können Ihren Wunschtermin direkt online buchen unter: <a href="https://calendly.com/onlinemaster711/new-meeting" class="ed-inline-link" target="_blank">Termin buchen →</a></p>
+            <p>Bei weiteren Fragen stehe ich gerne zur Verfügung.</p>
+            <p>Mit freundlichen Grüßen<br />Ihr Team von Musterbetrieb</p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -90,6 +146,220 @@ import Cta from '../components/Cta.astro';
   <Cta />
 
 </BaseLayout>
+
+<style is:global>
+  /* ── EMAIL DEMO ── */
+  .email-demo-section {
+    background: var(--surface);
+    padding: 4rem 0 5rem;
+  }
+
+  .email-demo-wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .email-demo-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary);
+    margin-bottom: 1.25rem;
+    text-align: center;
+  }
+
+  .email-demo-client {
+    background: white;
+    border: 1px solid var(--outline-variant);
+    border-radius: 1rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    font-family: 'Manrope', system-ui, sans-serif;
+  }
+
+  /* Client header */
+  .email-demo-header {
+    background: var(--surface-low);
+    padding: 0.625rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--outline-variant);
+  }
+
+  .email-demo-dots {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .ed-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .ed-dot--red    { background: #ff5f57; }
+  .ed-dot--yellow { background: #ffbd2e; }
+  .ed-dot--green  { background: #28c840; }
+
+  .email-demo-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--on-surface-muted);
+  }
+
+  /* Mail */
+  .email-demo-mail {
+    padding: 1.5rem;
+    background: white;
+    border-bottom: 1px solid var(--outline-variant);
+  }
+
+  .email-demo-mail--reply {
+    background: #f5f3f0;
+  }
+
+  .ed-mail-meta {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--outline-variant);
+  }
+
+  .ed-mail-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+  }
+
+  .ed-field {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .ed-field-label {
+    color: var(--on-surface-muted);
+    font-weight: 600;
+    flex-shrink: 0;
+    width: 52px;
+  }
+
+  .ed-field-val {
+    color: var(--on-surface);
+  }
+
+  .ed-subject {
+    font-weight: 600;
+  }
+
+  .ed-ki-tag {
+    color: var(--secondary);
+    font-size: 11px;
+  }
+
+  .ed-badge {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 0.25rem 0.625rem;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .ed-badge--incoming {
+    background: rgba(63, 69, 48, 0.1);
+    color: var(--primary);
+  }
+
+  .ed-badge--reply {
+    background: rgba(184, 0, 73, 0.1);
+    color: var(--secondary);
+  }
+
+  .ed-mail-body {
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: var(--on-surface);
+  }
+
+  .ed-mail-body p {
+    margin: 0 0 0.625rem;
+  }
+
+  .ed-mail-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ed-mail-body ul {
+    margin: 0 0 0.625rem 1.25rem;
+    padding: 0;
+  }
+
+  .ed-mail-body li {
+    margin-bottom: 0.25rem;
+  }
+
+  .ed-inline-link {
+    color: var(--secondary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .ed-inline-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Divider */
+  .ed-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: white;
+    border-bottom: 1px solid var(--outline-variant);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .ed-divider.ed-visible {
+    opacity: 1;
+  }
+
+  .ed-divider-line {
+    flex: 1;
+    height: 1px;
+    background: var(--outline-variant);
+  }
+
+  .ed-divider-text {
+    font-size: 12px;
+    color: var(--on-surface-muted);
+    white-space: nowrap;
+    font-style: italic;
+  }
+
+  /* Mail 2 animation */
+  #ed-mail-2 {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  #ed-mail-2.ed-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
 
 <style>
   /* Hero */
@@ -244,18 +514,6 @@ import Cta from '../components/Cta.astro';
     color: var(--on-surface-muted);
   }
 
-  /* Demo */
-  .demo-section {
-    background: var(--surface);
-    padding: 0;
-  }
-
-  .demo-inner {
-    max-width: 960px;
-    margin: 0 auto;
-  }
-
-  /* Responsive */
   @media (max-width: 767px) {
     .hero {
       padding-top: 6.5rem;
@@ -267,3 +525,32 @@ import Cta from '../components/Cta.astro';
     }
   }
 </style>
+
+<script>
+  (function() {
+    var divider = document.getElementById('ed-divider');
+    var mail2   = document.getElementById('ed-mail-2');
+    var timer: ReturnType<typeof setTimeout>;
+
+    function runSequence() {
+      // Reset
+      divider?.classList.remove('ed-visible');
+      mail2?.classList.remove('ed-visible');
+
+      // Step 1: divider after 1.5s
+      timer = setTimeout(function() {
+        divider?.classList.add('ed-visible');
+
+        // Step 2: mail 2 after 2.5s total
+        timer = setTimeout(function() {
+          mail2?.classList.add('ed-visible');
+
+          // Step 3: loop after 6s total
+          timer = setTimeout(runSequence, 6000);
+        }, 1000);
+      }, 1500);
+    }
+
+    runSequence();
+  })();
+</script>
