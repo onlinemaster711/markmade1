@@ -1,0 +1,323 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Cta from '../components/Cta.astro';
+---
+
+<BaseLayout
+  title="KI Automatisierung für KMU – Prozesse automatisieren | MarkMade"
+  description="KI automatisiert wiederkehrende Aufgaben in kleinen und mittelständischen Betrieben. Weniger Papierkram, weniger manuelle Arbeit, mehr Zeit für das Wesentliche."
+>
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">KI-Automatisierung für KMU</p>
+      <h1>Weniger Papierkram.<br />Mehr Zeit für dein Handwerk.</h1>
+      <p class="hero-text">
+        Wiederkehrende Aufgaben kosten täglich wertvolle Zeit. KI übernimmt was immer gleich ist – damit du dich auf das konzentrierst was wirklich wichtig ist.
+      </p>
+      <a href="https://calendly.com/onlinemaster711/new-meeting" class="btn-primary" target="_blank" rel="noopener noreferrer">Kostenloses Erstgespräch</a>
+    </div>
+  </section>
+
+  <!-- 2. WAS AUTOMATISIERT WERDEN KANN -->
+  <section class="was-ki-kann">
+    <div class="was-ki-inner">
+      <h2>Was KI in deinem Betrieb übernehmen kann.</h2>
+      <div class="ki-grid">
+
+        <div class="ki-karte fade-in">
+          <span class="ki-icon">📧</span>
+          <h3>E-Mail-Antworten</h3>
+          <p>Standardanfragen automatisch beantworten – ohne dass du jeden Morgen das Postfach leeren musst.</p>
+        </div>
+
+        <div class="ki-karte fade-in">
+          <span class="ki-icon">📅</span>
+          <h3>Terminbuchung</h3>
+          <p>Kunden buchen direkt in deinen Kalender – kein Telefonieren, kein Hin-und-Her.</p>
+        </div>
+
+        <div class="ki-karte fade-in">
+          <span class="ki-icon">📄</span>
+          <h3>Angebote erstellen</h3>
+          <p>Vorlagen automatisch befüllen – du prüfst kurz und schickst ab. Fertig.</p>
+        </div>
+
+        <div class="ki-karte fade-in">
+          <span class="ki-icon">💬</span>
+          <h3>Kundenkommunikation</h3>
+          <p>Chatbot beantwortet Fragen rund um die Uhr – auch abends, auch am Wochenende.</p>
+        </div>
+
+        <div class="ki-karte fade-in">
+          <span class="ki-icon">📊</span>
+          <h3>Auswertungen</h3>
+          <p>Kennzahlen automatisch zusammenfassen – du siehst auf einen Blick wie es läuft.</p>
+        </div>
+
+        <div class="ki-karte fade-in">
+          <span class="ki-icon">🔔</span>
+          <h3>Erinnerungen</h3>
+          <p>Kunden automatisch an Termine erinnern – weniger No-Shows, weniger Aufwand.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WICHTIGER HINWEIS -->
+  <section class="hinweis">
+    <div class="hinweis-inner">
+      <h2>KI automatisiert – du entscheidest.</h2>
+      <p>Wir automatisieren nur was wirklich Sinn ergibt. Kein blindes Delegieren an Maschinen. Jede Lösung wird mit dir abgestimmt und kann jederzeit angepasst werden.</p>
+    </div>
+  </section>
+
+  <!-- 4. FÜR WEN DAS PASST -->
+  <section class="beispiele">
+    <div class="beispiele-inner">
+      <h2>Konkrete Beispiele aus der Praxis.</h2>
+      <div class="beispiele-grid">
+
+        <div class="beispiel-karte fade-in">
+          <p class="branche">🔧 Handwerksbetrieb</p>
+          <h3>Terminbuchung + Anfragefilterung</h3>
+          <p>Kunden buchen direkt, unpassende Anfragen werden automatisch aussortiert. Der Handwerker sieht nur was wirklich passt.</p>
+        </div>
+
+        <div class="beispiel-karte fade-in">
+          <p class="branche">🏥 Arztpraxis</p>
+          <h3>Patientenkommunikation + Terminreminder</h3>
+          <p>Patienten bekommen automatische Antworten auf Standardfragen und werden einen Tag vorher an ihren Termin erinnert.</p>
+        </div>
+
+        <div class="beispiel-karte fade-in">
+          <p class="branche">💼 Selbstständige</p>
+          <h3>E-Mail-Automatisierung + Content-Erstellung</h3>
+          <p>Anfragen werden automatisch beantwortet, Social-Media-Posts werden wöchentlich von KI vorbereitet und zur Freigabe vorgelegt.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. CTA -->
+  <Cta />
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    background: var(--surface);
+    padding-top: 9rem;
+    padding-bottom: 5rem;
+    text-align: center;
+  }
+
+  .hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary);
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    line-height: 1.2;
+    color: var(--on-surface);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--on-surface-muted);
+    margin-bottom: 2rem;
+    max-width: 54ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: var(--on-secondary);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.88; }
+
+  /* Was KI kann */
+  .was-ki-kann {
+    background: var(--surface-low);
+    padding: 5rem 0;
+  }
+
+  .was-ki-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .was-ki-kann h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--on-surface);
+    margin-bottom: 3rem;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  .ki-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .ki-karte {
+    background: white;
+    border: 1px solid var(--outline-variant);
+    border-radius: 1rem;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .ki-icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .ki-karte h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--on-surface);
+  }
+
+  .ki-karte p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+  }
+
+  /* Hinweis */
+  .hinweis {
+    background: var(--primary);
+    padding: 5rem 0;
+    text-align: center;
+    color: white;
+  }
+
+  .hinweis-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .hinweis h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .hinweis p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  /* Beispiele */
+  .beispiele {
+    background: var(--surface);
+    padding: 5rem 0;
+  }
+
+  .beispiele-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .beispiele h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--on-surface);
+    margin-bottom: 3rem;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  .beispiele-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .beispiel-karte {
+    background: var(--surface-low);
+    border: 1px solid var(--outline-variant);
+    border-radius: 1rem;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .branche {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--secondary);
+  }
+
+  .beispiel-karte h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--on-surface);
+  }
+
+  .beispiel-karte p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .ki-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hero {
+      padding-top: 6.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .ki-grid,
+    .beispiele-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

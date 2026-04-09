@@ -1,0 +1,353 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Cta from '../components/Cta.astro';
+---
+
+<BaseLayout
+  title="Social Media mit KI – Posts & Skripte automatisch erstellen | MarkMade"
+  description="KI erstellt Social Media Posts, Skripte und Kampagnen für deinen Betrieb. Du genehmigst – wir liefern. Für kleine und mittelständische Unternehmen."
+>
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Social Media mit KI</p>
+      <h1>Mehr Präsenz. Weniger Aufwand.</h1>
+      <p class="hero-text">
+        KI erstellt Posts, Skripte und Kampagnen die zu deinem Betrieb passen. Du genehmigst in Minuten was sonst Stunden dauert.
+      </p>
+      <a href="https://calendly.com/onlinemaster711/new-meeting" class="btn-primary" target="_blank" rel="noopener noreferrer">Kostenloses Erstgespräch</a>
+    </div>
+  </section>
+
+  <!-- 2. WAS KI KONKRET MACHT -->
+  <section class="was-ki-macht">
+    <div class="was-ki-inner">
+      <h2>Was KI konkret für dich übernimmt.</h2>
+      <div class="ki-grid">
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">📝</span>
+          <div>
+            <h3>Post-Texte</h3>
+            <p>KI schreibt Beiträge für Instagram, Facebook und LinkedIn – in deiner Sprache, für deine Zielgruppe.</p>
+          </div>
+        </div>
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">🎬</span>
+          <div>
+            <h3>Video-Skripte</h3>
+            <p>Strukturierte Skripte für Reels, TikTok und YouTube – damit du weißt was du sagen willst.</p>
+          </div>
+        </div>
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">📅</span>
+          <div>
+            <h3>Redaktionsplan</h3>
+            <p>KI plant Themen und Zeitpunkte automatisch – ein ganzer Monat auf einmal, fertig zum Posten.</p>
+          </div>
+        </div>
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">🎯</span>
+          <div>
+            <h3>Zielgruppen-Texte</h3>
+            <p>Inhalte die genau deine Kunden ansprechen – nicht generisch, sondern auf deinen Betrieb zugeschnitten.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ABLAUF -->
+  <section class="ablauf">
+    <div class="ablauf-inner">
+      <h2>So funktioniert es in der Praxis.</h2>
+      <div class="schritte-grid">
+        <div class="schritt fade-in">
+          <div class="schritt-nr">1</div>
+          <h3>Du sagst was du machst</h3>
+          <p>Ein kurzes Gespräch – wer du bist, wen du erreichen willst und was dir wichtig ist.</p>
+        </div>
+        <div class="schritt fade-in">
+          <div class="schritt-nr">2</div>
+          <h3>KI erstellt einen Monat Content</h3>
+          <p>Posts, Skripte und Redaktionsplan – alles auf einmal, bereit zur Freigabe.</p>
+        </div>
+        <div class="schritt fade-in">
+          <div class="schritt-nr">3</div>
+          <h3>Du genehmigst, wir liefern</h3>
+          <p>Wir veröffentlichen für dich oder liefern alles zur Weiterverwendung – wie du es willst.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. FÜR WEN -->
+  <section class="fuer-wen">
+    <div class="fuer-wen-inner">
+      <h2>Für jeden der sichtbar sein will – ohne täglich Zeit zu verlieren.</h2>
+      <ul class="fuer-wen-liste">
+        <li><span class="haekchen">✓</span> Handwerker die Projekte zeigen wollen</li>
+        <li><span class="haekchen">✓</span> Praxen die Vertrauen aufbauen wollen</li>
+        <li><span class="haekchen">✓</span> Coaches die Expertise teilen wollen</li>
+        <li><span class="haekchen">✓</span> Händler die Angebote bewerben wollen</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. CTA -->
+  <Cta />
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    background: var(--surface);
+    padding-top: 9rem;
+    padding-bottom: 5rem;
+    text-align: center;
+  }
+
+  .hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary);
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    line-height: 1.2;
+    color: var(--on-surface);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--on-surface-muted);
+    margin-bottom: 2rem;
+    max-width: 54ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: var(--on-secondary);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.88; }
+
+  /* Was KI macht */
+  .was-ki-macht {
+    background: var(--surface-low);
+    padding: 5rem 0;
+  }
+
+  .was-ki-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .was-ki-macht h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--on-surface);
+    margin-bottom: 3rem;
+    line-height: 1.25;
+  }
+
+  .ki-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .ki-punkt {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .ki-icon {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .ki-punkt h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 0.4rem;
+  }
+
+  .ki-punkt p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+  }
+
+  /* Ablauf */
+  .ablauf {
+    background: var(--surface);
+    padding: 5rem 0;
+  }
+
+  .ablauf-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .ablauf h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--on-surface);
+    margin-bottom: 3rem;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  .schritte-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    position: relative;
+  }
+
+  .schritte-grid::before {
+    content: '';
+    position: absolute;
+    top: 2.5rem;
+    left: calc(16.67% + 1.5rem);
+    right: calc(16.67% + 1.5rem);
+    height: 1px;
+    background: var(--outline-variant);
+  }
+
+  .schritt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .schritt-nr {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: var(--on-secondary);
+    font-family: 'Noto Serif', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(184, 0, 73, 0.25);
+  }
+
+  .schritt h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--on-surface);
+  }
+
+  .schritt p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+  }
+
+  /* Für wen */
+  .fuer-wen {
+    background: var(--primary);
+    padding: 5rem 0;
+    color: white;
+  }
+
+  .fuer-wen-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .fuer-wen h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: white;
+    margin-bottom: 2.5rem;
+    line-height: 1.3;
+  }
+
+  .fuer-wen-liste {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .fuer-wen-liste li {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .haekchen {
+    color: #34d399;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 767px) {
+    .hero {
+      padding-top: 6.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .ki-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .schritte-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .schritte-grid::before {
+      display: none;
+    }
+  }
+</style>

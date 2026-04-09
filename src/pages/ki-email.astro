@@ -1,0 +1,269 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ChatDemo from '../components/ChatDemo.astro';
+import Cta from '../components/Cta.astro';
+---
+
+<BaseLayout
+  title="E-Mail-Automatisierung mit KI – Anfragen automatisch beantworten | MarkMade"
+  description="KI beantwortet eingehende E-Mails automatisch, priorisiert Anfragen und spart täglich wertvolle Zeit. Für kleine und mittelständische Betriebe."
+>
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">E-Mail-Automatisierung mit KI</p>
+      <h1>Dein Postfach arbeitet.<br />Auch wenn du es nicht tust.</h1>
+      <p class="hero-text">
+        KI liest eingehende E-Mails, beantwortet Standardanfragen automatisch und leitet komplexe Fälle an dich weiter. Du sparst täglich Zeit – ohne dass Kunden es merken.
+      </p>
+      <a href="https://calendly.com/onlinemaster711/new-meeting" class="btn-primary" target="_blank" rel="noopener noreferrer">Kostenloses Erstgespräch</a>
+    </div>
+  </section>
+
+  <!-- 2. DAS PROBLEM -->
+  <section class="problem">
+    <div class="problem-inner">
+      <h2>Wie viele E-Mails beantwortest du täglich – immer wieder dieselben?</h2>
+      <div class="pills">
+        <span class="pill">Preisanfragen</span>
+        <span class="pill">Terminwünsche</span>
+        <span class="pill">Öffnungszeiten</span>
+      </div>
+      <p class="problem-text">80% der eingehenden E-Mails sind Standardfragen. KI beantwortet sie – du kümmerst dich um den Rest.</p>
+    </div>
+  </section>
+
+  <!-- 3. WAS KI KONKRET MACHT -->
+  <section class="was-ki-macht">
+    <div class="was-ki-inner">
+      <h2>Was KI konkret für dein Postfach übernimmt.</h2>
+      <div class="ki-grid">
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">✅</span>
+          <div>
+            <h3>Standardanfragen beantworten</h3>
+            <p>Preise, Zeiten, Ablauf – KI antwortet sofort und korrekt, rund um die Uhr.</p>
+          </div>
+        </div>
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">🔀</span>
+          <div>
+            <h3>Weiterleiten &amp; priorisieren</h3>
+            <p>Wichtiges kommt sofort zu dir. Unwichtiges wird automatisch sortiert.</p>
+          </div>
+        </div>
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">📋</span>
+          <div>
+            <h3>Anfragen vorqualifizieren</h3>
+            <p>Nur ernsthafte Interessenten landen bei dir – kein Zeitverlust durch unpassende Anfragen.</p>
+          </div>
+        </div>
+        <div class="ki-punkt fade-in">
+          <span class="ki-icon">📊</span>
+          <div>
+            <h3>Auswerten</h3>
+            <p>Was wird am häufigsten gefragt? KI liefert dir einen Überblick damit du besser planst.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CHATDEMO -->
+  <section class="demo-section">
+    <div class="demo-inner">
+      <ChatDemo
+        title="So beantwortet KI deine E-Mails"
+        messages={[
+          {role: 'user', text: 'Was kostet eine Inspektion bei euch?'},
+          {role: 'bot', text: 'Eine Standardinspektion kostet bei uns 89 € inkl. MwSt. Termine gibt es dienstags und donnerstags. Soll ich direkt einen Slot reservieren?'},
+          {role: 'user', text: 'Habt ihr auch samstags geöffnet?'},
+          {role: 'bot', text: 'Ja, samstags sind wir von 9 bis 13 Uhr für Sie da – ohne Voranmeldung für kleine Reparaturen, für größere Arbeiten bitte kurz Termin buchen.'}
+        ]}
+      />
+    </div>
+  </section>
+
+  <!-- 5. CTA -->
+  <Cta />
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    background: var(--surface);
+    padding-top: 9rem;
+    padding-bottom: 5rem;
+    text-align: center;
+  }
+
+  .hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary);
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    line-height: 1.2;
+    color: var(--on-surface);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--on-surface-muted);
+    margin-bottom: 2rem;
+    max-width: 54ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: var(--on-secondary);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.88; }
+
+  /* Problem */
+  .problem {
+    background: var(--primary);
+    padding: 5rem 0;
+    text-align: center;
+    color: white;
+  }
+
+  .problem-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .problem h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.375rem, 3vw, 2rem);
+    line-height: 1.3;
+    color: white;
+    margin-bottom: 2rem;
+  }
+
+  .pills {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .pill {
+    padding: 0.5rem 1.25rem;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border-radius: 2rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+  }
+
+  .problem-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  /* Was KI macht */
+  .was-ki-macht {
+    background: var(--surface-low);
+    padding: 5rem 0;
+  }
+
+  .was-ki-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .was-ki-macht h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--on-surface);
+    margin-bottom: 3rem;
+    line-height: 1.25;
+  }
+
+  .ki-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .ki-punkt {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .ki-icon {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .ki-punkt h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 0.4rem;
+  }
+
+  .ki-punkt p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+  }
+
+  /* Demo */
+  .demo-section {
+    background: var(--surface);
+    padding: 0;
+  }
+
+  .demo-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  /* Responsive */
+  @media (max-width: 767px) {
+    .hero {
+      padding-top: 6.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .ki-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
