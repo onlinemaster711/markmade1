@@ -24,6 +24,94 @@ import Faq from '../components/Faq.astro';
   <Angebot />
   <Beweis />
   <Prozess />
+
+  <!-- Mehr entdecken -->
+  <section class="mehr-entdecken">
+    <div class="mehr-entdecken-inner">
+      <h2>Mehr entdecken</h2>
+      <div class="mehr-entdecken-grid">
+        <a href="/chatbot-handwerker" class="mehr-card">
+          <h3>Chatbot einrichten</h3>
+          <p>Kundenfragen rund um die Uhr automatisch beantworten</p>
+        </a>
+        <a href="/terminbuchung-handwerk" class="mehr-card">
+          <h3>Online-Terminbuchung</h3>
+          <p>Kunden buchen direkt in deinen Kalender</p>
+        </a>
+        <a href="/mehr-anfragen-handwerk" class="mehr-card">
+          <h3>Mehr Anfragen gewinnen</h3>
+          <p>Mit einer klaren Website mehr passende Kunden</p>
+        </a>
+        <a href="/ki-handwerker" class="mehr-card">
+          <h3>KI für Handwerker</h3>
+          <p>Was KI konkret für deinen Betrieb tun kann</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <Cta />
   <Faq />
 </BaseLayout>
+
+<style>
+  .mehr-entdecken {
+    background: var(--surface-low);
+    padding: 5rem 1.5rem;
+  }
+
+  .mehr-entdecken-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .mehr-entdecken h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .mehr-entdecken-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+  }
+
+  .mehr-card {
+    background: rgba(63, 69, 48, 0.04);
+    border: 1px solid rgba(63, 69, 48, 0.1);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .mehr-card:hover {
+    background: rgba(184, 0, 73, 0.05);
+    border-color: var(--secondary);
+    transform: translateY(-2px);
+  }
+
+  .mehr-card h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .mehr-card p {
+    font-size: 0.95rem;
+    color: var(--on-surface-muted);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 767px) {
+    .mehr-entdecken {
+      padding: 3.5rem 1.5rem;
+    }
+  }
+</style>

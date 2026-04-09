@@ -1,1144 +1,528 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Beweis from '../components/Beweis.astro';
+import Prozess from '../components/Prozess.astro';
+import Cta from '../components/Cta.astro';
 ---
 
 <BaseLayout
   title="MarkMade – KI-Agentur für kleine und mittelständische Betriebe"
-  description="KI für KMU – Chatbots, Telefonassistenten, E-Mail-Automatisierung, Social Media. Praktisch umsetzbar. Für Handwerker, Ärzte, Restaurants und mehr."
+  description="Chatbots, Telefonassistenten und KI-Automatisierung für KMU. Praktisch. Umsetzbar. Einmal bezahlt. Jetzt kostenloses Erstgespräch sichern."
 >
 
   <!-- 1. HERO -->
   <section class="hero">
     <div class="hero-inner">
 
-      <div class="hero-text-col">
-        <p class="eyebrow">KI-Agentur für kleine &amp; mittelständische Betriebe</p>
+      <div class="hero-left">
+        <p class="eyebrow">KI-Agentur für KMU</p>
         <h1>Welches Problem kostet dich täglich die meiste Zeit?</h1>
-        <p class="hero-sub">KI übernimmt die Zuarbeit – damit du dich auf das konzentrierst was wirklich zählt. Wir helfen dir herauszufinden wo KI in deinem Betrieb wirklich Sinn ergibt.</p>
-        <div class="problem-buttons">
-          <a href="/ki-telefonassistent" class="problem-btn">
-            <span class="pb-text">📞 Ich verpasse Anrufe und Anfragen</span>
-            <span class="pb-arrow">→</span>
-          </a>
-          <a href="/ki-email" class="problem-btn">
-            <span class="pb-text">✉️ Ich verbringe zu viel Zeit mit E-Mails</span>
-            <span class="pb-arrow">→</span>
-          </a>
-          <a href="/ratgeber/ki-im-unternehmen-nutzen" class="problem-btn">
-            <span class="pb-text">❓ Ich weiß nicht wo ich mit KI anfangen soll</span>
-            <span class="pb-arrow">→</span>
-          </a>
+        <p class="subtext">
+          Wir analysieren deinen Betrieb – und zeigen dir wo KI konkret Zeit spart.
+          Kein Tech-Wissen nötig. Kein Abo. Einmal gebaut, dauerhaft im Einsatz.
+        </p>
+        <div class="hero-buttons">
+          <a
+            href="https://calendly.com/onlinemaster711/new-meeting"
+            class="btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Kostenloses Erstgespräch buchen</a>
+          <a href="#leistungen" class="btn-ghost">Leistungen entdecken</a>
         </div>
-        <a href="https://calendly.com/onlinemaster711/new-meeting" class="hero-direct-link" target="_blank" rel="noopener noreferrer">Oder direkt Gespräch buchen →</a>
+        <ul class="haekchen-liste">
+          <li><span class="check">✓</span> Kostenlose Erstanalyse</li>
+          <li><span class="check">✓</span> Keine laufenden Kosten</li>
+          <li><span class="check">✓</span> Umsetzung in 1–2 Wochen</li>
+        </ul>
       </div>
 
-      <div class="hero-visual-col">
-        <div class="hero-chat" id="hero-chat">
-          <div class="hero-chat-header">
-            <span class="hero-chat-dot">●</span>
-            <span class="hero-chat-status">Online</span>
-            <span class="hero-chat-name">MarkMade KI</span>
-          </div>
-          <div class="hero-chat-body" id="hero-chat-body"></div>
-        </div>
-      </div>
+      <div class="hero-right" aria-hidden="true"></div>
 
     </div>
   </section>
 
-  <!-- 2. COUNTER -->
-  <div class="counter-bar" id="counter-bar">
-    <div class="counter-inner">
-      <div class="counter-item">
-        <span class="counter-num" data-target="847" id="cnt-0">0</span>
-        <span class="counter-label">Stunden gespart</span>
-      </div>
-      <div class="counter-item">
-        <span class="counter-num" data-target="30" id="cnt-1">0</span>
-        <span class="counter-label">KI-Lösungen umgesetzt</span>
-      </div>
-      <div class="counter-item">
-        <span class="counter-num" data-target="6" id="cnt-2">0</span>
-        <span class="counter-label">Branchen bedient</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3. WAS KI ÜBERNIMMT -->
+  <!-- 2. LEISTUNGEN -->
   <section class="leistungen" id="leistungen">
     <div class="leistungen-inner">
-      <p class="eyebrow-section">Was KI übernimmt</p>
-      <h2>KI arbeitet. Du auch – aber das Richtige.</h2>
+      <h2>Was wir für deinen Betrieb bauen.</h2>
+      <p class="leistungen-sub">Jede Lösung wird einmalig gebaut und läuft dann selbstständig.</p>
       <div class="leistungen-grid">
-        <a href="/ki-email" class="lk">
-          <span class="lk-icon">✉️</span>
-          <p class="lk-text">KI beantwortet deine E-Mails.</p>
-          <span class="lk-mehr">Mehr erfahren →</span>
+
+        <a href="/ki-fuer-unternehmen" class="lk">
+          <span class="lk-emoji">💬</span>
+          <strong class="lk-titel">KI-Chatbot</strong>
+          <p class="lk-text">Beantwortet Kundenfragen rund um die Uhr – auch nachts und am Wochenende.</p>
+          <span class="lk-arrow">→</span>
         </a>
+
         <a href="/ki-telefonassistent" class="lk">
-          <span class="lk-icon">📞</span>
-          <p class="lk-text">KI nimmt deine Anrufe entgegen.</p>
-          <span class="lk-mehr">Mehr erfahren →</span>
+          <span class="lk-emoji">📞</span>
+          <strong class="lk-titel">Telefonassistent</strong>
+          <p class="lk-text">Nimmt Anrufe an, qualifiziert Anfragen vor und leitet weiter.</p>
+          <span class="lk-arrow">→</span>
         </a>
-        <a href="/terminbuchung-handwerk" class="lk">
-          <span class="lk-icon">📅</span>
-          <p class="lk-text">KI vergibt Termine in deinen Kalender.</p>
-          <span class="lk-mehr">Mehr erfahren →</span>
+
+        <a href="/ki-email" class="lk">
+          <span class="lk-emoji">📧</span>
+          <strong class="lk-titel">E-Mail-Automatisierung</strong>
+          <p class="lk-text">Liest, sortiert und beantwortet eingehende E-Mails automatisch.</p>
+          <span class="lk-arrow">→</span>
         </a>
-        <a href="/chatbot-handwerker" class="lk">
-          <span class="lk-icon">💬</span>
-          <p class="lk-text">KI beantwortet Kundenfragen – rund um die Uhr.</p>
-          <span class="lk-mehr">Mehr erfahren →</span>
-        </a>
+
         <a href="/ki-social-media" class="lk">
-          <span class="lk-icon">📱</span>
-          <p class="lk-text">KI erstellt deinen Social Media Content.</p>
-          <span class="lk-mehr">Mehr erfahren →</span>
+          <span class="lk-emoji">📱</span>
+          <strong class="lk-titel">Social Media mit KI</strong>
+          <p class="lk-text">Erstellt Posts, Bildunterschriften und Content-Pläne auf Knopfdruck.</p>
+          <span class="lk-arrow">→</span>
         </a>
+
         <a href="/ki-automatisierung" class="lk">
-          <span class="lk-icon">⚙️</span>
-          <p class="lk-text">KI automatisiert deine Prozesse.</p>
-          <span class="lk-mehr">Mehr erfahren →</span>
+          <span class="lk-emoji">⚙️</span>
+          <strong class="lk-titel">Prozessautomatisierung</strong>
+          <p class="lk-text">Wiederkehrende Aufgaben wie Angebote, Berichte und Ablage automatisieren.</p>
+          <span class="lk-arrow">→</span>
         </a>
+
+        <a href="/webdesign-selbststaendige" class="lk">
+          <span class="lk-emoji">🌐</span>
+          <strong class="lk-titel">KI-Website</strong>
+          <p class="lk-text">Professioneller Webauftritt der Kunden überzeugt – ab 1.000 € einmalig.</p>
+          <span class="lk-arrow">→</span>
+        </a>
+
       </div>
     </div>
   </section>
 
-  <!-- 4. BRANCHEN -->
-  <section class="branchen" id="branchen">
+  <!-- 3. BRANCHEN -->
+  <section class="branchen">
     <div class="branchen-inner">
-      <p class="eyebrow-section">Branchenlösungen</p>
-      <h2>KI-Lösungen für deine Branche.</h2>
-      <p class="section-sub">Jede Branche hat eigene Zeitfresser. Wir kennen sie – und haben konkrete KI-Lösungen.</p>
+      <h2 class="branchen-h2">Für welche Branchen wir bauen.</h2>
+      <p class="branchen-sub">Jede Lösung wird auf die echten Abläufe deiner Branche zugeschnitten.</p>
       <div class="branchen-grid">
 
-        <div class="bk">
-          <span class="bk-icon">🔧</span>
-          <h3 class="bk-name">Handwerker &amp; Betriebe</h3>
-          <div class="bk-pills">
-            <span class="bk-pill">Chatbot</span>
-            <span class="bk-pill">Terminbuchung</span>
-            <span class="bk-pill">Telefonassistent</span>
-          </div>
-          <div class="bk-links">
-            <a href="/webdesign-handwerker" class="bk-link-main">KI-Lösungen →</a>
-            <a href="/ratgeber/ki-fuer-handwerker" class="bk-link-rat">Ratgeber lesen →</a>
-          </div>
-        </div>
+        <a href="/webdesign-handwerker" class="branche-karte">
+          <span class="branche-emoji">🔨</span>
+          <strong class="branche-titel">Handwerksbetriebe</strong>
+        </a>
 
-        <div class="bk">
-          <span class="bk-icon">🏥</span>
-          <h3 class="bk-name">Ärzte &amp; Praxen</h3>
-          <div class="bk-pills">
-            <span class="bk-pill">Patientenkommunikation</span>
-            <span class="bk-pill">Terminbuchung</span>
-          </div>
-          <div class="bk-links">
-            <a href="/chatbot-aerzte" class="bk-link-main">KI-Lösungen →</a>
-            <a href="/ratgeber/ki-fuer-aerzte" class="bk-link-rat">Ratgeber lesen →</a>
-          </div>
-        </div>
+        <a href="/webdesign-aerzte" class="branche-karte">
+          <span class="branche-emoji">🏥</span>
+          <strong class="branche-titel">Arztpraxen &amp; Praxen</strong>
+        </a>
 
-        <div class="bk">
-          <span class="bk-icon">🍕</span>
-          <h3 class="bk-name">Restaurants &amp; Gastronomie</h3>
-          <div class="bk-pills">
-            <span class="bk-pill">Reservierungen</span>
-            <span class="bk-pill">Speisekarten</span>
-            <span class="bk-pill">Bewertungen</span>
-          </div>
-          <div class="bk-links">
-            <a href="/ki-restaurant" class="bk-link-main">KI-Lösungen →</a>
-            <a href="/ratgeber/ki-fuer-restaurants" class="bk-link-rat">Ratgeber lesen →</a>
-          </div>
-        </div>
+        <a href="/ki-restaurant" class="branche-karte">
+          <span class="branche-emoji">🍽️</span>
+          <strong class="branche-titel">Restaurants &amp; Gastronomie</strong>
+        </a>
 
-        <div class="bk">
-          <span class="bk-icon">🏠</span>
-          <h3 class="bk-name">Immobilienmakler</h3>
-          <div class="bk-pills">
-            <span class="bk-pill">Exposés</span>
-            <span class="bk-pill">Interessenten</span>
-            <span class="bk-pill">Besichtigungen</span>
-          </div>
-          <div class="bk-links">
-            <a href="/ki-immobilienmakler" class="bk-link-main">KI-Lösungen →</a>
-            <a href="/ratgeber/ki-fuer-immobilienmakler" class="bk-link-rat">Ratgeber lesen →</a>
-          </div>
-        </div>
-
-        <div class="bk">
-          <span class="bk-icon">⚖️</span>
-          <h3 class="bk-name">Kanzleien &amp; Steuerberater</h3>
-          <div class="bk-pills">
-            <span class="bk-pill">Mandantenanfragen</span>
-            <span class="bk-pill">Termine</span>
-            <span class="bk-pill">Schreiben</span>
-          </div>
-          <div class="bk-links">
-            <a href="/ki-kanzlei" class="bk-link-main">KI-Lösungen →</a>
-            <a href="/ratgeber/ki-fuer-kanzleien" class="bk-link-rat">Ratgeber lesen →</a>
-          </div>
-        </div>
-
-        <div class="bk">
-          <span class="bk-icon">💼</span>
-          <h3 class="bk-name">Selbstständige &amp; Coaches</h3>
-          <div class="bk-pills">
-            <span class="bk-pill">Website</span>
-            <span class="bk-pill">Social Media</span>
-            <span class="bk-pill">E-Mails</span>
-          </div>
-          <div class="bk-links">
-            <a href="/ki-fuer-unternehmen" class="bk-link-main">KI-Lösungen →</a>
-            <a href="/ratgeber/ki-fuer-selbststaendige" class="bk-link-rat">Ratgeber lesen →</a>
-          </div>
-        </div>
+        <a href="/ki-kanzlei" class="branche-karte">
+          <span class="branche-emoji">⚖️</span>
+          <strong class="branche-titel">Kanzleien &amp; Steuerberater</strong>
+        </a>
 
       </div>
-
-      <div class="branchen-hinweis">
-        <p class="branchen-hinweis-text">Deine Branche nicht dabei?</p>
-        <a href="https://calendly.com/onlinemaster711/new-meeting" class="branchen-hinweis-link" target="_blank" rel="noopener noreferrer">Wir entwickeln individuelle KI-Lösungen → Sprich uns an</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. RATGEBER -->
-  <section class="ratgeber">
-    <div class="ratgeber-inner">
-      <p class="eyebrow-section">Kostenlose Ratgeber</p>
-      <h2>Versteh zuerst. Dann entscheide.</h2>
-      <p class="section-sub">Kein Verkaufsgespräch. Erst verstehen wie KI in deinem Betrieb helfen kann.</p>
-
-      <a href="/ratgeber/ki-im-unternehmen-nutzen" class="rf">
-        <div class="rf-left">
-          <span class="rf-badge">Empfohlen</span>
-          <span class="rf-icon">📖</span>
-        </div>
-        <div class="rf-right">
-          <h3>Wie du erkennst welche Prozesse KI lösen kann</h3>
-          <p>Die ehrliche Anleitung – nicht welche Tools du kaufen sollst, sondern wie du die richtigen Fragen stellst.</p>
-          <span class="rf-btn">Artikel lesen →</span>
-        </div>
+      <a href="/ki-fuer-unternehmen" class="branchen-mehr">
+        Immobilienmakler, Coaches und weitere Branchen →
       </a>
     </div>
   </section>
 
-  <!-- 6. KI MACHT DICH BESSER -->
-  <section class="warum">
-    <div class="warum-inner">
-      <h2>KI macht dich besser.</h2>
-      <div class="warum-grid">
-        <div class="wp">
-          <h3>Du gibst die Zuarbeit ab.</h3>
-          <p>Anfragen beantworten, Termine koordinieren, immer wieder dieselben Fragen – das übernimmt KI. Du konzentrierst dich auf deine Kunden und dein Handwerk.</p>
-        </div>
-        <div class="wp">
-          <h3>Du bleibst der Mensch im Mittelpunkt.</h3>
-          <p>KI ersetzt nicht was dich ausmacht – die Beziehung zu deinen Kunden, dein Fachwissen, dein Urteil. Sie übernimmt die Dinge die sich wiederholen.</p>
-        </div>
-        <div class="wp">
-          <h3>Wir bauen es für dich – in wenigen Tagen.</h3>
-          <p>Kein monatelanges Projekt. Kein Technik-Wissen nötig. Du erzählst uns was dich täglich Zeit kostet – wir bauen die Lösung.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. BEWEIS -->
+  <!-- 4. BEWEIS -->
   <Beweis />
 
-  <!-- 8. WEBDESIGN HINWEIS -->
-  <section class="webdesign-hinweis">
-    <div class="wh-inner">
-      <p class="wh-label">Auch als vollständige Website-Lösung verfügbar:</p>
-      <div class="wh-links">
-        <a href="/webdesign-handwerker" class="wh-link">Webdesign für Handwerker</a>
-        <a href="/webdesign-aerzte" class="wh-link">Webdesign für Ärzte</a>
-        <a href="/webdesign-selbststaendige" class="wh-link">Webdesign für Selbstständige</a>
+  <!-- 5. PROZESS -->
+  <Prozess />
+
+  <!-- 6. CTA -->
+  <Cta />
+
+  <!-- 7. FAQ (inline) -->
+  <section class="faq">
+    <div class="faq-inner">
+      <h2>Was dich vielleicht noch beschäftigt.</h2>
+
+      <div class="faq-item">
+        <h3>Was kostet das?</h3>
+        <p>Die Erstanalyse ist kostenlos. Umsetzungen starten ab 500 €, je nach Umfang. Keine Monatsgebühren, keine versteckten Kosten.</p>
       </div>
-    </div>
-  </section>
 
-  <!-- 9. CTA -->
-  <section class="cta-final">
-    <div class="cta-inner">
-      <p class="cta-eyebrow">Kostenlos &amp; unverbindlich</p>
-      <h2>Sprich mit uns über deine KI-Lösung.</h2>
-      <p class="cta-text">Erzähl uns was dich täglich Zeit kostet. Wir sagen dir ehrlich was KI lösen kann – und bauen es in wenigen Tagen.</p>
-      <a href="https://calendly.com/onlinemaster711/new-meeting" class="cta-btn" target="_blank" rel="noopener noreferrer">Jetzt Gespräch buchen</a>
-      <p class="cta-sub">📅 Direkt in den Kalender – kein Telefonat nötig</p>
-    </div>
-  </section>
+      <div class="faq-item">
+        <h3>Für wen ist das geeignet?</h3>
+        <p>Für Betriebe mit 1–50 Mitarbeitern die Zeit sparen wollen: Handwerker, Praxen, Restaurants, Kanzleien, Makler und Selbstständige.</p>
+      </div>
 
-  <!-- 10. ABSCHLUSS STREIFEN -->
-  <section class="abschluss">
-    <div class="abschluss-inner">
-      <p class="abschluss-text">Wer ohne KI arbeitet, wird durch KI ersetzt.</p>
+      <div class="faq-item">
+        <h3>Wie schnell ist das umgesetzt?</h3>
+        <p>In 1–2 Wochen. Du gibst uns 30 Minuten für das Erstgespräch – den Rest machen wir.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Ich habe keine Zeit dafür.</h3>
+        <p>Das ist der Punkt. Unser Prozess kostet dich 30 Minuten. Den Rest übernehmen wir – du musst nichts installieren oder einrichten.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Was wenn mir das Ergebnis nicht gefällt?</h3>
+        <p>Kein Cent fällig. Wir zeigen dir zuerst was wir bauen wollen – du entscheidest danach.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Wenn KI so viel kann – warum brauche ich noch jemanden?</h3>
+        <p>KI macht gute Leute besser – aber sie macht niemanden gut der sich nicht auskennt. Marketing und Betriebsabläufe sind unser Handwerk. KI ist unser Werkzeug.</p>
+      </div>
+
     </div>
   </section>
 
 </BaseLayout>
 
 <style>
-  /* ── HERO ── */
+  /* ─────────────────────────────────────────
+     HERO
+  ───────────────────────────────────────── */
   .hero {
     background: var(--surface);
-    padding-top: 7rem;
-    padding-bottom: 4rem;
+    padding: 9rem 1.5rem 6rem;
   }
 
   .hero-inner {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 4rem;
     align-items: center;
   }
 
-  .hero-text-col {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hero-visual-col {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .hero-right {
+    min-height: 300px;
   }
 
   .eyebrow {
-    font-size: 0.75rem;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.85rem;
     font-weight: 600;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
     color: var(--secondary);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
   }
 
   h1 {
     font-family: 'Noto Serif', serif;
-    font-size: clamp(1.625rem, 3vw, 2.5rem);
+    font-size: clamp(2rem, 4vw, 3rem);
     line-height: 1.2;
     color: var(--on-surface);
     margin-bottom: 1.25rem;
   }
 
-  .hero-sub {
-    font-size: 1.0625rem;
+  .subtext {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.1rem;
     line-height: 1.7;
     color: var(--on-surface-muted);
     margin-bottom: 2rem;
-    max-width: 48ch;
   }
 
-  .problem-buttons {
+  .hero-buttons {
     display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    width: 100%;
-    margin-bottom: 1.5rem;
-  }
-
-  .problem-btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 1rem 1.5rem;
-    background: white;
-    border: 1.5px solid var(--outline-variant);
-    border-radius: 1rem;
-    text-decoration: none;
-    color: var(--on-surface);
-    transition: border-color 0.2s, color 0.2s;
-  }
-
-  .problem-btn:hover {
-    border-color: var(--secondary);
-    color: var(--secondary);
-  }
-
-  .pb-text {
-    font-size: 0.9375rem;
-    font-weight: 500;
-    line-height: 1.4;
-  }
-
-  .pb-arrow {
-    font-size: 1.125rem;
-    flex-shrink: 0;
-    opacity: 0.5;
-  }
-
-  .problem-btn:hover .pb-arrow {
-    opacity: 1;
-  }
-
-  .hero-direct-link {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--on-surface-muted);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .hero-direct-link:hover {
-    color: var(--secondary);
-  }
-
-  /* ── COUNTER ── */
-  .counter-bar {
-    background: var(--primary);
-    padding: 1.5rem 0;
-  }
-
-  .counter-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
     flex-wrap: wrap;
+    gap: 12px;
   }
 
-  .counter-item {
+  .btn-primary {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn-primary:hover { opacity: 0.88; }
+
+  .btn-ghost {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn-ghost:hover {
+    background: var(--primary);
+    color: #fff;
+  }
+
+  .haekchen-liste {
+    list-style: none;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 0.2rem;
+    gap: 8px;
+    margin-top: 2rem;
   }
 
-  .counter-num {
-    font-family: 'Noto Serif', serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: white;
-    line-height: 1;
-  }
-
-  .counter-label {
-    font-size: 0.8125rem;
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 500;
-  }
-
-  /* ── SHARED ── */
-  .eyebrow-section {
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--secondary);
-    margin-bottom: 0.75rem;
-    display: block;
-    text-align: center;
-  }
-
-  h2 {
-    font-family: 'Noto Serif', serif;
-    font-size: clamp(1.5rem, 3vw, 2.25rem);
-    color: var(--on-surface);
-    text-align: center;
-    margin-bottom: 0.75rem;
-    line-height: 1.25;
-  }
-
-  .section-sub {
-    font-size: 1.0625rem;
-    line-height: 1.7;
+  .haekchen-liste li {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
     color: var(--on-surface-muted);
-    text-align: center;
-    max-width: 55ch;
-    margin: 0 auto 3rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
-  /* ── LEISTUNGEN ── */
+  .check {
+    color: var(--secondary);
+    font-weight: 700;
+  }
+
+  /* ─────────────────────────────────────────
+     LEISTUNGEN
+  ───────────────────────────────────────── */
   .leistungen {
     background: var(--surface-low);
-    padding: 5rem 0;
+    padding: 5rem 1.5rem;
   }
 
   .leistungen-inner {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1.5rem;
   }
 
-  .leistungen-inner h2 {
-    margin-bottom: 2.5rem;
+  .leistungen h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    color: var(--on-surface);
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .leistungen-sub {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.05rem;
+    color: var(--on-surface-muted);
+    text-align: center;
+    margin-bottom: 3rem;
   }
 
   .leistungen-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
+    gap: 20px;
   }
 
   .lk {
-    background: var(--surface);
-    border: 1px solid var(--outline-variant);
+    background: var(--surface-lowest);
+    border: 1px solid var(--dust);
     border-radius: 1rem;
     padding: 1.5rem;
-    text-decoration: none;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    transition: box-shadow 0.2s, border-color 0.2s;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.2s;
   }
 
   .lk:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-    border-color: var(--primary);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   }
 
-  .lk-icon {
-    font-size: 2rem;
+  .lk-emoji {
+    font-size: 1.75rem;
     line-height: 1;
-    margin-bottom: 0.25rem;
+  }
+
+  .lk-titel {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--on-surface);
   }
 
   .lk-text {
-    font-family: 'Noto Serif', serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--on-surface);
-    line-height: 1.4;
-    margin: 0;
-    flex: 1;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    color: var(--on-surface-muted);
+    line-height: 1.6;
+    flex-grow: 1;
   }
 
-  .lk-mehr {
-    font-size: 0.8125rem;
-    font-weight: 600;
+  .lk-arrow {
+    margin-top: auto;
     color: var(--secondary);
-    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    align-self: flex-end;
   }
 
-  /* ── BRANCHEN ── */
+  /* ─────────────────────────────────────────
+     BRANCHEN
+  ───────────────────────────────────────── */
   .branchen {
-    background: var(--surface);
-    padding: 5rem 0;
+    background: var(--primary);
+    padding: 5rem 1.5rem;
   }
 
   .branchen-inner {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+  }
+
+  .branchen-h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    color: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .branchen-sub {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    margin-bottom: 3rem;
   }
 
   .branchen-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-    margin-bottom: 2.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
   }
 
-  .bk {
-    background: var(--surface-low);
-    border: 1px solid var(--outline-variant);
+  .branche-karte {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 1rem;
-    padding: 1.5rem;
+    padding: 1.5rem 1.25rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 0.75rem;
-    transition: box-shadow 0.2s, border-color 0.2s;
-  }
-
-  .bk:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-    border-color: var(--primary);
-  }
-
-  .bk-icon {
-    font-size: 1.8rem;
-    line-height: 1;
-  }
-
-  .bk-name {
-    font-family: 'Noto Serif', serif;
-    font-size: 1.0625rem;
-    font-weight: 600;
-    color: var(--on-surface);
-    margin: 0;
-    line-height: 1.3;
-  }
-
-  .bk-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.375rem;
-  }
-
-  .bk-pill {
-    font-size: 0.75rem;
-    color: var(--on-surface-muted);
-    border: 1px solid var(--outline-variant);
-    border-radius: 2rem;
-    padding: 3px 10px;
-    white-space: nowrap;
-  }
-
-  .bk-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.375rem;
-    margin-top: auto;
-    padding-top: 0.5rem;
-    border-top: 1px solid var(--outline-variant);
-  }
-
-  .bk-link-main {
-    font-size: 0.9375rem;
-    font-weight: 500;
-    color: var(--on-surface);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .bk-link-main:hover {
-    color: var(--primary);
-  }
-
-  .bk-link-rat {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--secondary);
-    text-decoration: none;
-    transition: opacity 0.2s;
-  }
-
-  .bk-link-rat:hover {
-    opacity: 0.75;
-  }
-
-  .branchen-hinweis {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .branchen-hinweis-text {
-    font-size: 0.9375rem;
-    color: var(--on-surface-muted);
-    margin: 0;
-  }
-
-  .branchen-hinweis-link {
-    font-size: 0.9375rem;
-    font-weight: 600;
-    color: var(--secondary);
     text-decoration: none;
-    transition: opacity 0.2s;
+    color: rgba(255, 255, 255, 0.9);
+    transition: background 0.2s;
   }
 
-  .branchen-hinweis-link:hover {
-    opacity: 0.75;
+  .branche-karte:hover {
+    background: rgba(255, 255, 255, 0.14);
   }
 
-  /* ── RATGEBER ── */
-  .ratgeber {
-    background: var(--surface-low);
-    padding: 5rem 0;
-  }
-
-  .ratgeber-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
-  .rf {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    background: var(--primary);
-    border-radius: 1.2rem;
-    padding: 2rem;
-    text-decoration: none;
-    transition: opacity 0.2s;
-  }
-
-  .rf:hover {
-    opacity: 0.92;
-  }
-
-  .rf-left {
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .rf-badge {
-    display: inline-block;
-    font-size: 0.6875rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    background: var(--secondary);
-    color: white;
-    padding: 0.2rem 0.6rem;
-    border-radius: 100px;
-    white-space: nowrap;
-  }
-
-  .rf-icon {
+  .branche-emoji {
     font-size: 2rem;
     line-height: 1;
   }
 
-  .rf-right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 0.625rem;
-  }
-
-  .rf-right h3 {
-    font-family: 'Noto Serif', serif;
-    font-size: clamp(1rem, 2vw, 1.375rem);
-    font-weight: 700;
-    color: white;
-    line-height: 1.3;
-    margin: 0;
-  }
-
-  .rf-right p {
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.75);
-    margin: 0;
-  }
-
-  .rf-btn {
-    display: inline-block;
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: white;
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 0.625rem;
-    padding: 0.4rem 0.875rem;
-    width: fit-content;
-    margin-top: 0.25rem;
-  }
-
-  /* ── WARUM ── */
-  .warum {
-    background: var(--primary);
-    padding: 5rem 0;
-    color: white;
-  }
-
-  .warum-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
-  .warum h2 {
-    color: white;
-    margin-bottom: 3rem;
-  }
-
-  .warum-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-
-  .wp {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 1.5rem;
-  }
-
-  .wp h3 {
-    font-family: 'Noto Serif', serif;
-    font-size: 1.0625rem;
-    font-weight: 700;
-    color: white;
-    margin: 0 0 0.75rem;
+  .branche-titel {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
     line-height: 1.3;
   }
 
-  .wp p {
-    font-size: 0.9375rem;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.75);
-    margin: 0;
-  }
-
-  /* ── WEBDESIGN HINWEIS ── */
-  .webdesign-hinweis {
-    background: var(--surface);
-    padding: 2rem 1.5rem;
+  .branchen-mehr {
+    display: block;
     text-align: center;
-  }
-
-  .wh-inner {
-    max-width: 700px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .wh-label {
-    font-size: 0.875rem;
-    color: var(--on-surface-muted);
-    margin: 0;
-  }
-
-  .wh-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-    justify-content: center;
-  }
-
-  .wh-link {
-    font-size: 0.875rem;
-    color: var(--on-surface-muted);
+    margin-top: 2rem;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.55);
     text-decoration: none;
     transition: color 0.2s;
   }
 
-  .wh-link:hover {
-    color: var(--secondary);
+  .branchen-mehr:hover {
+    color: rgba(255, 255, 255, 0.9);
   }
 
-  /* ── CTA FINAL ── */
-  .cta-final {
+  /* ─────────────────────────────────────────
+     FAQ
+  ───────────────────────────────────────── */
+  .faq {
     background: var(--surface-low);
-    padding: 6rem 0;
-    text-align: center;
+    padding: 5rem 1.5rem;
   }
 
-  .cta-inner {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .cta-eyebrow {
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--secondary);
-    margin: 0;
-  }
-
-  .cta-final h2 {
-    color: var(--on-surface);
-    margin: 0;
-  }
-
-  .cta-text {
-    font-size: 1.0625rem;
-    line-height: 1.7;
-    color: var(--on-surface-muted);
-    max-width: 52ch;
-    margin: 0;
-  }
-
-  .cta-btn {
-    display: inline-block;
-    padding: 1rem 2.25rem;
-    background: var(--secondary);
-    color: white;
-    font-size: 1.0625rem;
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 1rem;
-    transition: opacity 0.2s;
-    margin-top: 0.5rem;
-  }
-
-  .cta-btn:hover {
-    opacity: 0.88;
-  }
-
-  .cta-sub {
-    font-size: 0.875rem;
-    color: var(--on-surface-muted);
-    margin: 0;
-  }
-
-  /* ── ABSCHLUSS ── */
-  .abschluss {
-    background: var(--surface-low);
-    padding: 2rem;
-    text-align: center;
-    border-top: 1px solid var(--outline-variant);
-  }
-
-  .abschluss-inner {
-    max-width: 640px;
+  .faq-inner {
+    max-width: 760px;
     margin: 0 auto;
   }
 
-  .abschluss-text {
+  .faq h2 {
     font-family: 'Noto Serif', serif;
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--primary);
-    margin: 0;
-    line-height: 1.4;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    color: var(--on-surface);
+    margin-bottom: 3rem;
   }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    .hero-inner {
-      grid-template-columns: 1fr;
-    }
+  .faq-item {
+    margin-bottom: 2.5rem;
+  }
 
-    .leistungen-grid,
-    .branchen-grid,
-    .warum-grid {
+  .faq-item h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 0.75rem;
+  }
+
+  .faq-item p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    color: var(--on-surface-muted);
+    line-height: 1.7;
+  }
+
+  /* ─────────────────────────────────────────
+     RESPONSIVE
+  ───────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .leistungen-grid {
       grid-template-columns: repeat(2, 1fr);
     }
+  }
 
-    .counter-inner {
-      gap: 2rem;
+  @media (max-width: 768px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .hero-right {
+      display: none;
+    }
+
+    .branchen-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 600px) {
     .hero {
-      padding-top: 6rem;
-      padding-bottom: 3rem;
+      padding-top: 6.5rem;
     }
 
-    .hero-visual-col {
-      display: none !important;
-    }
-
-    .leistungen-grid,
-    .branchen-grid,
-    .warum-grid {
+    .leistungen-grid {
       grid-template-columns: 1fr;
     }
-
-    .rf {
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .counter-inner {
-      gap: 1.5rem;
-    }
-
-    .wh-links {
-      flex-direction: column;
-      gap: 0.75rem;
-    }
   }
 </style>
-
-<style is:global>
-  /* ── HERO CHAT ── */
-  .hero-chat {
-    width: 100%;
-    max-width: 360px;
-    background: white;
-    border-radius: 1.2rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(63, 69, 48, 0.12);
-    overflow: hidden;
-    font-family: 'Manrope', system-ui, sans-serif;
-  }
-
-  .hero-chat-header {
-    background: #3f4530;
-    padding: 0.75rem 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .hero-chat-dot {
-    color: #6fdb6f;
-    font-size: 0.6rem;
-  }
-
-  .hero-chat-status {
-    font-size: 0.6875rem;
-    color: rgba(255, 255, 255, 0.6);
-    font-weight: 500;
-  }
-
-  .hero-chat-name {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: white;
-  }
-
-  .hero-chat-body {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.625rem;
-    min-height: 200px;
-  }
-
-  .hero-chat-msg {
-    max-width: 80%;
-    padding: 0.5rem 0.875rem;
-    border-radius: 1rem;
-    font-size: 0.875rem;
-    line-height: 1.45;
-    animation: hero-chat-fadein 0.3s ease;
-  }
-
-  .hero-chat-msg--user {
-    background: #f0ece4;
-    color: #3f4530;
-    align-self: flex-end;
-    border-bottom-right-radius: 0.25rem;
-  }
-
-  .hero-chat-msg--bot {
-    background: #3f4530;
-    color: white;
-    align-self: flex-start;
-    border-bottom-left-radius: 0.25rem;
-  }
-
-  .hero-chat-typing {
-    align-self: flex-start;
-    background: #3f4530;
-    border-radius: 1rem;
-    border-bottom-left-radius: 0.25rem;
-    padding: 0.5rem 0.875rem;
-    display: flex;
-    gap: 4px;
-    align-items: center;
-  }
-
-  .hero-chat-typing span {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.6);
-    animation: hero-chat-bounce 1s infinite;
-  }
-
-  .hero-chat-typing span:nth-child(2) { animation-delay: 0.15s; }
-  .hero-chat-typing span:nth-child(3) { animation-delay: 0.3s; }
-
-  @keyframes hero-chat-bounce {
-    0%, 60%, 100% { transform: translateY(0); opacity: 0.6; }
-    30% { transform: translateY(-4px); opacity: 1; }
-  }
-
-  @keyframes hero-chat-fadein {
-    from { opacity: 0; transform: translateY(4px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-</style>
-
-<script>
-(function() {
-  var messages = [
-    { role: 'user', text: 'Ich verpasse täglich Anrufe wenn ich arbeite.' },
-    { role: 'bot',  text: 'Das kennen viele Betriebe. Wie viele Anrufe verpasst du ungefähr pro Tag? 📞' },
-    { role: 'user', text: 'So 3 bis 5 – manchmal mehr.' },
-    { role: 'bot',  text: 'Das sind pro Jahr über 1.000 potenzielle Kunden. KI kann das lösen – soll ich dir zeigen wie?' }
-  ];
-
-  var body = document.getElementById('hero-chat-body');
-  if (!body) return;
-
-  var timer;
-
-  function clearBody() {
-    while (body.firstChild) body.removeChild(body.firstChild);
-  }
-
-  function addMsg(role, text, cb) {
-    if (role === 'bot') {
-      var typing = document.createElement('div');
-      typing.className = 'hero-chat-typing';
-      typing.innerHTML = '<span></span><span></span><span></span>';
-      body.appendChild(typing);
-      timer = setTimeout(function() {
-        body.removeChild(typing);
-        var msg = document.createElement('div');
-        msg.className = 'hero-chat-msg hero-chat-msg--bot';
-        msg.textContent = text;
-        body.appendChild(msg);
-        if (cb) timer = setTimeout(cb, 1200);
-      }, 1200);
-    } else {
-      var msg = document.createElement('div');
-      msg.className = 'hero-chat-msg hero-chat-msg--user';
-      msg.textContent = text;
-      body.appendChild(msg);
-      if (cb) timer = setTimeout(cb, 800);
-    }
-  }
-
-  function runSequence(index) {
-    if (index >= messages.length) {
-      timer = setTimeout(function() {
-        clearBody();
-        runSequence(0);
-      }, 4000);
-      return;
-    }
-    var m = messages[index];
-    addMsg(m.role, m.text, function() {
-      runSequence(index + 1);
-    });
-  }
-
-  runSequence(0);
-})();
-</script>
-
-<script>
-(function() {
-  var bar = document.getElementById('counter-bar');
-  if (!bar) return;
-  var started = false;
-  var counters = bar.querySelectorAll('.counter-num');
-
-  function animateCounter(el, target, duration) {
-    var start = performance.now();
-    function step(now) {
-      var p = Math.min((now - start) / duration, 1);
-      var ease = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(ease * target);
-      if (p < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-
-  var observer = new IntersectionObserver(function(entries) {
-    if (entries[0].isIntersecting && !started) {
-      started = true;
-      counters.forEach(function(el) {
-        animateCounter(el, parseInt(el.dataset.target || '0', 10), 1500);
-      });
-    }
-  }, { threshold: 0.5 });
-
-  observer.observe(bar);
-})();
-</script>

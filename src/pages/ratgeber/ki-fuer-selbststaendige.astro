@@ -83,6 +83,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- Das könnte dich auch interessieren -->
+  <section class="related-section">
+    <div class="related-inner">
+      <p class="related-label">Das könnte dich auch interessieren</p>
+      <div class="related-links">
+        <a href="/webdesign-selbststaendige" class="related-link">Webdesign für Selbstständige →</a>
+        <a href="/ki-fuer-unternehmen" class="related-link">KI für Unternehmen – Übersicht →</a>
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
 
 <style>
@@ -259,5 +270,49 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     .artikel {
       padding-top: 6rem;
     }
+  }
+
+  .related-section {
+    background: var(--surface-low);
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--outline-variant);
+  }
+
+  .related-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .related-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--on-surface-muted);
+    margin-bottom: 1rem;
+    max-width: none;
+  }
+
+  .related-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .related-link {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--secondary);
+    text-decoration: none;
+    background: white;
+    border: 1px solid var(--outline-variant);
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.75rem;
+    transition: border-color 0.2s;
+  }
+
+  .related-link:hover {
+    border-color: var(--secondary);
   }
 </style>

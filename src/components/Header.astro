@@ -71,7 +71,7 @@
       <a href="/ki-kanzlei" class="mobile-link">Kanzleien &amp; Steuerberater</a>
       <a href="/ki-immobilienmakler" class="mobile-link">Immobilienmakler</a>
       <a href="/ki-restaurant" class="mobile-link">Restaurants &amp; Cafés</a>
-      <a href="/webdesign-selbststaendige" class="mobile-link">Coaches &amp; Berater</a>
+      <span class="mobile-link mobile-link--soon" aria-disabled="true">Coaches &amp; Berater <span class="soon-badge">Bald</span></span>
 
       <a href="https://calendly.com/onlinemaster711/new-meeting" class="mobile-cta" target="_blank" rel="noopener noreferrer">Gespräch buchen</a>
     </div>
@@ -327,6 +327,26 @@
 
   .mobile-cta:hover {
     opacity: 0.88;
+  }
+
+  .mobile-link--soon {
+    opacity: 0.4;
+    cursor: default;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .soon-badge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: var(--outline-variant);
+    color: var(--on-surface-muted);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
   }
 
   /* Responsive */
