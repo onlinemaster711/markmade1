@@ -105,6 +105,26 @@ import Cta from '../components/Cta.astro';
     </div>
   </section>
 
+  <!-- 3. BRANCHEN -->
+  <section class="branchen-pills">
+    <div class="bp-inner">
+      <p class="eyebrow-section">Unsere Branchen</p>
+      <h2>KI-Lösungen für diese Branchen – und individuelle Lösungen für alle anderen.</h2>
+      <div class="bp-zeile">
+        <a href="/webdesign-handwerker" class="bp-pill">🔧 Handwerker</a>
+        <a href="/webdesign-aerzte" class="bp-pill">🏥 Ärzte &amp; Praxen</a>
+        <a href="/ki-restaurant" class="bp-pill">🍕 Restaurants</a>
+        <a href="/ki-immobilienmakler" class="bp-pill">🏠 Immobilienmakler</a>
+        <a href="/ki-kanzlei" class="bp-pill">⚖️ Kanzleien &amp; Steuerberater</a>
+        <a href="/webdesign-selbststaendige" class="bp-pill">💼 Selbstständige &amp; Coaches</a>
+      </div>
+      <p class="bp-hinweis">
+        Deine Branche nicht dabei? Wir entwickeln individuelle KI-Lösungen für jeden Betrieb.
+        <a href="https://calendly.com/onlinemaster711/new-meeting" class="bp-link" target="_blank" rel="noopener noreferrer">Sprich uns an →</a>
+      </p>
+    </div>
+  </section>
+
   <!-- 4. RATGEBER -->
   <section class="ratgeber">
     <div class="ratgeber-inner">
@@ -392,6 +412,77 @@ import Cta from '../components/Cta.astro';
   .ki-zeile:hover .kz-arrow {
     opacity: 1;
     transform: translateX(4px);
+  }
+
+  /* ── BRANCHEN PILLS ── */
+  .branchen-pills {
+    background: var(--surface-low);
+    padding: 3rem 1.5rem;
+  }
+
+  .bp-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bp-inner h2 {
+    margin-bottom: 1.75rem;
+  }
+
+  .bp-zeile {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .bp-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--outline-variant);
+    border-radius: 2rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--on-surface);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .bp-pill:hover {
+    border-color: var(--secondary);
+    color: var(--secondary);
+  }
+
+  .bp-hinweis {
+    font-size: 0.9375rem;
+    color: var(--on-surface-muted);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 56ch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .bp-link {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--secondary);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .bp-link:hover {
+    opacity: 0.75;
   }
 
   /* ── BRANCHEN TABS ── */
@@ -920,6 +1011,10 @@ import Cta from '../components/Cta.astro';
 
     .kz-text {
       font-size: 1rem;
+    }
+
+    .hero-visual-col {
+      display: none !important;
     }
   }
 </style>
