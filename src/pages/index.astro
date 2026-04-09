@@ -6,77 +6,86 @@ import Cta from '../components/Cta.astro';
 
 <BaseLayout
   title="MarkMade – KI-Agentur für kleine und mittelständische Betriebe"
-  description="KI für KMU – Websites, Chatbots, Automatisierung, Marketing. Praktisch umsetzbar. Einmal bezahlt. Für kleine und mittelständische Betriebe."
+  description="KI für KMU – Websites, Chatbots, Automatisierung, Marketing. Praktisch umsetzbar. Einmal bezahlt."
 >
 
   <!-- 1. HERO -->
   <section class="hero">
     <div class="hero-inner">
       <p class="eyebrow">KI-Agentur für kleine &amp; mittelständische Betriebe</p>
-      <h1>KI für deinen Betrieb.<br />Praktisch. Umsetzbar.</h1>
+      <h1>Welches Problem kostet dich täglich die meiste Zeit?</h1>
       <p class="hero-text">
-        Wir zeigen kleinen und mittelständischen Betrieben wie KI konkret Zeit spart, Prozesse vereinfacht und Kunden überzeugt – ohne monatliche Abokosten.
+        KI übernimmt die Zuarbeit – damit du dich auf das konzentrierst was wirklich zählt. Wir helfen dir herauszufinden wo KI in deinem Betrieb wirklich Sinn ergibt.
       </p>
-      <div class="hero-buttons">
-        <a href="https://calendly.com/onlinemaster711/new-meeting" class="btn-primary" target="_blank" rel="noopener noreferrer">Kostenloses Erstgespräch buchen</a>
-        <a href="/#leistungen" class="btn-ghost">Leistungen entdecken →</a>
+      <div class="problem-buttons">
+        <a href="/ki-telefonassistent" class="problem-btn">
+          <span class="pb-text">📞 Ich verpasse Anrufe und Anfragen</span>
+          <span class="pb-arrow">→</span>
+        </a>
+        <a href="/ki-email" class="problem-btn">
+          <span class="pb-text">✉️ Ich verbringe zu viel Zeit mit E-Mails</span>
+          <span class="pb-arrow">→</span>
+        </a>
+        <a href="/ratgeber/ki-im-unternehmen-nutzen" class="problem-btn">
+          <span class="pb-text">❓ Ich weiß nicht wo ich mit KI anfangen soll</span>
+          <span class="pb-arrow">→</span>
+        </a>
       </div>
-      <ul class="trust-list">
-        <li><span class="check">✓</span> Einmal bezahlt – kein Abo</li>
-        <li><span class="check">✓</span> Für KMU gemacht</li>
-        <li><span class="check">✓</span> Umsetzbar in Tagen</li>
-      </ul>
+      <a href="https://calendly.com/onlinemaster711/new-meeting" class="hero-direct-link" target="_blank" rel="noopener noreferrer">
+        Oder direkt Gespräch buchen →
+      </a>
     </div>
   </section>
 
-  <!-- 2. LEISTUNGEN -->
-  <section class="leistungen" id="leistungen">
-    <div class="leistungen-inner">
-      <p class="eyebrow-dark">Was wir für dich umsetzen</p>
-      <h2>KI die wirklich hilft – nicht nur beeindruckt.</h2>
-      <div class="leistungen-grid">
+  <!-- 2. ZEITFRESSER -->
+  <section class="zeitfresser" id="leistungen">
+    <div class="zeitfresser-inner">
+      <p class="eyebrow-section">Häufige Zeitfresser</p>
+      <h2>Erkennst du dich wieder?</h2>
+      <p class="section-text">Das sind die Probleme die wir täglich von Unternehmern hören – und die KI lösen kann.</p>
+      <div class="zeitfresser-grid">
 
-        <a href="/webdesign-selbststaendige" class="leistung-card">
-          <span class="leistung-icon">🌐</span>
-          <h3>Website &amp; Chatbot</h3>
-          <p>Professionelle Website mit KI-Chatbot der Kundenfragen automatisch beantwortet.</p>
-          <span class="leistung-link">Mehr erfahren →</span>
-        </a>
+        <div class="zf-karte fade-in">
+          <p class="zf-label">Verpasste Anrufe</p>
+          <p class="zf-zitat">"Ich bin auf der Baustelle und verpasse ständig Anrufe."</p>
+          <p class="zf-loesung">KI-Telefonassistent nimmt Anrufe 24/7 entgegen.</p>
+          <a href="/ki-telefonassistent" class="zf-link">Lösung ansehen →</a>
+        </div>
 
-        <a href="/ki-social-media" class="leistung-card">
-          <span class="leistung-icon">📱</span>
-          <h3>Social Media mit KI</h3>
-          <p>Skripte, Posts und Kampagnen – KI erstellt den Content, du genehmigst ihn.</p>
-          <span class="leistung-link">Mehr erfahren →</span>
-        </a>
+        <div class="zf-karte fade-in">
+          <p class="zf-label">E-Mail-Flut</p>
+          <p class="zf-zitat">"Ich beantworte täglich dieselben E-Mails immer wieder."</p>
+          <p class="zf-loesung">KI beantwortet Standardanfragen automatisch.</p>
+          <a href="/ki-email" class="zf-link">Lösung ansehen →</a>
+        </div>
 
-        <a href="/ki-email" class="leistung-card">
-          <span class="leistung-icon">✉️</span>
-          <h3>E-Mail-Automatisierung</h3>
-          <p>Eingehende E-Mails automatisch beantworten, weiterleiten und priorisieren.</p>
-          <span class="leistung-link">Mehr erfahren →</span>
-        </a>
+        <div class="zf-karte fade-in">
+          <p class="zf-label">Kundenfragen</p>
+          <p class="zf-zitat">"Kunden stellen immer dieselben Fragen – Preise, Ablauf, Zeiten."</p>
+          <p class="zf-loesung">KI-Chatbot beantwortet das rund um die Uhr.</p>
+          <a href="/chatbot-handwerker" class="zf-link">Lösung ansehen →</a>
+        </div>
 
-        <a href="/ki-dashboard" class="leistung-card">
-          <span class="leistung-icon">📊</span>
-          <h3>Dashboard &amp; Auswertung</h3>
-          <p>Eigenes Dashboard das deine wichtigsten Kennzahlen übersichtlich darstellt.</p>
-          <span class="leistung-link">Mehr erfahren →</span>
-        </a>
+        <div class="zf-karte fade-in">
+          <p class="zf-label">Terminbuchung</p>
+          <p class="zf-zitat">"Terminvereinbarungen kosten mich jeden Tag wertvolle Zeit."</p>
+          <p class="zf-loesung">Kunden buchen direkt online – ohne Telefonat.</p>
+          <a href="/terminbuchung-handwerk" class="zf-link">Lösung ansehen →</a>
+        </div>
 
-        <a href="/ki-crm" class="leistung-card">
-          <span class="leistung-icon">📋</span>
-          <h3>CRM auf Maß</h3>
-          <p>Kundenverwaltung die zu deinem Betrieb passt – einmal bezahlt, kein Abo.</p>
-          <span class="leistung-link">Mehr erfahren →</span>
-        </a>
+        <div class="zf-karte fade-in">
+          <p class="zf-label">Social Media</p>
+          <p class="zf-zitat">"Ich weiß ich sollte präsenter sein – aber ich hab keine Zeit."</p>
+          <p class="zf-loesung">KI erstellt Content, du genehmigst in Minuten.</p>
+          <a href="/ki-social-media" class="zf-link">Lösung ansehen →</a>
+        </div>
 
-        <a href="/ki-automatisierung" class="leistung-card">
-          <span class="leistung-icon">⚙️</span>
-          <h3>Prozess-Automatisierung</h3>
-          <p>Wiederkehrende Aufgaben automatisieren – mehr Zeit für das Wesentliche.</p>
-          <span class="leistung-link">Mehr erfahren →</span>
-        </a>
+        <div class="zf-karte fade-in">
+          <p class="zf-label">Wo anfangen?</p>
+          <p class="zf-zitat">"Ich höre überall von KI – aber weiß nicht was für mich passt."</p>
+          <p class="zf-loesung">Unser Ratgeber zeigt dir wie du vorgehst.</p>
+          <a href="/ratgeber/ki-im-unternehmen-nutzen" class="zf-link">Ratgeber lesen →</a>
+        </div>
 
       </div>
     </div>
@@ -85,66 +94,177 @@ import Cta from '../components/Cta.astro';
   <!-- 3. BRANCHEN -->
   <section class="branchen" id="branchen">
     <div class="branchen-inner">
-      <p class="eyebrow-dark">Für wen wir arbeiten</p>
-      <h2>Jede Branche hat eigene Bedürfnisse.</h2>
-      <p class="branchen-text">Wir kennen die Fragen die täglich kommen – und bauen Lösungen die genau passen.</p>
+      <p class="eyebrow-section">Branchenlösungen</p>
+      <h2>Deine Branche hat eigene Herausforderungen.</h2>
+      <p class="section-text">Wir kennen die typischen Zeitfresser in deiner Branche – und haben konkrete Lösungen.</p>
       <div class="branchen-grid">
 
-        <a href="/webdesign-handwerker" class="branchen-card">
-          <h3>Handwerker &amp; Gewerbe</h3>
-          <p>Website, Chatbot und Terminbuchung für Handwerksbetriebe.</p>
-          <span class="branchen-link">Zur Branchenseite →</span>
-        </a>
+        <div class="branchen-karte fade-in">
+          <span class="b-icon">🔧</span>
+          <h3>Handwerker &amp; Betriebe</h3>
+          <div class="pills">
+            <span class="pill">Verpasste Anrufe</span>
+            <span class="pill">Terminbuchung</span>
+            <span class="pill">Kundenfragen</span>
+          </div>
+          <a href="/webdesign-handwerker" class="b-link-main">Zur Branchenseite →</a>
+          <a href="/ratgeber/ki-fuer-handwerker" class="b-link-ratgeber">Ratgeber lesen →</a>
+        </div>
 
-        <a href="/webdesign-aerzte" class="branchen-card">
+        <div class="branchen-karte fade-in">
+          <span class="b-icon">🏥</span>
           <h3>Ärzte &amp; Praxen</h3>
-          <p>Professioneller Webauftritt und Patientenkommunikation.</p>
-          <span class="branchen-link">Zur Branchenseite →</span>
-        </a>
+          <div class="pills">
+            <span class="pill">Patientenanfragen</span>
+            <span class="pill">Terminbuchung</span>
+            <span class="pill">Öffnungszeiten</span>
+          </div>
+          <a href="/webdesign-aerzte" class="b-link-main">Zur Branchenseite →</a>
+          <a href="/ratgeber/ki-fuer-aerzte" class="b-link-ratgeber">Ratgeber lesen →</a>
+        </div>
 
-        <a href="/webdesign-selbststaendige" class="branchen-card">
+        <div class="branchen-karte fade-in">
+          <span class="b-icon">🍕</span>
+          <h3>Restaurants &amp; Gastronomie</h3>
+          <div class="pills">
+            <span class="pill">Reservierungen</span>
+            <span class="pill">Speisekarten</span>
+            <span class="pill">Gästeanfragen</span>
+          </div>
+          <a href="/ki-restaurant" class="b-link-main">Zur Branchenseite →</a>
+          <a href="/ratgeber/ki-fuer-restaurants" class="b-link-ratgeber">Ratgeber lesen →</a>
+        </div>
+
+        <div class="branchen-karte fade-in">
+          <span class="b-icon">🏠</span>
+          <h3>Immobilienmakler</h3>
+          <div class="pills">
+            <span class="pill">Exposés</span>
+            <span class="pill">Interessenten</span>
+            <span class="pill">Besichtigungen</span>
+          </div>
+          <a href="/ki-immobilienmakler" class="b-link-main">Zur Branchenseite →</a>
+          <a href="/ratgeber/ki-fuer-immobilienmakler" class="b-link-ratgeber">Ratgeber lesen →</a>
+        </div>
+
+        <div class="branchen-karte fade-in">
+          <span class="b-icon">⚖️</span>
+          <h3>Kanzleien &amp; Steuerberater</h3>
+          <div class="pills">
+            <span class="pill">Mandantenanfragen</span>
+            <span class="pill">Termine</span>
+            <span class="pill">Schreiben</span>
+          </div>
+          <a href="/ki-kanzlei" class="b-link-main">Zur Branchenseite →</a>
+          <a href="/ratgeber/ki-fuer-kanzleien" class="b-link-ratgeber">Ratgeber lesen →</a>
+        </div>
+
+        <div class="branchen-karte fade-in">
+          <span class="b-icon">💼</span>
           <h3>Selbstständige &amp; Coaches</h3>
-          <p>Klare Positionierung und automatisierte Kundenkommunikation.</p>
-          <span class="branchen-link">Zur Branchenseite →</span>
-        </a>
+          <div class="pills">
+            <span class="pill">Website</span>
+            <span class="pill">Social Media</span>
+            <span class="pill">E-Mails</span>
+          </div>
+          <a href="/webdesign-selbststaendige" class="b-link-main">Zur Branchenseite →</a>
+          <a href="/ratgeber/ki-fuer-selbststaendige" class="b-link-ratgeber">Ratgeber lesen →</a>
+        </div>
 
       </div>
     </div>
   </section>
 
-  <!-- 4. WARUM MARKMADE -->
+  <!-- 4. RATGEBER -->
+  <section class="ratgeber">
+    <div class="ratgeber-inner">
+      <p class="eyebrow-section">Kostenlose Ratgeber</p>
+      <h2>Versteh zuerst. Dann entscheide.</h2>
+      <p class="section-text">Kein Verkaufsgespräch. Erst verstehen wie KI in deinem Betrieb helfen kann – dann entscheiden ob du weitermachst.</p>
+
+      <!-- Featured Artikel -->
+      <a href="/ratgeber/ki-im-unternehmen-nutzen" class="ratgeber-featured fade-in">
+        <div class="rf-left">
+          <span class="rf-icon">📖</span>
+        </div>
+        <div class="rf-right">
+          <span class="rf-badge">Empfohlen</span>
+          <h3>Wie du erkennst welche Prozesse KI lösen kann</h3>
+          <p>Die ehrliche Anleitung – nicht welche Tools du kaufen sollst, sondern wie du die richtigen Fragen stellst.</p>
+          <span class="rf-cta">Artikel lesen →</span>
+        </div>
+      </a>
+
+      <!-- Kleinere Karten -->
+      <div class="ratgeber-grid">
+
+        <a href="/ratgeber/ki-fuer-handwerker" class="rg-karte fade-in">
+          <span class="rg-icon">🔧</span>
+          <h3>KI für Handwerker</h3>
+          <p>Konkrete Beispiele wie Handwerksbetriebe täglich Zeit sparen.</p>
+          <span class="rg-link">Lesen →</span>
+        </a>
+
+        <a href="/ratgeber/ki-fuer-aerzte" class="rg-karte fade-in">
+          <span class="rg-icon">🏥</span>
+          <h3>KI für Ärzte &amp; Praxen</h3>
+          <p>Wie Praxen Patientenkommunikation automatisieren.</p>
+          <span class="rg-link">Lesen →</span>
+        </a>
+
+        <a href="/ratgeber/ki-fuer-restaurants" class="rg-karte fade-in">
+          <span class="rg-icon">🍕</span>
+          <h3>KI für Restaurants</h3>
+          <p>Reservierungen, Speisekarten und Gästekommunikation.</p>
+          <span class="rg-link">Lesen →</span>
+        </a>
+
+      </div>
+
+      <div class="ratgeber-alle">
+        <a href="/ki-fuer-unternehmen" class="ratgeber-alle-link">Alle Ratgeber &amp; Branchenlösungen →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. WARUM MARKMADE -->
   <section class="warum">
     <div class="warum-inner">
       <h2>KI die für dich arbeitet – nicht gegen dich.</h2>
       <div class="warum-grid">
-
         <div class="warum-punkt">
           <span class="warum-icon">💰</span>
           <h3>Einmal bezahlt – kein Abo</h3>
           <p>Keine monatlichen Lizenzkosten. Du bezahlst einmal und behältst die Lösung.</p>
         </div>
-
         <div class="warum-punkt">
           <span class="warum-icon">🎯</span>
           <h3>Für KMU gemacht</h3>
           <p>Keine Enterprise-Lösungen die niemand versteht. Alles ist auf kleine Betriebe zugeschnitten.</p>
         </div>
-
         <div class="warum-punkt">
           <span class="warum-icon">⚡</span>
           <h3>Umsetzbar in Tagen</h3>
           <p>Keine monatelangen Projekte. Die meisten Lösungen sind in wenigen Tagen live.</p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- 5. BEWEIS -->
+  <!-- 6. BEWEIS -->
   <Beweis />
 
-  <!-- 6. CTA -->
-  <Cta />
+  <!-- 7. CTA CUSTOM -->
+  <section class="cta-custom">
+    <div class="cta-inner">
+      <p class="cta-eyebrow">Kostenlos &amp; unverbindlich</p>
+      <h2>Du hast ein konkretes Problem im Kopf?</h2>
+      <p class="cta-text">15 Minuten Gespräch – wir sagen dir ehrlich ob und wie KI es lösen kann. Kein Fachjargon. Kein Verkaufsgespräch.</p>
+      <a href="https://calendly.com/onlinemaster711/new-meeting" class="cta-btn" target="_blank" rel="noopener noreferrer">Jetzt Gespräch buchen</a>
+      <p class="cta-sub">📅 Direkt in den Kalender – kein Telefonat nötig</p>
+    </div>
+  </section>
 
 </BaseLayout>
 
@@ -154,13 +274,16 @@ import Cta from '../components/Cta.astro';
     background: var(--surface);
     padding-top: 9rem;
     padding-bottom: 5rem;
+    text-align: center;
   }
 
   .hero-inner {
-    max-width: 760px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 0 1.5rem;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .eyebrow {
@@ -174,10 +297,10 @@ import Cta from '../components/Cta.astro';
 
   h1 {
     font-family: 'Noto Serif', serif;
-    font-size: clamp(2.25rem, 5vw, 3.5rem);
-    line-height: 1.15;
+    font-size: clamp(1.875rem, 4.5vw, 3rem);
+    line-height: 1.2;
     color: var(--on-surface);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 
   .hero-text {
@@ -185,77 +308,68 @@ import Cta from '../components/Cta.astro';
     line-height: 1.7;
     color: var(--on-surface-muted);
     margin-bottom: 2.5rem;
-    max-width: 58ch;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 52ch;
   }
 
-  .hero-buttons {
+  .problem-buttons {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 520px;
+    margin-bottom: 1.5rem;
   }
 
-  .btn-primary {
-    display: inline-block;
-    padding: 0.875rem 1.75rem;
-    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
-    color: var(--on-secondary);
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 1rem;
-    transition: opacity 0.2s;
-  }
-
-  .btn-primary:hover { opacity: 0.88; }
-
-  .btn-ghost {
-    display: inline-flex;
+  .problem-btn {
+    display: flex;
     align-items: center;
-    padding: 0.875rem 1.25rem;
-    font-size: 1rem;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: white;
+    border: 1.5px solid var(--outline-variant);
+    border-radius: 1rem;
+    text-decoration: none;
+    text-align: left;
+    transition: border-color 0.2s, color 0.2s;
+    color: var(--on-surface);
+  }
+
+  .problem-btn:hover {
+    border-color: var(--secondary);
+    color: var(--secondary);
+  }
+
+  .pb-text {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .pb-arrow {
+    font-size: 1.125rem;
+    flex-shrink: 0;
+    opacity: 0.5;
+  }
+
+  .problem-btn:hover .pb-arrow {
+    opacity: 1;
+  }
+
+  .hero-direct-link {
+    font-size: 0.875rem;
     font-weight: 500;
     color: var(--on-surface-muted);
     text-decoration: none;
     transition: color 0.2s;
   }
 
-  .btn-ghost:hover { color: var(--on-surface); }
-
-  .trust-list {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+  .hero-direct-link:hover {
+    color: var(--secondary);
   }
 
-  .trust-list li {
-    font-size: 0.9375rem;
-    color: var(--on-surface-muted);
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-
-  .check { color: var(--secondary); font-weight: 700; }
-
-  /* ── LEISTUNGEN ── */
-  .leistungen {
-    background: var(--surface-low);
-    padding: 5rem 0;
-  }
-
-  .leistungen-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
-  .eyebrow-dark {
+  /* ── SHARED ── */
+  .eyebrow-section {
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -266,63 +380,93 @@ import Cta from '../components/Cta.astro';
     text-align: center;
   }
 
-  .leistungen h2,
-  .branchen h2 {
+  .section-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--on-surface-muted);
+    text-align: center;
+    max-width: 55ch;
+    margin: 0 auto 3rem;
+  }
+
+  h2 {
     font-family: 'Noto Serif', serif;
     font-size: clamp(1.5rem, 3vw, 2.25rem);
     color: var(--on-surface);
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 0.75rem;
     line-height: 1.25;
   }
 
-  .leistungen-grid {
+  /* ── ZEITFRESSER ── */
+  .zeitfresser {
+    background: var(--surface-low);
+    padding: 5rem 0;
+  }
+
+  .zeitfresser-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .zeitfresser-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
   }
 
-  .leistung-card {
-    background: var(--surface-lowest, white);
+  .zf-karte {
+    background: white;
     border: 1px solid var(--outline-variant);
     border-radius: 1rem;
-    padding: 1.75rem;
-    text-decoration: none;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    transition: box-shadow 0.2s, border-color 0.2s;
+    gap: 0.625rem;
+    transition: box-shadow 0.2s;
   }
 
-  .leistung-card:hover {
-    box-shadow: 0 8px 24px rgba(27, 28, 26, 0.1);
-    border-color: var(--primary-fixed, #3f4530);
+  .zf-karte:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   }
 
-  .leistung-icon {
-    font-size: 2rem;
-    line-height: 1;
+  .zf-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--secondary);
+    margin: 0;
   }
 
-  .leistung-card h3 {
+  .zf-zitat {
     font-family: 'Noto Serif', serif;
-    font-size: 1.0625rem;
-    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5;
     color: var(--on-surface);
-  }
-
-  .leistung-card p {
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    color: var(--on-surface-muted);
+    margin: 0;
     flex: 1;
   }
 
-  .leistung-link {
+  .zf-loesung {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--on-surface-muted);
+    margin: 0;
+  }
+
+  .zf-link {
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--secondary);
+    text-decoration: none;
     margin-top: auto;
+    transition: opacity 0.2s;
+  }
+
+  .zf-link:hover {
+    opacity: 0.75;
   }
 
   /* ── BRANCHEN ── */
@@ -335,17 +479,6 @@ import Cta from '../components/Cta.astro';
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 1.5rem;
-    text-align: center;
-  }
-
-  .branchen-text {
-    font-size: 1.0625rem;
-    color: var(--on-surface-muted);
-    line-height: 1.7;
-    margin-bottom: 3rem;
-    max-width: 55ch;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .branchen-grid {
@@ -354,41 +487,225 @@ import Cta from '../components/Cta.astro';
     gap: 1.25rem;
   }
 
-  .branchen-card {
+  .branchen-karte {
     background: var(--surface-low);
     border: 1px solid var(--outline-variant);
     border-radius: 1rem;
-    padding: 2rem 1.5rem;
-    text-decoration: none;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    text-align: left;
-    transition: box-shadow 0.2s, border-color 0.2s;
+    transition: box-shadow 0.2s;
   }
 
-  .branchen-card:hover {
-    box-shadow: 0 8px 24px rgba(27, 28, 26, 0.1);
-    border-color: var(--primary-fixed, #3f4530);
+  .branchen-karte:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   }
 
-  .branchen-card h3 {
+  .b-icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .branchen-karte h3 {
     font-family: 'Noto Serif', serif;
-    font-size: 1.0625rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--on-surface);
+    margin: 0;
   }
 
-  .branchen-card p {
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  .pill {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--on-surface-muted);
+    background: var(--surface);
+    border: 1px solid var(--outline-variant);
+    border-radius: 100px;
+    padding: 0.2rem 0.6rem;
+    white-space: nowrap;
+  }
+
+  .b-link-main {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    text-decoration: none;
+    margin-top: auto;
+    transition: color 0.2s;
+  }
+
+  .b-link-main:hover {
+    color: var(--secondary);
+  }
+
+  .b-link-ratgeber {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--secondary);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .b-link-ratgeber:hover {
+    opacity: 0.75;
+  }
+
+  /* ── RATGEBER ── */
+  .ratgeber {
+    background: var(--surface-low);
+    padding: 5rem 0;
+  }
+
+  .ratgeber-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .ratgeber-featured {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    background: var(--primary);
+    border-radius: 1.2rem;
+    padding: 2rem;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    transition: opacity 0.2s;
+  }
+
+  .ratgeber-featured:hover {
+    opacity: 0.92;
+  }
+
+  .rf-left {
+    flex-shrink: 0;
+  }
+
+  .rf-icon {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .rf-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .rf-badge {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: var(--secondary);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    width: fit-content;
+  }
+
+  .rf-right h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1rem, 2vw, 1.375rem);
+    font-weight: 700;
+    color: white;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .rf-right p {
     font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+  }
+
+  .rf-cta {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.625rem;
+    padding: 0.4rem 0.875rem;
+    width: fit-content;
+    margin-top: 0.25rem;
+  }
+
+  .ratgeber-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .rg-karte {
+    background: white;
+    border: 1px solid var(--outline-variant);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    text-decoration: none;
+    transition: box-shadow 0.2s;
+  }
+
+  .rg-karte:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .rg-icon {
+    font-size: 1.75rem;
+    line-height: 1;
+  }
+
+  .rg-karte h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin: 0;
+  }
+
+  .rg-karte p {
+    font-size: 0.875rem;
     line-height: 1.6;
     color: var(--on-surface-muted);
     flex: 1;
+    margin: 0;
   }
 
-  .branchen-link {
+  .rg-link {
     font-size: 0.875rem;
     font-weight: 600;
+    color: var(--secondary);
+    margin-top: auto;
+  }
+
+  .ratgeber-alle {
+    text-align: center;
+  }
+
+  .ratgeber-alle-link {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--on-surface-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .ratgeber-alle-link:hover {
     color: var(--secondary);
   }
 
@@ -406,12 +723,8 @@ import Cta from '../components/Cta.astro';
   }
 
   .warum h2 {
-    font-family: 'Noto Serif', serif;
-    font-size: clamp(1.5rem, 3vw, 2.25rem);
     color: white;
-    text-align: center;
     margin-bottom: 3rem;
-    line-height: 1.25;
   }
 
   .warum-grid {
@@ -438,17 +751,84 @@ import Cta from '../components/Cta.astro';
     font-size: 1.125rem;
     font-weight: 600;
     color: white;
+    margin: 0;
   }
 
   .warum-punkt p {
     font-size: 0.9375rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+  }
+
+  /* ── CTA CUSTOM ── */
+  .cta-custom {
+    background: linear-gradient(135deg, var(--primary), var(--primary-container, #5a6040));
+    padding: 6rem 0;
+    text-align: center;
+  }
+
+  .cta-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .cta-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+  }
+
+  .cta-custom h2 {
+    color: white;
+    margin: 0;
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  }
+
+  .cta-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 52ch;
+    margin: 0;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    padding: 1rem 2.25rem;
+    background: white;
+    color: var(--primary);
+    font-size: 1.0625rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: opacity 0.2s;
+    margin-top: 0.5rem;
+  }
+
+  .cta-btn:hover {
+    opacity: 0.9;
+  }
+
+  .cta-sub {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0;
   }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    .leistungen-grid {
+    .zeitfresser-grid,
+    .branchen-grid,
+    .ratgeber-grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
@@ -459,16 +839,20 @@ import Cta from '../components/Cta.astro';
       padding-bottom: 3.5rem;
     }
 
-    .trust-list {
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .leistungen-grid,
+    .zeitfresser-grid,
     .branchen-grid,
+    .ratgeber-grid,
     .warum-grid {
       grid-template-columns: 1fr;
+    }
+
+    .ratgeber-featured {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .rf-icon {
+      font-size: 2.25rem;
     }
   }
 </style>
