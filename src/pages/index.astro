@@ -23,9 +23,6 @@ import Cta from '../components/Cta.astro';
         <!-- Linke Spalte (8/12) -->
         <div class="hero-left">
 
-          <!-- Pill Badge -->
-          <span class="hero-pill">KI-Agentur für KMU · Einmal gebaut. Dauerhaft im Einsatz.</span>
-
           <!-- H1 -->
           <h1>
             KI übernimmt,<br>
@@ -52,28 +49,23 @@ import Cta from '../components/Cta.astro';
             <a href="#leistungen" class="btn-ghost">Leistungen entdecken</a>
           </div>
 
-          <!-- Häkchen -->
-          <ul class="haekchen-liste">
-            <li><span class="check">✓</span> Kostenlose Erstanalyse</li>
-            <li><span class="check">✓</span> Keine laufenden Kosten</li>
-            <li><span class="check">✓</span> Umsetzung in 1–2 Wochen</li>
-          </ul>
-
         </div>
 
         <!-- Rechte Spalte (4/12) -->
         <div class="hero-right">
           <div class="hero-image-placeholder">
-            <div class="hero-badge">
-              <span>100%</span>
-              <p>Maßarbeit</p>
-            </div>
+            <span class="hero-image-label">Bild folgt</span>
           </div>
         </div>
 
       </div>
 
-      <!-- Use-Case Cards -->
+    </div>
+  </section>
+
+  <!-- Use-Case Karten — direkt nach Hero -->
+  <section class="use-case-section">
+    <div class="use-case-inner">
       <div class="use-case-cards">
 
         <a href="/ki-telefonassistent" class="uc-card">
@@ -328,20 +320,6 @@ import Cta from '../components/Cta.astro';
     position: relative;
   }
 
-  /* Pill Badge */
-  .hero-pill {
-    display: inline-block;
-    margin-bottom: 1.5rem;
-    padding: 6px 16px;
-    border-radius: 99px;
-    border: 1px solid var(--dust);
-    font-family: 'Manrope', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--on-surface-muted);
-  }
-
   /* H1 */
   h1 {
     font-family: 'Noto Serif', serif;
@@ -424,68 +402,37 @@ import Cta from '../components/Cta.astro';
     background: var(--surface-low);
   }
 
-  /* Häkchen */
-  .haekchen-liste {
-    list-style: none;
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-  }
-
-  .haekchen-liste li {
-    font-family: 'Manrope', sans-serif;
-    font-size: 0.875rem;
-    color: var(--on-surface-muted);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .check {
-    color: var(--secondary);
-    font-weight: 700;
-  }
-
   /* Rechte Spalte — Bild-Platzhalter */
   .hero-image-placeholder {
     aspect-ratio: 4 / 5;
     background: var(--surface-low);
     border-radius: 0.5rem;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .hero-badge {
-    position: absolute;
-    bottom: -2rem;
-    left: -2rem;
-    background: var(--secondary);
-    padding: 1.5rem 2rem;
-    box-shadow: 0 20px 40px rgba(184, 0, 73, 0.2);
-    border-radius: 0.25rem;
-  }
-
-  .hero-badge span {
-    font-family: 'Noto Serif', serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #fff;
-    display: block;
-    margin-bottom: 4px;
-  }
-
-  .hero-badge p {
+  .hero-image-label {
     font-family: 'Manrope', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
+    font-size: 0.8rem;
+    color: var(--on-surface-muted);
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.8);
-    margin: 0;
   }
 
-  /* Use-Case Cards */
+  /* Use-Case Sektion */
+  .use-case-section {
+    background: var(--surface);
+    padding: 0 24px 80px;
+  }
+
+  .use-case-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
   .use-case-cards {
-    margin-top: 3rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
