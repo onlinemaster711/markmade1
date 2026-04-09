@@ -105,139 +105,73 @@ import Cta from '../components/Cta.astro';
     </div>
   </section>
 
-  <!-- 3. BRANCHEN TABS -->
-  <section class="branchen-tabs" id="branchen">
-    <div class="branchen-tabs-inner">
+  <!-- 3. BRANCHEN OFFEN -->
+  <section class="branchen-offen" id="branchen">
+    <div class="branchen-offen-inner">
       <p class="eyebrow-section">Branchenlösungen</p>
       <h2>Was KI in deiner Branche löst.</h2>
 
-      <div class="ki-tabs-bar">
-        <button class="ki-tabs-btn ki-tabs-active" data-tab="handwerker">Handwerker</button>
-        <button class="ki-tabs-btn" data-tab="aerzte">Ärzte</button>
-        <button class="ki-tabs-btn" data-tab="restaurant">Restaurant</button>
-        <button class="ki-tabs-btn" data-tab="immobilien">Immobilien</button>
-        <button class="ki-tabs-btn" data-tab="kanzlei">Kanzlei</button>
-        <button class="ki-tabs-btn" data-tab="selbststaendige">Selbstständige</button>
-      </div>
+      <div class="bo-list">
 
-      <div class="ki-tabs-content" id="tab-handwerker">
-        <div class="ki-tabs-grid">
-          <div class="ki-tabs-karte">
-            <span class="ki-tabs-icon">📞</span>
-            <p class="ki-tabs-titel">Verpasste Anrufe</p>
-            <p class="ki-tabs-text">KI nimmt Anrufe entgegen wenn du auf der Baustelle bist.</p>
-          </div>
-          <div class="ki-tabs-karte">
-            <span class="ki-tabs-icon">📅</span>
-            <p class="ki-tabs-titel">Terminvergabe</p>
-            <p class="ki-tabs-text">Kunden buchen direkt – KI trägt den Termin automatisch ein.</p>
-          </div>
-          <div class="ki-tabs-karte">
-            <span class="ki-tabs-icon">💬</span>
-            <p class="ki-tabs-titel">Kundenfragen</p>
-            <p class="ki-tabs-text">Preise, Ablauf, Verfügbarkeit – KI beantwortet das automatisch.</p>
+        <div class="bo-branche">
+          <h3 class="bo-name">🔧 Handwerker &amp; Betriebe</h3>
+          <div class="bo-grid">
+            <div class="bo-karte"><span class="bo-icon">📞</span><p class="bo-titel">Verpasste Anrufe</p><p class="bo-text">KI nimmt Anrufe entgegen wenn du auf der Baustelle bist.</p></div>
+            <div class="bo-karte"><span class="bo-icon">📅</span><p class="bo-titel">Terminvergabe</p><p class="bo-text">Kunden buchen direkt – KI trägt den Termin automatisch ein.</p></div>
+            <div class="bo-karte"><span class="bo-icon">💬</span><p class="bo-titel">Kundenfragen</p><p class="bo-text">Preise, Ablauf, Verfügbarkeit – KI beantwortet das automatisch.</p></div>
           </div>
         </div>
-      </div>
 
-      <div class="ki-tabs-content ki-tabs-hidden" id="tab-aerzte">
-        <div class="ki-tabs-grid">
-          <div class="ki-tabs-karte">
-            <span class="ki-tabs-icon">👥</span>
-            <p class="ki-tabs-titel">Patientenanfragen</p>
-            <p class="ki-tabs-text">Öffnungszeiten, Kassenärztlich, Ablauf – automatisch beantwortet.</p>
-          </div>
-          <div class="ki-tabs-karte">
-            <span class="ki-tabs-icon">📅</span>
-            <p class="ki-tabs-titel">Terminvergabe</p>
-            <p class="ki-tabs-text">Patienten buchen direkt online – kein Telefonaufwand.</p>
-          </div>
-          <div class="ki-tabs-karte">
-            <span class="ki-tabs-icon">📞</span>
-            <p class="ki-tabs-titel">Telefonassistent</p>
-            <p class="ki-tabs-text">Nimmt Anrufe entgegen wenn die Praxis beschäftigt ist.</p>
+        <div class="bo-branche">
+          <h3 class="bo-name">🏥 Ärzte &amp; Praxen</h3>
+          <div class="bo-grid">
+            <div class="bo-karte"><span class="bo-icon">👥</span><p class="bo-titel">Patientenanfragen</p><p class="bo-text">Öffnungszeiten, Kassenärztlich, Ablauf – automatisch beantwortet.</p></div>
+            <div class="bo-karte"><span class="bo-icon">📅</span><p class="bo-titel">Terminvergabe</p><p class="bo-text">Patienten buchen direkt online – kein Telefonaufwand.</p></div>
+            <div class="bo-karte"><span class="bo-icon">📞</span><p class="bo-titel">Telefonassistent</p><p class="bo-text">Nimmt Anrufe entgegen wenn die Praxis beschäftigt ist.</p></div>
           </div>
         </div>
-      </div>
 
-      <div class="ki-tabs-content ki-tabs-hidden" id="tab-restaurant">
-        <div class="ki-tabs-grid">
-          <div class="ki-tabs-karte">
-            <span class="ki-tabs-icon">🍽️</span>
-            <p class="ki-tabs-titel">Reservierungen</p>
-            <p class="ki-tabs-text">Gäste buchen direkt – auch abends wenn niemand ans Telefon geht.</p>
-          </div>
-          <div class="ki-tabs-karte">
-            <span class="ki-tabs-icon">📋</span>
-            <p class="ki-tabs-titel">Speisekarten</p>
-            <p class="ki-tabs-text">Schnell aktualisieren – saisonal, täglich, spontan.</p>
-          </div>
-          <div class="ki-tabs-karte">
-            <span class="ki-tabs-icon">⭐</span>
-            <p class="ki-tabs-titel">Bewertungen</p>
-            <p class="ki-tabs-text">KI antwortet professionell auf Google-Bewertungen.</p>
+        <div class="bo-branche">
+          <h3 class="bo-name">🍕 Restaurants &amp; Gastronomie</h3>
+          <div class="bo-grid">
+            <div class="bo-karte"><span class="bo-icon">🍽️</span><p class="bo-titel">Reservierungen</p><p class="bo-text">Gäste buchen direkt – auch abends wenn niemand ans Telefon geht.</p></div>
+            <div class="bo-karte"><span class="bo-icon">📋</span><p class="bo-titel">Speisekarten</p><p class="bo-text">Schnell aktualisieren – saisonal, täglich, spontan.</p></div>
+            <div class="bo-karte"><span class="bo-icon">⭐</span><p class="bo-titel">Bewertungen</p><p class="bo-text">KI antwortet professionell auf Google-Bewertungen.</p></div>
           </div>
         </div>
-      </div>
 
-      <div class="ki-tabs-content ki-tabs-hidden" id="tab-immobilien">
-        <div class="ki-tabs-grid">
-          <div class="ki-tabs-karte">
-            <span class="ki-tabs-icon">📄</span>
-            <p class="ki-tabs-titel">Exposés</p>
-            <p class="ki-tabs-text">Aus Eckdaten wird automatisch ein professionelles Exposé erstellt.</p>
-          </div>
-          <div class="ki-tabs-karte">
-            <span class="ki-tabs-icon">✅</span>
-            <p class="ki-tabs-titel">Vorqualifizierung</p>
-            <p class="ki-tabs-text">KI hilft ernsthafte Interessenten von Gelegenheitssuchenden zu unterscheiden.</p>
-          </div>
-          <div class="ki-tabs-karte">
-            <span class="ki-tabs-icon">📅</span>
-            <p class="ki-tabs-titel">Besichtigungen</p>
-            <p class="ki-tabs-text">Interessenten buchen direkt in deinen Kalender.</p>
+        <div class="bo-branche">
+          <h3 class="bo-name">🏠 Immobilienmakler</h3>
+          <div class="bo-grid">
+            <div class="bo-karte"><span class="bo-icon">📄</span><p class="bo-titel">Exposés</p><p class="bo-text">Aus Eckdaten wird automatisch ein professionelles Exposé erstellt.</p></div>
+            <div class="bo-karte"><span class="bo-icon">✅</span><p class="bo-titel">Vorqualifizierung</p><p class="bo-text">KI hilft ernsthafte Interessenten von Gelegenheitssuchenden zu unterscheiden.</p></div>
+            <div class="bo-karte"><span class="bo-icon">📅</span><p class="bo-titel">Besichtigungen</p><p class="bo-text">Interessenten buchen direkt in deinen Kalender.</p></div>
           </div>
         </div>
-      </div>
 
-      <div class="ki-tabs-content ki-tabs-hidden" id="tab-kanzlei">
-        <div class="ki-tabs-grid">
-          <div class="ki-tabs-karte">
-            <span class="ki-tabs-icon">💬</span>
-            <p class="ki-tabs-titel">Mandantenanfragen</p>
-            <p class="ki-tabs-text">Anliegen und Dringlichkeit vorklären bevor der Termin.</p>
-          </div>
-          <div class="ki-tabs-karte">
-            <span class="ki-tabs-icon">📅</span>
-            <p class="ki-tabs-titel">Terminvergabe</p>
-            <p class="ki-tabs-text">Mandanten buchen direkt – ohne Telefonat.</p>
-          </div>
-          <div class="ki-tabs-karte">
-            <span class="ki-tabs-icon">📄</span>
-            <p class="ki-tabs-titel">Standardschreiben</p>
-            <p class="ki-tabs-text">Vorlagen automatisch befüllen – du prüfst und unterschreibst.</p>
+        <div class="bo-branche">
+          <h3 class="bo-name">⚖️ Kanzleien &amp; Steuerberater</h3>
+          <div class="bo-grid">
+            <div class="bo-karte"><span class="bo-icon">💬</span><p class="bo-titel">Mandantenanfragen</p><p class="bo-text">Anliegen und Dringlichkeit vorklären bevor der Termin.</p></div>
+            <div class="bo-karte"><span class="bo-icon">📅</span><p class="bo-titel">Terminvergabe</p><p class="bo-text">Mandanten buchen direkt – ohne Telefonat.</p></div>
+            <div class="bo-karte"><span class="bo-icon">📄</span><p class="bo-titel">Standardschreiben</p><p class="bo-text">Vorlagen automatisch befüllen – du prüfst und unterschreibst.</p></div>
           </div>
         </div>
-      </div>
 
-      <div class="ki-tabs-content ki-tabs-hidden" id="tab-selbststaendige">
-        <div class="ki-tabs-grid">
-          <div class="ki-tabs-karte">
-            <span class="ki-tabs-icon">🌐</span>
-            <p class="ki-tabs-titel">Website &amp; Chatbot</p>
-            <p class="ki-tabs-text">Klarer Auftritt der kommuniziert was du anbietest.</p>
-          </div>
-          <div class="ki-tabs-karte">
-            <span class="ki-tabs-icon">📱</span>
-            <p class="ki-tabs-titel">Social Media</p>
-            <p class="ki-tabs-text">KI erstellt Content-Vorschläge – du entscheidest was gepostet wird.</p>
-          </div>
-          <div class="ki-tabs-karte">
-            <span class="ki-tabs-icon">✉️</span>
-            <p class="ki-tabs-titel">E-Mail-Kommunikation</p>
-            <p class="ki-tabs-text">Standardanfragen automatisch beantworten.</p>
+        <div class="bo-branche bo-branche--last">
+          <h3 class="bo-name">💼 Selbstständige &amp; Coaches</h3>
+          <div class="bo-grid">
+            <div class="bo-karte"><span class="bo-icon">🌐</span><p class="bo-titel">Website &amp; Chatbot</p><p class="bo-text">Klarer Auftritt der kommuniziert was du anbietest.</p></div>
+            <div class="bo-karte"><span class="bo-icon">📱</span><p class="bo-titel">Social Media</p><p class="bo-text">KI erstellt Content-Vorschläge – du entscheidest was gepostet wird.</p></div>
+            <div class="bo-karte"><span class="bo-icon">✉️</span><p class="bo-titel">E-Mail-Kommunikation</p><p class="bo-text">Standardanfragen automatisch beantworten.</p></div>
           </div>
         </div>
+
+      </div>
+
+      <div class="bo-hinweis">
+        <p class="bo-hinweis-text">Deine Branche nicht dabei – oder du weißt nicht wo du anfangen sollst?</p>
+        <a href="/ratgeber/ki-im-unternehmen-nutzen" class="bo-hinweis-link">Ratgeber lesen: Wie du herausfindest was KI für dich tun kann →</a>
       </div>
 
     </div>
@@ -299,22 +233,19 @@ import Cta from '../components/Cta.astro';
   <!-- 5. WARUM MARKMADE -->
   <section class="warum">
     <div class="warum-inner">
-      <h2>KI die für dich arbeitet – nicht gegen dich.</h2>
-      <div class="warum-grid">
-        <div class="warum-punkt">
-          <span class="warum-icon">💰</span>
-          <h3>Einmal bezahlt – kein Abo</h3>
-          <p>Keine monatlichen Lizenzkosten. Du bezahlst einmal und behältst die Lösung.</p>
+      <h2>KI macht dich besser. Nicht überflüssig.</h2>
+      <div class="warum-punkte">
+        <div class="warum-punkt fade-in">
+          <h3>Du gibst die Zuarbeit ab.</h3>
+          <p>Anfragen beantworten, Termine koordinieren, immer wieder dieselben Fragen – das übernimmt KI. Du konzentrierst dich auf das was wirklich zählt: deine Kunden, dein Handwerk, deine Expertise.</p>
         </div>
-        <div class="warum-punkt">
-          <span class="warum-icon">🎯</span>
-          <h3>Für KMU gemacht</h3>
-          <p>Keine Enterprise-Lösungen die niemand versteht. Alles ist auf kleine Betriebe zugeschnitten.</p>
+        <div class="warum-punkt fade-in">
+          <h3>Du bleibst der Mensch im Mittelpunkt.</h3>
+          <p>KI ersetzt nicht was dich ausmacht – die Beziehung zu deinen Kunden, dein Fachwissen, dein Urteil. Sie übernimmt die Dinge die sich wiederholen damit du mehr Zeit für die Dinge hast die wirklich Menschlichkeit brauchen.</p>
         </div>
-        <div class="warum-punkt">
-          <span class="warum-icon">⚡</span>
-          <h3>Umsetzbar in Tagen</h3>
-          <p>Keine monatelangen Projekte. Die meisten Lösungen sind in wenigen Tagen live.</p>
+        <div class="warum-punkt fade-in">
+          <h3>Wir bauen es für dich – in wenigen Tagen.</h3>
+          <p>Kein monatelanges Projekt. Kein Technik-Wissen nötig. Du erzählst uns was dich täglich Zeit kostet – wir bauen die Lösung. Schnell, konkret, auf dich zugeschnitten.</p>
         </div>
       </div>
     </div>
@@ -795,6 +726,107 @@ import Cta from '../components/Cta.astro';
     color: var(--secondary);
   }
 
+  /* ── BRANCHEN OFFEN ── */
+  .branchen-offen {
+    background: var(--surface-low);
+    padding: 5rem 0;
+  }
+
+  .branchen-offen-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .bo-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+  }
+
+  .bo-branche {
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--outline-variant);
+  }
+
+  .bo-branche--last {
+    border-bottom: 1px solid var(--outline-variant);
+  }
+
+  .bo-name {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 1.25rem;
+  }
+
+  .bo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .bo-karte {
+    background: white;
+    border: 0.5px solid var(--outline-variant);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .bo-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .bo-titel {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--on-surface);
+    margin: 0;
+  }
+
+  .bo-text {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--on-surface-muted);
+    margin: 0;
+  }
+
+  .bo-hinweis {
+    margin-top: 2rem;
+    background: white;
+    border: 1px solid var(--outline-variant);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    align-items: center;
+  }
+
+  .bo-hinweis-text {
+    font-size: 0.9375rem;
+    color: var(--on-surface-muted);
+    margin: 0;
+  }
+
+  .bo-hinweis-link {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--secondary);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .bo-hinweis-link:hover {
+    opacity: 0.75;
+  }
+
   /* ── WARUM ── */
   .warum {
     background: var(--primary);
@@ -803,7 +835,7 @@ import Cta from '../components/Cta.astro';
   }
 
   .warum-inner {
-    max-width: 1100px;
+    max-width: 760px;
     margin: 0 auto;
     padding: 0 1.5rem;
   }
@@ -813,37 +845,29 @@ import Cta from '../components/Cta.astro';
     margin-bottom: 3rem;
   }
 
-  .warum-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  .warum-punkte {
+    display: flex;
+    flex-direction: column;
     gap: 2.5rem;
   }
 
   .warum-punkt {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .warum-icon {
-    font-size: 2.5rem;
-    line-height: 1;
+    border-left: 2px solid rgba(255, 255, 255, 0.2);
+    padding-left: 1.5rem;
   }
 
   .warum-punkt h3 {
     font-family: 'Noto Serif', serif;
     font-size: 1.125rem;
-    font-weight: 600;
+    font-weight: 700;
     color: white;
-    margin: 0;
+    margin: 0 0 0.5rem;
   }
 
   .warum-punkt p {
     font-size: 0.9375rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
     margin: 0;
   }
 
@@ -920,7 +944,8 @@ import Cta from '../components/Cta.astro';
       order: -1;
     }
 
-    .ratgeber-grid {
+    .ratgeber-grid,
+    .bo-grid {
       grid-template-columns: repeat(2, 1fr);
     }
 
@@ -940,7 +965,7 @@ import Cta from '../components/Cta.astro';
     }
 
     .ratgeber-grid,
-    .warum-grid {
+    .bo-grid {
       grid-template-columns: 1fr;
     }
 
