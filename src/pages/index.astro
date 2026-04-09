@@ -66,42 +66,42 @@ import Cta from '../components/Cta.astro';
           <span class="lk-emoji">💬</span>
           <strong class="lk-titel">KI-Chatbot</strong>
           <p class="lk-text">Beantwortet Kundenfragen rund um die Uhr – auch nachts und am Wochenende.</p>
-          <span class="lk-arrow">→</span>
+          <span class="lk-cta">Details<span class="lk-line"></span></span>
         </a>
 
         <a href="/ki-telefonassistent" class="lk">
           <span class="lk-emoji">📞</span>
           <strong class="lk-titel">Telefonassistent</strong>
           <p class="lk-text">Nimmt Anrufe an, qualifiziert Anfragen vor und leitet weiter.</p>
-          <span class="lk-arrow">→</span>
+          <span class="lk-cta">Details<span class="lk-line"></span></span>
         </a>
 
         <a href="/ki-email" class="lk">
           <span class="lk-emoji">📧</span>
           <strong class="lk-titel">E-Mail-Automatisierung</strong>
           <p class="lk-text">Liest, sortiert und beantwortet eingehende E-Mails automatisch.</p>
-          <span class="lk-arrow">→</span>
+          <span class="lk-cta">Details<span class="lk-line"></span></span>
         </a>
 
         <a href="/ki-social-media" class="lk">
           <span class="lk-emoji">📱</span>
           <strong class="lk-titel">Social Media mit KI</strong>
           <p class="lk-text">Erstellt Posts, Bildunterschriften und Content-Pläne auf Knopfdruck.</p>
-          <span class="lk-arrow">→</span>
+          <span class="lk-cta">Details<span class="lk-line"></span></span>
         </a>
 
         <a href="/ki-automatisierung" class="lk">
           <span class="lk-emoji">⚙️</span>
           <strong class="lk-titel">Prozessautomatisierung</strong>
           <p class="lk-text">Wiederkehrende Aufgaben wie Angebote, Berichte und Ablage automatisieren.</p>
-          <span class="lk-arrow">→</span>
+          <span class="lk-cta">Details<span class="lk-line"></span></span>
         </a>
 
         <a href="/webdesign-selbststaendige" class="lk">
           <span class="lk-emoji">🌐</span>
           <strong class="lk-titel">KI-Website</strong>
           <p class="lk-text">Professioneller Webauftritt der Kunden überzeugt – ab 1.000 € einmalig.</p>
-          <span class="lk-arrow">→</span>
+          <span class="lk-cta">Details<span class="lk-line"></span></span>
         </a>
 
       </div>
@@ -115,43 +115,53 @@ import Cta from '../components/Cta.astro';
       <p class="branchen-sub">Jede Lösung wird auf die echten Abläufe deiner Branche zugeschnitten.</p>
       <div class="branchen-grid">
 
-        <div class="branche-karte">
-          <span class="branche-emoji">🔨</span>
-          <strong class="branche-titel">Handwerksbetriebe</strong>
+        <div class="branche-karte branche-dunkel">
+          <div class="branche-top">
+            <span class="branche-emoji">🔨</span>
+            <strong class="branche-titel">Handwerksbetriebe</strong>
+          </div>
           <div class="branche-links">
             <a href="/webdesign-handwerker">Website für Handwerker</a>
             <a href="/ki-handwerker">KI für Handwerker</a>
           </div>
         </div>
 
-        <div class="branche-karte">
-          <span class="branche-emoji">🏥</span>
-          <strong class="branche-titel">Arztpraxen</strong>
+        <div class="branche-karte branche-hell">
+          <div class="branche-top">
+            <span class="branche-emoji">🏥</span>
+            <strong class="branche-titel">Arztpraxen</strong>
+          </div>
           <div class="branche-links">
             <a href="/webdesign-aerzte">Website für Ärzte</a>
             <a href="/ki-aerzte">KI für Ärzte &amp; Praxen</a>
           </div>
         </div>
 
-        <div class="branche-karte">
-          <span class="branche-emoji">🍽️</span>
-          <strong class="branche-titel">Restaurants</strong>
+        <div class="branche-karte branche-dunkel">
+          <div class="branche-top">
+            <span class="branche-emoji">🍽️</span>
+            <strong class="branche-titel">Restaurants</strong>
+          </div>
           <div class="branche-links">
             <a href="/ki-restaurant">KI für Restaurants</a>
           </div>
         </div>
 
-        <div class="branche-karte">
-          <span class="branche-emoji">⚖️</span>
-          <strong class="branche-titel">Kanzleien</strong>
+        <div class="branche-karte branche-hell">
+          <div class="branche-top">
+            <span class="branche-emoji">⚖️</span>
+            <strong class="branche-titel">Kanzleien</strong>
+          </div>
           <div class="branche-links">
             <a href="/ki-kanzlei">KI für Kanzleien</a>
           </div>
         </div>
 
-        <div class="branche-karte">
-          <span class="branche-emoji">🏠</span>
-          <strong class="branche-titel">Immobilienmakler</strong>
+        <div class="branche-karte branche-dunkel">
+          <div class="branche-top">
+            <span class="branche-emoji">🏠</span>
+            <strong class="branche-titel">Immobilienmakler</strong>
+          </div>
           <div class="branche-links">
             <a href="/ki-immobilienmakler">KI für Immobilienmakler</a>
           </div>
@@ -182,7 +192,7 @@ import Cta from '../components/Cta.astro';
         <p>Für Betriebe mit 1–50 Mitarbeitern die Zeit sparen wollen: Handwerker, Praxen, Restaurants, Kanzleien, Makler und Selbstständige.</p>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item faq-highlight">
         <h3>Wie schnell ist das umgesetzt?</h3>
         <p>In 1–2 Wochen. Du gibst uns 30 Minuten für das Erstgespräch – den Rest machen wir.</p>
       </div>
@@ -197,7 +207,7 @@ import Cta from '../components/Cta.astro';
         <p>Kein Cent fällig. Wir zeigen dir zuerst was wir bauen wollen – du entscheidest danach.</p>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item faq-item--last">
         <h3>Wenn KI so viel kann – warum brauche ich noch jemanden?</h3>
         <p>KI macht gute Leute besser – aber sie macht niemanden gut der sich nicht auskennt. Marketing und Betriebsabläufe sind unser Handwerk. KI ist unser Werkzeug.</p>
       </div>
@@ -213,7 +223,7 @@ import Cta from '../components/Cta.astro';
   ───────────────────────────────────────── */
   .hero {
     background: var(--surface);
-    padding: 9rem 1.5rem 6rem;
+    padding: 140px 1.5rem 100px;
     text-align: center;
   }
 
@@ -291,7 +301,6 @@ import Cta from '../components/Cta.astro';
     font-weight: 700;
   }
 
-  /* Use-case cards in hero */
   .use-case-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -332,7 +341,7 @@ import Cta from '../components/Cta.astro';
   ───────────────────────────────────────── */
   .leistungen {
     background: var(--surface-low);
-    padding: 5rem 1.5rem;
+    padding: 128px 1.5rem;
   }
 
   .leistungen-inner {
@@ -353,7 +362,7 @@ import Cta from '../components/Cta.astro';
     font-size: 1.05rem;
     color: var(--on-surface-muted);
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
   }
 
   .leistungen-grid {
@@ -366,53 +375,75 @@ import Cta from '../components/Cta.astro';
     background: var(--surface-lowest);
     border: 1px solid var(--dust);
     border-radius: 1rem;
-    padding: 1.5rem;
+    padding: 2.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
     text-decoration: none;
     color: inherit;
-    transition: box-shadow 0.2s;
+    box-shadow: 0px 12px 32px rgba(27, 28, 26, 0.06);
+    transition: transform 0.3s ease;
   }
 
   .lk:hover {
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-8px);
+  }
+
+  .lk:hover .lk-line {
+    width: 3rem;
   }
 
   .lk-emoji {
-    font-size: 1.75rem;
+    font-size: 2.5rem;
     line-height: 1;
+    color: var(--secondary);
+    margin-bottom: 2rem;
+    display: block;
   }
 
   .lk-titel {
-    font-family: 'Manrope', sans-serif;
-    font-weight: 600;
-    font-size: 1.05rem;
-    color: var(--on-surface);
+    font-family: 'Noto Serif', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    display: block;
   }
 
   .lk-text {
     font-family: 'Manrope', sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.9375rem;
     color: var(--on-surface-muted);
-    line-height: 1.6;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
     flex-grow: 1;
   }
 
-  .lk-arrow {
+  .lk-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
     margin-top: auto;
-    color: var(--secondary);
-    font-size: 1rem;
-    font-weight: 600;
-    align-self: flex-end;
+  }
+
+  .lk-line {
+    display: inline-block;
+    width: 2rem;
+    height: 2px;
+    background: var(--secondary);
+    transition: width 0.3s ease;
+    flex-shrink: 0;
   }
 
   /* ─────────────────────────────────────────
      BRANCHEN
   ───────────────────────────────────────── */
   .branchen {
-    background: var(--primary);
-    padding: 5rem 1.5rem;
+    background: var(--surface);
+    padding: 128px 1.5rem;
   }
 
   .branchen-inner {
@@ -423,7 +454,7 @@ import Cta from '../components/Cta.astro';
   .branchen-h2 {
     font-family: 'Noto Serif', serif;
     font-size: clamp(1.75rem, 3vw, 2.5rem);
-    color: rgba(255, 255, 255, 0.95);
+    color: var(--on-surface);
     text-align: center;
     margin-bottom: 0.75rem;
   }
@@ -431,64 +462,120 @@ import Cta from '../components/Cta.astro';
   .branchen-sub {
     font-family: 'Manrope', sans-serif;
     font-size: 1.05rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--on-surface-muted);
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
   }
 
   .branchen-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: start;
   }
 
   .branche-karte {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 1rem;
-    padding: 1.5rem 1rem;
+    min-height: 380px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 0.625rem;
-    text-align: center;
+    justify-content: space-between;
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+  }
+
+  .branche-karte:hover {
+    transform: translateY(-8px);
+  }
+
+  /* Dunkle Karten (1, 3, 5) */
+  .branche-dunkel {
+    background: var(--primary-container);
+  }
+
+  .branche-dunkel .branche-emoji {
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  .branche-dunkel .branche-titel {
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  .branche-dunkel .branche-links a {
+    color: var(--primary-fixed);
+  }
+
+  .branche-dunkel .branche-links a:hover {
+    opacity: 0.8;
+  }
+
+  /* Helle Karten (2, 4) */
+  .branche-hell {
+    background: var(--surface-lowest);
+    border: 1px solid var(--dust);
+    box-shadow: 0px 12px 32px rgba(27, 28, 26, 0.06);
+    margin-top: 3rem;
+  }
+
+  .branche-hell .branche-emoji {
+    color: var(--secondary);
+  }
+
+  .branche-hell .branche-titel {
+    color: var(--primary);
+  }
+
+  .branche-hell .branche-links a {
+    color: var(--secondary);
+  }
+
+  .branche-hell .branche-links a:hover {
+    opacity: 0.8;
+  }
+
+  /* Karten-Aufbau */
+  .branche-top {
+    display: flex;
+    flex-direction: column;
   }
 
   .branche-emoji {
-    font-size: 2rem;
+    font-size: 2.5rem;
     line-height: 1;
+    margin-bottom: 1.5rem;
+    display: block;
   }
 
   .branche-titel {
-    font-family: 'Manrope', sans-serif;
-    font-weight: 600;
-    font-size: 0.9375rem;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.3;
+    font-family: 'Noto Serif', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 0;
   }
 
   .branche-links {
     display: flex;
     flex-direction: column;
-    gap: 0.375rem;
-    margin-top: 0.25rem;
-    width: 100%;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 1.5rem;
   }
 
   .branche-links a {
-    display: block;
     font-family: 'Manrope', sans-serif;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.85rem;
+    font-weight: 600;
     text-decoration: none;
-    padding: 0.3rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    transition: color 0.2s;
-    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s;
   }
 
-  .branche-links a:hover {
-    color: rgba(255, 255, 255, 0.95);
+  .branche-links a::before {
+    content: '→';
+    font-size: 0.8rem;
   }
 
   /* ─────────────────────────────────────────
@@ -496,11 +583,11 @@ import Cta from '../components/Cta.astro';
   ───────────────────────────────────────── */
   .faq {
     background: var(--surface-low);
-    padding: 5rem 1.5rem;
+    padding: 128px 1.5rem;
   }
 
   .faq-inner {
-    max-width: 760px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 
@@ -511,23 +598,62 @@ import Cta from '../components/Cta.astro';
     margin-bottom: 3rem;
   }
 
+  /* Normales FAQ-Item: 2-spaltig */
   .faq-item {
-    margin-bottom: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: start;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--dust);
+  }
+
+  .faq-item--last {
+    border-bottom: none;
   }
 
   .faq-item h3 {
     font-family: 'Noto Serif', serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--on-surface);
-    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.4;
+    margin: 0;
   }
 
   .faq-item p {
     font-family: 'Manrope', sans-serif;
     font-size: 1rem;
     color: var(--on-surface-muted);
-    line-height: 1.7;
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  /* Highlight-Item (Frage 3) */
+  .faq-highlight {
+    display: block;
+    background: var(--primary);
+    border-radius: 1rem;
+    padding: 2.5rem 3rem;
+    margin: 0.5rem 0;
+    border-bottom: none;
+  }
+
+  .faq-highlight h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .faq-highlight p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    color: var(--primary-fixed);
+    line-height: 1.8;
+    margin: 0;
   }
 
   /* ─────────────────────────────────────────
@@ -535,7 +661,11 @@ import Cta from '../components/Cta.astro';
   ───────────────────────────────────────── */
   @media (max-width: 1024px) {
     .branchen-grid {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .branche-hell {
+      margin-top: 0;
     }
   }
 
@@ -547,8 +677,8 @@ import Cta from '../components/Cta.astro';
 
   @media (max-width: 767px) {
     .hero {
-      padding-top: 6.5rem;
-      padding-bottom: 4rem;
+      padding-top: 100px;
+      padding-bottom: 64px;
     }
 
     .use-case-cards {
@@ -556,7 +686,20 @@ import Cta from '../components/Cta.astro';
     }
 
     .branchen-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
+    }
+
+    .branche-karte {
+      min-height: auto;
+    }
+
+    .faq-item {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .faq-highlight {
+      padding: 2rem 1.5rem;
     }
   }
 
@@ -564,11 +707,9 @@ import Cta from '../components/Cta.astro';
     .leistungen-grid {
       grid-template-columns: 1fr;
     }
-  }
 
-  @media (max-width: 480px) {
-    .branchen-grid {
-      grid-template-columns: 1fr 1fr;
+    .lk {
+      padding: 1.75rem;
     }
   }
 </style>
