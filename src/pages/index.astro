@@ -87,36 +87,6 @@ import Cta from '../components/Cta.astro';
         rel="noopener noreferrer"
       >Sag uns wie du arbeitest — wir finden die Lösung</a>
 
-      <div class="vergleich-boxen">
-
-        <div class="vergleich-box">
-          <span class="vergleich-label">TELEFON &amp; ANFRAGEN</span>
-          <div class="vergleich-row">
-            <span class="vergleich-vorher">3 Mitarbeiter</span>
-            <span class="vergleich-pfeil">→</span>
-            <span class="vergleich-nachher">1 Person + KI</span>
-          </div>
-        </div>
-
-        <div class="vergleich-box">
-          <span class="vergleich-label">WOCHENOUTPUT</span>
-          <div class="vergleich-row">
-            <span class="vergleich-vorher">1 Woche Arbeit</span>
-            <span class="vergleich-pfeil">→</span>
-            <span class="vergleich-nachher">1 Tag mit KI</span>
-          </div>
-        </div>
-
-        <div class="vergleich-box">
-          <span class="vergleich-label">SOCIAL MEDIA</span>
-          <div class="vergleich-row">
-            <span class="vergleich-vorher">5 Wochen</span>
-            <span class="vergleich-pfeil">→</span>
-            <span class="vergleich-nachher">1 Woche mit KI</span>
-          </div>
-        </div>
-
-      </div>
     </div>
   </section>
 
@@ -128,8 +98,8 @@ import Cta from '../components/Cta.astro';
 
       <div class="social-media-header">
         <span class="eyebrow-lk">SOCIAL MEDIA &amp; CONTENT MIT KI</span>
-        <h2>Einmal erstellt. Überall verteilt.<br>Immer ausgewertet.</h2>
-        <p class="social-media-subtext">Du machst ein Video oder einen Post — wir sorgen dafür dass er auf allen Kanälen landet und gut aussieht.</p>
+        <h2>Social Media mit KI.</h2>
+        <p class="social-media-subtext">Wir übernehmen die Produktion, die Verteilung und die Auswertung — du lieferst den Inhalt.</p>
       </div>
 
       <div class="leistungen-grid-wrapper">
@@ -138,28 +108,28 @@ import Cta from '../components/Cta.astro';
           <a href="/ki-social-media" class="lk">
             <span class="lk-icon">📹</span>
             <h3>Ein Video. Sechs Plattformen.</h3>
-            <p class="lk-text">Du lädst einmal hoch. Wir verteilen es automatisch auf Instagram, TikTok, YouTube, LinkedIn und mehr — fertig aufbereitet für jede Plattform.</p>
+            <p class="lk-text">Du lädst einmal hoch. Wir bereiten es auf und verteilen es automatisch auf Instagram, TikTok, YouTube, LinkedIn und mehr.</p>
             <div class="lk-line"></div>
           </a>
 
           <a href="/ki-social-media" class="lk">
             <span class="lk-icon">📊</span>
             <h3>Wir sehen was funktioniert.</h3>
-            <p class="lk-text">Welcher Post bekommt Reaktionen, welcher nicht — wir überwachen das automatisch und sagen dir was du mehr davon machen solltest.</p>
+            <p class="lk-text">Wir haben eine eigene Software entwickelt die überwacht welcher Beitrag wie performt — und zeigt dir was du mehr davon machen solltest.</p>
             <div class="lk-line"></div>
           </a>
 
           <a href="/ki-social-media" class="lk">
             <span class="lk-icon">🎨</span>
-            <h3>Immer dein Look.</h3>
-            <p class="lk-text">Jeder Post sieht aus wie du. Farben, Schriften, Stil — KI hält das konsistent, egal wer den Inhalt erstellt.</p>
+            <h3>Konstantes Design für deine Marke.</h3>
+            <p class="lk-text">Jeder Post sieht aus wie du. Farben, Schriften, Stil — immer konsistent, egal auf welcher Plattform.</p>
             <div class="lk-line"></div>
           </a>
 
           <a href="/ki-social-media" class="lk">
             <span class="lk-icon">🧠</span>
             <h3>Dein Wissen wird Inhalt.</h3>
-            <p class="lk-text">Du sagst was du weißt — KI macht daraus Posts, Texte und Videos die nach dir klingen. Nicht nach einer Maschine.</p>
+            <p class="lk-text">Du sagst was du weißt — wir machen daraus Posts, Texte und Videos die nach dir klingen. Nicht nach einer Maschine.</p>
             <div class="lk-line"></div>
           </a>
 
@@ -431,15 +401,16 @@ import Cta from '../components/Cta.astro';
   .subtitle {
     font-family: 'Noto Serif', serif;
     font-style: italic;
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
-    color: var(--on-surface-muted);
+    font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+    line-height: 1.3;
+    color: var(--on-surface);
     margin-bottom: 1rem;
   }
 
   /* Subtext */
   .subtext {
     font-family: 'Manrope', sans-serif;
-    font-size: 1.1rem;
+    font-size: clamp(1.1rem, 1.8vw, 1.35rem);
     font-weight: 300;
     color: var(--on-surface-muted);
     line-height: 1.7;
@@ -877,7 +848,7 @@ import Cta from '../components/Cta.astro';
   }
 
   .faq-inner {
-    max-width: 760px;
+    max-width: 900px;
     margin: 0 auto;
   }
 
@@ -890,12 +861,15 @@ import Cta from '../components/Cta.astro';
   }
 
   .faq-item {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 3rem;
-    align-items: start;
-    padding: 2rem 0;
+    display: block;
+    padding-bottom: 2.5rem;
+    margin-bottom: 0;
     border-bottom: 1px solid var(--dust);
+    padding-top: 2.5rem;
+  }
+
+  .faq-item:first-of-type {
+    padding-top: 0;
   }
 
   .faq-item--last {
@@ -904,11 +878,11 @@ import Cta from '../components/Cta.astro';
 
   .faq-item h3 {
     font-family: 'Noto Serif', serif;
-    font-size: 1.5rem;
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
     font-weight: 400;
     color: var(--primary);
     line-height: 1.3;
-    margin: 0;
+    margin: 0 0 1rem 0;
   }
 
   .faq-item p {
@@ -985,17 +959,9 @@ import Cta from '../components/Cta.astro';
       align-items: flex-start;
     }
 
-    .faq-item:not(.faq-highlight) {
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-    }
   }
 
   @media (max-width: 640px) {
-    .faq-item:not(.faq-highlight) {
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-    }
   }
 
   @media (max-width: 600px) {
@@ -1094,63 +1060,6 @@ import Cta from '../components/Cta.astro';
     background: var(--secondary-container);
   }
 
-  .vergleich-boxen {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .vergleich-box {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 0.75rem;
-    padding: 1.25rem;
-  }
-
-  .vergleich-label {
-    display: block;
-    font-family: 'Manrope', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--primary-fixed);
-    margin-bottom: 0.75rem;
-  }
-
-  .vergleich-row {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
-
-  .vergleich-vorher {
-    font-family: 'Manrope', sans-serif;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.45);
-    text-decoration: line-through;
-  }
-
-  .vergleich-pfeil {
-    font-family: 'Manrope', sans-serif;
-    font-size: 1rem;
-    color: var(--primary-fixed);
-  }
-
-  .vergleich-nachher {
-    font-family: 'Manrope', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #fff;
-  }
-
-  @media (max-width: 768px) {
-    .vergleich-boxen {
-      grid-template-columns: 1fr;
-    }
-  }
-
   /* ─────────────────────────────────────────
      SOCIAL MEDIA SEKTION
   ───────────────────────────────────────── */
@@ -1223,8 +1132,9 @@ import Cta from '../components/Cta.astro';
   .faq-statement {
     background: var(--primary);
     border-radius: 0.75rem;
-    padding: 2rem 2.5rem;
+    padding: 3rem 3.5rem;
     margin-top: 2rem;
+    max-width: 900px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -1235,10 +1145,16 @@ import Cta from '../components/Cta.astro';
   .faq-statement p {
     font-family: 'Noto Serif', serif;
     font-style: italic;
-    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-size: clamp(1.3rem, 2.2vw, 1.75rem);
     color: rgba(255, 255, 255, 0.95);
-    line-height: 1.7;
+    line-height: 1.65;
     margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .faq-statement {
+      padding: 2rem 1.5rem;
+    }
   }
 
   .faq-statement-btn {
