@@ -952,9 +952,9 @@ import Cta from '../components/Cta.astro';
 
   .faq-item p {
     font-family: 'Manrope', sans-serif;
-    font-size: 1rem;
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
     color: var(--on-surface-muted);
-    line-height: 1.8;
+    line-height: 1.85;
     margin: 0;
   }
 
@@ -1101,7 +1101,7 @@ import Cta from '../components/Cta.astro';
 
   .ki-effekt-text p {
     font-family: 'Manrope', sans-serif;
-    font-size: 1.05rem;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.80);
     margin: 0;
@@ -1111,6 +1111,7 @@ import Cta from '../components/Cta.astro';
     border-left: 3px solid var(--secondary);
     padding-left: 1.25rem;
     color: var(--primary-fixed) !important;
+    font-size: clamp(1.1rem, 1.8vw, 1.35rem) !important;
     font-weight: 600 !important;
   }
 
@@ -1273,7 +1274,7 @@ import Cta from '../components/Cta.astro';
   .faq-statement p {
     font-family: 'Noto Serif', serif;
     font-style: italic;
-    font-size: 1.25rem;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
     color: rgba(255, 255, 255, 0.95);
     line-height: 1.7;
     margin: 0;
