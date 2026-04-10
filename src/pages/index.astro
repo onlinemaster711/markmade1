@@ -17,49 +17,30 @@ import Cta from '../components/Cta.astro';
     <div class="hero-bg" aria-hidden="true"></div>
 
     <div class="hero-inner">
-      <div class="hero-grid">
 
-        <!-- Linke Spalte (8/12) -->
-        <div class="hero-left">
+      <!-- H1 -->
+      <h1>
+        KI macht dich <em>besser.</em>
+      </h1>
 
-          <!-- H1 -->
-          <h1>
-            KI macht dich <em>besser.</em>
-          </h1>
+      <!-- Subtitle -->
+      <p class="subtitle">Eine Person mit KI schlägt ein Team ohne. Wir zeigen dir wie.</p>
 
-          <!-- Subtitle -->
-          <p class="subtitle">Eine Person mit KI schlägt ein Team ohne. Wir zeigen dir wie.</p>
+      <!-- Subtext -->
+      <p class="subtext">
+        Wir bauen KI-Lösungen für kleine und mittelständische Betriebe —
+        Standard oder individuell, exakt auf deinen Betrieb zugeschnitten.
+      </p>
 
-          <!-- Subtext -->
-          <p class="subtext">
-            Wir bauen KI-Lösungen für kleine und mittelständische Betriebe —
-            Standard oder individuell, exakt auf deinen Betrieb zugeschnitten.
-          </p>
-
-          <!-- Buttons -->
-          <div class="hero-buttons">
-            <a
-              href="https://calendly.com/onlinemaster711/new-meeting"
-              class="btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Kostenloses Erstgespräch buchen <span>→</span></a>
-            <a href="#leistungen" class="btn-ghost">Leistungen entdecken</a>
-          </div>
-
-        </div>
-
-        <!-- Rechte Spalte (4/12) -->
-        <div class="hero-right">
-          <img
-            src="/hero-main.webp"
-            alt="KI-Agentur MarkMade – KI-Lösungen für kleine Betriebe"
-            width="800"
-            height="1000"
-            style="width:100%; height:100%; object-fit:cover; border-radius:0.5rem; display:block;"
-          />
-        </div>
-
+      <!-- Buttons -->
+      <div class="hero-buttons">
+        <a
+          href="https://calendly.com/onlinemaster711/new-meeting"
+          class="btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Kostenloses Erstgespräch buchen <span>→</span></a>
+        <a href="#leistungen" class="btn-ghost">Leistungen entdecken</a>
       </div>
 
     </div>
@@ -277,7 +258,6 @@ import Cta from '../components/Cta.astro';
           <h2>Dein KI-Team.</h2>
           <p class="leistungen-subtext">Sechs Rollen. Kein Gehalt. Kein Urlaub. Kein Krankenstand.</p>
         </div>
-        <div class="leistungen-watermark" aria-hidden="true">SERVICES</div>
       </div>
 
       <div class="leistungen-grid-wrapper">
@@ -360,26 +340,11 @@ import Cta from '../components/Cta.astro';
   }
 
   .hero-inner {
-    max-width: 1400px;
+    max-width: 800px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
-  }
-
-  .hero-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 2rem;
-    align-items: start;
-  }
-
-  .hero-left {
-    grid-column: span 8;
-  }
-
-  .hero-right {
-    grid-column: span 4;
-    position: relative;
+    text-align: center;
   }
 
   /* H1 */
@@ -415,7 +380,7 @@ import Cta from '../components/Cta.astro';
     color: var(--on-surface-muted);
     line-height: 1.7;
     max-width: 580px;
-    margin-bottom: 2.5rem;
+    margin: 0 auto 2.5rem;
   }
 
   /* Buttons */
@@ -423,6 +388,7 @@ import Cta from '../components/Cta.astro';
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .btn-primary {
@@ -563,11 +529,8 @@ import Cta from '../components/Cta.astro';
   }
 
   .leistungen-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    text-align: center;
     margin-bottom: 4rem;
-    gap: 2rem;
   }
 
   .eyebrow-lk {
@@ -585,6 +548,7 @@ import Cta from '../components/Cta.astro';
     font-size: clamp(2rem, 4vw, 3rem);
     color: var(--primary);
     margin: 0;
+    text-align: center;
   }
 
   .leistungen-watermark {
@@ -920,13 +884,6 @@ import Cta from '../components/Cta.astro';
      RESPONSIVE
   ───────────────────────────────────────── */
   @media (max-width: 1024px) {
-    .hero-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .hero-left { grid-column: span 1; }
-    .hero-right { display: none; }
-
     .leistungen-watermark { display: none; }
   }
 
@@ -954,11 +911,6 @@ import Cta from '../components/Cta.astro';
       grid-template-columns: repeat(2, 1fr);
     }
 
-    .leistungen-header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
   }
 
   @media (max-width: 640px) {
@@ -983,6 +935,7 @@ import Cta from '../components/Cta.astro';
     font-size: 1rem;
     color: var(--on-surface-muted);
     margin-top: 0.5rem;
+    text-align: center;
   }
 
   /* ─────────────────────────────────────────
@@ -995,8 +948,9 @@ import Cta from '../components/Cta.astro';
   }
 
   .ki-effekt-inner {
-    max-width: 1400px;
+    max-width: 860px;
     margin: 0 auto;
+    text-align: center;
   }
 
   .ki-effekt-eyebrow {
@@ -1008,6 +962,7 @@ import Cta from '../components/Cta.astro';
     letter-spacing: 0.2em;
     color: var(--primary-fixed);
     margin-bottom: 1.25rem;
+    text-align: center;
   }
 
   .ki-effekt-h2 {
@@ -1016,6 +971,7 @@ import Cta from '../components/Cta.astro';
     color: #fff;
     margin-bottom: 2.5rem;
     line-height: 1.15;
+    text-align: center;
   }
 
   .ki-effekt-text {
@@ -1023,7 +979,7 @@ import Cta from '../components/Cta.astro';
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    margin-bottom: 2.5rem;
+    margin: 0 auto 2.5rem;
   }
 
   .ki-effekt-text p {
@@ -1037,13 +993,18 @@ import Cta from '../components/Cta.astro';
   .ki-effekt-highlight {
     border-left: 3px solid var(--secondary);
     padding-left: 1.25rem;
+    text-align: left;
+    max-width: 700px;
+    margin: 1.5rem auto 0;
     color: var(--primary-fixed) !important;
     font-size: clamp(1.1rem, 1.8vw, 1.35rem) !important;
     font-weight: 600 !important;
   }
 
   .ki-effekt-btn {
-    display: inline-block;
+    display: block;
+    width: fit-content;
+    margin: 2rem auto 0;
     background: var(--secondary);
     color: #fff;
     padding: 0.875rem 1.75rem;
@@ -1052,7 +1013,6 @@ import Cta from '../components/Cta.astro';
     font-weight: 600;
     font-size: 1rem;
     text-decoration: none;
-    margin-bottom: 3rem;
     transition: background 0.2s ease;
   }
 
@@ -1083,6 +1043,7 @@ import Cta from '../components/Cta.astro';
     color: var(--primary);
     margin: 1rem 0 0.75rem;
     line-height: 1.15;
+    text-align: center;
   }
 
   .social-media-subtext {
@@ -1090,6 +1051,7 @@ import Cta from '../components/Cta.astro';
     font-size: 1.05rem;
     color: var(--on-surface-muted);
     margin: 0;
+    text-align: center;
   }
 
   .social-karten {
