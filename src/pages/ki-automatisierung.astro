@@ -103,7 +103,93 @@ import Cta from '../components/Cta.astro';
     </div>
   </section>
 
-  <!-- 5. CTA -->
+  <!-- 5. ZEITRECHNER -->
+  <section class="zeitrechner">
+    <div class="zr-inner">
+      <div class="zr-content">
+        <h2>Wie viel Zeit kostet dich Verwaltung gerade wirklich?</h2>
+
+        <div class="zr-slider-group">
+          <label for="aufgaben">
+            Wie viele wiederkehrende Aufgaben erledigst du pro Tag?
+            <span class="zr-val" id="aufgaben-val">5</span>
+          </label>
+          <input type="range" id="aufgaben" min="1" max="20" value="5" step="1" class="zr-range" />
+          <div class="zr-range-labels"><span>1</span><span>20</span></div>
+        </div>
+
+        <div class="zr-slider-group">
+          <label for="minuten">
+            Wie lange dauert eine solche Aufgabe?
+            <span class="zr-val" id="minuten-val">20 Min</span>
+          </label>
+          <input type="range" id="minuten" min="5" max="60" value="20" step="5" class="zr-range" />
+          <div class="zr-range-labels"><span>5 Min</span><span>60 Min</span></div>
+        </div>
+      </div>
+
+      <div class="zr-ergebnis">
+        <div class="zr-box">
+          <p class="zr-label">Minuten pro Tag</p>
+          <p class="zr-tag" id="zr-tag">100</p>
+          <p class="zr-label">Stunden pro Monat</p>
+          <p class="zr-monat" id="zr-monat">33</p>
+          <p class="zr-label">Stunden pro Jahr</p>
+          <p class="zr-jahr" id="zr-jahr">400</p>
+          <p class="zr-frage" id="zr-frage">Was machst du mit 400 Stunden mehr im Jahr?</p>
+          <p class="zr-hinweis">Das sind keine Versprechen. Das ist Mathematik.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. WAS KI NICHT KANN -->
+  <section class="ki-nicht">
+    <div class="kn-inner">
+      <h2>Was KI nicht ersetzt.</h2>
+      <p class="kn-text">KI kann keine Entscheidungen treffen die Erfahrung und Urteilsvermögen erfordern. Sie kann nicht einschätzen ob ein Kunde gerade verärgert ist oder ob eine Situation Fingerspitzengefühl braucht. Aber sie übernimmt was immer gleich ist – damit du dich auf das konzentrierst was wirklich deinen Einsatz erfordert.</p>
+      <div class="kn-punkte">
+        <div class="kn-punkt">
+          <span class="kn-dash">—</span>
+          <p><strong>Entscheidungen triffst du</strong> – KI bereitet sie vor</p>
+        </div>
+        <div class="kn-punkt">
+          <span class="kn-dash">—</span>
+          <p><strong>Kundenbeziehungen pflegst du</strong> – KI gibt dir mehr Zeit dafür</p>
+        </div>
+        <div class="kn-punkt">
+          <span class="kn-dash">—</span>
+          <p><strong>Dein Betrieb bleibt unter deiner Kontrolle</strong> – KI wird von dir konfiguriert und kann jederzeit angepasst werden</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUCH INTERESSANT -->
+  <section class="auch-interessant">
+    <div class="ai-inner">
+      <h3>Das könnte dich auch interessieren</h3>
+      <div class="ai-grid">
+        <a href="/ki-telefonassistent" class="ai-karte">
+          <span class="ai-icon">📞</span>
+          <span class="ai-titel">KI-Telefonassistent</span>
+          <span class="ai-arrow">→</span>
+        </a>
+        <a href="/ki-email" class="ai-karte">
+          <span class="ai-icon">✉️</span>
+          <span class="ai-titel">E-Mail-Automatisierung</span>
+          <span class="ai-arrow">→</span>
+        </a>
+        <a href="/ki-fuer-unternehmen" class="ai-karte">
+          <span class="ai-icon">💬</span>
+          <span class="ai-titel">KI-Chatbot &amp; Übersicht</span>
+          <span class="ai-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. CTA -->
   <Cta />
 
 </BaseLayout>
@@ -303,6 +389,249 @@ import Cta from '../components/Cta.astro';
     color: var(--on-surface-muted);
   }
 
+  /* Zeitrechner */
+  .zeitrechner {
+    background: var(--primary);
+    padding: 5rem 0;
+    color: white;
+  }
+
+  .zr-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .zeitrechner h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+    color: white;
+    margin-bottom: 2rem;
+    line-height: 1.3;
+  }
+
+  .zr-slider-group {
+    margin-bottom: 2rem;
+  }
+
+  .zr-slider-group label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
+
+  .zr-val {
+    font-weight: 700;
+    color: white;
+  }
+
+  .zr-range {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.25);
+    outline: none;
+  }
+
+  .zr-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-fixed, #e8ecd4);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .zr-range::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-fixed, #e8ecd4);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .zr-range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 0.375rem;
+  }
+
+  .zr-ergebnis {
+    display: flex;
+    justify-content: center;
+  }
+
+  .zr-box {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1.25rem;
+    padding: 2rem 2.25rem;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .zr-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.25rem;
+  }
+
+  .zr-tag, .zr-monat, .zr-jahr {
+    font-family: 'Noto Serif', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .zr-frage {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--primary-fixed, #e8ecd4);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  .zr-hinweis {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+  }
+
+  /* Was KI nicht kann */
+  .ki-nicht {
+    background: var(--surface-low);
+    padding: 5rem 0;
+  }
+
+  .kn-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .ki-nicht h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--on-surface);
+    margin-bottom: 1.5rem;
+    line-height: 1.25;
+  }
+
+  .kn-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--on-surface-muted);
+    margin-bottom: 2rem;
+  }
+
+  .kn-punkte {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .kn-punkt {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .kn-dash {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--secondary);
+    flex-shrink: 0;
+    line-height: 1.6;
+  }
+
+  .kn-punkt p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--on-surface-muted);
+    margin: 0;
+  }
+
+  /* Auch interessant */
+  .auch-interessant {
+    background: var(--surface-low);
+    padding: 3rem 0;
+    border-top: 1px solid var(--outline-variant);
+  }
+
+  .ai-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .auch-interessant h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 1.25rem;
+  }
+
+  .ai-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .ai-karte {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: white;
+    border: 1px solid var(--outline-variant);
+    border-radius: 0.875rem;
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+
+  .ai-karte:hover {
+    border-color: var(--secondary);
+  }
+
+  .ai-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .ai-titel {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    flex: 1;
+    line-height: 1.35;
+  }
+
+  .ai-arrow {
+    font-size: 0.875rem;
+    color: var(--secondary);
+    flex-shrink: 0;
+  }
+
   /* Responsive */
   @media (max-width: 900px) {
     .ki-grid {
@@ -320,5 +649,44 @@ import Cta from '../components/Cta.astro';
     .beispiele-grid {
       grid-template-columns: 1fr;
     }
+
+    .zr-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .zr-box {
+      max-width: 100%;
+    }
+
+    .ai-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
+
+<script>
+  function updateZeitrechner() {
+    const aufgabenEl = document.getElementById('aufgaben') as HTMLInputElement;
+    const minutenEl = document.getElementById('minuten') as HTMLInputElement;
+    if (!aufgabenEl || !minutenEl) return;
+
+    const aufgaben = parseInt(aufgabenEl.value, 10);
+    const minuten = parseInt(minutenEl.value, 10);
+
+    const min_tag = aufgaben * minuten;
+    const std_monat = Math.round((min_tag * 22) / 60 * 10) / 10;
+    const std_jahr = Math.round((min_tag * 260) / 60 * 10) / 10;
+
+    (document.getElementById('aufgaben-val') as HTMLElement).textContent = String(aufgaben);
+    (document.getElementById('minuten-val') as HTMLElement).textContent = minuten + ' Min';
+    (document.getElementById('zr-tag') as HTMLElement).textContent = String(min_tag);
+    (document.getElementById('zr-monat') as HTMLElement).textContent = String(std_monat);
+    (document.getElementById('zr-jahr') as HTMLElement).textContent = String(std_jahr);
+    (document.getElementById('zr-frage') as HTMLElement).textContent =
+      'Was machst du mit ' + std_jahr + ' Stunden mehr im Jahr?';
+  }
+
+  document.getElementById('aufgaben')?.addEventListener('input', updateZeitrechner);
+  document.getElementById('minuten')?.addEventListener('input', updateZeitrechner);
+</script>
