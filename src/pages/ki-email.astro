@@ -71,7 +71,69 @@ import Cta from '../components/Cta.astro';
     </div>
   </section>
 
-  <!-- 4. E-MAIL DEMO -->
+  <!-- 4. ZEITRECHNER -->
+  <section class="zeitrechner">
+    <div class="zr-inner">
+      <div class="zr-content">
+        <h2>Wie viele E-Mails beantwortest du gerade noch selbst?</h2>
+
+        <div class="zr-slider-group">
+          <label for="emails">
+            Wie viele E-Mails bekommst du pro Tag?
+            <span class="zr-val" id="emails-val">15</span>
+          </label>
+          <input type="range" id="emails" min="5" max="50" value="15" step="1" class="zr-range" />
+          <div class="zr-range-labels"><span>5</span><span>50</span></div>
+        </div>
+
+        <div class="zr-slider-group">
+          <label for="minuten">
+            Wie lange brauchst du pro E-Mail?
+            <span class="zr-val" id="minuten-val">8 Min</span>
+          </label>
+          <input type="range" id="minuten" min="3" max="20" value="8" step="1" class="zr-range" />
+          <div class="zr-range-labels"><span>3 Min</span><span>20 Min</span></div>
+        </div>
+      </div>
+
+      <div class="zr-ergebnis">
+        <div class="zr-box">
+          <p class="zr-label">Minuten pro Tag</p>
+          <p class="zr-tag" id="zr-tag">120</p>
+          <p class="zr-label">Stunden pro Monat</p>
+          <p class="zr-monat" id="zr-monat">60</p>
+          <p class="zr-label">Stunden pro Jahr</p>
+          <p class="zr-jahr" id="zr-jahr">730</p>
+          <p class="zr-frage" id="zr-frage">Was machst du mit 730 Stunden mehr im Jahr?</p>
+          <p class="zr-hinweis">80% der eingehenden E-Mails sind Standardfragen. KI beantwortet sie.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. WAS KI NICHT KANN -->
+  <section class="ki-nicht">
+    <div class="kn-inner">
+      <h2>Was KI nicht ersetzt.</h2>
+      <p class="kn-text">KI kann keine persönliche Beziehung aufbauen. Sie kann nicht einschätzen ob ein Kunde gerade verärgert ist und Fingerspitzengefühl braucht. Und sie kann keine strategischen Entscheidungen treffen. Aber sie beantwortet Standardfragen – damit du Zeit für die E-Mails hast die wirklich zählen.</p>
+      <div class="kn-punkte">
+        <div class="kn-punkt">
+          <span class="kn-dash">—</span>
+          <p><strong>Persönliche Kommunikation machst du</strong> – KI übernimmt die Routine</p>
+        </div>
+        <div class="kn-punkt">
+          <span class="kn-dash">—</span>
+          <p><strong>Komplexe Anfragen erkennst du</strong> – KI leitet sie direkt zu dir weiter</p>
+        </div>
+        <div class="kn-punkt">
+          <span class="kn-dash">—</span>
+          <p><strong>Dein Ton bleibt erkennbar</strong> – KI wird auf deine Sprache konfiguriert</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. E-MAIL DEMO -->
   <section class="email-demo-section">
     <div class="email-demo-wrap">
       <p class="email-demo-label">So funktioniert KI-E-Mail-Automatisierung</p>
@@ -143,7 +205,31 @@ import Cta from '../components/Cta.astro';
     </div>
   </section>
 
-  <!-- 5. CTA -->
+  <!-- AUCH INTERESSANT -->
+  <section class="auch-interessant">
+    <div class="ai-inner">
+      <h3>Das könnte dich auch interessieren</h3>
+      <div class="ai-grid">
+        <a href="/ki-telefonassistent" class="ai-karte">
+          <span class="ai-icon">📞</span>
+          <span class="ai-titel">KI-Telefonassistent</span>
+          <span class="ai-arrow">→</span>
+        </a>
+        <a href="/ki-fuer-unternehmen" class="ai-karte">
+          <span class="ai-icon">💬</span>
+          <span class="ai-titel">KI-Chatbot &amp; Übersicht</span>
+          <span class="ai-arrow">→</span>
+        </a>
+        <a href="/ki-automatisierung" class="ai-karte">
+          <span class="ai-icon">⚙️</span>
+          <span class="ai-titel">Prozessautomatisierung</span>
+          <span class="ai-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <Cta />
 
 </BaseLayout>
@@ -515,6 +601,266 @@ import Cta from '../components/Cta.astro';
     color: var(--on-surface-muted);
   }
 
+  /* Zeitrechner */
+  .zeitrechner {
+    background: var(--primary);
+    padding: 5rem 0;
+    color: white;
+  }
+
+  .zr-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .zr-content h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.4rem, 2.8vw, 2rem);
+    color: white;
+    margin-bottom: 2.5rem;
+    line-height: 1.3;
+  }
+
+  .zr-slider-group {
+    margin-bottom: 2rem;
+  }
+
+  .zr-slider-group label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 0.75rem;
+  }
+
+  .zr-val {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--primary-fixed);
+    flex-shrink: 0;
+  }
+
+  .zr-range {
+    width: 100%;
+    appearance: none;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    cursor: pointer;
+  }
+
+  .zr-range::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-fixed);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  .zr-range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.35);
+    margin-top: 0.35rem;
+  }
+
+  .zr-ergebnis {
+    display: flex;
+    justify-content: center;
+  }
+
+  .zr-box {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1.5rem;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .zr-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.35rem;
+  }
+
+  .zr-tag {
+    font-family: 'Noto Serif', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+
+  .zr-monat {
+    font-family: 'Noto Serif', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-fixed);
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+
+  .zr-jahr {
+    font-family: 'Noto Serif', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+
+  .zr-frage {
+    font-family: 'Noto Serif', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .zr-hinweis {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* KI nicht */
+  .ki-nicht {
+    background: var(--surface-low);
+    padding: 5rem 0;
+  }
+
+  .kn-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .ki-nicht h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    color: var(--on-surface);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .kn-text {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--on-surface-muted);
+    margin-bottom: 2rem;
+  }
+
+  .kn-punkte {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .kn-punkt {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .kn-dash {
+    font-size: 1.25rem;
+    color: var(--secondary);
+    font-weight: 700;
+    flex-shrink: 0;
+    line-height: 1.5;
+  }
+
+  .kn-punkt p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--on-surface);
+  }
+
+  /* Auch interessant */
+  .auch-interessant {
+    background: var(--surface-low);
+    padding: 3rem 0;
+  }
+
+  .ai-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .ai-inner h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 1.25rem;
+  }
+
+  .ai-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .ai-karte {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: white;
+    border: 1px solid var(--outline-variant);
+    border-radius: 1rem;
+    text-decoration: none;
+    color: var(--on-surface);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .ai-karte:hover {
+    border-color: var(--secondary);
+    color: var(--secondary);
+  }
+
+  .ai-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .ai-titel {
+    flex: 1;
+    line-height: 1.3;
+  }
+
+  .ai-arrow {
+    font-size: 1rem;
+    opacity: 0.4;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+  }
+
+  .ai-karte:hover .ai-arrow {
+    opacity: 1;
+  }
+
   @media (max-width: 767px) {
     .hero {
       padding-top: 6.5rem;
@@ -524,8 +870,39 @@ import Cta from '../components/Cta.astro';
     .ki-grid {
       grid-template-columns: 1fr;
     }
+
+    .zr-inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .ai-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
+
+<script>
+  function updateZeitrechner() {
+    const emails = parseInt((document.getElementById('emails') as HTMLInputElement).value, 10);
+    const minuten = parseInt((document.getElementById('minuten') as HTMLInputElement).value, 10);
+
+    const min_tag = emails * minuten;
+    const std_monat = Math.round((min_tag * 30) / 60 * 10) / 10;
+    const std_jahr = Math.round((min_tag * 365) / 60 * 10) / 10;
+
+    (document.getElementById('emails-val') as HTMLElement).textContent = String(emails);
+    (document.getElementById('minuten-val') as HTMLElement).textContent = minuten + ' Min';
+    (document.getElementById('zr-tag') as HTMLElement).textContent = String(min_tag);
+    (document.getElementById('zr-monat') as HTMLElement).textContent = String(std_monat);
+    (document.getElementById('zr-jahr') as HTMLElement).textContent = String(std_jahr);
+    (document.getElementById('zr-frage') as HTMLElement).textContent =
+      'Was machst du mit ' + std_jahr + ' Stunden mehr im Jahr?';
+  }
+
+  document.getElementById('emails')?.addEventListener('input', updateZeitrechner);
+  document.getElementById('minuten')?.addEventListener('input', updateZeitrechner);
+</script>
 
 <script>
   (function() {
