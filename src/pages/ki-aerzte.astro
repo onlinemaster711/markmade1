@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import ChatDemo from '../components/ChatDemo.astro';
 import Rechner from '../components/Rechner.astro';
 import Cta from '../components/Cta.astro';
 ---
@@ -17,35 +18,81 @@ import Cta from '../components/Cta.astro';
     mobileScreenshot="screenshot-arztpraxis-mobile.webp"
   />
 
+  <!-- SEO Subline -->
+  <div class="seo-subline-wrap">
+    <h2 class="seo-subline">KI für Ärzte und Arztpraxen – Patientenanfragen, Termine und Kommunikation automatisch erledigen</h2>
+  </div>
+
   <!-- Was KI konkret macht -->
   <section class="ki-macht-section">
-    <div class="ki-macht-inner">
-      <h2>Was KI konkret macht</h2>
+    <div class="uc-inner">
+      <h2>Was KI für Arztpraxen konkret übernimmt</h2>
+      <div class="uc-grid">
 
-      <div class="ki-macht-grid">
-        <div class="ki-item">
-          <div class="ki-icon">💬</div>
-          <h3>Patientenfragen beantworten</h3>
-          <p>Ohne dass Ihr Team dran ist</p>
+        <div class="uc-punkt fade-in">
+          <span class="uc-icon">💬</span>
+          <div>
+            <h3>Patientenfragen automatisch beantworten</h3>
+            <p>Öffnungszeiten, Kassenärztliche Zulassung, Ablauf – KI antwortet sofort.</p>
+          </div>
         </div>
 
-        <div class="ki-item">
-          <div class="ki-icon">📅</div>
-          <h3>Termine buchen</h3>
-          <p>Automatisch, direkt in den Kalender</p>
+        <div class="uc-punkt fade-in">
+          <span class="uc-icon">📅</span>
+          <div>
+            <h3>Termine automatisch buchen</h3>
+            <p>Patienten buchen direkt in den Kalender. Keine Warteschleifen, kein Telefonieren.</p>
+          </div>
         </div>
 
-        <div class="ki-item">
-          <div class="ki-icon">📋</div>
-          <h3>Anliegen vorqualifizieren</h3>
-          <p>Nur passende Anfragen kommen durch</p>
+        <div class="uc-punkt fade-in">
+          <span class="uc-icon">📋</span>
+          <div>
+            <h3>Anliegen vorqualifizieren</h3>
+            <p>Dringend oder Routinetermin? KI klärt vorab. Nur passende Anfragen kommen durch.</p>
+          </div>
         </div>
 
-        <div class="ki-item">
-          <div class="ki-icon">🔍</div>
-          <h3>Gefunden werden</h3>
-          <p>Bei Google und KI-Suchen wie ChatGPT</p>
+        <div class="uc-punkt fade-in">
+          <span class="uc-icon">📞</span>
+          <div>
+            <h3>Anrufe entgegennehmen</h3>
+            <p>KI-Telefonassistent nimmt an, klärt vor und bucht. Das Team wird nur informiert wenn nötig.</p>
+          </div>
         </div>
+
+        <div class="uc-punkt fade-in">
+          <span class="uc-icon">⭐</span>
+          <div>
+            <h3>Bewertungen automatisch anfordern</h3>
+            <p>Nach dem Termin automatisch um eine Google-Bewertung bitten.</p>
+          </div>
+        </div>
+
+        <div class="uc-punkt fade-in">
+          <span class="uc-icon">🔔</span>
+          <div>
+            <h3>Erinnerungen und Bestätigungen</h3>
+            <p>Patienten bekommen automatisch Terminbestätigungen und Erinnerungen. Weniger No-Shows.</p>
+          </div>
+        </div>
+
+        <div class="uc-punkt fade-in">
+          <span class="uc-icon">🔍</span>
+          <div>
+            <h3>Bei Google gefunden werden</h3>
+            <p>Optimierte Praxis-Website die bei lokalen Suchanfragen weit oben erscheint.</p>
+          </div>
+        </div>
+
+        <div class="uc-punkt fade-in">
+          <span class="uc-icon">🔁</span>
+          <div>
+            <h3>Wiederbestellungen automatisieren</h3>
+            <p>Patienten die regelmäßige Termine brauchen werden automatisch erinnert.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -64,57 +111,193 @@ import Cta from '../components/Cta.astro';
   </section>
 
   <Rechner />
+
+  <!-- Chat Demo -->
+  <section class="demo-section">
+    <div class="demo-inner">
+      <ChatDemo
+        title="So beantwortet KI Anfragen Ihrer Patienten"
+        messages={[
+          {role: 'user', text: 'Nehmen Sie auch neue Kassenpatienten an?'},
+          {role: 'bot', text: 'Ja, wir nehmen aktuell neue Kassenpatienten auf. Für einen Ersttermin haben wir diese Woche noch Termine verfügbar. Soll ich direkt einen für Sie buchen?'},
+          {role: 'user', text: 'Ja bitte – am liebsten vormittags.'},
+          {role: 'bot', text: 'Ich sehe freie Termine: Donnerstag 9:30 Uhr oder Freitag 10:00 Uhr. Welcher passt Ihnen besser?'}
+        ]}
+      />
+    </div>
+  </section>
+
+  <!-- Auch interessant -->
+  <section class="auch-interessant">
+    <div class="ai-inner">
+      <h3>Das könnte Sie auch interessieren</h3>
+      <div class="ai-grid">
+        <a href="/ki-telefonassistent" class="ai-karte">
+          <span class="ai-icon">📞</span>
+          <span class="ai-titel">KI-Telefonassistent</span>
+          <span class="ai-arrow">→</span>
+        </a>
+        <a href="/ki-email" class="ai-karte">
+          <span class="ai-icon">✉️</span>
+          <span class="ai-titel">E-Mail-Automatisierung</span>
+          <span class="ai-arrow">→</span>
+        </a>
+        <a href="/ratgeber/ki-fuer-aerzte" class="ai-karte">
+          <span class="ai-icon">📖</span>
+          <span class="ai-titel">Ratgeber: KI für Ärzte</span>
+          <span class="ai-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <Cta />
 </BaseLayout>
 
 <style>
-  /* --- Was KI macht Section --- */
+  /* SEO Subline */
+  .seo-subline-wrap {
+    background: var(--surface);
+    padding: 0 1.5rem 2.5rem;
+    text-align: center;
+  }
+
+  .seo-subline {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--on-surface-muted);
+    margin: 0 auto;
+    max-width: 700px;
+    line-height: 1.5;
+  }
+
+  /* --- Was KI macht Section — 8-Punkte-Grid --- */
   .ki-macht-section {
     background: var(--surface-low);
     padding: 5rem 1.5rem;
   }
 
-  .ki-macht-inner {
-    max-width: 1200px;
+  .uc-inner {
+    max-width: 960px;
     margin: 0 auto;
   }
 
   .ki-macht-section h2 {
     font-family: 'Noto Serif', serif;
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
-    font-weight: 600;
-    color: var(--primary);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--on-surface);
     margin-bottom: 3rem;
-    text-align: center;
+    line-height: 1.25;
   }
 
-  .ki-macht-grid {
+  .uc-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
 
-  .ki-item {
-    text-align: center;
+  .uc-punkt {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
   }
 
-  .ki-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    display: block;
+  .uc-icon {
+    font-size: 1.75rem;
+    line-height: 1;
+    flex-shrink: 0;
   }
 
-  .ki-item h3 {
+  .uc-punkt h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 0.35rem;
+  }
+
+  .uc-punkt p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+  }
+
+  /* Chat Demo */
+  .demo-section {
+    background: var(--surface);
+    padding: 0;
+  }
+
+  .demo-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  /* Auch interessant */
+  .auch-interessant {
+    background: var(--surface-low);
+    padding: 3rem 1.5rem;
+  }
+
+  .ai-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .ai-inner h3 {
+    font-family: 'Noto Serif', serif;
     font-size: 1.125rem;
     font-weight: 600;
     color: var(--on-surface);
-    margin-bottom: 0.75rem;
+    margin-bottom: 1.25rem;
   }
 
-  .ki-item p {
-    font-size: 0.95rem;
-    color: var(--on-surface-muted);
-    line-height: 1.6;
+  .ai-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .ai-karte {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: white;
+    border: 1px solid var(--outline-variant);
+    border-radius: 1rem;
+    text-decoration: none;
+    color: var(--on-surface);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .ai-karte:hover {
+    border-color: var(--secondary);
+    color: var(--secondary);
+  }
+
+  .ai-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .ai-titel {
+    flex: 1;
+    line-height: 1.3;
+  }
+
+  .ai-arrow {
+    font-size: 1rem;
+    opacity: 0.4;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+  }
+
+  .ai-karte:hover .ai-arrow {
+    opacity: 1;
   }
 
   /* --- Was KI nicht ersetzt --- */
@@ -164,6 +347,14 @@ import Cta from '../components/Cta.astro';
 
     .ki-quote {
       font-size: 1.1rem;
+    }
+
+    .uc-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
