@@ -1,0 +1,476 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ChatDemo from '../components/ChatDemo.astro';
+import Cta from '../components/Cta.astro';
+---
+
+<BaseLayout
+  title="Chatbot Stuttgart – KI-Chatbot für lokale Betriebe | MarkMade"
+  description="KI-Chatbot für Stuttgarter Betriebe – beantwortet Kundenfragen automatisch, bucht Termine und filtert Anfragen. Einmalig ab 500 €, kein Abo."
+>
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">KI-Chatbot · Stuttgart</p>
+      <h1>Dein Chatbot beantwortet. Du arbeitest.</h1>
+      <h2 class="seo-subline">KI-Chatbot für Stuttgarter Betriebe – rund um die Uhr erreichbar</h2>
+      <p class="hero-text">
+        Öffnungszeiten, Preise, Ablauf – dein Chatbot klärt das automatisch. Auch abends. Auch am Wochenende. Auch wenn du auf der Baustelle bist. Nur wer wirklich passt, landet bei dir.
+      </p>
+      <a href="https://calendly.com/onlinemaster711/new-meeting" class="btn-primary" target="_blank" rel="noopener noreferrer">Kostenloses Erstgespräch buchen</a>
+    </div>
+  </section>
+
+  <!-- 2. PROBLEM -->
+  <section class="problem">
+    <div class="prob-inner">
+      <h2>Wie viele Anfragen beantwortest du gerade noch selbst?</h2>
+      <p class="prob-text">Öffnungszeiten. Preise. Ablauf. Ob du das auch machst. Dieselben Fragen, jeden Tag. Das ist kein schlechter Kunde – das ist eine Website die zu wenig erklärt. Ein Chatbot löst das. Automatisch.</p>
+      <div class="prob-punkte">
+        <div class="prob-punkt">
+          <span class="prob-icon">📞</span>
+          <div>
+            <h3>Weniger Telefonate</h3>
+            <p>Standardfragen klärt der Chatbot bevor jemand anruft.</p>
+          </div>
+        </div>
+        <div class="prob-punkt">
+          <span class="prob-icon">🕐</span>
+          <div>
+            <h3>24/7 erreichbar</h3>
+            <p>Auch nachts, auch am Wochenende, auch wenn du beschäftigt bist.</p>
+          </div>
+        </div>
+        <div class="prob-punkt">
+          <span class="prob-icon">✅</span>
+          <div>
+            <h3>Nur passende Anfragen</h3>
+            <p>Unpassende Kunden filtern sich selbst raus.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. FÜR WEN -->
+  <section class="fuer-wen">
+    <div class="fw-inner">
+      <h2>Für welche Stuttgarter Betriebe ein Chatbot Sinn ergibt</h2>
+      <div class="fw-grid">
+
+        <div class="fw-karte">
+          <span class="fw-icon">🔧</span>
+          <div>
+            <h3>Handwerker &amp; Betriebe</h3>
+            <p>Weniger Anrufe, mehr Zeit auf der Baustelle.</p>
+          </div>
+        </div>
+
+        <div class="fw-karte">
+          <span class="fw-icon">🏥</span>
+          <div>
+            <h3>Ärzte &amp; Praxen</h3>
+            <p>Patientenfragen automatisch beantworten.</p>
+          </div>
+        </div>
+
+        <div class="fw-karte">
+          <span class="fw-icon">🍕</span>
+          <div>
+            <h3>Restaurants</h3>
+            <p>Reservierungen und Öffnungszeiten automatisch klären.</p>
+          </div>
+        </div>
+
+        <div class="fw-karte">
+          <span class="fw-icon">⚖️</span>
+          <div>
+            <h3>Kanzleien</h3>
+            <p>Mandantenanfragen vorqualifizieren.</p>
+          </div>
+        </div>
+
+        <div class="fw-karte">
+          <span class="fw-icon">🏠</span>
+          <div>
+            <h3>Immobilienmakler</h3>
+            <p>Interessenten vorfiltern, Besichtigungen buchen.</p>
+          </div>
+        </div>
+
+        <div class="fw-karte">
+          <span class="fw-icon">💼</span>
+          <div>
+            <h3>Selbstständige &amp; Coaches</h3>
+            <p>Rund um die Uhr erreichbar ohne selbst dran zu sein.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CHAT-DEMO -->
+  <ChatDemo
+    title="So läuft ein Gespräch mit deinem Chatbot ab"
+    messages={[
+      { role: 'user', text: 'Habt ihr am Samstag auf?' },
+      { role: 'bot',  text: 'Ja, wir sind samstags von 9 bis 14 Uhr erreichbar. Möchtest du direkt einen Termin buchen?' },
+      { role: 'user', text: 'Was kostet eine Erstberatung?' },
+      { role: 'bot',  text: 'Eine Erstberatung ist bei uns kostenlos und dauert ca. 30 Minuten. Ich kann dir gerne direkt einen Termin reservieren – welcher Tag passt dir am besten?' }
+    ]}
+  />
+
+  <!-- 5. PREIS -->
+  <section class="preis">
+    <div class="preis-inner">
+      <h2>Was kostet ein Chatbot in Stuttgart?</h2>
+      <p class="preis-text">Der Chatbot kostet 500 € einmalig – als Ergänzung zu einer neuen Website, oder als eigenständige Lösung. Einmal konfiguriert, läuft er dauerhaft. Kein Abo, keine monatlichen Kosten.</p>
+      <a href="https://calendly.com/onlinemaster711/new-meeting" class="btn-preis" target="_blank" rel="noopener noreferrer">Kostenloses Erstgespräch buchen</a>
+      <p class="preis-hinweis">Entwurf zuerst – dann entscheiden. Kein Cent ohne deine Freigabe.</p>
+    </div>
+  </section>
+
+  <!-- AUCH INTERESSANT -->
+  <section class="auch-interessant">
+    <div class="ai-inner">
+      <h3>Das könnte dich auch interessieren</h3>
+      <div class="ai-grid">
+        <a href="/ki-telefonassistent" class="ai-karte">
+          <span class="ai-icon">📞</span>
+          <span class="ai-titel">KI-Telefonassistent</span>
+          <span class="ai-arrow">→</span>
+        </a>
+        <a href="/webdesign-stuttgart" class="ai-karte">
+          <span class="ai-icon">🌐</span>
+          <span class="ai-titel">Webdesign Stuttgart</span>
+          <span class="ai-arrow">→</span>
+        </a>
+        <a href="/ki-agentur-stuttgart" class="ai-karte">
+          <span class="ai-icon">🏙️</span>
+          <span class="ai-titel">KI-Agentur Stuttgart</span>
+          <span class="ai-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CTA -->
+  <Cta />
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    background: var(--primary);
+    padding-top: 9rem;
+    padding-bottom: 5rem;
+    text-align: center;
+    color: white;
+  }
+
+  .hero-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    line-height: 1.2;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .seo-subline {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 2rem;
+    max-width: 54ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    background: white;
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.9; }
+
+  /* Problem */
+  .problem {
+    background: var(--surface);
+    padding: 5rem 0;
+  }
+
+  .prob-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .problem h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--on-surface);
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  .prob-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--on-surface-muted);
+    margin-bottom: 2.5rem;
+  }
+
+  .prob-punkte {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .prob-punkt {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .prob-icon {
+    font-size: 1.75rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .prob-punkt h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 0.3rem;
+  }
+
+  .prob-punkt p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--on-surface-muted);
+    margin: 0;
+  }
+
+  /* Für wen */
+  .fuer-wen {
+    background: var(--surface-low);
+    padding: 5rem 0;
+  }
+
+  .fw-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .fuer-wen h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--on-surface);
+    margin-bottom: 3rem;
+    line-height: 1.25;
+  }
+
+  .fw-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .fw-karte {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    background: white;
+    border: 1px solid var(--outline-variant);
+    border-radius: 1rem;
+    padding: 1.5rem;
+  }
+
+  .fw-icon {
+    font-size: 1.75rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .fw-karte h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 0.35rem;
+  }
+
+  .fw-karte p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+    margin: 0;
+  }
+
+  /* Preis */
+  .preis {
+    background: var(--surface);
+    padding: 5rem 0;
+    text-align: center;
+  }
+
+  .preis-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .preis h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--on-surface);
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  .preis-text {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--on-surface-muted);
+    margin: 0;
+    max-width: 52ch;
+  }
+
+  .btn-preis {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: opacity 0.2s;
+    margin-top: 0.5rem;
+  }
+
+  .btn-preis:hover { opacity: 0.88; }
+
+  .preis-hinweis {
+    font-size: 0.8125rem;
+    color: var(--on-surface-muted);
+    margin: 0;
+  }
+
+  /* Auch interessant */
+  .auch-interessant {
+    background: var(--surface-low);
+    padding: 3rem 0;
+    border-top: 1px solid var(--outline-variant);
+  }
+
+  .ai-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .auch-interessant h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 1.25rem;
+  }
+
+  .ai-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .ai-karte {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: white;
+    border: 1px solid var(--outline-variant);
+    border-radius: 0.875rem;
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+
+  .ai-karte:hover { border-color: var(--secondary); }
+
+  .ai-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .ai-titel {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    flex: 1;
+    line-height: 1.35;
+  }
+
+  .ai-arrow {
+    font-size: 0.875rem;
+    color: var(--secondary);
+    flex-shrink: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 767px) {
+    .hero {
+      padding-top: 6.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .fw-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
