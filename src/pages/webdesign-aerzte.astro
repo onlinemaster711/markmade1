@@ -65,6 +65,84 @@ import Cta from '../components/Cta.astro';
     </div>
   </section>
 
+  <!-- Zeitrechner -->
+  <section class="zeitrechner">
+    <div class="zr-inner">
+      <div class="zr-content">
+        <h2>Wie viel Zeit kostet das Telefon Ihre Praxis gerade wirklich?</h2>
+
+        <div class="zr-slider-group">
+          <label for="anrufe">
+            Wie viele Anrufe bekommt Ihre Praxis pro Tag?
+            <span class="zr-val" id="anrufe-val">15</span>
+          </label>
+          <input type="range" id="anrufe" min="5" max="50" value="15" step="1" class="zr-range" />
+          <div class="zr-range-labels"><span>5</span><span>50</span></div>
+        </div>
+
+        <div class="zr-slider-group">
+          <label for="minuten">
+            Wie lange dauert ein Gespräch durchschnittlich?
+            <span class="zr-val" id="minuten-val">7 Min</span>
+          </label>
+          <input type="range" id="minuten" min="3" max="15" value="7" step="1" class="zr-range" />
+          <div class="zr-range-labels"><span>3 Min</span><span>15 Min</span></div>
+        </div>
+      </div>
+
+      <div class="zr-ergebnis">
+        <div class="zr-box">
+          <p class="zr-label">Minuten pro Tag</p>
+          <p class="zr-tag" id="zr-tag">105</p>
+          <p class="zr-label">Stunden pro Monat</p>
+          <p class="zr-monat" id="zr-monat">53</p>
+          <p class="zr-label">Stunden pro Jahr</p>
+          <p class="zr-jahr" id="zr-jahr">638</p>
+          <p class="zr-frage" id="zr-frage">Was macht Ihr Team mit 638 Stunden mehr im Jahr?</p>
+          <p class="zr-hinweis">Das sind keine Versprechen. Das ist Mathematik.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preissektion -->
+  <section class="preise">
+    <div class="preise-inner">
+      <h2>Ein Preis. Alles drin. Kein Kleingedrucktes.</h2>
+      <div class="preise-grid">
+
+        <div class="preis-karte">
+          <p class="preis-titel">Website</p>
+          <p class="preis-betrag">1.000 € <span class="preis-note">inkl. MwSt. · Festpreis</span></p>
+          <ul class="preis-liste">
+            <li>Professionelle Praxis-Website</li>
+            <li>Strategie &amp; Texte</li>
+            <li>Design &amp; Technik</li>
+            <li>Google-Optimierung</li>
+            <li>Mobil &amp; schnell</li>
+            <li>Entwurf zuerst</li>
+          </ul>
+          <a href="https://calendly.com/onlinemaster711/new-meeting" class="preis-btn" target="_blank" rel="noopener noreferrer">Kostenlosen Entwurf sichern</a>
+        </div>
+
+        <div class="preis-karte preis-featured">
+          <p class="preis-badge">Empfohlen</p>
+          <p class="preis-titel">Website &amp; Chatbot</p>
+          <p class="preis-betrag">1.500 € <span class="preis-note">inkl. MwSt. · Festpreis</span></p>
+          <ul class="preis-liste">
+            <li>Alles aus Paket 1</li>
+            <li>KI-Chatbot individuell konfiguriert</li>
+            <li>Beantwortet Patientenfragen 24/7</li>
+            <li>Terminbuchung direkt im Kalender</li>
+            <li>Nur passende Anfragen kommen durch</li>
+          </ul>
+          <a href="https://calendly.com/onlinemaster711/new-meeting" class="preis-btn preis-btn-featured" target="_blank" rel="noopener noreferrer">Kostenlosen Entwurf sichern</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- Unterseiten Links -->
   <section class="unterseiten-section">
     <div class="unterseiten-inner">
@@ -98,6 +176,47 @@ import Cta from '../components/Cta.astro';
     screenshotSrc="screenshot-arztpraxis-desktop.webp"
     screenshotAlt="Website Dr. Hoffmann Arztpraxis Stuttgart"
   />
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="faq-inner">
+      <h2>Was Sie vielleicht noch beschäftigt.</h2>
+      <div class="faq-liste">
+
+        <div class="faq-item">
+          <h3>Was kostet das?</h3>
+          <p>Die Website kostet 1.000 € inkl. MwSt. – Festpreis, alles inklusive. Der Chatbot optional dazu für 500 € einmalig. Der Entwurf ist kostenlos.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Wir haben keine Zeit dafür.</h3>
+          <p>Genau 10 Minuten Gespräch – das ist alles. Texte, Design und Technik übernehmen wir vollständig.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Was wenn uns der Entwurf nicht gefällt?</h3>
+          <p>Dann zahlen Sie nichts. Kein Vertrag, keine Rechnung. Sie entscheiden erst wenn Sie sehen was Sie bekommen.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Unsere Website ist doch eigentlich okay.</h3>
+          <p>Möglich. Der kostenlose Entwurf zeigt Ihnen konkret was möglich wäre. Unverbindlich.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Wie könnt ihr das für 1.000 € anbieten?</h3>
+          <p>Wir arbeiten effizienter als klassische Agenturen – durch KI erledigen wir in Stunden was andere Wochen brauchen. Den Vorteil geben wir weiter.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Verstehen Sie die Besonderheiten einer Arztpraxis?</h3>
+          <p>Ja. Wir kennen die Anforderungen – Kassenärztliche Zulassung, Datenschutz, Patientenkommunikation. Jede Lösung wird individuell auf Ihre Praxis zugeschnitten.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <Cta />
 </BaseLayout>
 
@@ -250,6 +369,339 @@ import Cta from '../components/Cta.astro';
     line-height: 1.6;
   }
 
+  /* --- Zeitrechner --- */
+  .zeitrechner {
+    background: var(--primary);
+    padding: 5rem 1.5rem;
+    color: white;
+  }
+
+  .zr-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .zr-content h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.4rem, 2.8vw, 2rem);
+    color: white;
+    margin-bottom: 2.5rem;
+    line-height: 1.3;
+  }
+
+  .zr-slider-group {
+    margin-bottom: 2rem;
+  }
+
+  .zr-slider-group label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 0.75rem;
+  }
+
+  .zr-val {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--primary-fixed);
+    flex-shrink: 0;
+  }
+
+  .zr-range {
+    width: 100%;
+    appearance: none;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    cursor: pointer;
+  }
+
+  .zr-range::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-fixed);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  .zr-range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.35);
+    margin-top: 0.35rem;
+  }
+
+  .zr-ergebnis {
+    display: flex;
+    justify-content: center;
+  }
+
+  .zr-box {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1.5rem;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .zr-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.35rem;
+  }
+
+  .zr-tag {
+    font-family: 'Noto Serif', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+
+  .zr-monat {
+    font-family: 'Noto Serif', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-fixed);
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+
+  .zr-jahr {
+    font-family: 'Noto Serif', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+
+  .zr-frage {
+    font-family: 'Noto Serif', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .zr-hinweis {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* --- Preissektion --- */
+  .preise {
+    background: var(--surface);
+    padding: 5rem 1.5rem;
+  }
+
+  .preise-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .preise h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--on-surface);
+    margin-bottom: 3rem;
+    text-align: center;
+    line-height: 1.25;
+  }
+
+  .preise-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .preis-karte {
+    background: var(--surface-low);
+    border: 1px solid var(--outline-variant);
+    border-radius: 1.5rem;
+    padding: 2.5rem 2rem;
+  }
+
+  .preis-featured {
+    background: var(--primary);
+    border-color: var(--primary);
+    margin-top: -24px;
+    color: white;
+  }
+
+  .preis-badge {
+    display: inline-block;
+    background: var(--secondary);
+    color: white;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+
+  .preis-titel {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 0.5rem;
+  }
+
+  .preis-featured .preis-titel {
+    color: white;
+  }
+
+  .preis-betrag {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.625rem;
+    font-weight: 700;
+    color: var(--on-surface);
+    margin-bottom: 1.75rem;
+  }
+
+  .preis-featured .preis-betrag {
+    color: white;
+  }
+
+  .preis-note {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--on-surface-muted);
+  }
+
+  .preis-featured .preis-note {
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  .preis-liste {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .preis-liste li {
+    font-size: 0.9375rem;
+    color: var(--on-surface-muted);
+    padding-left: 1.4rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .preis-liste li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--secondary);
+    font-weight: 700;
+  }
+
+  .preis-featured .preis-liste li {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .preis-featured .preis-liste li::before {
+    color: var(--primary-fixed);
+  }
+
+  .preis-btn {
+    display: block;
+    text-align: center;
+    padding: 0.875rem 1.5rem;
+    background: var(--secondary);
+    color: white;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0.875rem;
+    transition: opacity 0.2s;
+  }
+
+  .preis-btn:hover {
+    opacity: 0.88;
+  }
+
+  .preis-btn-featured {
+    background: white;
+    color: var(--primary);
+  }
+
+  /* --- FAQ --- */
+  .faq-section {
+    background: var(--surface-low);
+    padding: 5rem 1.5rem;
+  }
+
+  .faq-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .faq-section h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--on-surface);
+    margin-bottom: 3rem;
+    line-height: 1.25;
+  }
+
+  .faq-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .faq-item {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--outline-variant);
+  }
+
+  .faq-item:first-child {
+    border-top: 1px solid var(--outline-variant);
+  }
+
+  .faq-item h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .faq-item p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--on-surface-muted);
+  }
+
   /* --- Responsive --- */
   @media (max-width: 767px) {
     .probleme-section,
@@ -266,5 +718,40 @@ import Cta from '../components/Cta.astro';
       padding: 0.625rem 1.25rem;
       font-size: 0.875rem;
     }
+
+    .zr-inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .preise-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .preis-featured {
+      margin-top: 0;
+    }
   }
 </style>
+
+<script>
+  function updateZeitrechner() {
+    const anrufe = parseInt((document.getElementById('anrufe') as HTMLInputElement).value, 10);
+    const minuten = parseInt((document.getElementById('minuten') as HTMLInputElement).value, 10);
+
+    const min_tag = anrufe * minuten;
+    const std_monat = Math.round((min_tag * 30) / 60 * 10) / 10;
+    const std_jahr = Math.round((min_tag * 365) / 60 * 10) / 10;
+
+    (document.getElementById('anrufe-val') as HTMLElement).textContent = String(anrufe);
+    (document.getElementById('minuten-val') as HTMLElement).textContent = minuten + ' Min';
+    (document.getElementById('zr-tag') as HTMLElement).textContent = String(min_tag);
+    (document.getElementById('zr-monat') as HTMLElement).textContent = String(std_monat);
+    (document.getElementById('zr-jahr') as HTMLElement).textContent = String(std_jahr);
+    (document.getElementById('zr-frage') as HTMLElement).textContent =
+      'Was macht Ihr Team mit ' + std_jahr + ' Stunden mehr im Jahr?';
+  }
+
+  document.getElementById('anrufe')?.addEventListener('input', updateZeitrechner);
+  document.getElementById('minuten')?.addEventListener('input', updateZeitrechner);
+</script>
