@@ -198,6 +198,7 @@ import Cta from '../components/Cta.astro';
           <div class="branche-inhalt">
             <h3>Handwerksbetriebe</h3>
             <a href="/ki-handwerker">KI für Handwerker</a>
+            <a href="/webdesign-handwerker" class="branche-link-2">Website für Handwerker</a>
           </div>
         </div>
 
@@ -207,6 +208,7 @@ import Cta from '../components/Cta.astro';
           <div class="branche-inhalt">
             <h3>Arztpraxen</h3>
             <a href="/ki-aerzte">KI für Ärzte &amp; Praxen</a>
+            <a href="/webdesign-aerzte" class="branche-link-2">Website für Ärzte</a>
           </div>
         </div>
 
@@ -307,6 +309,11 @@ import Cta from '../components/Cta.astro';
 
         </div>
       </div>
+
+      <div class="leistungen-ratgeber">
+        <a href="/ratgeber" class="leistungen-ratgeber-link">Alle Ratgeber-Artikel lesen →</a>
+      </div>
+
     </div>
   </section>
 
@@ -789,6 +796,16 @@ import Cta from '../components/Cta.astro';
     color: #fff;
   }
 
+  .branche-link-2 {
+    font-size: 0.725rem !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    margin-top: 0.2rem !important;
+  }
+
+  .branche-link-2:hover {
+    color: rgba(255, 255, 255, 0.85) !important;
+  }
+
   .branchen-mehr {
     display: block;
     text-align: center;
@@ -937,6 +954,24 @@ import Cta from '../components/Cta.astro';
     color: var(--on-surface-muted);
     margin-top: 0.5rem;
     text-align: center;
+  }
+
+  .leistungen-ratgeber {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+
+  .leistungen-ratgeber-link {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--secondary);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .leistungen-ratgeber-link:hover {
+    opacity: 0.75;
   }
 
   /* ─────────────────────────────────────────
