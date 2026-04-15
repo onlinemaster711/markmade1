@@ -19,7 +19,54 @@ import Faq from '../components/Faq.astro';
     heading="Deine Website erklärt was du machst. Dein Chatbot klärt den Rest."
     subtext="Wir bauen dir eine Website die klar zeigt was du anbietest – und einen Chatbot der Kundenfragen automatisch beantwortet. Das Ergebnis: Weniger Telefonate, bessere Anfragen."
   />
+
+  <!-- SEO-Subline -->
+  <div class="seo-subline-wrap">
+    <h2 class="seo-subline">Webdesign für Selbstständige &amp; Coaches – professionelle Website ab 1.000 €</h2>
+  </div>
+
   <VierFragen />
+
+  <!-- ZEITRECHNER -->
+  <section class="zeitrechner">
+    <div class="zr-inner">
+      <div class="zr-content">
+        <h2>Wie viel Zeit kostet dich das Telefon gerade wirklich?</h2>
+
+        <div class="zr-slider-group">
+          <label for="anfragen">
+            Wie viele Anfragen bekommst du pro Tag?
+            <span class="zr-val" id="anfragen-val">3</span>
+          </label>
+          <input type="range" id="anfragen" min="1" max="15" value="3" step="1" class="zr-range" />
+          <div class="zr-range-labels"><span>1</span><span>15</span></div>
+        </div>
+
+        <div class="zr-slider-group">
+          <label for="minuten">
+            Wie lange dauert ein Gespräch durchschnittlich?
+            <span class="zr-val" id="minuten-val">10 Min</span>
+          </label>
+          <input type="range" id="minuten" min="5" max="30" value="10" step="5" class="zr-range" />
+          <div class="zr-range-labels"><span>5 Min</span><span>30 Min</span></div>
+        </div>
+      </div>
+
+      <div class="zr-ergebnis">
+        <div class="zr-box">
+          <p class="zr-label">Minuten pro Tag</p>
+          <p class="zr-tag" id="zr-tag">30</p>
+          <p class="zr-label">Stunden pro Monat</p>
+          <p class="zr-monat" id="zr-monat">11</p>
+          <p class="zr-label">Stunden pro Jahr</p>
+          <p class="zr-jahr" id="zr-jahr">130</p>
+          <p class="zr-frage" id="zr-frage">Was machst du mit 130 Stunden mehr im Jahr?</p>
+          <p class="zr-hinweis">Das sind keine Versprechen. Das ist Mathematik.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <ChatDemo
     title="So läuft ein Gespräch mit uns ab"
     messages={[
@@ -34,6 +81,289 @@ import Faq from '../components/Faq.astro';
   <Angebot />
   <Beweis />
   <Prozess />
+
+  <!-- MEHR ENTDECKEN -->
+  <section class="mehr-entdecken">
+    <div class="mehr-entdecken-inner">
+      <h3 class="mehr-heading">Das könnte dich auch interessieren</h3>
+      <div class="mehr-entdecken-grid">
+        <a href="/ki-fuer-unternehmen" class="mehr-card">
+          <span class="mehr-icon">💬</span>
+          <h4>KI-Chatbot einrichten</h4>
+          <p>Kundenfragen automatisch beantworten</p>
+        </a>
+        <a href="/ki-email" class="mehr-card">
+          <span class="mehr-icon">✉️</span>
+          <h4>E-Mail-Automatisierung</h4>
+          <p>Standardanfragen automatisch beantworten</p>
+        </a>
+        <a href="/ki-social-media" class="mehr-card">
+          <span class="mehr-icon">📱</span>
+          <h4>Social Media mit KI</h4>
+          <p>Sichtbar sein ohne täglich Zeit zu verlieren</p>
+        </a>
+        <a href="/ratgeber/ki-fuer-selbststaendige" class="mehr-card">
+          <span class="mehr-icon">📖</span>
+          <h4>Ratgeber: KI für Selbstständige</h4>
+          <p>Wie du KI in deinem Alltag nutzt</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <Cta />
   <Faq />
 </BaseLayout>
+
+<style>
+  /* SEO-Subline */
+  .seo-subline-wrap {
+    background: var(--surface);
+    padding: 0 1.5rem 2.5rem;
+    text-align: center;
+  }
+
+  .seo-subline {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 400;
+    color: var(--on-surface-muted);
+    margin: 0 auto;
+    max-width: 700px;
+    line-height: 1.5;
+  }
+
+  /* Zeitrechner */
+  .zeitrechner {
+    background: var(--primary);
+    padding: 5rem 0;
+    color: white;
+  }
+
+  .zr-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .zeitrechner h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+    color: white;
+    margin-bottom: 2rem;
+    line-height: 1.3;
+  }
+
+  .zr-slider-group {
+    margin-bottom: 2rem;
+  }
+
+  .zr-slider-group label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
+
+  .zr-val {
+    font-weight: 700;
+    color: white;
+  }
+
+  .zr-range {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.25);
+    outline: none;
+  }
+
+  .zr-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-fixed, #e8ecd4);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .zr-range::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-fixed, #e8ecd4);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .zr-range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 0.375rem;
+  }
+
+  .zr-ergebnis {
+    display: flex;
+    justify-content: center;
+  }
+
+  .zr-box {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1.25rem;
+    padding: 2rem 2.25rem;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .zr-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.25rem;
+  }
+
+  .zr-tag, .zr-monat, .zr-jahr {
+    font-family: 'Noto Serif', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .zr-frage {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--primary-fixed, #e8ecd4);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  .zr-hinweis {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+  }
+
+  /* Mehr entdecken */
+  .mehr-entdecken {
+    background: var(--surface-low);
+    padding: 5rem 1.5rem;
+  }
+
+  .mehr-entdecken-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .mehr-heading {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .mehr-entdecken-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+  }
+
+  .mehr-card {
+    background: rgba(63, 69, 48, 0.04);
+    border: 1px solid rgba(63, 69, 48, 0.1);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mehr-card:hover {
+    background: rgba(184, 0, 73, 0.05);
+    border-color: var(--secondary);
+    transform: translateY(-2px);
+  }
+
+  .mehr-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .mehr-card h4 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 0;
+  }
+
+  .mehr-card p {
+    font-size: 0.9375rem;
+    color: var(--on-surface-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 767px) {
+    .zr-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .zr-box {
+      max-width: 100%;
+    }
+
+    .mehr-entdecken {
+      padding: 3.5rem 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  function updateZeitrechner() {
+    const anfragenEl = document.getElementById('anfragen') as HTMLInputElement;
+    const minutenEl = document.getElementById('minuten') as HTMLInputElement;
+    if (!anfragenEl || !minutenEl) return;
+
+    const anfragen = parseInt(anfragenEl.value, 10);
+    const minuten = parseInt(minutenEl.value, 10);
+
+    const min_tag = anfragen * minuten;
+    const std_monat = Math.round((min_tag * 22) / 60 * 10) / 10;
+    const std_jahr = Math.round((min_tag * 260) / 60 * 10) / 10;
+
+    (document.getElementById('anfragen-val') as HTMLElement).textContent = String(anfragen);
+    (document.getElementById('minuten-val') as HTMLElement).textContent = minuten + ' Min';
+    (document.getElementById('zr-tag') as HTMLElement).textContent = String(min_tag);
+    (document.getElementById('zr-monat') as HTMLElement).textContent = String(std_monat);
+    (document.getElementById('zr-jahr') as HTMLElement).textContent = String(std_jahr);
+    (document.getElementById('zr-frage') as HTMLElement).textContent =
+      'Was machst du mit ' + std_jahr + ' Stunden mehr im Jahr?';
+  }
+
+  document.getElementById('anfragen')?.addEventListener('input', updateZeitrechner);
+  document.getElementById('minuten')?.addEventListener('input', updateZeitrechner);
+</script>
