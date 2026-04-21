@@ -125,10 +125,10 @@
     left: 0;
     right: 0;
     z-index: 100;
-    background: rgba(251, 249, 246, 0.92);
+    background: rgba(41, 47, 27, 0.55);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border-bottom: 1px solid var(--dust);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .header-inner {
@@ -147,9 +147,22 @@
     font-size: 1.25rem;
     font-weight: 700;
     text-decoration: none;
-    color: var(--on-surface);
+    color: #fff;
     flex-shrink: 0;
     margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .logo::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--secondary);
+    border-radius: 50%;
+    flex-shrink: 0;
   }
 
   .logo span {
@@ -171,7 +184,7 @@
     font-family: 'Manrope', sans-serif;
     font-size: 0.9375rem;
     font-weight: 500;
-    color: var(--on-surface-muted);
+    color: rgba(251, 249, 246, 0.85);
     background: none;
     border: none;
     cursor: pointer;
@@ -182,8 +195,8 @@
   }
 
   .nav-trigger:hover {
-    color: var(--on-surface);
-    background: var(--surface-low);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
   }
 
   .chevron {
@@ -265,7 +278,7 @@
     font-family: 'Manrope', sans-serif;
     font-size: 0.9375rem;
     font-weight: 500;
-    color: var(--on-surface-muted);
+    color: rgba(251, 249, 246, 0.85);
     text-decoration: none;
     padding: 0.5rem 0.75rem;
     border-radius: 0.5rem;
@@ -275,8 +288,8 @@
   }
 
   .ratgeber-link:hover {
-    color: var(--on-surface);
-    background: var(--surface-low);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
   }
 
   /* ── CTA BUTTON ── */
@@ -284,21 +297,22 @@
     flex-shrink: 0;
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    background: transparent;
     color: #fff;
     font-family: 'Manrope', sans-serif;
     font-size: 0.9375rem;
     font-weight: 600;
     text-decoration: none;
     border-radius: 1rem;
-    border: none;
-    transition: opacity 0.2s;
+    border: 1px solid rgba(251, 249, 246, 0.25);
+    transition: background 0.2s, border-color 0.2s;
     white-space: nowrap;
     margin-left: 0.5rem;
   }
 
   .cta-button:hover {
-    opacity: 0.88;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(251, 249, 246, 0.45);
   }
 
   /* ── BURGER ── */
