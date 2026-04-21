@@ -5,12 +5,24 @@ interface Props {
   subtext?: string;
   desktopScreenshot?: string;
   mobileScreenshot?: string;
+  primaryCtaText?: string;
+  primaryCtaHref?: string;
+  primaryCtaExternal?: boolean;
+  secondaryCtaText?: string;
+  secondaryCtaHref?: string;
+  metaItems?: string[];
 }
 
 const {
   eyebrow = 'Webdesign · Chatbot · Zeitersparnis',
   heading = 'Deine Website erklärt was du machst. Dein Chatbot klärt den Rest.',
   subtext = 'Wir bauen dir eine Website die klar zeigt was du anbietest – und einen Chatbot der Kundenfragen automatisch beantwortet. Das Ergebnis: Weniger Telefonate, bessere Anfragen.',
+  primaryCtaText = 'Kostenlosen Entwurf sichern',
+  primaryCtaHref = 'https://calendly.com/onlinemaster711/new-meeting',
+  primaryCtaExternal = true,
+  secondaryCtaText = 'Zeitersparnis berechnen',
+  secondaryCtaHref = '/#rechner',
+  metaItems = ['Kein Auftrag nötig', '10 Minuten genügen', 'Entwurf zuerst – dann entscheiden'],
 } = Astro.props;
 ---
 
@@ -22,16 +34,21 @@ const {
     <h1 class="hero-headline">{heading}</h1>
     <p class="hero-lede">{subtext}</p>
     <div class="cta-row">
-      <a href="https://calendly.com/onlinemaster711/new-meeting" class="btn-primary" target="_blank" rel="noopener noreferrer">
-        <span>Kostenlosen Entwurf sichern</span>
-        <span class="arrow">→</span>
-      </a>
-      <a href="/#rechner" class="btn-secondary">Zeitersparnis berechnen</a>
+      {primaryCtaExternal ? (
+        <a href={primaryCtaHref} class="btn-primary" target="_blank" rel="noopener noreferrer">
+          <span>{primaryCtaText}</span>
+          <span class="arrow">→</span>
+        </a>
+      ) : (
+        <a href={primaryCtaHref} class="btn-primary">
+          <span>{primaryCtaText}</span>
+          <span class="arrow">→</span>
+        </a>
+      )}
+      <a href={secondaryCtaHref} class="btn-secondary">{secondaryCtaText}</a>
     </div>
     <div class="meta-row">
-      <span>Kein Auftrag nötig</span>
-      <span>10 Minuten genügen</span>
-      <span>Entwurf zuerst – dann entscheiden</span>
+      {metaItems.map((item) => <span>{item}</span>)}
     </div>
   </div>
   <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><span class="scroll-line"></span></div>

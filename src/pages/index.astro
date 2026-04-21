@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
 import Cta from '../components/Cta.astro';
 ---
 
@@ -11,500 +12,393 @@ import Cta from '../components/Cta.astro';
   <!-- ══════════════════════════════════════
        SEKTION 1 — HERO
   ══════════════════════════════════════ -->
-  <section class="hero">
-
-    <!-- Subtiler Hintergrund-Gradient -->
-    <div class="hero-bg" aria-hidden="true"></div>
-
-    <div class="hero-inner">
-
-      <!-- H1 -->
-      <h1>
-        KI macht dich <em>besser.</em>
-      </h1>
-
-      <!-- Subtitle -->
-      <p class="subtitle">Eine Person mit KI schlägt ein Team ohne. Wir zeigen dir wie.</p>
-
-      <!-- Subtext -->
-      <p class="subtext">
-        Wir bauen KI-Lösungen für kleine und mittelständische Betriebe —
-        Standard oder individuell, exakt auf deinen Betrieb zugeschnitten.
-      </p>
-
-      <!-- Buttons -->
-      <div class="hero-buttons">
-        <a
-          href="https://calendly.com/onlinemaster711/new-meeting"
-          class="btn-primary"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Kostenloses Erstgespräch buchen <span>→</span></a>
-        <a href="#leistungen" class="btn-ghost">Leistungen entdecken</a>
-      </div>
-
-    </div>
-  </section>
+  <Hero
+    eyebrow="KI Atelier · Stuttgart"
+    heading="KI macht dich besser."
+    subtext="Eine Person mit KI schlägt ein Team ohne. Wir zeigen dir wie."
+    primaryCtaText="Kostenloses Erstgespräch buchen"
+    primaryCtaHref="https://calendly.com/onlinemaster711/new-meeting"
+    secondaryCtaText="Leistungen entdecken"
+    secondaryCtaHref="#leistungen"
+    metaItems={['30 Minuten genügen', 'Ohne Verpflichtung', 'Standard oder individuell']}
+  />
 
   <!-- ══════════════════════════════════════
-       SEKTION 2 — KI-EFFEKTIVITÄT
+       SEKTION 2 — KI-EFFEKTIVITÄT (Editorial Manifest)
   ══════════════════════════════════════ -->
-  <section class="ki-effekt">
-    <div class="ki-effekt-inner">
+  <section class="section sec-effektivitaet">
+    <div class="effekt-grain"></div>
+    <div class="section-inner">
+      <div class="effekt-grid">
 
-      <span class="ki-effekt-eyebrow">MEHR OUTPUT. WENIGER AUFWAND.</span>
-      <h2 class="ki-effekt-h2">Was früher eine Woche dauerte,<br>schaffst du heute an einem Tag.</h2>
-
-      <div class="ki-effekt-text">
-        <p>Wer KI richtig einsetzt, schafft in einer Woche was andere in fünf schaffen. Das ist kein Versprechen — das ist Mathematik. Gleiche Zeit, fünffacher Output. Wer das nutzt, gewinnt.</p>
-        <p>Wir bauen keine Standard-Software und lassen dich damit alleine. Wir optimieren deine Prozesse. Du sagst uns wie du arbeitest — wir geben der KI die Informationen die sie braucht um für dich bestmögliche Ergebnisse zu liefern. Mit deinem Wissen. Deiner Stimme. Deinem Design.</p>
-        <p class="ki-effekt-highlight">Als kleines oder mittelständisches Unternehmen kannst du mit KI die Großen angreifen. Nicht irgendwann. Jetzt.</p>
-      </div>
-
-      <a
-        href="https://calendly.com/onlinemaster711/new-meeting"
-        class="ki-effekt-btn"
-        target="_blank"
-        rel="noopener noreferrer"
-      >Sag uns wie du arbeitest — wir finden die Lösung</a>
-
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       SEKTION 4 — SOCIAL MEDIA MIT KI
-  ══════════════════════════════════════ -->
-  <section class="social-media-sek">
-    <div class="social-media-inner">
-
-      <div class="social-media-header">
-        <span class="eyebrow-lk">SOCIAL MEDIA &amp; CONTENT MIT KI</span>
-        <h2>Social Media mit KI.</h2>
-        <p class="social-media-subtext">Wir übernehmen die Produktion, die Verteilung und die Auswertung — du lieferst den Inhalt.</p>
-      </div>
-
-      <div class="leistungen-grid-wrapper">
-        <div class="leistungen-grid social-karten">
-
-          <a href="/ki-social-media" class="lk">
-            <span class="lk-icon">📹</span>
-            <h3>Ein Video. Sechs Plattformen.</h3>
-            <p class="lk-text">Du lädst einmal hoch. Wir bereiten es auf und verteilen es automatisch auf Instagram, TikTok, YouTube, LinkedIn und mehr.</p>
-            <div class="lk-line"></div>
-          </a>
-
-          <a href="/ki-social-media" class="lk">
-            <span class="lk-icon">📊</span>
-            <h3>Wir sehen was funktioniert.</h3>
-            <p class="lk-text">Wir haben eine eigene Software entwickelt die überwacht welcher Beitrag wie performt — und zeigt dir was du mehr davon machen solltest.</p>
-            <div class="lk-line"></div>
-          </a>
-
-          <a href="/ki-social-media" class="lk">
-            <span class="lk-icon">🎨</span>
-            <h3>Konstantes Design für deine Marke.</h3>
-            <p class="lk-text">Jeder Post sieht aus wie du. Farben, Schriften, Stil — immer konsistent, egal auf welcher Plattform.</p>
-            <div class="lk-line"></div>
-          </a>
-
-          <a href="/ki-social-media" class="lk">
-            <span class="lk-icon">🧠</span>
-            <h3>Dein Wissen wird Inhalt.</h3>
-            <p class="lk-text">Du sagst was du weißt — wir machen daraus Posts, Texte und Videos die nach dir klingen. Nicht nach einer Maschine.</p>
-            <div class="lk-line"></div>
-          </a>
-
+        <div class="effekt-head">
+          <div class="section-eyebrow"><span>00 — Manifest</span></div>
+          <h2 class="effekt-headline">Was früher eine Woche dauerte, schaffst du heute an einem Tag.</h2>
         </div>
+
+        <div class="effekt-body">
+          <p class="effekt-paragraph">Wer KI richtig einsetzt, schafft in einer Woche was andere in fünf schaffen. Das ist kein Versprechen — das ist Mathematik. Gleiche Zeit, fünffacher Output. Wer das nutzt, gewinnt.</p>
+          <p class="effekt-paragraph">Wir bauen keine Standard-Software und lassen dich damit alleine. Wir optimieren deine Prozesse. Du sagst uns wie du arbeitest — wir geben der KI die Informationen die sie braucht um für dich bestmögliche Ergebnisse zu liefern. Mit deinem Wissen. Deiner Stimme. Deinem Design.</p>
+          <p class="effekt-highlight">Als kleines oder mittelständisches Unternehmen kannst du mit KI die Großen angreifen. Nicht irgendwann. Jetzt.</p>
+
+          <a
+            href="https://calendly.com/onlinemaster711/new-meeting"
+            class="btn-primary-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Sag uns wie du arbeitest — wir finden die Lösung</span>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SEKTION 3 — SOCIAL MEDIA MIT KI
+  ══════════════════════════════════════ -->
+  <section class="section sec-social">
+    <div class="section-inner">
+
+      <div class="section-head-row">
+        <div class="section-head-left">
+          <div class="section-eyebrow">01 — Social Media &amp; Content mit KI</div>
+          <h2 class="section-headline">Social Media mit KI.</h2>
+        </div>
+        <p class="section-aside">Wir übernehmen die Produktion, die Verteilung und die Auswertung — du lieferst den Inhalt.</p>
       </div>
 
-      <div class="social-media-cta">
-        <p class="social-media-cta-text">Wer eine Woche mit KI an Social Media arbeitet, schafft was andere in fünf Wochen schaffen. Sprich mit uns.</p>
+      <div class="social-grid">
+
+        <a href="/ki-social-media" class="social-card">
+          <div class="card-num">01</div>
+          <div class="card-icon" aria-hidden="true">📹</div>
+          <h3 class="card-title">Ein Video. Sechs Plattformen.</h3>
+          <p class="card-text">Du lädst einmal hoch. Wir bereiten es auf und verteilen es automatisch auf Instagram, TikTok, YouTube, LinkedIn und mehr.</p>
+        </a>
+
+        <a href="/ki-social-media" class="social-card">
+          <div class="card-num">02</div>
+          <div class="card-icon" aria-hidden="true">📊</div>
+          <h3 class="card-title">Wir sehen was funktioniert.</h3>
+          <p class="card-text">Wir haben eine eigene Software entwickelt die überwacht welcher Beitrag wie performt — und zeigt dir was du mehr davon machen solltest.</p>
+        </a>
+
+        <a href="/ki-social-media" class="social-card">
+          <div class="card-num">03</div>
+          <div class="card-icon" aria-hidden="true">🎨</div>
+          <h3 class="card-title">Konstantes Design für deine Marke.</h3>
+          <p class="card-text">Jeder Post sieht aus wie du. Farben, Schriften, Stil — immer konsistent, egal auf welcher Plattform.</p>
+        </a>
+
+        <a href="/ki-social-media" class="social-card">
+          <div class="card-num">04</div>
+          <div class="card-icon" aria-hidden="true">🧠</div>
+          <h3 class="card-title">Dein Wissen wird Inhalt.</h3>
+          <p class="card-text">Du sagst was du weißt — wir machen daraus Posts, Texte und Videos die nach dir klingen. Nicht nach einer Maschine.</p>
+        </a>
+
+      </div>
+
+      <div class="section-footer">
+        <p class="section-outro">Wer eine Woche mit KI an Social Media arbeitet, schafft was andere in fünf Wochen schaffen. Sprich mit uns.</p>
         <a
           href="https://calendly.com/onlinemaster711/new-meeting"
-          class="btn-primary"
+          class="btn-primary sec-social-cta"
           target="_blank"
           rel="noopener noreferrer"
-        >Jetzt Gespräch buchen →</a>
+        >
+          <span>Jetzt Gespräch buchen</span>
+          <span class="arrow">→</span>
+        </a>
       </div>
 
     </div>
   </section>
 
   <!-- ══════════════════════════════════════
-       SEKTION 4 — FAQ
+       SEKTION 4 — BRANCHEN
   ══════════════════════════════════════ -->
-  <section class="faq">
-    <div class="faq-inner">
-      <h2>Häufige Fragen</h2>
+  <section class="section sec-branchen">
+    <div class="section-inner">
 
-      <div class="faq-item">
-        <h3>Kann KI wirklich einen Unterschied machen — oder ist das Hype?</h3>
-        <p>Wer KI richtig einsetzt, schafft heute in einer Woche was andere in fünf schaffen. Das ist kein Versprechen — das ist Mathematik. Gleiche Zeit, fünffacher Output. Wer das nutzt, gewinnt.</p>
+      <div class="section-head">
+        <div class="section-eyebrow"><span>02 — Branchen</span></div>
+        <h2 class="section-headline">Für welche Branchen wir bauen.</h2>
+        <p class="section-lede">Branchen mit Substanz.</p>
       </div>
-
-      <div class="faq-item">
-        <h3>Was bringt mir das konkret in meinem Alltag?</h3>
-        <p>Du hörst auf Dinge zu tun die sich wiederholen. KI übernimmt Telefon, E-Mails, Dokumente, Social Media. Du konzentrierst dich auf das was nur du kannst — und wirst darin besser als je zuvor.</p>
-      </div>
-
-      <div class="faq-item faq-highlight">
-        <h3>Ich bin kein Technik-Experte. Kann ich das trotzdem nutzen?</h3>
-        <p>Das ist genau der Punkt. Du musst kein Technik-Experte sein. Du sagst uns wie du arbeitest — wir geben der KI die Informationen die sie braucht um für dich zu arbeiten. Du nutzt das Ergebnis. Fertig.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Was unterscheidet MarkMade von anderen KI-Anbietern?</h3>
-        <p>Wir verkaufen keine Software. Wir optimieren Prozesse. Der Unterschied: Software kannst du kaufen und trotzdem nichts damit anfangen. Wir sorgen dafür dass KI wirklich für deinen Betrieb arbeitet — mit deinem Wissen, deiner Stimme, deinem Design.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Was passiert wenn ich jetzt nichts tue?</h3>
-        <p>Deine Konkurrenz die KI nutzt, wird in einem Jahr so viel mehr geschafft haben dass der Abstand kaum noch aufzuholen ist. Die Arbeitswelt befindet sich im größten Wandel ihrer Geschichte. Wer jetzt nicht anfängt, fängt zu spät an.</p>
-      </div>
-
-      <div class="faq-item faq-item--last">
-        <h3>Wie schnell sehe ich Ergebnisse?</h3>
-        <p>In 1–2 Wochen läuft deine erste KI-Lösung. Nicht ein Prototyp — eine echte Lösung die täglich arbeitet. Die meisten unserer Kunden sehen in der ersten Woche wie viel Zeit sie bisher verschenkt haben.</p>
-      </div>
-
-      <div class="faq-statement">
-        <p>Wer als kleines oder mittelständisches Unternehmen KI richtig einsetzt, kann die Großen angreifen. Nicht irgendwann. Jetzt. Das ist der größte Wandel in der Geschichte der Arbeit — und du kannst auf der richtigen Seite davon stehen.</p>
-        <a
-          href="https://calendly.com/onlinemaster711/new-meeting"
-          class="faq-statement-btn"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Jetzt auf der richtigen Seite stehen →</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       SEKTION 5 — BRANCHEN
-  ══════════════════════════════════════ -->
-  <section class="branchen">
-    <div class="branchen-inner">
-
-      <h2 class="branchen-h2">Für welche Branchen wir bauen.</h2>
-      <p class="branchen-subtitle">Branchen mit <span>Substanz</span></p>
-      <div class="branchen-divider"></div>
 
       <div class="branchen-grid">
 
-        <div class="branche-karte branche-handwerk">
-          <img src="/branche-handwerk.webp" alt="KI für Handwerksbetriebe" class="branche-bg-img" loading="lazy" width="600" height="400" />
-          <div class="branche-overlay"></div>
-          <div class="branche-inhalt">
-            <h3>Handwerksbetriebe</h3>
-            <a href="/ki-handwerker">KI für Handwerker</a>
+        <div class="branche-card">
+          <div class="branche-image">
+            <img src="/branche-handwerk.webp" alt="KI für Handwerksbetriebe" loading="lazy" width="600" height="400" />
+          </div>
+          <div class="branche-content">
+            <div class="branche-num">01</div>
+            <h3 class="branche-title">Handwerksbetriebe</h3>
+            <a href="/ki-handwerker" class="branche-subtitle">
+              <span>KI für Handwerker</span>
+              <span class="branche-arrow">→</span>
+            </a>
             <a href="/webdesign-handwerker" class="branche-link-2">Website für Handwerker</a>
           </div>
         </div>
 
-        <div class="branche-karte branche-aerzte">
-          <img src="/branche-aerzte.webp" alt="KI für Arztpraxen" class="branche-bg-img" loading="lazy" width="600" height="400" />
-          <div class="branche-overlay"></div>
-          <div class="branche-inhalt">
-            <h3>Arztpraxen</h3>
-            <a href="/ki-aerzte">KI für Ärzte &amp; Praxen</a>
+        <div class="branche-card">
+          <div class="branche-image">
+            <img src="/branche-aerzte.webp" alt="KI für Arztpraxen" loading="lazy" width="600" height="400" />
+          </div>
+          <div class="branche-content">
+            <div class="branche-num">02</div>
+            <h3 class="branche-title">Arztpraxen</h3>
+            <a href="/ki-aerzte" class="branche-subtitle">
+              <span>KI für Ärzte &amp; Praxen</span>
+              <span class="branche-arrow">→</span>
+            </a>
             <a href="/webdesign-aerzte" class="branche-link-2">Website für Ärzte</a>
           </div>
         </div>
 
-        <div class="branche-karte branche-restaurants">
-          <img src="/branche-restaurant.webp" alt="KI für Restaurants" class="branche-bg-img" loading="lazy" width="600" height="400" />
-          <div class="branche-overlay"></div>
-          <div class="branche-inhalt">
-            <h3>Restaurants</h3>
-            <a href="/ki-restaurant">KI für Restaurants</a>
+        <div class="branche-card">
+          <div class="branche-image">
+            <img src="/branche-restaurant.webp" alt="KI für Restaurants" loading="lazy" width="600" height="400" />
+          </div>
+          <div class="branche-content">
+            <div class="branche-num">03</div>
+            <h3 class="branche-title">Restaurants</h3>
+            <a href="/ki-restaurant" class="branche-subtitle">
+              <span>KI für Restaurants</span>
+              <span class="branche-arrow">→</span>
+            </a>
           </div>
         </div>
 
-        <div class="branche-karte branche-kanzleien">
-          <img src="/branche-kanzlei.webp" alt="KI für Kanzleien" class="branche-bg-img" loading="lazy" width="600" height="400" />
-          <div class="branche-overlay"></div>
-          <div class="branche-inhalt">
-            <h3>Kanzleien</h3>
-            <a href="/ki-kanzlei">KI für Kanzleien</a>
+        <div class="branche-card">
+          <div class="branche-image">
+            <img src="/branche-kanzlei.webp" alt="KI für Kanzleien" loading="lazy" width="600" height="400" />
+          </div>
+          <div class="branche-content">
+            <div class="branche-num">04</div>
+            <h3 class="branche-title">Kanzleien</h3>
+            <a href="/ki-kanzlei" class="branche-subtitle">
+              <span>KI für Kanzleien</span>
+              <span class="branche-arrow">→</span>
+            </a>
           </div>
         </div>
 
-        <div class="branche-karte branche-immobilien">
-          <img src="/branche-immobilien.webp" alt="KI für Immobilienmakler" class="branche-bg-img" loading="lazy" width="600" height="400" />
-          <div class="branche-overlay"></div>
-          <div class="branche-inhalt">
-            <h3>Immobilien-<br>makler</h3>
-            <a href="/ki-immobilienmakler">KI für Immobilienmakler</a>
+        <div class="branche-card">
+          <div class="branche-image">
+            <img src="/branche-immobilien.webp" alt="KI für Immobilienmakler" loading="lazy" width="600" height="400" />
+          </div>
+          <div class="branche-content">
+            <div class="branche-num">05</div>
+            <h3 class="branche-title">Immobilienmakler</h3>
+            <a href="/ki-immobilienmakler" class="branche-subtitle">
+              <span>KI für Immobilienmakler</span>
+              <span class="branche-arrow">→</span>
+            </a>
           </div>
         </div>
 
       </div>
 
-      <a href="/ki-fuer-unternehmen" class="branchen-mehr">
-        Coaches, Selbstständige und weitere Branchen →
-      </a>
+      <p class="section-outro">
+        <a href="/ki-fuer-unternehmen">Coaches, Selbstständige und weitere Branchen →</a>
+      </p>
 
     </div>
   </section>
 
   <!-- ══════════════════════════════════════
-       SEKTION 6 — LEISTUNGEN
+       SEKTION 5 — REFERENZ (Editorial)
   ══════════════════════════════════════ -->
-  <section class="leistungen" id="leistungen">
-    <div class="leistungen-inner">
-
-      <div class="leistungen-header">
-        <div>
-          <span class="eyebrow-lk">Expertise</span>
-          <h2>Dein KI-Team.</h2>
-          <p class="leistungen-subtext">Sechs Rollen. Kein Gehalt. Kein Urlaub. Kein Krankenstand.</p>
+  <section class="section sec-referenz">
+    <div class="section-inner">
+      <div class="referenz-grid">
+        <div class="referenz-image">
+          <img src="/elke-reinke-screenshot.webp" alt="Website von Elke Reinke – Osteopathin Stuttgart" />
+        </div>
+        <div class="referenz-content">
+          <div class="section-eyebrow"><span>03 — Referenz</span></div>
+          <blockquote class="referenz-quote">
+            „Ich hatte vorher keine Seite die wirklich zu mir gepasst hat. Jetzt finden mich Patienten bei Google – und melden sich direkt."
+          </blockquote>
+          <div class="referenz-meta">
+            <div class="referenz-name">Elke Reinke</div>
+            <div class="referenz-role">Osteopathin · Stuttgart Degerloch</div>
+          </div>
+          <a href="https://osteopath-stuttgart.com" target="_blank" rel="noopener noreferrer" class="referenz-link">
+            osteopath-stuttgart.com ansehen
+            <span class="arrow">→</span>
+          </a>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="leistungen-grid-wrapper">
-        <div class="leistungen-grid">
+  <!-- ══════════════════════════════════════
+       SEKTION 6 — KI-TEAM (Editorial)
+  ══════════════════════════════════════ -->
+  <section class="section sec-kiteam" id="leistungen">
+    <div class="section-inner">
 
-          <a href="/ki-fuer-unternehmen" class="lk">
-            <span class="lk-icon">💬</span>
-            <h3>KI-Chatbot</h3>
-            <p class="lk-text">Dein Kundenbetreuer. Antwortet sofort, rund um die Uhr, auf jede Frage — ohne dass du dabei sein musst.</p>
-            <div class="lk-line"></div>
-          </a>
-
-          <a href="/ki-telefonassistent" class="lk">
-            <span class="lk-icon">📞</span>
-            <h3>Telefonassistent</h3>
-            <p class="lk-text">Deine Assistentin am Telefon. Nimmt an, klärt vor, leitet weiter. Du wirst nur informiert wenn es zählt.</p>
-            <div class="lk-line"></div>
-          </a>
-
-          <a href="/ki-email" class="lk">
-            <span class="lk-icon">📧</span>
-            <h3>E-Mail-Automatisierung</h3>
-            <p class="lk-text">Dein Büromanager. Liest alles, beantwortet Routinefragen, priorisiert was deine Aufmerksamkeit braucht.</p>
-            <div class="lk-line"></div>
-          </a>
-
-          <a href="/ki-social-media" class="lk">
-            <span class="lk-icon">📱</span>
-            <h3>Social Media mit KI</h3>
-            <p class="lk-text">Dein Content-Team. Erstellt Posts, Texte und Pläne — du musst nur noch freigeben.</p>
-            <div class="lk-line"></div>
-          </a>
-
-          <a href="/ki-automatisierung" class="lk">
-            <span class="lk-icon">⚙️</span>
-            <h3>Prozessautomatisierung</h3>
-            <p class="lk-text">Dein Sachbearbeiter. Wiederkehrende Aufgaben laufen automatisch — ohne dass du daran denkst.</p>
-            <div class="lk-line"></div>
-          </a>
-
-          <a href="/webdesign-selbststaendige" class="lk">
-            <span class="lk-icon">🌐</span>
-            <h3>KI-Website</h3>
-            <p class="lk-text">Dein Vertriebsmitarbeiter. Überzeugt Besucher, beantwortet Fragen, bringt Anfragen — 24/7.</p>
-            <div class="lk-line"></div>
-          </a>
-
-        </div>
+      <div class="section-head">
+        <div class="section-eyebrow"><span>04 — Expertise</span></div>
+        <h2 class="section-headline">Dein KI-Team.</h2>
+        <p class="section-lede">Sechs Rollen. Kein Gehalt. Kein Urlaub. Kein Krankenstand.</p>
       </div>
 
-      <div class="leistungen-ratgeber">
-        <a href="/ratgeber" class="leistungen-ratgeber-link">Alle Ratgeber-Artikel lesen →</a>
+      <div class="kiteam-grid">
+
+        <a href="/ki-fuer-unternehmen" class="kiteam-card">
+          <div class="card-num">01</div>
+          <div class="card-icon" aria-hidden="true">💬</div>
+          <h3 class="card-title">KI-Chatbot</h3>
+          <p class="card-text">Dein Kundenbetreuer. Antwortet sofort, rund um die Uhr, auf jede Frage — ohne dass du dabei sein musst.</p>
+          <span class="card-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href="/ki-telefonassistent" class="kiteam-card">
+          <div class="card-num">02</div>
+          <div class="card-icon" aria-hidden="true">📞</div>
+          <h3 class="card-title">Telefonassistent</h3>
+          <p class="card-text">Deine Assistentin am Telefon. Nimmt an, klärt vor, leitet weiter. Du wirst nur informiert wenn es zählt.</p>
+          <span class="card-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href="/ki-email" class="kiteam-card">
+          <div class="card-num">03</div>
+          <div class="card-icon" aria-hidden="true">📧</div>
+          <h3 class="card-title">E-Mail-Automatisierung</h3>
+          <p class="card-text">Dein Büromanager. Liest alles, beantwortet Routinefragen, priorisiert was deine Aufmerksamkeit braucht.</p>
+          <span class="card-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href="/ki-social-media" class="kiteam-card featured">
+          <div class="card-num">04</div>
+          <div class="card-icon" aria-hidden="true">📱</div>
+          <h3 class="card-title">Social Media mit KI</h3>
+          <p class="card-text">Dein Content-Team. Erstellt Posts, Texte und Pläne — du musst nur noch freigeben.</p>
+          <span class="card-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href="/ki-automatisierung" class="kiteam-card">
+          <div class="card-num">05</div>
+          <div class="card-icon" aria-hidden="true">⚙️</div>
+          <h3 class="card-title">Prozessautomatisierung</h3>
+          <p class="card-text">Dein Sachbearbeiter. Wiederkehrende Aufgaben laufen automatisch — ohne dass du daran denkst.</p>
+          <span class="card-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href="/webdesign-selbststaendige" class="kiteam-card">
+          <div class="card-num">06</div>
+          <div class="card-icon" aria-hidden="true">🌐</div>
+          <h3 class="card-title">KI-Website</h3>
+          <p class="card-text">Dein Vertriebsmitarbeiter. Überzeugt Besucher, beantwortet Fragen, bringt Anfragen — 24/7.</p>
+          <span class="card-arrow" aria-hidden="true">→</span>
+        </a>
+
+      </div>
+
+      <div class="section-footer">
+        <a href="/ratgeber" class="ratgeber-link">Alle Ratgeber-Artikel lesen →</a>
       </div>
 
     </div>
   </section>
 
   <!-- ══════════════════════════════════════
-       SEKTION 7 — CTA
+       SEKTION 7 — FAQ (Editorial)
+  ══════════════════════════════════════ -->
+  <section class="section sec-faq">
+    <div class="section-inner">
+
+      <div class="section-head">
+        <div class="section-eyebrow"><span>05 — Häufige Fragen</span></div>
+        <h2 class="section-headline">Häufige Fragen</h2>
+      </div>
+
+      <div class="faq-list">
+
+        <article class="faq-item">
+          <div class="faq-num">01</div>
+          <div class="faq-body">
+            <h3 class="faq-question">Kann KI wirklich einen Unterschied machen — oder ist das Hype?</h3>
+            <p class="faq-answer">Wer KI richtig einsetzt, schafft heute in einer Woche was andere in fünf schaffen. Das ist kein Versprechen — das ist Mathematik. Gleiche Zeit, fünffacher Output. Wer das nutzt, gewinnt.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <div class="faq-num">02</div>
+          <div class="faq-body">
+            <h3 class="faq-question">Was bringt mir das konkret in meinem Alltag?</h3>
+            <p class="faq-answer">Du hörst auf Dinge zu tun die sich wiederholen. KI übernimmt Telefon, E-Mails, Dokumente, Social Media. Du konzentrierst dich auf das was nur du kannst — und wirst darin besser als je zuvor.</p>
+          </div>
+        </article>
+
+        <article class="faq-item featured">
+          <div class="faq-num">03</div>
+          <div class="faq-body">
+            <h3 class="faq-question">Ich bin kein Technik-Experte. Kann ich das trotzdem nutzen?</h3>
+            <p class="faq-answer">Das ist genau der Punkt. Du musst kein Technik-Experte sein. Du sagst uns wie du arbeitest — wir geben der KI die Informationen die sie braucht um für dich zu arbeiten. Du nutzt das Ergebnis. Fertig.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <div class="faq-num">04</div>
+          <div class="faq-body">
+            <h3 class="faq-question">Was unterscheidet MarkMade von anderen KI-Anbietern?</h3>
+            <p class="faq-answer">Wir verkaufen keine Software. Wir optimieren Prozesse. Der Unterschied: Software kannst du kaufen und trotzdem nichts damit anfangen. Wir sorgen dafür dass KI wirklich für deinen Betrieb arbeitet — mit deinem Wissen, deiner Stimme, deinem Design.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <div class="faq-num">05</div>
+          <div class="faq-body">
+            <h3 class="faq-question">Was passiert wenn ich jetzt nichts tue?</h3>
+            <p class="faq-answer">Deine Konkurrenz die KI nutzt, wird in einem Jahr so viel mehr geschafft haben dass der Abstand kaum noch aufzuholen ist. Die Arbeitswelt befindet sich im größten Wandel ihrer Geschichte. Wer jetzt nicht anfängt, fängt zu spät an.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <div class="faq-num">06</div>
+          <div class="faq-body">
+            <h3 class="faq-question">Wie schnell sehe ich Ergebnisse?</h3>
+            <p class="faq-answer">In 1–2 Wochen läuft deine erste KI-Lösung. Nicht ein Prototyp — eine echte Lösung die täglich arbeitet. Die meisten unserer Kunden sehen in der ersten Woche wie viel Zeit sie bisher verschenkt haben.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="faq-outro">
+        <p class="faq-outro-text">Wer als kleines oder mittelständisches Unternehmen KI richtig einsetzt, kann die Großen angreifen. Nicht irgendwann. Jetzt. Das ist der größte Wandel in der Geschichte der Arbeit — und du kannst auf der richtigen Seite davon stehen.</p>
+        <a
+          href="https://calendly.com/onlinemaster711/new-meeting"
+          class="btn-primary faq-cta"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>Jetzt auf der richtigen Seite stehen</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SEKTION 8 — CTA
   ══════════════════════════════════════ -->
   <Cta />
 
 </BaseLayout>
 
 <style>
-  /* ─────────────────────────────────────────
-     HERO
-  ───────────────────────────────────────── */
-  .hero {
-    background: var(--surface);
-    padding: 160px 24px 64px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* Subtiler radialer Hintergrund */
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background:
-      radial-gradient(circle at 70% 30%, rgba(223, 230, 201, 0.35) 0%, transparent 55%),
-      radial-gradient(circle at 20% 80%, rgba(255, 178, 190, 0.12) 0%, transparent 45%);
-  }
-
-  .hero-inner {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-    text-align: center;
-  }
-
-  /* H1 */
-  h1 {
-    font-family: 'Noto Serif', serif;
-    font-size: clamp(3.5rem, 7vw, 5.5rem);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    color: var(--primary);
-    margin-bottom: 1.5rem;
-  }
-
-  h1 em {
-    color: var(--secondary);
-    font-style: italic;
-  }
-
-  /* Subtitle */
-  .subtitle {
-    font-family: 'Noto Serif', serif;
-    font-style: italic;
-    font-size: clamp(1.5rem, 2.8vw, 2.2rem);
-    line-height: 1.3;
-    color: var(--on-surface);
-    margin-bottom: 1rem;
-  }
-
-  /* Subtext */
-  .subtext {
-    font-family: 'Manrope', sans-serif;
-    font-size: clamp(1.1rem, 1.8vw, 1.35rem);
-    font-weight: 300;
-    color: var(--on-surface-muted);
-    line-height: 1.7;
-    max-width: 580px;
-    margin: 0 auto 2.5rem;
-  }
-
-  /* Buttons */
-  .hero-buttons {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .btn-primary {
-    background: var(--primary);
-    color: #fff;
-    padding: 1rem 2rem;
-    border-radius: 0.375rem;
-    font-family: 'Manrope', sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: background 0.2s ease;
-    white-space: nowrap;
-  }
-
-  .btn-primary:hover {
-    background: var(--primary-container);
-  }
-
-  .btn-ghost {
-    background: transparent;
-    color: var(--primary);
-    border: 1px solid var(--dust);
-    padding: 1rem 2rem;
-    border-radius: 0.375rem;
-    font-family: 'Manrope', sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    transition: background 0.2s ease;
-    white-space: nowrap;
-  }
-
-  .btn-ghost:hover {
-    background: var(--surface-low);
-  }
-
-  /* Rechte Spalte — Bild-Platzhalter */
-  .hero-image-placeholder {
-    aspect-ratio: 4 / 5;
-    background: var(--surface-low);
-    border-radius: 0.5rem;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero-image-label {
-    font-family: 'Manrope', sans-serif;
-    font-size: 0.8rem;
-    color: var(--on-surface-muted);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  /* Use-Case Sektion */
-  .use-case-section {
-    background: var(--surface);
-    padding: 0 24px 80px;
-  }
-
-  .use-case-inner {
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-
-  .use-case-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-  }
-
-  .uc-card {
-    background: transparent;
-    border: 1px solid var(--dust);
-    border-radius: 0.375rem;
-    padding: 1.25rem;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    transition: border-color 0.2s ease, transform 0.2s ease;
-  }
-
-  .uc-card:hover {
-    border-color: var(--secondary);
-    transform: translateY(-4px);
-  }
-
-  .uc-icon-wrap {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--surface-low);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0.75rem;
-  }
-
-  .uc-icon {
-    font-size: 1.1rem;
-    line-height: 1;
-  }
+  /* Hero wird durch Hero.astro Component gerendert (scoped styles dort) */
 
   .uc-titel {
     font-family: 'Manrope', sans-serif;
@@ -523,652 +417,1080 @@ import Cta from '../components/Cta.astro';
   }
 
   /* ─────────────────────────────────────────
-     LEISTUNGEN
+     KI-TEAM — Editorial
   ───────────────────────────────────────── */
-  .leistungen {
-    background: var(--surface-low);
-    padding: 128px 24px;
+  .sec-kiteam {
+    background: var(--surface);
+    padding: 6rem 2.5rem;
+    position: relative;
   }
 
-  .leistungen-inner {
-    max-width: 1400px;
+  .sec-kiteam .section-inner {
+    max-width: 1200px;
     margin: 0 auto;
   }
 
-  .leistungen-header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-
-  .eyebrow-lk {
-    display: block;
+  /* Section-Eyebrow */
+  .sec-kiteam .section-eyebrow {
     font-family: 'Manrope', sans-serif;
     font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--secondary);
-    margin-bottom: 1rem;
-    text-align: center;
+    color: var(--on-surface-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
   }
 
-  .leistungen h2 {
+  .sec-kiteam .section-eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--secondary);
+  }
+
+  /* Section-Head zentriert */
+  .sec-kiteam .section-head {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 5rem;
+  }
+
+  .sec-kiteam .section-head .section-eyebrow {
+    justify-content: center;
+  }
+
+  .sec-kiteam .section-headline {
     font-family: 'Noto Serif', serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    color: var(--primary);
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 0 0 1.5rem;
+    color: var(--on-surface);
+    text-wrap: balance;
+  }
+
+  .sec-kiteam .section-lede {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
     margin: 0;
+  }
+
+  /* KI-Team Grid — 3 Spalten */
+  .sec-kiteam .kiteam-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .sec-kiteam .kiteam-card {
+    position: relative;
+    background: var(--surface-lowest);
+    border-radius: 1.25rem;
+    padding: 2.25rem 2rem 2.5rem;
+    box-shadow: 0 20px 40px 0 rgba(27, 28, 26, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    min-height: 280px;
+  }
+
+  .sec-kiteam .kiteam-card:hover {
+    box-shadow: 0 28px 56px 0 rgba(27, 28, 26, 0.12);
+    transform: translateY(-6px);
+  }
+
+  /* Featured Card (Social Media) */
+  .sec-kiteam .kiteam-card.featured {
+    background: var(--primary-container);
+    color: #fbf9f6;
+  }
+
+  .sec-kiteam .kiteam-card.featured .card-num { color: rgba(223, 230, 200, 0.55); }
+  .sec-kiteam .kiteam-card.featured .card-title { color: #fbf9f6; }
+  .sec-kiteam .kiteam-card.featured .card-text { color: var(--primary-fixed); }
+  .sec-kiteam .kiteam-card.featured .card-arrow { color: #d4889a; }
+
+  .sec-kiteam .card-num {
+    font-family: 'Noto Serif', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--on-surface-muted);
+  }
+
+  .sec-kiteam .card-icon {
+    font-size: 1.75rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .sec-kiteam .card-title {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.375rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--on-surface);
+    text-wrap: balance;
+  }
+
+  .sec-kiteam .card-text {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+    margin: 0;
+    flex: 1;
+  }
+
+  .sec-kiteam .card-arrow {
+    position: absolute;
+    right: 2rem;
+    bottom: 1.75rem;
+    font-size: 1rem;
+    color: var(--secondary);
+    transition: transform 0.3s ease;
+  }
+
+  .sec-kiteam .kiteam-card:hover .card-arrow {
+    transform: translateX(4px);
+  }
+
+  /* Section-Footer — Ratgeber-Link */
+  .sec-kiteam .section-footer {
+    margin-top: 4rem;
     text-align: center;
   }
 
-  .leistungen-watermark {
+  .sec-kiteam .ratgeber-link {
     font-family: 'Manrope', sans-serif;
-    font-size: 4rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 500;
     color: var(--on-surface);
-    opacity: 0.05;
+    text-decoration: none;
+    border-bottom: 1px solid var(--secondary);
+    padding-bottom: 2px;
+    transition: color 0.2s ease;
+  }
+
+  .sec-kiteam .ratgeber-link:hover {
+    color: var(--secondary);
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .sec-kiteam .kiteam-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 760px) {
+    .sec-kiteam { padding: 4rem 1.5rem; }
+    .sec-kiteam .section-head { margin-bottom: 3rem; }
+    .sec-kiteam .kiteam-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+    .sec-kiteam .kiteam-card { padding: 2rem 1.5rem; min-height: auto; }
+  }
+
+  /* ─────────────────────────────────────────
+     BRANCHEN — Editorial
+  ───────────────────────────────────────── */
+  .sec-branchen {
+    background: var(--surface-low);
+    padding: 6rem 2.5rem;
+    position: relative;
+  }
+
+  .sec-branchen .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Section-Eyebrow — rote Linie davor */
+  .sec-branchen .section-eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--on-surface-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .sec-branchen .section-eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--secondary);
+  }
+
+  /* Section-Head zentriert */
+  .sec-branchen .section-head {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 5rem;
+  }
+
+  .sec-branchen .section-head .section-eyebrow {
+    justify-content: center;
+  }
+
+  .sec-branchen .section-headline {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 700;
     letter-spacing: -0.02em;
-    white-space: nowrap;
-    flex-shrink: 0;
-    line-height: 1;
-    user-select: none;
+    line-height: 1.05;
+    margin: 0 0 1.5rem;
+    color: var(--on-surface);
+    text-wrap: balance;
   }
 
-  /* Grid-Wrapper schafft 1px-Linien via gap auf dust-Hintergrund */
-  .leistungen-grid-wrapper {
-    background: var(--dust);
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(27, 28, 26, 0.06);
+  .sec-branchen .section-lede {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+    margin: 0;
   }
 
-  .leistungen-grid {
+  /* Branchen-Grid — 5 Spalten */
+  .sec-branchen .branchen-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.5rem;
   }
 
-  /* Service-Karte */
-  .lk {
-    background: var(--surface-lowest);
-    padding: 2.5rem;
+  .sec-branchen .branche-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     text-decoration: none;
     color: inherit;
-    transition: background 0.5s ease;
-  }
-
-  .lk:hover {
-    background: var(--primary);
-  }
-
-  .lk-icon {
-    font-size: 2rem;
-    color: var(--secondary);
-    margin-bottom: 2rem;
-    display: block;
-    transition: color 0.5s ease;
-  }
-
-  .lk:hover .lk-icon {
-    color: var(--primary-fixed);
-  }
-
-  .lk h3 {
-    font-family: 'Noto Serif', serif;
-    font-size: 1.5rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-    font-weight: 700;
-    transition: color 0.5s ease;
-  }
-
-  .lk:hover h3 {
-    color: #fff;
-  }
-
-  .lk-text {
-    font-family: 'Manrope', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 300;
-    color: var(--on-surface-muted);
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    flex-grow: 1;
-    transition: color 0.5s ease;
-  }
-
-  .lk:hover .lk-text {
-    color: var(--primary-fixed);
-  }
-
-  .lk-line {
-    height: 2px;
-    width: 3rem;
-    background: var(--secondary);
-    margin-top: auto;
-    transition: width 0.5s ease, background 0.5s ease;
-  }
-
-  .lk:hover .lk-line {
-    width: 100%;
-    background: var(--primary-fixed);
-  }
-
-  /* ─────────────────────────────────────────
-     BRANCHEN
-  ───────────────────────────────────────── */
-  .branchen {
-    background: var(--surface);
-    padding: 128px 24px;
-  }
-
-  .branchen-inner {
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-
-  .branchen-h2 {
-    font-family: 'Noto Serif', serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    color: var(--on-surface);
-    text-align: center;
-    margin-bottom: 0.75rem;
-  }
-
-  .branchen-subtitle {
-    font-family: 'Noto Serif', serif;
-    font-style: italic;
-    font-size: 1.1rem;
-    color: var(--on-surface-muted);
-    text-align: center;
-  }
-
-  .branchen-subtitle span {
-    color: var(--secondary);
-  }
-
-  .branchen-divider {
-    width: 6rem;
-    height: 2px;
-    background: var(--primary);
-    margin: 1.5rem auto 4rem;
-  }
-
-  /* Branchen-Grid: 5 Spalten, erste Karte doppelt so breit */
-  .branchen-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-    gap: 1rem;
-    height: 600px;
-  }
-
-  /* Einzelne Karte */
-  .branche-karte {
-    position: relative;
+    border-radius: 1.25rem;
     overflow: hidden;
-    border-radius: 0.75rem;
-    cursor: default;
+    background: var(--surface-lowest);
+    box-shadow: 0 20px 40px 0 rgba(27, 28, 26, 0.06);
+    transition: box-shadow 0.35s ease, transform 0.35s ease;
   }
 
-  /* Fallback-Farben falls Bilder nicht geladen */
-  .branche-handwerk    { background: #3f4530; }
-  .branche-aerzte      { background: #2d3748; }
-  .branche-restaurants { background: #742a2a; }
-  .branche-kanzleien   { background: #1a365d; }
-  .branche-immobilien  { background: #22543d; }
+  .sec-branchen .branche-card:hover {
+    box-shadow: 0 28px 56px 0 rgba(27, 28, 26, 0.14);
+    transform: translateY(-6px);
+  }
 
-  /* Hintergrundbild */
-  .branche-bg-img {
-    position: absolute;
-    inset: 0;
+  .sec-branchen .branche-image {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    background: #3f4530;
+  }
+
+  .sec-branchen .branche-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 0;
+    transition: transform 0.6s ease;
+    display: block;
   }
 
-  /* Overlay */
-  .branche-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.85) 0%,
-      rgba(0, 0, 0, 0.55) 40%,
-      rgba(0, 0, 0, 0.25) 100%
-    );
-    transition: background 0.3s ease;
+  .sec-branchen .branche-card:hover .branche-image img {
+    transform: scale(1.05);
   }
 
-  .branche-karte:hover .branche-overlay {
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.75) 0%,
-      rgba(0, 0, 0, 0.45) 40%,
-      rgba(0, 0, 0, 0.15) 100%
-    );
+  .sec-branchen .branche-content {
+    padding: 1.5rem 1.25rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
   }
 
-  /* Inhalt absolut unten links */
-  .branche-inhalt {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 2rem;
+  .sec-branchen .branche-num {
+    font-family: 'Noto Serif', serif;
+    font-size: 0.9375rem;
+    font-style: italic;
+    color: var(--on-surface-muted);
+    margin-bottom: 0.125rem;
+  }
+
+  .sec-branchen .branche-title {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    color: var(--on-surface);
+    margin: 0 0 0.25rem;
+    text-wrap: balance;
+  }
+
+  .sec-branchen .branche-subtitle {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--secondary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: gap 0.25s ease;
+  }
+
+  .sec-branchen .branche-subtitle:hover {
+    gap: 0.65rem;
+  }
+
+  .sec-branchen .branche-subtitle .branche-arrow {
+    display: inline-block;
+    transition: transform 0.25s ease;
+  }
+
+  .sec-branchen .branche-subtitle:hover .branche-arrow {
+    transform: translateX(2px);
+  }
+
+  .sec-branchen .branche-link-2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.8125rem;
+    color: var(--on-surface-muted);
+    text-decoration: none;
+    margin-top: 0.125rem;
+    transition: color 0.2s ease;
+  }
+
+  .sec-branchen .branche-link-2:hover {
+    color: var(--on-surface);
+  }
+
+  /* Outro-Link */
+  .sec-branchen .section-outro {
+    text-align: center;
+    margin: 3.5rem 0 0;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9375rem;
+    color: var(--on-surface-muted);
+  }
+
+  .sec-branchen .section-outro a {
+    color: var(--on-surface-muted);
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .sec-branchen .section-outro a:hover {
+    color: var(--on-surface);
+    border-bottom-color: var(--secondary);
+  }
+
+  /* Responsive */
+  @media (max-width: 1100px) {
+    .sec-branchen .branchen-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 860px) {
+    .sec-branchen { padding: 4rem 1.5rem; }
+    .sec-branchen .section-head { margin-bottom: 3rem; }
+    .sec-branchen .branchen-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .sec-branchen .branchen-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     FAQ — Editorial
+  ───────────────────────────────────────── */
+  .sec-faq {
+    background: var(--surface-low);
+    padding: 6rem 2.5rem;
+    position: relative;
+  }
+
+  .sec-faq .section-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* Section-Eyebrow */
+  .sec-faq .section-eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--on-surface-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .sec-faq .section-eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--secondary);
+  }
+
+  /* Section-Head zentriert */
+  .sec-faq .section-head {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 5rem;
+  }
+
+  .sec-faq .section-head .section-eyebrow {
+    justify-content: center;
+  }
+
+  .sec-faq .section-headline {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 0;
+    color: var(--on-surface);
+    text-wrap: balance;
+  }
+
+  /* FAQ-Liste */
+  .sec-faq .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .sec-faq .faq-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 2.5rem;
+    padding: 2.5rem 0;
+    border-top: 1px solid rgba(199, 199, 188, 0.3);
+    align-items: start;
+  }
+
+  .sec-faq .faq-item:last-child {
+    border-bottom: 1px solid rgba(199, 199, 188, 0.3);
+  }
+
+  .sec-faq .faq-num {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--on-surface-muted);
+    line-height: 1;
+    opacity: 0.7;
+  }
+
+  .sec-faq .faq-body {
+    max-width: 720px;
+  }
+
+  .sec-faq .faq-question {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    margin: 0 0 1rem;
+    color: var(--on-surface);
+    text-wrap: balance;
+  }
+
+  .sec-faq .faq-answer {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--on-surface-muted);
+    margin: 0;
+  }
+
+  /* Featured FAQ */
+  .sec-faq .faq-item.featured {
+    background: var(--primary-container);
+    color: #fbf9f6;
+    border-radius: 1.25rem;
+    padding: 2.5rem 2.5rem;
+    border-top: none;
+    margin: 1.5rem 0;
+    box-shadow: 0 20px 40px 0 rgba(27, 28, 26, 0.08);
+  }
+
+  .sec-faq .faq-item.featured + .faq-item {
+    border-top: 1px solid rgba(199, 199, 188, 0.3);
+  }
+
+  .sec-faq .faq-item.featured .faq-num {
+    color: rgba(223, 230, 200, 0.55);
+    opacity: 1;
+  }
+
+  .sec-faq .faq-item.featured .faq-question {
+    color: #fbf9f6;
+  }
+
+  .sec-faq .faq-item.featured .faq-answer {
+    color: var(--primary-fixed);
+  }
+
+  /* FAQ Outro-Block */
+  .sec-faq .faq-outro {
+    margin-top: 5rem;
+    padding: 3.5rem 3rem;
+    background: var(--primary);
+    color: #fbf9f6;
+    border-radius: 1.5rem;
+    text-align: center;
+    box-shadow: 0 24px 48px 0 rgba(27, 28, 26, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sec-faq .faq-outro-text {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.25rem, 2vw, 1.625rem);
+    font-weight: 600;
+    line-height: 1.35;
+    margin: 0 auto 2rem;
+    color: #fbf9f6;
+    max-width: 680px;
+    text-wrap: balance;
+  }
+
+  /* Button Primary — FAQ CTA */
+  .sec-faq .btn-primary.faq-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: linear-gradient(135deg, #b80049 0%, #8c0037 100%);
+    color: #ffffff;
+    border-radius: 1rem;
+    padding: 1rem 1.75rem;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    letter-spacing: 0.01em;
+    margin-top: 0;
+  }
+
+  .sec-faq .btn-primary.faq-cta:hover {
+    box-shadow: 0 12px 28px rgba(184, 0, 73, 0.35);
+    transform: translateY(-1px);
+  }
+
+  .sec-faq .btn-primary.faq-cta .arrow {
+    display: inline-block;
+    transition: transform 0.25s ease;
+  }
+
+  .sec-faq .btn-primary.faq-cta:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  /* Responsive */
+  @media (max-width: 760px) {
+    .sec-faq { padding: 4rem 1.5rem; }
+    .sec-faq .section-head { margin-bottom: 3rem; }
+    .sec-faq .faq-item { grid-template-columns: 40px 1fr; gap: 1.25rem; padding: 2rem 0; }
+    .sec-faq .faq-num { font-size: 1.125rem; }
+    .sec-faq .faq-question { font-size: 1.25rem; }
+    .sec-faq .faq-answer { font-size: 1rem; }
+    .sec-faq .faq-item.featured { padding: 2rem 1.5rem; }
+    .sec-faq .faq-outro { padding: 2.5rem 1.5rem; margin-top: 3rem; }
+  }
+
+
+  /* ─────────────────────────────────────────
+     KI-EFFEKTIVITÄT — Editorial Manifest
+  ───────────────────────────────────────── */
+  .sec-effektivitaet {
+    position: relative;
+    background: var(--primary);
+    color: #fbf9f6;
+    padding: 6rem 2.5rem;
+    overflow: hidden;
+  }
+
+  .sec-effektivitaet .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
     z-index: 2;
   }
 
-  .branche-inhalt h3 {
+  /* Grain-Textur (subtil) */
+  .effekt-grain {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.5'/></svg>");
+    z-index: 1;
+  }
+
+  /* Asymmetrisches Grid — links Head, rechts Body */
+  .effekt-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    gap: 5rem;
+    align-items: start;
+  }
+
+  /* Section-Eyebrow */
+  .sec-effektivitaet .section-eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(223, 230, 200, 0.65);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .sec-effektivitaet .section-eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--secondary);
+  }
+
+  .effekt-headline {
     font-family: 'Noto Serif', serif;
-    font-style: italic;
-    color: #fff;
+    font-size: clamp(2rem, 3.5vw, 2.875rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 0;
+    color: #fbf9f6;
+    text-wrap: balance;
+    max-width: 480px;
+    position: sticky;
+    top: 6rem;
+  }
+
+  /* Body-Spalte */
+  .effekt-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 640px;
+  }
+
+  .effekt-paragraph {
+    font-family: 'Manrope', sans-serif;
     font-weight: 400;
-    line-height: 1.3;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--primary-fixed);
+    margin: 0;
+  }
+
+  /* Hervorgehobener Absatz */
+  .effekt-highlight {
+    font-family: 'Noto Serif', serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.45;
+    color: #fbf9f6;
+    margin: 1rem 0 0.5rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--secondary);
+    text-wrap: balance;
+  }
+
+  /* Button im Editorial-Stil */
+  .sec-effektivitaet .btn-primary-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: linear-gradient(135deg, #b80049 0%, #8c0037 100%);
+    color: #ffffff;
+    border-radius: 1rem;
+    padding: 1rem 1.75rem;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    letter-spacing: 0.01em;
+    margin-top: 1.5rem;
+    align-self: flex-start;
+  }
+
+  .sec-effektivitaet .btn-primary-outline:hover {
+    box-shadow: 0 14px 32px rgba(184, 0, 73, 0.4);
+    transform: translateY(-1px);
+  }
+
+  .sec-effektivitaet .btn-primary-outline .arrow {
+    display: inline-block;
+    transition: transform 0.25s ease;
+  }
+
+  .sec-effektivitaet .btn-primary-outline:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  /* Mobile */
+  @media (max-width: 860px) {
+    .sec-effektivitaet { padding: 4rem 1.5rem; }
+    .effekt-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .effekt-headline { position: static; max-width: 100%; }
+    .effekt-body { max-width: 100%; }
+    .effekt-highlight { font-size: 1.125rem; padding-left: 1.25rem; }
+  }
+
+  /* ─────────────────────────────────────────
+     SOCIAL MEDIA SEKTION — Editorial
+  ───────────────────────────────────────── */
+  .sec-social {
+    background: var(--surface);
+    padding: 6rem 2.5rem;
+    position: relative;
+  }
+
+  .sec-social .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Section-Eyebrow — rote Linie davor */
+  .sec-social .section-eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--on-surface-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .sec-social .section-eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--secondary);
+  }
+
+  /* Section-Head asymmetrisch */
+  .sec-social .section-head-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 4rem;
+    margin-bottom: 5rem;
+    flex-wrap: wrap;
+  }
+
+  .sec-social .section-head-left {
+    flex: 1 1 600px;
+  }
+
+  .sec-social .section-headline {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 0;
+    color: var(--on-surface);
+    text-wrap: balance;
+    max-width: 720px;
+  }
+
+  .sec-social .section-aside {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+    margin: 0;
+    max-width: 320px;
+    flex: 0 1 320px;
+  }
+
+  /* 4-Karten-Grid */
+  .sec-social .social-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .sec-social .social-card {
+    background: var(--surface-lowest);
+    border-radius: 1.25rem;
+    padding: 2.25rem 2rem 2rem;
+    box-shadow: 0 20px 40px 0 rgba(27, 28, 26, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .sec-social .social-card:hover {
+    box-shadow: 0 24px 48px 0 rgba(27, 28, 26, 0.10);
+    transform: translateY(-4px);
+  }
+
+  .sec-social .card-num {
+    font-family: 'Noto Serif', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--on-surface-muted);
     margin-bottom: 0.5rem;
   }
 
-  /* Erste Karte (Handwerker) — größerer H3 */
-  .branche-handwerk .branche-inhalt h3 {
-    font-size: 2rem;
+  .sec-social .card-icon {
+    font-size: 1.75rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
   }
 
-  /* Karten 2–5 — kleinerer H3 */
-  .branche-aerzte .branche-inhalt h3,
-  .branche-restaurants .branche-inhalt h3,
-  .branche-kanzleien .branche-inhalt h3,
-  .branche-immobilien .branche-inhalt h3 {
-    font-size: 1.5rem;
-  }
-
-  .branche-inhalt a {
-    display: block;
-    font-family: 'Manrope', sans-serif;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    margin-top: 0.375rem;
-    transition: color 0.2s ease;
-  }
-
-  .branche-inhalt a:hover {
-    color: #fff;
-  }
-
-  .branche-link-2 {
-    font-size: 0.725rem !important;
-    color: rgba(255, 255, 255, 0.5) !important;
-    margin-top: 0.2rem !important;
-  }
-
-  .branche-link-2:hover {
-    color: rgba(255, 255, 255, 0.85) !important;
-  }
-
-  .branchen-mehr {
-    display: block;
-    text-align: center;
-    margin-top: 2rem;
-    font-family: 'Manrope', sans-serif;
-    font-size: 0.9rem;
-    color: var(--on-surface-muted);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  .branchen-mehr:hover {
-    color: var(--primary);
-  }
-
-  /* ─────────────────────────────────────────
-     FAQ
-  ───────────────────────────────────────── */
-  .faq {
-    background: var(--surface);
-    padding: 128px 24px;
-  }
-
-  .faq-inner {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .faq h2 {
+  .sec-social .card-title {
     font-family: 'Noto Serif', serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    color: var(--on-surface);
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-
-  .faq-item {
-    display: block;
-    padding-bottom: 2.5rem;
-    margin-bottom: 0;
-    border-bottom: 1px solid var(--dust);
-    padding-top: 2.5rem;
-  }
-
-  .faq-item:first-of-type {
-    padding-top: 0;
-  }
-
-  .faq-item--last {
-    border-bottom: none;
-  }
-
-  .faq-item h3 {
-    font-family: 'Noto Serif', serif;
-    font-size: clamp(1.3rem, 2vw, 1.6rem);
-    font-weight: 400;
-    color: var(--primary);
-    line-height: 1.3;
-    margin: 0 0 1rem 0;
-  }
-
-  .faq-item p {
-    font-family: 'Manrope', sans-serif;
-    font-size: clamp(1rem, 1.3vw, 1.15rem);
-    color: var(--on-surface-muted);
-    line-height: 1.85;
+    font-size: 1.375rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
     margin: 0;
+    color: var(--on-surface);
+    text-wrap: balance;
   }
 
-  /* Highlight (Frage 3) */
-  .faq-highlight {
-    display: block;
-    background: var(--primary);
-    border-radius: 0.75rem;
-    padding: 2rem 2.5rem;
-    margin: 0.5rem 0;
-    border-bottom: none;
-  }
-
-  .faq-highlight h3 {
-    color: rgba(255, 255, 255, 0.95);
-    font-size: 1.3rem;
-    font-weight: 400;
-    margin-bottom: 0.75rem;
-    line-height: 1.3;
-  }
-
-  .faq-highlight p {
-    color: var(--primary-fixed);
-    font-size: 1rem;
-  }
-
-  /* ─────────────────────────────────────────
-     RESPONSIVE
-  ───────────────────────────────────────── */
-  @media (max-width: 1024px) {
-    .leistungen-watermark { display: none; }
-  }
-
-  @media (max-width: 900px) {
-    .leistungen-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .branchen-grid {
-      grid-template-columns: repeat(3, 1fr);
-      height: auto;
-    }
-
-    .branche-karte {
-      min-height: 400px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .hero {
-      padding: 120px 24px 80px;
-    }
-
-    .use-case-cards {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-  }
-
-  @media (max-width: 640px) {
-  }
-
-  @media (max-width: 600px) {
-    .leistungen-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .branchen-grid {
-      grid-template-columns: 1fr;
-      height: auto;
-    }
-  }
-
-  /* ─────────────────────────────────────────
-     LEISTUNGEN SUBTEXT
-  ───────────────────────────────────────── */
-  .leistungen-subtext {
-    font-family: 'Manrope', sans-serif;
-    font-size: 1rem;
-    color: var(--on-surface-muted);
-    margin-top: 0.5rem;
-    text-align: center;
-  }
-
-  .leistungen-ratgeber {
-    text-align: center;
-    margin-top: 2.5rem;
-  }
-
-  .leistungen-ratgeber-link {
+  .sec-social .card-text {
     font-family: 'Manrope', sans-serif;
     font-size: 0.9375rem;
-    font-weight: 600;
-    color: var(--secondary);
-    text-decoration: none;
-    transition: opacity 0.2s;
+    line-height: 1.6;
+    color: var(--on-surface-muted);
+    margin: 0;
   }
 
-  .leistungen-ratgeber-link:hover {
-    opacity: 0.75;
-  }
-
-  /* ─────────────────────────────────────────
-     KI-EFFEKTIVITÄT
-  ───────────────────────────────────────── */
-  .ki-effekt {
-    background: var(--primary);
-    padding: 80px 24px 128px;
-    color: #fff;
-  }
-
-  .ki-effekt-inner {
-    max-width: 860px;
-    margin: 0 auto;
+  /* Section-Footer */
+  .sec-social .section-footer {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
     text-align: center;
   }
 
-  .ki-effekt-eyebrow {
+  .sec-social .section-outro {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    color: var(--on-surface-muted);
+    margin: 0;
+    max-width: 560px;
+  }
+
+  /* Button Primary — lokal für diese Sektion */
+  .sec-social .btn-primary.sec-social-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: linear-gradient(135deg, #b80049 0%, #8c0037 100%);
+    color: #ffffff;
+    border-radius: 1rem;
+    padding: 1rem 1.75rem;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    letter-spacing: 0.01em;
+  }
+
+  .sec-social .btn-primary.sec-social-cta:hover {
+    box-shadow: 0 12px 28px rgba(184, 0, 73, 0.35);
+    transform: translateY(-1px);
+  }
+
+  .sec-social .btn-primary.sec-social-cta .arrow {
+    display: inline-block;
+    transition: transform 0.25s ease;
+  }
+
+  .sec-social .btn-primary.sec-social-cta:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  /* Mobile */
+  @media (max-width: 1024px) {
+    .sec-social .social-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 860px) {
+    .sec-social { padding: 4rem 1.5rem; }
+    .sec-social .section-head-row { margin-bottom: 3rem; gap: 2rem; }
+    .sec-social .social-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  }
+
+  /* ═══════════════════════════════════
+     SEC-REFERENZ (Editorial)
+  ═══════════════════════════════════ */
+  .sec-referenz {
+    background: var(--surface);
+    padding: 6rem 2.5rem;
+  }
+
+  .sec-referenz .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .referenz-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 5rem;
+    align-items: center;
+  }
+
+  /* Bild links */
+  .referenz-image {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 24px 48px 0 rgba(27, 28, 26, 0.10);
+    aspect-ratio: 4/3;
+    background: var(--surface-high);
+  }
+
+  .referenz-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
+  }
+
+  /* Content rechts */
+  .referenz-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sec-referenz .section-eyebrow {
     font-family: 'Manrope', sans-serif;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--primary-fixed);
-    margin-bottom: 1.25rem;
-    text-align: center;
-  }
-
-  .ki-effekt-h2 {
-    font-family: 'Noto Serif', serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    color: #fff;
-    margin-bottom: 2.5rem;
-    line-height: 1.15;
-    text-align: center;
-  }
-
-  .ki-effekt-text {
-    max-width: 720px;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    margin: 0 auto 2.5rem;
-  }
-
-  .ki-effekt-text p {
-    font-family: 'Manrope', sans-serif;
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.80);
+    color: var(--on-surface-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
     margin: 0;
   }
 
-  .ki-effekt-highlight {
-    border-left: 3px solid var(--secondary);
-    padding-left: 1.25rem;
-    text-align: left;
-    max-width: 700px;
-    margin: 1.5rem auto 0;
-    color: var(--primary-fixed) !important;
-    font-size: clamp(1.1rem, 1.8vw, 1.35rem) !important;
-    font-weight: 600 !important;
-  }
-
-  .ki-effekt-btn {
-    display: block;
-    width: fit-content;
-    margin: 2rem auto 0;
+  .sec-referenz .section-eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
     background: var(--secondary);
-    color: #fff;
-    padding: 0.875rem 1.75rem;
-    border-radius: 0.375rem;
-    font-family: 'Manrope', sans-serif;
+  }
+
+  .referenz-quote {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
     font-weight: 600;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: background 0.2s ease;
-  }
-
-  .ki-effekt-btn:hover {
-    background: var(--secondary-container);
-  }
-
-  /* ─────────────────────────────────────────
-     SOCIAL MEDIA SEKTION
-  ───────────────────────────────────────── */
-  .social-media-sek {
-    background: var(--surface-low);
-    padding: 128px 24px;
-  }
-
-  .social-media-inner {
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-
-  .social-media-header {
-    margin-bottom: 4rem;
-  }
-
-  .social-media-header h2 {
-    font-family: 'Noto Serif', serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    color: var(--primary);
-    margin: 1rem 0 0.75rem;
-    line-height: 1.15;
-    text-align: center;
-  }
-
-  .social-media-subtext {
-    font-family: 'Manrope', sans-serif;
-    font-size: 1.05rem;
-    color: var(--on-surface-muted);
-    margin: 0;
-    text-align: center;
-  }
-
-  .social-karten {
-    grid-template-columns: repeat(4, 1fr) !important;
-  }
-
-  .social-media-cta {
-    margin-top: 3rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.25rem;
-  }
-
-  .social-media-cta-text {
-    font-family: 'Manrope', sans-serif;
-    font-size: 1.05rem;
-    color: var(--on-surface-muted);
-    line-height: 1.7;
-    max-width: 56ch;
-    margin: 0;
-  }
-
-  @media (max-width: 900px) {
-    .social-karten {
-      grid-template-columns: repeat(2, 1fr) !important;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .social-karten {
-      grid-template-columns: 1fr !important;
-    }
-  }
-
-  /* ─────────────────────────────────────────
-     FAQ STATEMENT BLOCK
-  ───────────────────────────────────────── */
-  .faq-statement {
-    background: var(--primary);
-    border-radius: 0.75rem;
-    padding: 3rem 3.5rem;
-    margin-top: 2rem;
-    max-width: 900px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .faq-statement p {
-    font-family: 'Noto Serif', serif;
     font-style: italic;
-    font-size: clamp(1.3rem, 2.2vw, 1.75rem);
-    color: rgba(255, 255, 255, 0.95);
-    line-height: 1.65;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    color: var(--on-surface);
     margin: 0;
+    text-wrap: balance;
   }
 
-  @media (max-width: 768px) {
-    .faq-statement {
-      padding: 2rem 1.5rem;
-    }
+  .referenz-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
   }
 
-  .faq-statement-btn {
-    display: inline-block;
-    background: var(--secondary);
-    color: #fff;
-    padding: 0.875rem 1.75rem;
-    border-radius: 0.375rem;
-    font-family: 'Manrope', sans-serif;
+  .referenz-name {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.125rem;
     font-weight: 600;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: background 0.2s ease;
+    color: var(--on-surface);
   }
 
-  .faq-statement-btn:hover {
-    background: var(--secondary-container);
+  .referenz-role {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9375rem;
+    color: var(--on-surface-muted);
   }
+
+  .referenz-link {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--on-surface);
+    text-decoration: none;
+    border-bottom: 1px solid var(--secondary);
+    padding-bottom: 2px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: flex-start;
+    transition: color 0.2s ease;
+  }
+
+  .referenz-link:hover {
+    color: var(--secondary);
+  }
+
+  .referenz-link .arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .referenz-link:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 860px) {
+    .sec-referenz { padding: 4rem 1.5rem; }
+    .referenz-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .referenz-content { gap: 1.5rem; }
+  }
+
 </style>

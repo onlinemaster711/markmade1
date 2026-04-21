@@ -1,110 +1,196 @@
 ---
 ---
 
-<section class="cta-section" id="cta">
-  <div class="inner">
-    <p class="eyebrow">Kostenlos &amp; unverbindlich</p>
-    <h2>Zeig uns deinen Betrieb. Wir machen dich schlagkräftiger als jedes Team ohne KI.</h2>
-    <p class="subtext">
-      Standardlösung oder individuell gebaut — wir finden was für deinen Betrieb passt. 30 Minuten. Kostenlos. Ohne Versprechen die wir nicht halten.
-    </p>
-    <a href="https://calendly.com/onlinemaster711/new-meeting" class="btn-cta" target="_blank" rel="noopener noreferrer">Jetzt kostenloses Gespräch buchen</a>
-    <p class="cta-hint">📅 Direkt in den Kalender – kein Telefonat nötig</p>
-  </div>
+<section id="cta" class="section sec-cta">
+  <div class="cta-grain"></div>
+  <div class="orbit-glow"></div>
+  <div class="section-inner">
+    <div class="cta-block">
+      <div class="section-eyebrow"><span>06 — Kostenlos &amp; unverbindlich</span></div>
+      <h2 class="cta-headline">Zeig uns deinen Betrieb. Wir machen dich schlagkräftiger als jedes Team ohne KI.</h2>
+      <p class="cta-text">Standardlösung oder individuell gebaut — wir finden was für deinen Betrieb passt. 30 Minuten. Kostenlos. Ohne Versprechen die wir nicht halten.</p>
 
-  <div class="cta-deco" aria-hidden="true"></div>
+      <a href="https://calendly.com/onlinemaster711/new-meeting" class="btn-primary" target="_blank" rel="noopener noreferrer">
+        <span>Jetzt kostenloses Gespräch buchen</span>
+        <span class="arrow">→</span>
+      </a>
+
+      <div class="cta-meta">
+        <span>30 Minuten</span>
+        <span>Ohne Verpflichtung</span>
+        <span>Per Telefon-Call</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <style>
-  .cta-section {
-    background: linear-gradient(135deg, var(--primary), var(--primary-container));
-    padding: 6rem 0;
-    text-align: center;
+  .sec-cta {
     position: relative;
+    background: radial-gradient(ellipse at 50% 50%, #3f4530 0%, #292f1b 100%);
+    color: #fbf9f6;
+    padding: 8rem 2.5rem;
     overflow: hidden;
-    color: #fff;
   }
 
-  .inner {
-    max-width: 680px;
+  .sec-cta .section-inner {
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1.5rem;
     position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.25rem;
+    z-index: 2;
   }
 
-  .eyebrow {
+  /* Grain-Textur */
+  .cta-grain {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.5'/></svg>");
+    z-index: 1;
+  }
+
+  /* Orbital Glow */
+  .orbit-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 640px;
+    height: 640px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at center, rgba(212, 136, 154, 0.15) 0%, rgba(212, 136, 154, 0) 60%);
+    pointer-events: none;
+    filter: blur(40px);
+    animation: orbitPulse 8s ease-in-out infinite;
+    z-index: 0;
+  }
+
+  @keyframes orbitPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
+    50%      { transform: translate(-50%, -50%) scale(1.15); opacity: 0.9; }
+  }
+
+  /* Section-Eyebrow — rote Linie davor */
+  .sec-cta .section-eyebrow {
+    font-family: 'Manrope', sans-serif;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--primary-fixed);
-    display: flex;
+    color: rgba(223, 230, 200, 0.65);
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
+    margin-bottom: 2.5rem;
   }
 
-  .eyebrow::before {
-    content: '';
-    display: inline-block;
+  .sec-cta .section-eyebrow::before {
+    content: "";
     width: 28px;
     height: 1px;
     background: var(--secondary);
-    flex-shrink: 0;
   }
 
-  h2 {
+  /* CTA-Block zentriert */
+  .cta-block {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cta-headline {
+    font-family: 'Noto Serif', serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
-    line-height: 1.1;
-    letter-spacing: -0.025em;
-    color: #fff;
-  }
-
-  .subtext {
-    font-size: 1.0625rem;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.8);
-    max-width: 54ch;
-  }
-
-  .btn-cta {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
-    color: var(--on-secondary);
-    font-size: 1.0625rem;
     font-weight: 700;
-    text-decoration: none;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+    margin: 0 0 1.75rem;
+    color: #fbf9f6;
+    text-wrap: balance;
+  }
+
+  .cta-text {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.0625rem, 1.5vw, 1.25rem);
+    line-height: 1.55;
+    color: var(--primary-fixed);
+    max-width: 640px;
+    margin: 0 auto 3rem;
+    text-wrap: pretty;
+  }
+
+  /* Button Primary */
+  .sec-cta .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: linear-gradient(135deg, #b80049 0%, #8c0037 100%);
+    color: #ffffff;
     border-radius: 1rem;
-    transition: opacity 0.2s, transform 0.2s;
-    box-shadow: 0 8px 32px rgba(184, 0, 73, 0.35);
-    margin-top: 0.5rem;
+    padding: 1.125rem 2rem;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    letter-spacing: 0.01em;
   }
 
-  .btn-cta:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
+  .sec-cta .btn-primary:hover {
+    box-shadow: 0 16px 36px rgba(184, 0, 73, 0.4);
+    transform: translateY(-1px);
   }
 
-  .cta-hint {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.55);
+  .sec-cta .btn-primary .arrow {
+    display: inline-block;
+    transition: transform 0.25s ease;
   }
 
-  /* Decorative blurred circle */
-  .cta-deco {
+  .sec-cta .btn-primary:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  /* CTA-Meta mit roten Dot-Separatoren */
+  .cta-meta {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(223, 230, 200, 0.65);
+  }
+
+  .cta-meta span {
+    position: relative;
+  }
+
+  .cta-meta span + span::before {
+    content: "";
     position: absolute;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(223, 230, 200, 0.08) 0%, transparent 70%);
+    left: -1.5rem;
+    top: 50%;
+    width: 4px;
+    height: 4px;
+    background: var(--secondary);
     border-radius: 50%;
-    top: -100px;
-    right: -100px;
-    pointer-events: none;
+    transform: translateY(-50%);
+  }
+
+  /* Mobile */
+  @media (max-width: 760px) {
+    .sec-cta { padding: 5rem 1.5rem; }
+    .cta-block { padding: 0; }
+    .cta-meta { gap: 2rem; margin-top: 2rem; }
+    .cta-meta span + span::before { left: -1rem; }
+    .sec-cta .btn-primary { padding: 1rem 1.75rem; }
   }
 </style>
