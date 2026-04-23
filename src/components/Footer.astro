@@ -9,7 +9,13 @@
 
       <!-- Logo + Tagline -->
       <div class="footer-brand">
-        <a href="/" class="footer-logo" aria-label="MarkMade – Startseite">mark<span>made</span></a>
+        <a href="/" class="footer-logo" aria-label="MarkMade – Startseite">
+          <svg class="footer-logo-svg" viewBox="0 0 920 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="footer-logo-title">
+            <title id="footer-logo-title">MarkMade</title>
+            <text x="40" y="150" class="footer-logo-text footer-logo-text-mark">mark</text>
+            <text x="457" y="150" class="footer-logo-text footer-logo-text-made">made</text>
+          </svg>
+        </a>
         <p class="footer-tagline">Mit KI schaffst du in einem Tag was andere in einer Woche schaffen.</p>
       </div>
 
@@ -202,28 +208,25 @@
   .footer-logo {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    font-family: 'Noto Serif', serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--on-surface);
     text-decoration: none;
     margin-bottom: 0.5rem;
   }
 
-  .footer-logo::before {
-    content: '';
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background: var(--secondary);
-    border-radius: 50%;
-    flex-shrink: 0;
+  .footer-logo-svg {
+    height: 28px;
+    width: auto;
+    display: block;
   }
 
-  .footer-logo span {
-    color: var(--secondary);
+  .footer-logo-text {
+    font-family: 'Noto Serif', Georgia, serif;
+    font-size: 160px;
+    font-weight: 700;
+    letter-spacing: -5.6px;
   }
+
+  .footer-logo-text-mark { fill: #1b1c1a; }
+  .footer-logo-text-made { fill: #b80049; }
 
   .footer-tagline {
     font-family: 'Manrope', sans-serif;
