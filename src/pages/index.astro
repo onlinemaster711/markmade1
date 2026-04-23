@@ -32,21 +32,25 @@ import Cta from '../components/Cta.astro';
 
       <div class="szenarien-liste">
         <div class="szenario">
+          <span class="szenario-nummer">01</span>
           <p class="szenario-vorher">Dein Kunde fragt um 23 Uhr nach einem Termin.</p>
           <p class="szenario-nachher">Am nächsten Morgen hast du die Bestätigung im Postfach.</p>
         </div>
 
         <div class="szenario">
+          <span class="szenario-nummer">02</span>
           <p class="szenario-vorher">Dein Postfach hat Freitag Abend 40 Mails.</p>
           <p class="szenario-nachher">Montag früh sind 37 davon beantwortet.</p>
         </div>
 
         <div class="szenario">
+          <span class="szenario-nummer">03</span>
           <p class="szenario-vorher">Dein erstes Angebot dauerte 2 Stunden.</p>
           <p class="szenario-nachher">Dein zehntes dauert 5 Minuten.</p>
         </div>
 
         <div class="szenario">
+          <span class="szenario-nummer">04</span>
           <p class="szenario-vorher">Ein Video das du heute drehst.</p>
           <p class="szenario-nachher">Morgen auf 5 Plattformen — mit passenden Texten.</p>
         </div>
@@ -73,70 +77,80 @@ import Cta from '../components/Cta.astro';
   <!-- ══════════════════════════════════════
        SEKTION 4 — FAQ
   ══════════════════════════════════════ -->
-  <section class="section sec-faq">
+  <section class="section sec-faq" id="faq">
     <div class="section-inner">
-
-      <div class="section-head">
+      <div class="section-header">
         <div class="section-eyebrow"><span>04 — Häufige Fragen</span></div>
         <h2 class="section-headline">Häufige Fragen</h2>
       </div>
 
-      <div class="faq-list">
-
-        <article class="faq-item">
-          <div class="faq-num">01</div>
-          <div class="faq-body">
-            <h3 class="faq-question">Kann KI wirklich einen Unterschied machen — oder ist das Hype?</h3>
-            <p class="faq-answer">Wer KI richtig einsetzt, schafft heute in einer Woche was andere in fünf schaffen. Das ist kein Versprechen — das ist Mathematik. Gleiche Zeit, fünffacher Output. Wer das nutzt, gewinnt.</p>
+      <div class="faq-liste">
+        <details class="faq-item">
+          <summary class="faq-frage">
+            <span class="faq-nummer">01</span>
+            <span class="faq-titel">Was kann man alles mit KI bearbeiten?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-antwort">
+            <p>Telefon. E-Mails. Angebote. Social Media. Kundenanfragen. Termine. Dokumente. Grob gesagt: Alles was sich wiederholt. Was du nicht mehr selbst machen willst, kann KI übernehmen — wenn sie richtig eingerichtet ist.</p>
           </div>
-        </article>
+        </details>
 
-        <article class="faq-item">
-          <div class="faq-num">02</div>
-          <div class="faq-body">
-            <h3 class="faq-question">Was bringt mir das konkret in meinem Alltag?</h3>
-            <p class="faq-answer">Du hörst auf Dinge zu tun die sich wiederholen. KI übernimmt Telefon, E-Mails, Dokumente, Social Media. Du konzentrierst dich auf das was nur du kannst — und wirst darin besser als je zuvor.</p>
+        <details class="faq-item">
+          <summary class="faq-frage">
+            <span class="faq-nummer">02</span>
+            <span class="faq-titel">Wie hilft mir das tatsächlich in meinem Alltag?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-antwort">
+            <p>Du hast Freitag Abend nicht mehr 40 offene Mails. Du schreibst keine Angebote mehr in 2 Stunden. Du nimmst nicht mehr jedes Telefonat an. Du machst die Arbeit für die man dich bezahlt — den Rest macht KI.</p>
           </div>
-        </article>
+        </details>
 
-        <article class="faq-item featured">
-          <div class="faq-num">03</div>
-          <div class="faq-body">
-            <h3 class="faq-question">Ich bin kein Technik-Experte. Kann ich das trotzdem nutzen?</h3>
-            <p class="faq-answer">Das ist genau der Punkt. Du musst kein Technik-Experte sein. Du sagst uns wie du arbeitest — wir geben der KI die Informationen die sie braucht um für dich zu arbeiten. Du nutzt das Ergebnis. Fertig.</p>
+        <details class="faq-item">
+          <summary class="faq-frage">
+            <span class="faq-nummer">03</span>
+            <span class="faq-titel">Ich bin kein Technik-Experte — geht das trotzdem?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-antwort">
+            <p>Genau dafür gibt's uns. Du musst KI nicht verstehen. Du musst nur wissen wie du arbeitest. Den Rest übersetzen wir.</p>
           </div>
-        </article>
+        </details>
 
-        <article class="faq-item">
-          <div class="faq-num">04</div>
-          <div class="faq-body">
-            <h3 class="faq-question">Was unterscheidet MarkMade von anderen KI-Anbietern?</h3>
-            <p class="faq-answer">Wir verkaufen keine Software. Wir optimieren Prozesse. Der Unterschied: Software kannst du kaufen und trotzdem nichts damit anfangen. Wir sorgen dafür dass KI wirklich für deinen Betrieb arbeitet — mit deinem Wissen, deiner Stimme, deinem Design.</p>
+        <details class="faq-item">
+          <summary class="faq-frage">
+            <span class="faq-nummer">04</span>
+            <span class="faq-titel">Wie läuft die Wartung? Was wenn sich was ändert?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-antwort">
+            <p>Wir bleiben dran. Wenn sich bei dir was ändert — neue Leistung, andere Preise, neuer Mitarbeiter — passen wir die KI an. Das ist kein Zusatzservice, das gehört dazu.</p>
           </div>
-        </article>
+        </details>
 
-        <article class="faq-item">
-          <div class="faq-num">05</div>
-          <div class="faq-body">
-            <h3 class="faq-question">Was passiert wenn ich jetzt nichts tue?</h3>
-            <p class="faq-answer">Deine Konkurrenz die KI nutzt, wird in einem Jahr so viel mehr geschafft haben dass der Abstand kaum noch aufzuholen ist. Die Arbeitswelt befindet sich im größten Wandel ihrer Geschichte. Wer jetzt nicht anfängt, fängt zu spät an.</p>
+        <details class="faq-item">
+          <summary class="faq-frage">
+            <span class="faq-nummer">05</span>
+            <span class="faq-titel">Was unterscheidet euch von anderen KI-Anbietern?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-antwort">
+            <p>Andere verkaufen dir Software. Wir verkaufen dir keine Software — wir optimieren deine Prozesse. Und wir verschwinden nicht nach der Einrichtung.</p>
           </div>
-        </article>
+        </details>
 
-        <article class="faq-item">
-          <div class="faq-num">06</div>
-          <div class="faq-body">
-            <h3 class="faq-question">Wie schnell sehe ich Ergebnisse?</h3>
-            <p class="faq-answer">In 1–2 Wochen läuft deine erste KI-Lösung. Nicht ein Prototyp — eine echte Lösung die täglich arbeitet. Die meisten unserer Kunden sehen in der ersten Woche wie viel Zeit sie bisher verschenkt haben.</p>
+        <details class="faq-item">
+          <summary class="faq-frage">
+            <span class="faq-nummer">06</span>
+            <span class="faq-titel">Was passiert wenn ich jetzt nichts tue?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-antwort">
+            <p>Deine Konkurrenz wird schneller. In einem Jahr schafft sie in einer Woche was du in fünf brauchst. Wer nicht mitzieht, verliert den Anschluss — nicht dramatisch, aber unumkehrbar.</p>
           </div>
-        </article>
-
+        </details>
       </div>
-
-      <div class="faq-outro">
-        <p class="faq-outro-text">Wer als kleines oder mittelständisches Unternehmen KI richtig einsetzt, kann die Großen angreifen. Nicht irgendwann. Jetzt. Das ist der größte Wandel in der Geschichte der Arbeit — und du kannst auf der richtigen Seite davon stehen.</p>
-      </div>
-
     </div>
   </section>
 
@@ -151,20 +165,23 @@ import Cta from '../components/Cta.astro';
   /* Hero wird durch Hero.astro Component gerendert (scoped styles dort) */
 
   /* ─────────────────────────────────────────
-     FAQ — Editorial
+     FAQ — Editorial Akkordeon
   ───────────────────────────────────────── */
   .sec-faq {
     background: var(--surface-low);
-    padding: 6rem 2.5rem;
-    position: relative;
+    padding: 6rem 2rem;
   }
 
   .sec-faq .section-inner {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
   }
 
-  /* Section-Eyebrow */
+  .sec-faq .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
   .sec-faq .section-eyebrow {
     font-family: 'Manrope', sans-serif;
     font-size: 0.75rem;
@@ -175,7 +192,7 @@ import Cta from '../components/Cta.astro';
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    margin-bottom: 2rem;
+    justify-content: center;
   }
 
   .sec-faq .section-eyebrow::before {
@@ -185,143 +202,101 @@ import Cta from '../components/Cta.astro';
     background: var(--secondary);
   }
 
-  /* Section-Head zentriert */
-  .sec-faq .section-head {
-    text-align: center;
-    max-width: 720px;
-    margin: 0 auto 5rem;
-  }
-
-  .sec-faq .section-head .section-eyebrow {
-    justify-content: center;
-  }
-
   .sec-faq .section-headline {
     font-family: 'Noto Serif', serif;
-    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 1.05;
-    margin: 0;
     color: var(--on-surface);
-    text-wrap: balance;
+    margin: 1rem 0 0 0;
+    letter-spacing: -0.01em;
   }
 
   /* FAQ-Liste */
-  .sec-faq .faq-list {
+  .faq-liste {
     display: flex;
     flex-direction: column;
-    gap: 0;
   }
 
-  .sec-faq .faq-item {
+  .faq-item {
+    border-top: 1px solid var(--dust);
+  }
+  .faq-item:last-child {
+    border-bottom: 1px solid var(--dust);
+  }
+
+  .faq-frage {
     display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 2.5rem;
-    padding: 2.5rem 0;
-    border-top: 1px solid rgba(199, 199, 188, 0.3);
-    align-items: start;
+    grid-template-columns: auto 1fr auto;
+    gap: 1.5rem;
+    align-items: baseline;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    list-style: none;
   }
+  .faq-frage::-webkit-details-marker { display: none; }
 
-  .sec-faq .faq-item:last-child {
-    border-bottom: 1px solid rgba(199, 199, 188, 0.3);
-  }
-
-  .sec-faq .faq-num {
-    font-family: 'Noto Serif', serif;
-    font-size: 1.5rem;
-    font-style: italic;
-    color: var(--on-surface-muted);
-    line-height: 1;
-    opacity: 0.7;
-  }
-
-  .sec-faq .faq-body {
-    max-width: 720px;
-  }
-
-  .sec-faq .faq-question {
-    font-family: 'Noto Serif', serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    line-height: 1.3;
-    margin: 0 0 1rem;
-    color: var(--on-surface);
-    text-wrap: balance;
-  }
-
-  .sec-faq .faq-answer {
+  .faq-nummer {
     font-family: 'Manrope', sans-serif;
-    font-size: 1.0625rem;
-    line-height: 1.65;
+    font-size: 0.875rem;
+    font-weight: 500;
     color: var(--on-surface-muted);
-    margin: 0;
+    letter-spacing: 0.05em;
+    min-width: 2rem;
   }
 
-  /* Featured FAQ */
-  .sec-faq .faq-item.featured {
-    background: var(--primary-container);
-    color: #fbf9f6;
-    border-radius: 1.25rem;
-    padding: 2.5rem 2.5rem;
-    border-top: none;
-    margin: 1.5rem 0;
-    box-shadow: 0 20px 40px 0 rgba(27, 28, 26, 0.08);
-  }
-
-  .sec-faq .faq-item.featured + .faq-item {
-    border-top: 1px solid rgba(199, 199, 188, 0.3);
-  }
-
-  .sec-faq .faq-item.featured .faq-num {
-    color: rgba(223, 230, 200, 0.55);
-    opacity: 1;
-  }
-
-  .sec-faq .faq-item.featured .faq-question {
-    color: #fbf9f6;
-  }
-
-  .sec-faq .faq-item.featured .faq-answer {
-    color: var(--primary-fixed);
-  }
-
-  /* FAQ Outro-Block */
-  .sec-faq .faq-outro {
-    margin-top: 5rem;
-    padding: 3.5rem 3rem;
-    background: var(--primary-fixed);
-    color: var(--on-surface);
-    border-radius: 1.5rem;
-    text-align: center;
-    box-shadow: 0 12px 28px 0 rgba(27, 28, 26, 0.05);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .sec-faq .faq-outro-text {
+  .faq-titel {
     font-family: 'Noto Serif', serif;
-    font-size: clamp(1.25rem, 2vw, 1.625rem);
-    font-weight: 600;
-    line-height: 1.35;
-    margin: 0 auto;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 700;
     color: var(--on-surface);
-    max-width: 680px;
-    text-wrap: balance;
+    line-height: 1.3;
   }
 
-  /* Responsive */
+  .faq-icon {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--on-surface-muted);
+    transition: transform 0.3s ease;
+    line-height: 1;
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-antwort {
+    padding: 0 0 1.5rem calc(2rem + 1.5rem);
+  }
+
+  .faq-antwort p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.3125rem;
+    font-weight: 400;
+    color: var(--on-surface-muted);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 680px;
+  }
+
   @media (max-width: 760px) {
-    .sec-faq { padding: 4rem 1.5rem; }
-    .sec-faq .section-head { margin-bottom: 3rem; }
-    .sec-faq .faq-item { grid-template-columns: 40px 1fr; gap: 1.25rem; padding: 2rem 0; }
-    .sec-faq .faq-num { font-size: 1.125rem; }
-    .sec-faq .faq-question { font-size: 1.25rem; }
-    .sec-faq .faq-answer { font-size: 1rem; }
-    .sec-faq .faq-item.featured { padding: 2rem 1.5rem; }
-    .sec-faq .faq-outro { padding: 2.5rem 1.5rem; margin-top: 3rem; }
+    .sec-faq { padding: 4rem 1.25rem; }
+    .sec-faq .section-header { margin-bottom: 3rem; }
+
+    .faq-frage {
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      padding: 1.25rem 0;
+    }
+    .faq-nummer {
+      display: none;
+    }
+    .faq-titel {
+      font-size: 1.5rem;
+    }
+    .faq-antwort {
+      padding: 0 0 1.25rem 0;
+    }
   }
 
   /* ─────────────────────────────────────────
@@ -357,18 +332,42 @@ import Cta from '../components/Cta.astro';
   .szenarien-liste {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 0;
   }
 
   .szenario {
     text-align: center;
     max-width: 640px;
     margin: 0 auto;
+    padding: 4rem 0;
+    position: relative;
+  }
+
+  .szenario + .szenario::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: var(--dust);
+  }
+
+  .szenario-nummer {
+    display: block;
+    font-family: 'Noto Serif', serif;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: var(--on-surface-muted);
+    letter-spacing: 0.08em;
+    margin-bottom: 1.25rem;
+    font-style: italic;
   }
 
   .szenario-vorher {
     font-family: 'Manrope', sans-serif;
-    font-size: clamp(1.0625rem, 1.5vw, 1.25rem);
+    font-size: 1.3125rem;
     font-weight: 400;
     color: var(--on-surface-muted);
     line-height: 1.5;
@@ -377,17 +376,18 @@ import Cta from '../components/Cta.astro';
 
   .szenario-nachher {
     font-family: 'Manrope', sans-serif;
-    font-size: clamp(1.0625rem, 1.5vw, 1.25rem);
+    font-size: 1.3125rem;
     font-weight: 600;
     color: var(--on-surface);
     line-height: 1.5;
-    margin: 0.5rem 0 0 0;
+    margin: 0.75rem 0 0 0;
   }
 
   @media (max-width: 760px) {
     .sec-szenarien { padding: 4rem 1.5rem; }
     .sec-szenarien .section-header { margin-bottom: 3.5rem; }
-    .szenarien-liste { gap: 3rem; }
+    .szenario { padding: 3rem 0; }
+    .szenario + .szenario::before { width: 40px; }
   }
 
   /* ─────────────────────────────────────────
@@ -423,10 +423,10 @@ import Cta from '../components/Cta.astro';
 
   .arbeitsweise-statement p {
     font-family: 'Manrope', sans-serif;
-    font-size: clamp(1.0625rem, 1.5vw, 1.25rem);
+    font-size: 1.3125rem;
     font-weight: 500;
     color: var(--on-surface);
-    line-height: 1.4;
+    line-height: 1.5;
     margin: 0;
   }
 
@@ -435,3 +435,13 @@ import Cta from '../components/Cta.astro';
     .sec-arbeitsweise .section-headline { margin-bottom: 3rem; }
   }
 </style>
+
+<script>
+  // Auf Desktop: alle FAQ-Items beim Laden öffnen
+  // Auf Mobile: alle geschlossen lassen (Akkordeon-Verhalten)
+  if (window.matchMedia('(min-width: 761px)').matches) {
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.setAttribute('open', '');
+    });
+  }
+</script>
