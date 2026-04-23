@@ -21,13 +21,63 @@ import Cta from '../components/Cta.astro';
   />
 
   <!-- ══════════════════════════════════════
-       SEKTION 2 — FAQ
+       SEKTION 2 — WAS KI HEUTE SCHON MACHT
+  ══════════════════════════════════════ -->
+  <section class="section sec-szenarien">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow"><span>02 — Was KI heute schon macht</span></div>
+        <h2 class="section-headline">Während du arbeitest. Während du schläfst.</h2>
+      </div>
+
+      <div class="szenarien-liste">
+        <div class="szenario">
+          <p class="szenario-vorher">Dein Kunde fragt um 23 Uhr nach einem Termin.</p>
+          <p class="szenario-nachher">Am nächsten Morgen hast du die Bestätigung im Postfach.</p>
+        </div>
+
+        <div class="szenario">
+          <p class="szenario-vorher">Dein Postfach hat Freitag Abend 40 Mails.</p>
+          <p class="szenario-nachher">Montag früh sind 37 davon beantwortet.</p>
+        </div>
+
+        <div class="szenario">
+          <p class="szenario-vorher">Dein erstes Angebot dauerte 2 Stunden.</p>
+          <p class="szenario-nachher">Dein zehntes dauert 5 Minuten.</p>
+        </div>
+
+        <div class="szenario">
+          <p class="szenario-vorher">Ein Video das du heute drehst.</p>
+          <p class="szenario-nachher">Morgen auf 5 Plattformen — mit passenden Texten.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SEKTION 3 — WIE WIR ARBEITEN
+  ══════════════════════════════════════ -->
+  <section class="section sec-arbeitsweise">
+    <div class="section-inner">
+      <div class="section-eyebrow"><span>03 — Wie wir arbeiten</span></div>
+      <h2 class="section-headline">Keine Software. Kein Abo. Keine Überraschungen.</h2>
+
+      <div class="arbeitsweise-statement">
+        <p>Du sagst uns wie du arbeitest.</p>
+        <p>Wir bauen die KI die das übernimmt.</p>
+        <p>Einmal bezahlt. Dauerhaft im Einsatz.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SEKTION 4 — FAQ
   ══════════════════════════════════════ -->
   <section class="section sec-faq">
     <div class="section-inner">
 
       <div class="section-head">
-        <div class="section-eyebrow"><span>02 — Häufige Fragen</span></div>
+        <div class="section-eyebrow"><span>04 — Häufige Fragen</span></div>
         <h2 class="section-headline">Häufige Fragen</h2>
       </div>
 
@@ -91,7 +141,7 @@ import Cta from '../components/Cta.astro';
   </section>
 
   <!-- ══════════════════════════════════════
-       SEKTION 3 — CTA
+       SEKTION 5 — CTA
   ══════════════════════════════════════ -->
   <Cta />
 
@@ -272,5 +322,116 @@ import Cta from '../components/Cta.astro';
     .sec-faq .faq-answer { font-size: 1rem; }
     .sec-faq .faq-item.featured { padding: 2rem 1.5rem; }
     .sec-faq .faq-outro { padding: 2.5rem 1.5rem; margin-top: 3rem; }
+  }
+
+  /* ─────────────────────────────────────────
+     SZENARIEN — Was KI heute schon macht
+  ───────────────────────────────────────── */
+  .sec-szenarien {
+    background: var(--surface);
+    padding: 6rem 2rem;
+  }
+
+  .sec-szenarien .section-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .sec-szenarien .section-header {
+    margin-bottom: 5rem;
+    text-align: center;
+  }
+
+  .sec-szenarien .section-headline {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--on-surface);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    max-width: 760px;
+    margin: 1rem auto 0;
+    text-wrap: balance;
+  }
+
+  .szenarien-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .szenario {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .szenario-vorher {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(1.0625rem, 1.5vw, 1.25rem);
+    font-weight: 400;
+    color: var(--on-surface-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .szenario-nachher {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(1.0625rem, 1.5vw, 1.25rem);
+    font-weight: 600;
+    color: var(--on-surface);
+    line-height: 1.5;
+    margin: 0.5rem 0 0 0;
+  }
+
+  @media (max-width: 760px) {
+    .sec-szenarien { padding: 4rem 1.5rem; }
+    .sec-szenarien .section-header { margin-bottom: 3.5rem; }
+    .szenarien-liste { gap: 3rem; }
+  }
+
+  /* ─────────────────────────────────────────
+     ARBEITSWEISE — Wie wir arbeiten
+  ───────────────────────────────────────── */
+  .sec-arbeitsweise {
+    background: var(--surface-low);
+    padding: 6rem 2rem;
+  }
+
+  .sec-arbeitsweise .section-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .sec-arbeitsweise .section-headline {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--on-surface);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin: 1rem 0 4rem 0;
+    text-wrap: balance;
+  }
+
+  .arbeitsweise-statement {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .arbeitsweise-statement p {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(1.0625rem, 1.5vw, 1.25rem);
+    font-weight: 500;
+    color: var(--on-surface);
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  @media (max-width: 760px) {
+    .sec-arbeitsweise { padding: 4rem 1.5rem; }
+    .sec-arbeitsweise .section-headline { margin-bottom: 3rem; }
   }
 </style>
