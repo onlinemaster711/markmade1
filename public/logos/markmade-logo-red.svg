@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" role="img" aria-label="MarkMade">
+  <title>MarkMade</title>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&amp;display=swap');
+      .mark { fill: #fbf9f6; font-family: 'Noto Serif', Georgia, serif; font-weight: 700; font-size: 160px; letter-spacing: -5.6px; }
+      .made { fill: #292f1b; font-family: 'Noto Serif', Georgia, serif; font-weight: 700; font-size: 160px; letter-spacing: -5.6px; }
+    </style>
+  </defs>
+  <text x="40" y="150" class="mark">mark</text>
+  <text x="408" y="150" class="made">made</text>
+</svg>

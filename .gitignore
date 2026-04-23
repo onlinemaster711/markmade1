@@ -29,3 +29,7 @@ pnpm-debug.log*
 # local env
 .env.local
 PLAN.md
+
+# Lokale Arbeitsverzeichnisse (nicht ins Repo)
+/logos/
+Content Auto/

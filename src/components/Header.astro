@@ -5,7 +5,11 @@
   <div class="header-inner">
 
     <a href="/" class="logo" aria-label="MarkMade – Startseite">
-      mark<span>made</span>
+      <svg class="logo-svg" viewBox="0 0 880 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logo-title">
+        <title id="logo-title">MarkMade</title>
+        <text x="40" y="150" class="logo-text logo-text-mark">mark</text>
+        <text x="408" y="150" class="logo-text logo-text-made">made</text>
+      </svg>
     </a>
 
     <nav class="nav" aria-label="Hauptnavigation">
@@ -125,10 +129,10 @@
     left: 0;
     right: 0;
     z-index: 100;
-    background: rgba(41, 47, 27, 0.55);
+    background: rgba(251, 249, 246, 0.82);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(199, 199, 188, 0.4);
   }
 
   .header-inner {
@@ -143,30 +147,38 @@
 
   /* ── LOGO ── */
   .logo {
-    font-family: 'Noto Serif', serif;
-    font-size: 1.25rem;
-    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
-    color: #fff;
     flex-shrink: 0;
     margin-right: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
   }
 
-  .logo::before {
-    content: '';
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background: var(--secondary);
-    border-radius: 50%;
-    flex-shrink: 0;
+  .logo-svg {
+    height: 32px;
+    width: auto;
+    display: block;
   }
 
-  .logo span {
-    color: var(--secondary);
+  .logo-text {
+    font-family: 'Noto Serif', Georgia, serif;
+    font-size: 160px;
+    font-weight: 700;
+    letter-spacing: -5.6px;
+  }
+
+  .logo-text-mark {
+    fill: #1b1c1a;
+  }
+
+  .logo-text-made {
+    fill: #b80049;
+  }
+
+  @media (min-width: 768px) {
+    .logo-svg {
+      height: 40px;
+    }
   }
 
   /* ── NAV ── */
@@ -184,7 +196,7 @@
     font-family: 'Manrope', sans-serif;
     font-size: 0.9375rem;
     font-weight: 500;
-    color: rgba(251, 249, 246, 0.85);
+    color: var(--on-surface-muted);
     background: none;
     border: none;
     cursor: pointer;
@@ -195,8 +207,8 @@
   }
 
   .nav-trigger:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.08);
+    color: var(--on-surface);
+    background: var(--surface-low);
   }
 
   .chevron {
@@ -278,7 +290,7 @@
     font-family: 'Manrope', sans-serif;
     font-size: 0.9375rem;
     font-weight: 500;
-    color: rgba(251, 249, 246, 0.85);
+    color: var(--on-surface-muted);
     text-decoration: none;
     padding: 0.5rem 0.75rem;
     border-radius: 0.5rem;
@@ -288,31 +300,31 @@
   }
 
   .ratgeber-link:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.08);
+    color: var(--on-surface);
+    background: var(--surface-low);
   }
 
   /* ── CTA BUTTON ── */
   .cta-button {
     flex-shrink: 0;
     display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: transparent;
-    color: #fff;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #b80049 0%, #8c0037 100%);
+    color: #ffffff;
     font-family: 'Manrope', sans-serif;
     font-size: 0.9375rem;
     font-weight: 600;
     text-decoration: none;
-    border-radius: 1rem;
-    border: 1px solid rgba(251, 249, 246, 0.25);
-    transition: background 0.2s, border-color 0.2s;
+    border-radius: 0.75rem;
+    border: none;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
     white-space: nowrap;
     margin-left: 0.5rem;
   }
 
   .cta-button:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(251, 249, 246, 0.45);
+    box-shadow: 0 8px 20px rgba(184, 0, 73, 0.3);
+    transform: translateY(-1px);
   }
 
   /* ── BURGER ── */
