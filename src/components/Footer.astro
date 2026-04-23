@@ -17,6 +17,13 @@
           </svg>
         </a>
         <p class="footer-tagline">Mit KI schaffst du in einem Tag was andere in einer Woche schaffen.</p>
+
+        <div class="footer-own-projects">
+          <span class="footer-col-title">Eigene Projekte</span>
+          <a href="https://skriptgenerator.com" target="_blank" rel="noopener noreferrer">
+            Skriptgenerator.com
+          </a>
+        </div>
       </div>
 
       <!-- Desktop: 4 Spalten -->
@@ -234,6 +241,25 @@
     color: var(--on-surface-muted);
     line-height: 1.5;
     max-width: 18ch;
+  }
+
+  .footer-own-projects {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-own-projects a {
+    color: var(--on-surface-muted);
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+  }
+
+  .footer-own-projects a:hover {
+    color: var(--on-surface);
   }
 
   /* Desktop 4 Spalten */
