@@ -1,0 +1,175 @@
+---
+---
+<div id="chatbot-tooltip" class="chatbot-tooltip" role="status" aria-live="polite">
+  <button class="chatbot-tooltip-close" aria-label="Hinweis schließen">×</button>
+  <p class="chatbot-tooltip-text-desktop">Frag mich was wir mit KI für dich machen können.</p>
+  <p class="chatbot-tooltip-text-mobile">Frag mich.</p>
+  <div class="chatbot-tooltip-arrow"></div>
+</div>
+
+<div id="chatbot-notification-dot" class="chatbot-notification-dot" aria-hidden="true"></div>
+
+<style>
+  .chatbot-tooltip {
+    position: fixed;
+    right: 80px;
+    bottom: 28px;
+    z-index: 9998;
+    max-width: 280px;
+    background: #1A1814;
+    color: #fff;
+    padding: 14px 36px 14px 18px;
+    border-radius: 14px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .chatbot-tooltip.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .chatbot-tooltip p {
+    margin: 0;
+  }
+
+  .chatbot-tooltip-text-mobile {
+    display: none;
+  }
+
+  .chatbot-tooltip-arrow {
+    position: absolute;
+    right: -6px;
+    bottom: 18px;
+    width: 12px;
+    height: 12px;
+    background: #1A1814;
+    transform: rotate(45deg);
+    border-radius: 2px;
+  }
+
+  .chatbot-tooltip-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: none;
+    border: 0;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 6px;
+    transition: color 0.2s ease;
+  }
+
+  .chatbot-tooltip-close:hover {
+    color: #fff;
+  }
+
+  /* Notification-Dot direkt über dem Chatbot-Button (separates Element) */
+  .chatbot-notification-dot {
+    position: fixed;
+    right: 22px;
+    bottom: 62px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #A8174D;
+    border: 2px solid #F5F1EA;
+    z-index: 9997;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .chatbot-notification-dot.visible {
+    opacity: 1;
+  }
+
+  @media (max-width: 760px) {
+    .chatbot-tooltip {
+      right: 72px;
+      bottom: 24px;
+      max-width: 140px;
+      padding: 12px 30px 12px 14px;
+      font-size: 13px;
+    }
+
+    .chatbot-tooltip-text-desktop {
+      display: none;
+    }
+
+    .chatbot-tooltip-text-mobile {
+      display: block;
+    }
+
+    .chatbot-notification-dot {
+      right: 18px;
+      bottom: 54px;
+    }
+  }
+</style>
+
+<script is:inline>
+(function() {
+  const TOOLTIP_SHOWN_KEY = 'mm-chatbot-tooltip-shown';
+  const TOOLTIP_DELAY_MS = 8000;
+  const TOOLTIP_AUTOHIDE_MS = 6000;
+
+  function init() {
+    const tooltip = document.getElementById('chatbot-tooltip');
+    const dot = document.getElementById('chatbot-notification-dot');
+    const closeBtn = tooltip ? tooltip.querySelector('.chatbot-tooltip-close') : null;
+
+    if (!tooltip || !dot) return;
+
+    // Notification-Dot immer zeigen
+    setTimeout(() => dot.classList.add('visible'), 1200);
+
+    // Tooltip nur beim ersten Besuch
+    let alreadyShown = false;
+    try {
+      alreadyShown = localStorage.getItem(TOOLTIP_SHOWN_KEY) === '1';
+    } catch (e) {
+      alreadyShown = true;
+    }
+
+    if (!alreadyShown) {
+      setTimeout(() => {
+        tooltip.classList.add('visible');
+        try { localStorage.setItem(TOOLTIP_SHOWN_KEY, '1'); } catch (e) {}
+        setTimeout(() => tooltip.classList.remove('visible'), TOOLTIP_AUTOHIDE_MS);
+      }, TOOLTIP_DELAY_MS);
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        tooltip.classList.remove('visible');
+      });
+    }
+
+    document.addEventListener('click', (e) => {
+      const x = e.clientX, y = e.clientY;
+      const w = window.innerWidth, h = window.innerHeight;
+      if (x > w - 80 && y > h - 80) {
+        tooltip.classList.remove('visible');
+        dot.classList.remove('visible');
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
