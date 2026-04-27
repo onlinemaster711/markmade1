@@ -105,19 +105,7 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer}
 .brand .dot{
   width:5px; height:5px; border-radius:50%; background:var(--bordeaux); margin-left:3px;
 }
-.menu{display:flex; gap:6px; align-items:center; justify-content:center}
-.menu a{
-  padding:8px 14px; border-radius:999px;
-  font-size:14px; font-weight:500;
-  color:var(--ink-2);
-  display:inline-flex; align-items:center; gap:6px;
-  transition:background .2s, color .2s;
-}
-.menu a:hover{background:var(--cream-2); color:var(--ink)}
-.menu a .chev{opacity:.5; transition:transform .2s}
-.menu a:hover .chev{transform:translateY(1px); opacity:.9}
 .nav-right{display:flex; align-items:center; gap:18px}
-.nav-right .ratgeber{font-size:14px; color:var(--ink-2)}
 .btn{
   display:inline-flex; align-items:center; gap:10px;
   padding:11px 18px;
@@ -581,9 +569,7 @@ footer{
 
 /* ============ Responsive ============ */
 @media (max-width: 960px){
-  .menu{display:none}
   .nav-inner{grid-template-columns:auto auto; gap:16px}
-  .nav-right .ratgeber{display:none}
   .topstrip-inner .marquee{display:none}
 
   .hero-stats{grid-template-columns:repeat(2,1fr)}
