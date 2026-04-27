@@ -1,0 +1,82 @@
+---
+---
+<section class="zone faq">
+  <div class="container">
+    <div class="faq-head reveal">
+      <div>
+        <div class="kicker"><span class="rule"></span><span class="num">04</span><span>Häufige Fragen</span></div>
+        <h2 class="zone-h2">Häufige Fragen</h2>
+      </div>
+      <p class="lead">Sechs Fragen, die wir in fast jedem Erstgespräch hören. Wenn deine fehlt — frag uns einfach.</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          <span class="qnum">01</span>
+          <span class="qtxt">Was kann man alles mit KI bearbeiten?</span>
+          <span class="icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div><div class="faq-a-inner"><p>Telefon. E-Mails. Angebote. Social Media. Kundenanfragen. Termine. Dokumente. Grob gesagt: Alles was sich wiederholt. Was du nicht mehr selbst machen willst, kann KI übernehmen — wenn sie richtig eingerichtet ist.</p></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          <span class="qnum">02</span>
+          <span class="qtxt">Wie hilft mir das tatsächlich in meinem Alltag?</span>
+          <span class="icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div><div class="faq-a-inner"><p>Du hast Freitag Abend nicht mehr 40 offene Mails. Du schreibst keine Angebote mehr in 2 Stunden. Du nimmst nicht mehr jedes Telefonat an. Du machst die Arbeit für die man dich bezahlt — den Rest macht KI.</p></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          <span class="qnum">03</span>
+          <span class="qtxt">Ich bin kein Technik-Experte — geht das trotzdem?</span>
+          <span class="icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div><div class="faq-a-inner"><p>Genau dafür gibt's uns. Du musst KI nicht verstehen. Du musst nur wissen wie du arbeitest. Den Rest übersetzen wir.</p></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          <span class="qnum">04</span>
+          <span class="qtxt">Wie läuft die Wartung? Was wenn sich was ändert?</span>
+          <span class="icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div><div class="faq-a-inner"><p>Wir bleiben dran. Wenn sich bei dir was ändert — neue Leistung, andere Preise, neuer Mitarbeiter — passen wir die KI an. Das ist kein Zusatzservice, das gehört dazu.</p></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          <span class="qnum">05</span>
+          <span class="qtxt">Was unterscheidet euch von anderen KI-Anbietern?</span>
+          <span class="icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div><div class="faq-a-inner"><p>Andere verkaufen dir Software. Wir verkaufen dir keine Software — wir optimieren deine Prozesse. Und wir verschwinden nicht nach der Einrichtung.</p></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          <span class="qnum">06</span>
+          <span class="qtxt">Was passiert wenn ich jetzt nichts tue?</span>
+          <span class="icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div><div class="faq-a-inner"><p>Deine Konkurrenz wird schneller. In einem Jahr schafft sie in einer Woche was du in fünf brauchst. Wer nicht mitzieht, verliert den Anschluss — nicht dramatisch, aber unumkehrbar.</p></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-q');
+    btn?.addEventListener('click', () => {
+      const open = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  });
+  // Open first by default
+  document.querySelector('.faq-item')?.classList.add('open');
+  document.querySelector('.faq-item .faq-q')?.setAttribute('aria-expanded', 'true');
+</script>

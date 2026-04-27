@@ -1,0 +1,98 @@
+---
+import CookieBanner from '../components/CookieBanner.astro';
+import Chatbot from '../components/Chatbot.astro';
+import '../styles/landing.css';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+}
+
+const { title, description, ogImage = '/og-default.jpg' } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="MarkMade" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicons/favicon-64.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180.png" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="MarkMade" />
+    <meta property="og:image" content="https://www.markmade.de/og-default.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://www.markmade.de/" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://www.markmade.de/og-default.jpg" />
+
+    <link rel="canonical" href={canonicalURL} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "MarkMade",
+      "description": "KI-Agentur für kleine und mittelständische Betriebe – Chatbots, Telefonassistenten, E-Mail-Automatisierung und Prozessoptimierung.",
+      "url": "https://www.markmade.de",
+      "logo": "https://www.markmade.de/logo.png",
+      "priceRange": "€€",
+      "areaServed": {"@type": "Country", "name": "DE"},
+      "serviceType": ["KI-Agentur", "Webdesign", "Prozessautomatisierung"],
+      "founder": {
+        "@type": "Person",
+        "name": "Mark Bergenthal",
+        "jobTitle": "Gründer & KI-Stratege",
+        "url": "https://www.markmade.de"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "url": "https://calendly.com/onlinemaster711/new-meeting",
+        "availableLanguage": "German"
+      }
+    })}></script>
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "MarkMade",
+      "url": "https://www.markmade.de",
+      "inLanguage": "de",
+      "description": "KI-Agentur für kleine und mittelständische Betriebe"
+    })}></script>
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "MarkMade – KI-Agentur für kleine und mittelständische Betriebe",
+      "url": "https://www.markmade.de/",
+      "description": "Chatbots, Telefonassistenten und KI-Automatisierung für KMU.",
+      "inLanguage": "de",
+      "isPartOf": {"@type": "WebSite", "url": "https://www.markmade.de"}
+    })}></script>
+  </head>
+  <body>
+    <slot />
+    <CookieBanner />
+    <Chatbot />
+  </body>
+</html>

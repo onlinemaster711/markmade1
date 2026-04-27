@@ -46,7 +46,7 @@
     left: 0;
     right: 0;
     z-index: 200;
-    background: var(--primary);
+    background: var(--ink, var(--primary));
     color: #fff;
     border-radius: 1rem 1rem 0 0;
   }
@@ -67,14 +67,14 @@
 
   .cookie-link {
     font-size: 0.8125rem;
-    color: rgba(255, 255, 255, 0.65);
+    color: var(--bordeaux, rgba(255, 255, 255, 0.65));
     text-decoration: underline;
     text-underline-offset: 3px;
     transition: color 0.2s;
   }
 
   .cookie-link:hover {
-    color: #fff;
+    color: var(--bordeaux-deep, #fff);
   }
 
   .cookie-actions {
@@ -96,22 +96,26 @@
 
   .btn-reject {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--rule-2, rgba(255, 255, 255, 0.3));
     color: #fff;
+    transition: background 0.2s, border-color 0.2s;
   }
 
   .btn-reject:hover {
-    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--rule-2, rgba(255, 255, 255, 0.6));
   }
 
   .btn-accept {
-    background: linear-gradient(135deg, var(--secondary), var(--secondary-container));
+    background: var(--bordeaux, linear-gradient(135deg, var(--secondary), var(--secondary-container)));
     border: none;
-    color: var(--on-secondary);
+    color: #fff;
+    transition: background 0.2s, opacity 0.2s;
   }
 
   .btn-accept:hover {
-    opacity: 0.88;
+    background: var(--bordeaux-deep, var(--secondary-container));
+    opacity: 0.95;
   }
 
   @media (max-width: 767px) {
