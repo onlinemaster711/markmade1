@@ -90,7 +90,8 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer}
 }
 .nav-inner{
   display:grid;
-  grid-template-columns:auto 1fr auto;
+  grid-template-columns:auto auto;
+  justify-content:space-between;
   align-items:center;
   gap:32px;
   padding:14px var(--gutter);
@@ -581,7 +582,7 @@ footer{
 /* ============ Responsive ============ */
 @media (max-width: 960px){
   .menu{display:none}
-  .nav-inner{grid-template-columns:auto 1fr auto; gap:16px}
+  .nav-inner{grid-template-columns:auto auto; gap:16px}
   .nav-right .ratgeber{display:none}
   .topstrip-inner .marquee{display:none}
 
