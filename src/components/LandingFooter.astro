@@ -8,7 +8,7 @@
       <h4>Eigene Projekte</h4>
       <ul><li><a href="https://skriptgenerator.com" target="_blank" rel="noopener noreferrer">Skriptgenerator.com →</a></li></ul>
     </div>
-    <details class="col col-collapsible">
+    <details class="col col-collapsible" open>
       <summary><h4>KI-Services</h4></summary>
       <ul>
         <li><a href="/ki-fuer-unternehmen">KI-Chatbot</a></li>
@@ -19,7 +19,7 @@
         <li><a href="/ki-agentur-stuttgart">KI-Agentur Stuttgart</a></li>
       </ul>
     </details>
-    <details class="col col-collapsible">
+    <details class="col col-collapsible" open>
       <summary><h4>Webdesign</h4></summary>
       <ul>
         <li><a href="/webdesign-selbststaendige">Selbstständige</a></li>
@@ -28,7 +28,7 @@
         <li><a href="/webdesign-stuttgart">Stuttgart</a></li>
       </ul>
     </details>
-    <details class="col col-collapsible">
+    <details class="col col-collapsible" open>
       <summary><h4>KI für Branchen</h4></summary>
       <ul>
         <li><a href="/ki-handwerker">Handwerker</a></li>
@@ -38,7 +38,7 @@
         <li><a href="/ki-immobilienmakler">Makler</a></li>
       </ul>
     </details>
-    <details class="col col-collapsible">
+    <details class="col col-collapsible" open>
       <summary><h4>Ratgeber</h4></summary>
       <ul>
         <li><a href="/ratgeber/ki-im-unternehmen-nutzen">KI im Unternehmen</a></li>
@@ -60,3 +60,29 @@
     <span class="copy">© 2026 markmade</span>
   </div>
 </footer>
+
+<script is:inline>
+  // Footer-Akkordeon: <details> ist standardmäßig open (Desktop sichtbar).
+  // Auf Mobile (<= 760px) das open-Attribut entfernen, damit der User selbst aufklappt.
+  // Das Script ist is:inline und läuft synchron direkt nach dem Footer-Markup
+  // — vor dem ersten Paint, daher kein FOUC.
+  (function () {
+    var mql = window.matchMedia('(max-width: 760px)');
+    var details = document.querySelectorAll('.col-collapsible');
+
+    function apply(matches) {
+      details.forEach(function (d) {
+        if (matches) d.removeAttribute('open');
+        else d.setAttribute('open', '');
+      });
+    }
+
+    apply(mql.matches);
+
+    if (mql.addEventListener) {
+      mql.addEventListener('change', function (e) { apply(e.matches); });
+    } else if (mql.addListener) {
+      mql.addListener(function (e) { apply(e.matches); });
+    }
+  })();
+</script>

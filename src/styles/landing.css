@@ -552,9 +552,12 @@ footer{
 .col-collapsible > summary > h4 {
   margin: 0 0 14px;
 }
-/* Auf Desktop: details-Inhalt immer sichtbar (überschreibt UA-Default für <details> ohne [open]) */
+/* Auf Desktop: details-Inhalt immer sichtbar.
+   !important nötig, da modern Browser <details> ohne [open] über internen Slot-Mechanismus
+   verbergen, der von normalem CSS nicht zuverlässig überschrieben wird.
+   In Kombination mit dem [open]-Attribut im Markup garantiert das Sichtbarkeit. */
 .col-collapsible > ul {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   gap: 8px;
   list-style: none;
@@ -672,10 +675,10 @@ footer{
     content: "−";
   }
   .col-collapsible > ul {
-    display: none;
+    display: none !important;
     padding-top: 14px;
   }
   .col-collapsible[open] > ul {
-    display: flex;
+    display: flex !important;
   }
 }
