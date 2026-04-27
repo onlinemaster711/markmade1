@@ -534,6 +534,30 @@ footer{
 .foot-bottom .legal a:hover{color:var(--ink)}
 .foot-bottom .copy{justify-self:end}
 
+/* Collapsible columns (mobile only — auf Desktop verhalten sie sich wie normale Spalten) */
+.col-collapsible {
+  display: block;
+}
+.col-collapsible > summary {
+  list-style: none;
+  cursor: default;
+  display: block;
+}
+.col-collapsible > summary::-webkit-details-marker {
+  display: none;
+}
+.col-collapsible > summary::marker {
+  display: none;
+}
+.col-collapsible > summary > h4 {
+  margin: 0 0 14px;
+}
+/* Auf Desktop: details-Element wird wie ein normales <div> behandelt */
+.col-collapsible[open] > ul,
+.col-collapsible:not([open]) > ul {
+  display: flex;
+}
+
 /* ============ Reveal ============ */
 .reveal{opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease}
 .reveal.in{opacity:1; transform:none}
@@ -586,4 +610,57 @@ footer{
   .stat{border-right:0; border-bottom:1px solid var(--rule)}
   .stat:last-child{border-bottom:0}
   .foot{grid-template-columns:1fr}
+}
+
+/* ============ Mobile Footer Akkordeon (≤ 760px) ============ */
+@media (max-width: 760px) {
+  /* Footer-Grid auf 1 Spalte */
+  .foot {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* About-Spalte hat Abstand nach unten */
+  .foot .col.about {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* Collapsible-Spalten: Akkordeon-Verhalten */
+  .col-collapsible {
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 0;
+  }
+  .col-collapsible > summary {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    user-select: none;
+  }
+  .col-collapsible > summary > h4 {
+    margin: 0;
+  }
+  /* Plus-Icon rechts */
+  .col-collapsible > summary::after {
+    content: "+";
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--muted);
+    transition: transform .25s ease;
+    line-height: 1;
+  }
+  .col-collapsible[open] > summary::after {
+    content: "−";
+  }
+  .col-collapsible > ul {
+    display: none;
+    padding-top: 14px;
+  }
+  .col-collapsible[open] > ul {
+    display: flex;
+  }
 }
