@@ -1,0 +1,342 @@
+---
+import LandingLayout from '../layouts/LandingLayout.astro';
+import Nav from '../components/Nav.astro';
+import LandingFooter from '../components/LandingFooter.astro';
+import ChatbotTooltip from '../components/ChatbotTooltip.astro';
+
+const CALENDLY = 'https://calendly.com/onlinemaster711/new-meeting';
+---
+
+<LandingLayout
+  title="KI-Automatisierung & Workflows | n8n + KI für DACH | MarkMade"
+  description="Was sich täglich wiederholt, läuft ab heute alleine. Wir bauen Workflows die mitdenken — mit n8n, Make und KI. DSGVO-konform. Einmal gebaut. Dauerhaft im Einsatz."
+>
+  <Nav />
+
+  <!-- ══════ HERO ══════ -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-meta reveal">
+        <hr>
+        <span class="tag"><span class="pin"></span>01 · KI-Automatisierung & Workflows — DACH</span>
+        <hr>
+      </div>
+
+      <h1 class="hero-h1 reveal">
+        Was sich täglich wiederholt,<br>
+        läuft ab heute <span class="em">alleine.</span>
+      </h1>
+
+      <div class="hero-sub reveal">
+        <hr>
+        <p>Du sagst uns wie du arbeitest. Wir bauen die Automatisierung. Einmal gebaut. Du nutzt sie dauerhaft.</p>
+        <hr>
+      </div>
+
+      <div class="hero-cta reveal">
+        <a class="btn btn-lg" href={CALENDLY} target="_blank" rel="noopener noreferrer">Kostenloses Erstgespräch buchen <span class="arrow">→</span></a>
+        <a class="btn btn-ghost btn-lg" href="#use-cases">Drei Use-Cases ansehen</a>
+      </div>
+
+      <div class="hero-stats reveal">
+        <div class="stat">
+          <div class="num">4<span class="unit">h</span></div>
+          <div class="lbl">Repetitive Aufgaben pro Tag</div>
+        </div>
+        <div class="stat">
+          <div class="num">2<span class="unit">Wochen</span></div>
+          <div class="lbl">Bis erster Workflow live</div>
+        </div>
+        <div class="stat">
+          <div class="num">n8n<span class="unit">+ Make</span></div>
+          <div class="lbl">Workflow-Engines</div>
+        </div>
+        <div class="stat">
+          <div class="num">1×<span class="unit">bezahlt</span></div>
+          <div class="lbl">Kein Abo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ DREI SZENEN AUS DEINEM TAG (Sticky Sidebar) ══════ -->
+  <section class="zone steps" id="szenen">
+    <div class="container">
+      <div class="steps-head reveal">
+        <div class="kicker"><span class="rule"></span><span class="num">02</span><span>Drei Szenen aus deinem Tag</span></div>
+        <h2 class="zone-h2">Was du machen könntest. Wenn nicht <em style="font-family:var(--serif-italic); font-weight:400; color:var(--bordeaux);">Dann.</em></h2>
+      </div>
+
+      <div class="steps-grid">
+        <aside class="steps-aside reveal">
+          <span class="label">Drei Situationen die jede Woche passieren. Und was sich ändert, wenn der Workflow vor dir anfängt.</span>
+          <ol>
+            <li class="step-link active" data-step="1">9:00 Uhr, fünfte Mail</li>
+            <li class="step-link" data-step="2">Rechnung als PDF</li>
+            <li class="step-link" data-step="3">Wochenbericht montags</li>
+          </ol>
+        </aside>
+
+        <div class="steps-list">
+          <article class="step reveal" data-step="1">
+            <div class="index">01</div>
+            <div class="body">
+              <h3>Es ist 9:00 Uhr. Eine Anfrage. Du schreibst die fünfte E-Mail mit dem gleichen Wortlaut.</h3>
+              <p>KI liest, antwortet, qualifiziert. Du siehst nur was wirklich Beratung braucht.</p>
+            </div>
+            <div class="meta"><span>Aufwand</span><b>− 80 %</b></div>
+          </article>
+
+          <article class="step reveal" data-step="2">
+            <div class="index">02</div>
+            <div class="body">
+              <h3>Eine Rechnung. Eine PDF. Anhang in einer E-Mail. Drei Klicks bis es im Buchhaltungstool ist.</h3>
+              <p>Workflow zieht es raus, prüft, legt ab. Ohne Klick.</p>
+            </div>
+            <div class="meta"><span>Zeit</span><b>0 Sek.</b></div>
+          </article>
+
+          <article class="step reveal" data-step="3">
+            <div class="index">03</div>
+            <div class="body">
+              <h3>Der Wochenbericht. Drei Tabs offen, Zahlen kopiert, manuell zusammengetragen. Jeden Montag.</h3>
+              <p>KI baut den Bericht aus deinen Live-Daten. In deiner Tonalität.</p>
+            </div>
+            <div class="meta"><span>Montage</span><b>Autopilot</b></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ WORKFLOWS DIE MITDENKEN (Editorial-Block) ══════ -->
+  <section class="zone">
+    <div class="container">
+      <div class="steps-head reveal">
+        <div class="kicker"><span class="rule"></span><span class="num">03</span><span>Was uns von Standard-Automatisierung unterscheidet</span></div>
+        <h2 class="zone-h2">Workflows die <em style="font-family:var(--serif-italic); font-weight:400; color:var(--bordeaux);">mitdenken.</em></h2>
+      </div>
+
+      <div class="reveal" style="max-width:720px; margin:48px auto 0; color:var(--ink-2); font-size:clamp(18px, 1.5vw, 22px); line-height:1.65;">
+        <p style="margin:0 0 1.5em;">Klassische Workflow-Tools machen einen Job: Daten von A nach B schieben, wenn X passiert.</p>
+        <p style="margin:0 0 1.5em;">Das funktioniert. Solange dein Prozess immer gleich aussieht.</p>
+        <p style="margin:0 0 1.5em;">Sobald aber jemand „kann ich morgen Termin haben?" schreibt statt ein Webformular auszufüllen — bricht der Workflow. Sobald die Rechnung als Foto kommt statt als PDF — bricht der Workflow. Sobald der Kunde abweicht vom Standardweg — bricht der Workflow.</p>
+        <p style="margin:0;">Wir bauen Workflows die das verstehen. Die lesen, einordnen, entscheiden. Mit n8n oder Make als Pipeline. Mit GPT, Claude oder lokalen Modellen als Hirn. Mit deiner Logik als Regelwerk.</p>
+        <p style="margin:2.5em 0 0;"><em style="font-family:var(--serif-italic); font-weight:400; color:var(--bordeaux); font-size:clamp(24px, 2.5vw, 32px); line-height:1.3;">Workflows die mitdenken statt nur ausführen.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ DREI USE-CASES (Principle / Ledger) ══════ -->
+  <section class="zone principle" id="use-cases">
+    <div class="container">
+      <div class="reveal" style="display:flex; justify-content:center"><div class="kicker"><span class="rule"></span><span class="num">04</span><span>Drei Use-Cases die wir oft bauen</span></div></div>
+      <h2 class="reveal">Drei Module. <em style="font-family:var(--serif-italic); font-weight:400; color:var(--bordeaux);">Direkt einsetzbar.</em></h2>
+      <div class="ledger reveal">
+        <div>
+          <span class="step-num">i.</span>
+          <span class="step-text">Autonomer Posteingang. Mails und Belege, eingeordnet.</span>
+        </div>
+        <div>
+          <span class="step-num">ii.</span>
+          <span class="step-text">Smarte Lead-Pipeline. Angereichert, qualifiziert, terminiert.</span>
+        </div>
+        <div>
+          <span class="step-num">iii.</span>
+          <span class="step-text">Automatische Reports. Aus deinen Live-Daten.</span>
+        </div>
+      </div>
+      <p class="reveal" style="margin:48px 0 0;">
+        <em style="font-family:var(--serif-italic); font-weight:400; color:var(--bordeaux); font-size:clamp(18px, 2vw, 22px); line-height:1.3;">Keine Software. Kein Abo. Einmal gebaut. Dauerhaft im Einsatz.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════ WERKZEUG & DATENSCHUTZ (Editorial kompakt) ══════ -->
+  <section class="zone">
+    <div class="container">
+      <div class="steps-head reveal">
+        <div class="kicker"><span class="rule"></span><span class="num">05</span><span>Werkzeug & Datenschutz</span></div>
+        <h2 class="zone-h2">Dein Tech-Stack passt. <em style="font-family:var(--serif-italic); font-weight:400; color:var(--bordeaux);">DSGVO sowieso.</em></h2>
+      </div>
+
+      <div class="reveal" style="max-width:720px; margin:48px auto 0; color:var(--ink-2); font-size:clamp(18px, 1.5vw, 22px); line-height:1.65;">
+        <p style="margin:0 0 1.5em;">Wir bauen mit n8n oder Make als Workflow-Engine. KI-Modelle nach Use-Case: GPT, Claude, oder lokale Modelle wenn Daten das Haus nicht verlassen sollen.</p>
+        <p style="margin:0 0 1.5em;">Office 365, Google Workspace, dein CRM, dein Buchhaltungstool — alles was du heute nutzt, lässt sich anbinden.</p>
+        <p style="margin:0;">Datenschutz nach DSGVO ist nicht optional. Verschlüsselte Schnittstellen, dokumentierte AV-Verträge. Auf Wunsch komplett auf eigener Infrastruktur.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ WIE WIR ARBEITEN (3 Schritte ohne Sticky Sidebar) ══════ -->
+  <section class="zone">
+    <div class="container">
+      <div class="steps-head reveal">
+        <div class="kicker"><span class="rule"></span><span class="num">06</span><span>Wie wir arbeiten</span></div>
+        <h2 class="zone-h2">Drei Schritte. <em style="font-family:var(--serif-italic); font-weight:400; color:var(--bordeaux);">Mehr nicht.</em></h2>
+      </div>
+
+      <div class="steps-list">
+        <article class="step reveal">
+          <div class="index">01</div>
+          <div class="body">
+            <span style="display:block; font-family:var(--sans); font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:10px;">Audit</span>
+            <h3>Wir finden die Aufgabe die dich am meisten Zeit kostet.</h3>
+            <p>Kein Workshop, kein Fragebogen. 30 Minuten Gespräch.</p>
+          </div>
+          <div class="meta"><span>Dauer</span><b>30 Min.</b></div>
+        </article>
+
+        <article class="step reveal">
+          <div class="index">02</div>
+          <div class="body">
+            <span style="display:block; font-family:var(--sans); font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:10px;">Bauen</span>
+            <h3>Erster Workflow läuft in 2 bis 4 Wochen.</h3>
+            <p>Du siehst ihn arbeiten, bevor wir abrechnen.</p>
+          </div>
+          <div class="meta"><span>Zeitraum</span><b>2-4 Wochen</b></div>
+        </article>
+
+        <article class="step reveal">
+          <div class="index">03</div>
+          <div class="body">
+            <span style="display:block; font-family:var(--sans); font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:10px;">Übergeben</span>
+            <h3>Workflow läuft. Dein Team weiß wo die Hebel sind.</h3>
+            <p>Wir sind erreichbar wenn etwas auffällt.</p>
+          </div>
+          <div class="meta"><span>Support</span><b>Inklusive</b></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ FAQ ══════ -->
+  <section class="zone faq">
+    <div class="container">
+      <div class="faq-head reveal">
+        <div>
+          <div class="kicker"><span class="rule"></span><span class="num">07</span><span>Häufige Fragen</span></div>
+          <h2 class="zone-h2">Häufige Fragen.</h2>
+        </div>
+        <p class="lead">Sieben Fragen die wir in fast jedem Erstgespräch hören. Wenn deine fehlt — frag uns einfach.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span class="qnum">01</span>
+            <span class="qtxt">Brauche ich neue Software?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a"><div><div class="faq-a-inner"><p>Meistens nein. Wir verbinden was du schon nutzt — Office 365, Google Workspace, dein CRM, dein Buchhaltungstool. Neue Software kommt nur dann ins Spiel, wenn du sie wirklich brauchst.</p></div></div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span class="qnum">02</span>
+            <span class="qtxt">Was kostet das?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a"><div><div class="faq-a-inner"><p>Einmalige Investition, abhängig vom Umfang. Im Erstgespräch bekommst du eine konkrete Zahl, keinen Schätzkorridor. Amortisiert sich meist in 3 bis 6 Monaten durch die Zeitersparnis.</p></div></div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span class="qnum">03</span>
+            <span class="qtxt">Was passiert wenn ein Workflow Fehler macht?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a"><div><div class="faq-a-inner"><p>Jeder Workflow hat Plausibilitätsprüfung und Logging. Was unklar ist, geht zur menschlichen Prüfung — nicht durchgewunken. Du behältst die Kontrolle, das System nimmt dir nur die Routinearbeit ab.</p></div></div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span class="qnum">04</span>
+            <span class="qtxt">Ist das DSGVO-konform?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a"><div><div class="faq-a-inner"><p>Ja. Verschlüsselte Schnittstellen, dokumentierte AV-Verträge mit europäischen Anbietern. Auf Wunsch komplett auf eigener Infrastruktur mit lokalen KI-Modellen — dann verlassen die Daten dein Haus nicht.</p></div></div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span class="qnum">05</span>
+            <span class="qtxt">Wie schnell ist das einsatzbereit?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a"><div><div class="faq-a-inner"><p>Erster funktionierender Workflow in 2 bis 4 Wochen. Für ein komplettes Setup mit mehreren Modulen kalkulieren wir 6 bis 8 Wochen — je nachdem wie viele Prozesse wir abbilden.</p></div></div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span class="qnum">06</span>
+            <span class="qtxt">Was wenn sich mein Prozess ändert?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a"><div><div class="faq-a-inner"><p>Workflows sind nicht starr. Anpassungen sind kleine Eingriffe, kein Neubau. Wir dokumentieren so, dass dein Team auch selbst kleinere Änderungen machen kann.</p></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ CTA ══════ -->
+  <section class="cta-zone" id="cta">
+    <div class="cta-card reveal">
+      <div class="cta-grid">
+        <div class="kicker"><span class="rule"></span><span class="num">08</span><span>Nächster Schritt</span></div>
+        <h2>Zeig uns deine <em style="font-family:var(--serif-italic); font-weight:400; color:var(--bordeaux);">Tretmühle.</em></h2>
+        <p>30 Minuten Gespräch. Wir finden die Aufgabe die du nie wieder selbst machen musst.</p>
+        <div class="actions">
+          <a class="btn btn-lg" href={CALENDLY} target="_blank" rel="noopener noreferrer">Kostenloses Erstgespräch buchen <span class="arrow">→</span></a>
+        </div>
+      </div>
+      <div class="cta-meta">
+        <span>— KOSTENLOS · UNVERBINDLICH</span>
+        <span>30 MIN.</span>
+      </div>
+    </div>
+  </section>
+
+  <LandingFooter />
+  <ChatbotTooltip />
+</LandingLayout>
+
+<script>
+  // Reveal-on-scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Steps active aside (Sektion „Drei Szenen aus deinem Tag")
+  const stepsObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const target = e.target as HTMLElement;
+        const id = target.dataset.step;
+        if (!id) return;
+        document.querySelectorAll<HTMLElement>('.step-link').forEach(l => {
+          l.classList.toggle('active', l.dataset.step === id);
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.step[data-step]').forEach(s => stepsObs.observe(s));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-q');
+    btn?.addEventListener('click', () => {
+      const open = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  });
+  // Open first by default
+  document.querySelector('.faq-item')?.classList.add('open');
+  document.querySelector('.faq-item .faq-q')?.setAttribute('aria-expanded', 'true');
+</script>
