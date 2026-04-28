@@ -161,7 +161,7 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer}
 .hero-h1{
   font-family:var(--serif);
   font-weight:700;
-  font-size: clamp(64px, 12vw, 188px);
+  font-size: clamp(40px, 6vw, 96px);
   line-height:0.92;
   letter-spacing:-0.035em;
   text-align:center;
@@ -216,7 +216,7 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer}
 }
 .stat .num .unit{font-size:.55em; color:var(--muted); font-weight:500; margin-left:4px; letter-spacing:0}
 .stat .lbl{
-  font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted);
+  font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted);
 }
 
 /* hero ambient mark */
@@ -239,10 +239,10 @@ section.zone{
 
 .kicker{
   display:inline-flex; align-items:center; gap:14px;
-  font-size:11px; letter-spacing:0.18em; text-transform:uppercase;
+  font-size:13px; letter-spacing:0.14em; text-transform:uppercase;
   color:var(--muted);
 }
-.kicker .num{font-family:var(--serif); font-weight:600; color:var(--ink); letter-spacing:0; font-size:12px}
+.kicker .num{font-family:var(--serif); font-weight:600; color:var(--ink); letter-spacing:0; font-size:14px}
 .kicker .rule{width:36px; height:1px; background:var(--bordeaux)}
 
 .zone-h2{
@@ -273,7 +273,7 @@ section.zone{
 }
 .steps-aside{
   position:sticky; top:96px;
-  font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted);
+  font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted);
   display:flex; flex-direction:column; gap:14px;
 }
 .steps-aside .label{color:var(--ink); font-weight:600}
@@ -326,7 +326,7 @@ section.zone{
 }
 .step .meta{
   text-align:right;
-  font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted);
+  font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted);
   display:flex; flex-direction:column; gap:6px;
   align-self:start; padding-top:6px;
 }
@@ -397,8 +397,8 @@ section.zone{
   text-align:left;
 }
 .faq-q .qnum{
-  font-family:var(--serif-italic); font-style:italic; color:var(--olive);
-  font-size:18px;
+  font-family:var(--serif-italic); font-style:italic; color:var(--bordeaux);
+  font-size:20px;
 }
 .faq-q .qtxt{
   font-family:var(--serif); font-weight:600;

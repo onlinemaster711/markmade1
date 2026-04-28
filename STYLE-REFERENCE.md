@@ -42,14 +42,14 @@ Aus `:root` in `landing.css`. Keine Schatten- oder Radius-Tokens — Schatten/Ra
 | `--bordeaux` | `#A8174D` | Brand-Primärakzent: `.btn` background, `.brand .made`, `.brand .dot`, `.live .dot`, `.hero-h1 .em`, `.kicker .rule`, italic-em-Pattern, `.faq-q:hover .qtxt`, `::selection` |
 | `--bordeaux-deep` | `#7E0F39` | Hover-Variante: `.btn:hover` background, manuelle hover für italic-Akzente |
 | `--sage` | `#D4DDB8` | **NUR** `.cta-card` background |
-| `--olive` | `#9C9678` | Italic-Numerale: `.step .index`, `.ledger .step-num`, `.faq-q .qnum` |
+| `--olive` | `#9C9678` | Italic-Numerale: `.step .index`, `.ledger .step-num` (FAQ-Numerale wurden auf `--bordeaux` umgestellt für bessere Sichtbarkeit) |
 
 ### Schriften
 
 | Variable | Wert | Verwendung |
 |---|---|---|
 | `--serif` | `"Roboto Slab", Georgia, serif` | alle Headlines, `.brand`, `.stat .num`, `.kicker .num`, `.ledger .step-text`, `.faq-q .qtxt` |
-| `--serif-italic` | `"Instrument Serif", Georgia, serif` | italic-Akzente: `.hero-h1 .em`, `.hero-sub p`, `.step .index`, `.ledger .step-num`, `.faq-q .qnum`, alle inline-em-Pattern |
+| `--serif-italic` | `"Instrument Serif", Georgia, serif` | italic-Akzente: `.hero-h1 .em`, `.hero-sub p`, `.step .index`, `.ledger .step-num`, `.faq-q .qnum` (italic + bordeaux), alle inline-em-Pattern |
 | `--sans` | `"Inter", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif` | body Default, alle Body-Paragraphen, UI (Buttons, Footer-Links, Eyebrows) |
 
 Schriften werden via `@import` in `landing.css` von Google Fonts geladen — Subpages ziehen sie nicht.
@@ -72,7 +72,7 @@ Alle Headline- und Body-Klassen mit konkreten Werten und Beispiel-Inhalten aus `
 
 | Klasse | Family | font-size | line-height | letter-spacing | weight | Wofür | Beispiel (index.astro) |
 |---|---|---|---|---|---|---|---|
-| `.hero-h1` | `--serif` | `clamp(64px, 12vw, 188px)` | `0.92` | `-0.035em` | `700` | Display-Headline (Hero only) | „KI macht dich besser." |
+| `.hero-h1` | `--serif` | `clamp(40px, 6vw, 96px)` | `0.92` | `-0.035em` | `700` | Display-Headline (Hero only) — von urspr. `clamp(64px, 12vw, 188px)` zweimal reduziert (zwischenzeitlich `clamp(48px, 8vw, 124px)`), um Hero-Wirkung ruhiger und Schrift-Hierarchie ausgewogen zu halten | „KI macht dich besser." |
 | `.hero-h1 .em` | `--serif-italic` | inherit | inherit | `-0.01em` | `400 italic`, color `--bordeaux` | italic-Bordeaux-Akzent in Hero | „besser." |
 | `.zone-h2` | `--serif` | `clamp(36px, 5.4vw, 64px)` | `1.04` | `-0.025em` | `700`, color `--ink` | Section-Headline (zone-Sektionen) | „Dein Kunde bekommt sofort eine Antwort. Du wirst nicht unterbrochen." |
 | `.principle h2` | `--serif` | `clamp(36px, 5.5vw, 64px)` | `1.05` | `-0.025em` | `700` | Section-Headline in Principle (h2 ohne Klasse, via Cascade) | „Keine Software. Kein Abo. Keine Überraschungen." |
@@ -95,18 +95,18 @@ Alle Headline- und Body-Klassen mit konkreten Werten und Beispiel-Inhalten aus `
 
 | Klasse | Family | font-size | line-height | letter-spacing | weight | Wofür | Beispiel |
 |---|---|---|---|---|---|---|---|
-| `.kicker` | `--sans` | `11px` | (inherit) | `0.18em` | (inherit), uppercase, color `--muted` | Sektions-Eyebrow | „02 Was KI heute schon macht" |
-| `.kicker .num` | `--serif` | `12px` | inherit | `0` | `600`, color `--ink` | Numeral im Kicker | „02" |
+| `.kicker` | `--sans` | `13px` | (inherit) | `0.14em` | (inherit), uppercase, color `--muted` | Sektions-Eyebrow | „02 Was KI heute schon macht" |
+| `.kicker .num` | `--serif` | `14px` | inherit | `0` | `600`, color `--ink` | Numeral im Kicker | „02" |
 | `.kicker .rule` | — | (1px height, 36px width, color `--bordeaux`) | — | — | — | Bordeaux-Strich vor Kicker | (visuell) |
 | `.stat .num` | `--serif` | `clamp(28px, 3vw, 40px)` | `1` | `-0.02em` | `700`, color `--ink` | Stat-Wert | „24" / „8" / „< 5" / „1×" |
 | `.stat .num .unit` | inherit | `0.55em` (relativ) | inherit | `0` | `500`, color `--muted` | Unit-Suffix nach Stat-Wert | „/ 7" / „statt 40" / „Min." / „bezahlt" |
-| `.stat .lbl` | inherit `--sans` | `11px` | inherit | `0.16em` | `400`, uppercase, color `--muted` | Stat-Label | „Erreichbarkeit" / „Mails am Tag" |
+| `.stat .lbl` | inherit `--sans` | `13px` | inherit | `0.14em` | `400`, uppercase, color `--muted` | Stat-Label | „Erreichbarkeit" / „Mails am Tag" |
 | `.step .index` | `--serif-italic` | `clamp(48px, 6vw, 72px)` | `1` | `-0.01em` | `400 italic`, color `--olive` | Step-Numeral (links in Zeile) | „01" / „02" / „03" |
 | `.step:hover .index` | — | inherit | inherit | inherit | color `--bordeaux` (transition) | Hover-Color der Step-Numerale | — |
-| `.step .meta` | inherit `--sans` | `11px` | inherit | `0.16em` | `400`, uppercase, color `--muted` | rechte Meta-Spalte (label + bold value) | „Reaktionszeit / < 5 Min." |
-| `.step .meta b` | inherit | `11px` | inherit | inherit | `600`, color `--ink` | bolder Wert in `.step .meta` | „< 5 Min." |
+| `.step .meta` | inherit `--sans` | `13px` | inherit | `0.14em` | `400`, uppercase, color `--muted` | rechte Meta-Spalte (label + bold value) | „Reaktionszeit / < 5 Min." |
+| `.step .meta b` | inherit | `13px` | inherit | inherit | `600`, color `--ink` | bolder Wert in `.step .meta` | „< 5 Min." |
 | `.ledger .step-num` | `--serif-italic` | `14px` | (default) | (default) | `400 italic`, color `--olive` | Numeral in Ledger-Zelle | „i." / „ii." / „iii." |
-| `.faq-q .qnum` | `--serif-italic` | `18px` | (default) | (default) | `400 italic`, color `--olive` | Numeral vor FAQ-Frage | „01" |
+| `.faq-q .qnum` | `--serif-italic` | `20px` | (default) | (default) | `400 italic`, color `--bordeaux` | Numeral vor FAQ-Frage — sichtbarer visueller Anker | „01" |
 
 ### Buttons
 
@@ -167,6 +167,24 @@ Alle wiederkehrenden Sektionsmuster auf `index.astro`, mit empirisch ermittelten
 - `.hero-cta`: 1-2 Buttons, primary + ghost.
 - `.stat .num`: 1 Token (Zahl/Symbol), `.unit` 1-2 Tokens, `.lbl` 1-3 Wörter uppercase.
 - **Anzahl Stats: GENAU 4** (Grid ist `repeat(4,1fr)`). Bei 3 Stats bleibt eine Zelle leer und sichtbar.
+
+**⚠️ EINSCHRÄNKUNG — Wortlänge:**
+
+`.hero-h1` skaliert mit `clamp(48px, 8vw, 124px)`. Auf großen Viewports rendert Roboto Slab Bold breit — sehr lange Einzelwörter können den Viewport sprengen.
+
+**Faustregel:** Kein Einzelwort in der Hero-Headline länger als **~13 Glyphen**.
+
+| Status | Beispiel | Max-Glyphen |
+|---|---|---|
+| ✅ funktioniert | „KI macht dich besser." | 6 |
+| ✅ funktioniert | „KI für Steuerberater." | 13 |
+| ⚠️ knapp | „Standardaufgaben" | 15 |
+| ❌ bricht | „Mandantenanfragen" | 17 |
+| ❌ bricht | „Verwaltungsaufgaben" | 19 |
+
+Bei langen Branchen-Bezeichnungen oder Compound-Wörtern: entweder Headline anders formulieren oder das lange Wort in die Subline verschieben (`.hero-sub p` ist deutlich kleiner und verträgt 13+ Glyphen problemlos).
+
+*(Die Faustregel galt bei der ursprünglichen `clamp(64px, 12vw, 188px)`-Größe als ~10 Glyphen. Mit der reduzierten Hero-Größe verträgt das Pattern jetzt ~13 Glyphen sicher.)*
 
 ### Pattern 2 — Sticky-Sidebar mit Steps
 
@@ -344,9 +362,8 @@ Bordeaux ist das einzige Brand-Signal. Nie für ganze Sätze, nie als Hintergrun
 `--olive` (#9C9678) wird für italic-Numerale verwendet, NICHT für Hintergrundflächen:
 - `.step .index` (große italic Step-Nummer)
 - `.ledger .step-num` (kleine italic römische Ziffer)
-- `.faq-q .qnum` (italic FAQ-Nummer)
 
-Bei `.step:hover` wechselt `.index` von Olive zu Bordeaux.
+Bei `.step:hover` wechselt `.index` von Olive zu Bordeaux. `.faq-q .qnum` wurde aus dieser Gruppe herausgenommen und auf `--bordeaux` umgestellt — die FAQ-Nummer war als visueller Anker zu unscheinbar in Olive.
 
 ### Sage — exklusiv für CTA
 `--sage` (#D4DDB8) wird **nur** für `.cta-card` verwendet. Nicht in andere Sektionen kopieren — Sage ist das visuelle Signal „Ende der Story, jetzt handeln".
@@ -673,6 +690,8 @@ LandingLayout setzt automatisch:
 3. **`.step .meta` ist ein **Stempel**, kein Untertitel.** „Reduktion / −98 %" passt. „Differenz beim Vergleich pro Mandant pro Monat / signifikant" passt nicht.
 4. **Italic-Bordeaux ist Punkt, nicht Strich.** 1-3 Wörter. Nie ein ganzer Satz, nie als Überschrift.
 5. **Wenn etwas auf Mobile bricht, ist der Text zu lang** — nicht das CSS schuld. Die Mobile-Overrides in `landing.css` sind vom Original-HTML-Entwurf so abgestimmt, dass sie mit kurzen, knappen Inhalten exzellent funktionieren. Kürzen, nicht patchen.
+6. **Hero-Wortlänge prüfen:** Kein Wort in `.hero-h1` länger als ~13 Glyphen. Sehr lange Compound-Wörter im Deutschen („Mandantenanfragen", „Verwaltungsaufgaben") sprengen das Pattern auf großen Viewports. Wenn solch ein Wort unverzichtbar ist: in die Subline verschieben.
+7. **Eyebrows, Labels und Mikrotext nicht unter 13px.** Lesbarkeit vor Editorial-Eleganz. Das Sprung-Verhältnis zwischen Headlines und Kleintext sollte gemäßigt bleiben — sonst „schreit" die Hero und „flüstert" alles andere. `.kicker`, `.stat .lbl`, `.step .meta` haben deshalb 13px Mindestgröße; `.steps-aside` 14px. Begleitend: letter-spacing bei kleinem Uppercase nicht über `0.14em`, sonst wirkt Text zu gespreizt.
 
 ---
 
