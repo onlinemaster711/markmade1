@@ -1,0 +1,336 @@
+---
+import LandingLayout from '../layouts/LandingLayout.astro';
+import Nav from '../components/Nav.astro';
+import LandingFooter from '../components/LandingFooter.astro';
+import ChatbotTooltip from '../components/ChatbotTooltip.astro';
+
+const CALENDLY = 'https://calendly.com/onlinemaster711/new-meeting';
+---
+
+<LandingLayout
+  title="KI für Steuerberater | Belegerfassung automatisieren | MarkMade"
+  description="Drei Stunden Belege sortieren kostet 180 Euro. KI macht das in zwei Minuten für unter zehn Cent. KI-Lösungen für Steuerkanzleien im DACH-Raum."
+>
+  <Nav />
+
+  <!-- ══════ HERO ══════ -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-meta reveal">
+        <hr>
+        <span class="tag"><span class="pin"></span>KI für Steuerkanzleien · DACH</span>
+        <hr>
+      </div>
+
+      <h1 class="hero-h1 reveal">
+        Drei Stunden Belege<br>
+        sortieren. 180 Euro.<br>
+        <span class="em">Oder zehn Cent.</span>
+      </h1>
+
+      <div class="hero-sub reveal">
+        <hr>
+        <p>KI übernimmt das Sortieren, Prüfen und Übergeben — sauber nach DATEV-Logik. Dein Team kümmert sich um das, wofür Mandanten dich bezahlen: Beratung.</p>
+        <hr>
+      </div>
+
+      <div class="hero-cta reveal">
+        <a class="btn btn-lg" href={CALENDLY} target="_blank" rel="noopener noreferrer">Kostenloses Erstgespräch buchen <span class="arrow">→</span></a>
+      </div>
+
+      <div class="hero-stats reveal">
+        <div class="stat">
+          <div class="num">3 h → 2 Min.</div>
+          <div class="lbl">Zeit pro Mandant pro Monat</div>
+        </div>
+        <div class="stat">
+          <div class="num">180 € → 0,10 €</div>
+          <div class="lbl">Kosten pro Sortier-Vorgang</div>
+        </div>
+        <div class="stat">
+          <div class="num">108 k € → 60 €</div>
+          <div class="lbl">50 Mandanten · ein Jahr</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ DIE RECHNUNG ══════ -->
+  <section class="zone">
+    <div class="container">
+      <div class="steps-head reveal">
+        <div class="kicker"><span class="rule"></span><span class="num">02</span><span>Die Rechnung die du kennen musst</span></div>
+        <h2 class="zone-h2">Stundenlohn-Arbeit. <em style="font-family:var(--serif-italic); font-weight:400; color:var(--bordeaux);">Für Cent-Beträge.</em></h2>
+      </div>
+
+      <div class="reveal" style="max-width:680px; color:var(--ink-2); font-size:15.5px; line-height:1.7;">
+        <p style="margin:0 0 16px;">Beispielrechnung: ein Mandant mit rund 200 Belegen pro Monat. Der Mitarbeiter sortiert, prüft, ordnet zu, bereitet für DATEV vor. Das dauert ungefähr drei Stunden. Bei einem Vollkostensatz von 60 Euro pro Stunde sind das 180 Euro pro Mandant pro Monat.</p>
+        <p style="margin:0 0 48px;">Was eine KI für die gleiche Aufgabe braucht: zwei Minuten. Was sie kostet: ein paar Cent für die API-Aufrufe. Hier die Zahlen im direkten Vergleich.</p>
+      </div>
+
+      <div class="steps-list">
+        <article class="step reveal">
+          <div class="index">i.</div>
+          <div class="body">
+            <h3>Mitarbeiter ~3 Stunden. KI ~2 Minuten.</h3>
+            <p>Zeit pro Mandant pro Monat</p>
+          </div>
+          <div class="meta"><span>Reduktion</span><b>− 98 %</b></div>
+        </article>
+        <article class="step reveal">
+          <div class="index">ii.</div>
+          <div class="body">
+            <h3>Mitarbeiter 180 €. KI unter 0,10 €.</h3>
+            <p>Kosten pro Mandant pro Monat</p>
+          </div>
+          <div class="meta"><span>Faktor</span><b>~ 1.800 ×</b></div>
+        </article>
+        <article class="step reveal">
+          <div class="index">iii.</div>
+          <div class="body">
+            <h3>Mitarbeiter 2.160 €. KI ca. 1,20 €.</h3>
+            <p>Pro Mandant pro Jahr</p>
+          </div>
+          <div class="meta"><span>Ersparnis</span><b>2.158 €</b></div>
+        </article>
+        <article class="step reveal">
+          <div class="index">iv.</div>
+          <div class="body">
+            <h3>Mitarbeiter 108.000 €. KI ca. 60 €.</h3>
+            <p>Bei 50 Mandanten pro Jahr</p>
+          </div>
+          <div class="meta"><span>Ersparnis</span><b>107.940 €</b></div>
+        </article>
+      </div>
+
+      <p class="reveal" style="max-width:680px; color:var(--ink-2); font-size:15.5px; line-height:1.7; margin:48px 0 0;">
+        Die Rechnung ist konservativ. Sie geht davon aus, dass dein Mitarbeiter wirklich nur Belege sortiert — keine Rückfragen, keine Unterbrechungen, keine Korrekturen. In der Realität ist es teurer.
+      </p>
+
+      <p class="reveal" style="margin:32px 0 0;">
+        <em style="font-family:var(--serif-italic); font-weight:400; color:var(--bordeaux); font-size:clamp(20px, 2.4vw, 26px); line-height:1.3;">Das ist nicht Effizienz. Das ist Überleben.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════ DREI SZENEN (Sticky Sidebar) ══════ -->
+  <section class="zone steps" id="szenen">
+    <div class="container">
+      <div class="steps-head reveal">
+        <div class="kicker"><span class="rule"></span><span class="num">03</span><span>Drei Szenen aus deinem Kanzleialltag</span></div>
+        <h2 class="zone-h2">Du machst Beratung. <em style="font-family:var(--serif-italic); font-weight:400; color:var(--bordeaux);">Nicht Sortierarbeit.</em></h2>
+      </div>
+
+      <div class="steps-grid">
+        <aside class="steps-aside reveal">
+          <span class="label">Drei Situationen, die jede Kanzlei kennt. Und was sich ändert, wenn KI den Stapel macht.</span>
+          <ol>
+            <li class="step-link active" data-step="1">Montag, 47 Mandanten</li>
+            <li class="step-link" data-step="2">200 Belege per WhatsApp</li>
+            <li class="step-link" data-step="3">20. April, 60-Stunden-Wochen</li>
+          </ol>
+        </aside>
+
+        <div class="steps-list">
+          <article class="step reveal" data-step="1">
+            <div class="index">01</div>
+            <div class="body">
+              <h3>Es ist Montagmorgen. 47 Mandanten haben am Wochenende Belege geschickt.</h3>
+              <p>KI sortiert über Nacht. Montags steht ein DATEV-fertiger Stapel bereit.</p>
+            </div>
+            <div class="meta"><span>Vorbereitung</span><b>Erledigt</b></div>
+          </article>
+          <article class="step reveal" data-step="2">
+            <div class="index">02</div>
+            <div class="body">
+              <h3>Eine Mandantin schickt 200 verwackelte Foto-Belege per WhatsApp.</h3>
+              <p>KI erkennt, dreht, prüft, ordnet zu. Was unklar ist, geht mit Rückfrage zurück.</p>
+            </div>
+            <div class="meta"><span>Manuell</span><b>0 Belege</b></div>
+          </article>
+          <article class="step reveal" data-step="3">
+            <div class="index">03</div>
+            <div class="body">
+              <h3>Es ist 20. April. Dein Team arbeitet 60-Stunden-Wochen.</h3>
+              <p>KI nimmt euch ab, was kein Mensch will. Die Saison wird nicht kürzer — aber tragbar.</p>
+            </div>
+            <div class="meta"><span>Saison</span><b>Tragbar</b></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ WAS WIR KONKRET BAUEN (Principle / Ledger) ══════ -->
+  <section class="zone principle">
+    <div class="container">
+      <div class="reveal" style="display:flex; justify-content:center"><div class="kicker"><span class="rule"></span><span class="num">04</span><span>Was wir konkret bauen</span></div></div>
+      <h2 class="reveal">Drei Module. <em style="font-family:var(--serif-italic); font-weight:400; color:var(--bordeaux);">Einmal gebaut.</em></h2>
+      <div class="ledger reveal">
+        <div>
+          <span class="step-num">i.</span>
+          <span class="step-text">Beleg-Pipeline</span>
+          <p style="margin:10px 0 0; color:var(--ink-2); line-height:1.55; text-align:center;">Was reinkommt wird erkannt, sortiert, geprüft, DATEV-fertig übergeben.</p>
+        </div>
+        <div>
+          <span class="step-num">ii.</span>
+          <span class="step-text">Mandanten-Vorqualifizierung</span>
+          <p style="margin:10px 0 0; color:var(--ink-2); line-height:1.55; text-align:center;">Standardanfragen beantwortet die KI. Beratung kommt durch.</p>
+        </div>
+        <div>
+          <span class="step-num">iii.</span>
+          <span class="step-text">Interne Recherche-KI</span>
+          <p style="margin:10px 0 0; color:var(--ink-2); line-height:1.55; text-align:center;">Antworten aus euren eigenen Akten und Vorlagen — mit Quellenangabe.</p>
+        </div>
+      </div>
+      <p class="reveal" style="margin:48px 0 0;">
+        <em style="font-family:var(--serif-italic); font-weight:400; color:var(--bordeaux); font-size:clamp(18px, 2vw, 22px); line-height:1.3;">Keine Software. Kein Abo. Einmal gebaut. Dauerhaft im Einsatz.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════ DER EHRLICHE TEIL ══════ -->
+  <section class="zone">
+    <div class="container">
+      <div class="reveal" style="display:flex; justify-content:center"><div class="kicker"><span class="rule"></span><span class="num">05</span><span>Der ehrliche Teil</span></div></div>
+      <h2 class="zone-h2 center reveal" style="margin-left:auto; margin-right:auto; text-align:center; max-width:18ch;">Was passiert, wenn du wartest.</h2>
+
+      <div class="reveal" style="max-width:680px; margin:48px auto 0; color:var(--ink-2); font-size:16px; line-height:1.7;">
+        <p style="margin:0 0 24px;">Kanzleien, die KI heute integrieren, senken ihre operativen Kosten um 60 bis 80 Prozent in genau den Bereichen, die nicht honorarpflichtig sind. Belegerfassung. Vorqualifizierung. Standardrecherche.</p>
+        <p style="margin:0 0 24px;">Diese Kanzleien können in fünf Jahren Pauschalen anbieten, zu denen du nicht mehr mithalten kannst. Nicht weil sie schlechter beraten — sondern weil ihre Struktur günstiger arbeitet.</p>
+        <p style="margin:0 0 32px;">Der Markt für Steuerberatung wird nicht verschwinden. Aber er wird sich teilen: in Kanzleien, die mit KI arbeiten, und Kanzleien, die nur Beratung anbieten zu Premium-Preisen. Alles dazwischen wird schwer.</p>
+        <p style="margin:0;"><em style="font-family:var(--serif-italic); font-weight:400; color:var(--bordeaux); font-size:clamp(20px, 2.4vw, 26px); line-height:1.3;">Es ist keine Frage, ob du KI brauchst. Es ist eine Frage, wann.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ FAQ ══════ -->
+  <section class="zone faq">
+    <div class="container">
+      <div class="faq-head reveal">
+        <div>
+          <div class="kicker"><span class="rule"></span><span class="num">06</span><span>Häufige Fragen</span></div>
+          <h2 class="zone-h2">Häufige Fragen</h2>
+        </div>
+        <p class="lead">Sechs Fragen, die wir in fast jedem Kanzlei-Erstgespräch hören. Wenn deine fehlt — frag uns einfach.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span class="qnum">01</span>
+            <span class="qtxt">Was kostet das im Vergleich zu einem Mitarbeiter?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a"><div><div class="faq-a-inner"><p>Ein Mitarbeiter, der für Belegerfassung und Standardanfragen zuständig ist, kostet dich bei Vollkosten ungefähr 50.000 bis 70.000 Euro im Jahr. Eine maßgeschneiderte KI-Pipeline ist eine einmalige Investition im niedrigen fünfstelligen Bereich plus ein paar Hundert Euro pro Jahr für API-Kosten. Im Erstgespräch rechnen wir das konkret für deine Kanzlei durch. Wenn es sich nicht lohnt, sagen wir das.</p></div></div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span class="qnum">02</span>
+            <span class="qtxt">Was ist mit Datenschutz und Mandantengeheimnis?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a"><div><div class="faq-a-inner"><p>Wir bauen die KI so, dass sensible Daten DSGVO-konform und unter Einhaltung der Berufsordnung verarbeitet werden — mit europäischen Anbietern, dokumentierten Verarbeitungswegen und klaren AV-Verträgen. Auf Wunsch komplett auf eurer eigenen Infrastruktur.</p></div></div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span class="qnum">03</span>
+            <span class="qtxt">Wie integriert sich das in DATEV?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a"><div><div class="faq-a-inner"><p>Die KI bereitet Belege so vor, wie ihr sie sonst auch in DATEV importiert — Buchungs-Stapel, Belegbilder, Kontierung. Eure Buchhaltung sieht keinen Unterschied, außer dass die Vorarbeit fertig ist, wenn sie morgens den Rechner anmacht.</p></div></div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span class="qnum">04</span>
+            <span class="qtxt">Was passiert, wenn die KI einen Beleg falsch zuordnet?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a"><div><div class="faq-a-inner"><p>Jeder Beleg läuft durch eine Plausibilitätsprüfung. Was unsicher ist, wird markiert und geht zur menschlichen Prüfung — nicht durchgewunken. Die KI ersetzt nicht eure Sorgfaltspflicht. Sie spart die Zeit, in der ohnehin nichts geprüft wird, weil ein Beleg eindeutig ist.</p></div></div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span class="qnum">05</span>
+            <span class="qtxt">Wie schnell ist das einsatzbereit?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a"><div><div class="faq-a-inner"><p>Ein erstes Modul (z.B. die Beleg-Pipeline) läuft typischerweise nach zwei bis vier Wochen produktiv. Für ein vollständiges Setup mit Mandanten-Vorqualifizierung und interner Recherche kalkulieren wir sechs bis acht Wochen — je nachdem, wie viele eurer Prozesse wir abbilden.</p></div></div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span class="qnum">06</span>
+            <span class="qtxt">Was kostet die Einrichtung?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a"><div><div class="faq-a-inner"><p>Hängt vom Umfang ab. Für ein einzelnes Modul rechnen wir niedrige fünfstellige Beträge. Für ein vollständiges Setup höhere fünfstellige. Einmalige Investition, danach laufen nur noch die API-Kosten — keine Lizenzgebühren, kein Abo. Im Erstgespräch bekommst du eine konkrete Zahl, keinen Schätzkorridor.</p></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ CTA ══════ -->
+  <section class="cta-zone" id="cta">
+    <div class="cta-card reveal">
+      <div class="cta-grid">
+        <div class="kicker"><span class="rule"></span><span class="num">07</span><span>Nächster Schritt</span></div>
+        <h2>Zeig uns deine <em style="font-family:var(--serif-italic); font-weight:400; color:var(--bordeaux);">Belegprozesse.</em></h2>
+        <p>30 Minuten. Wir rechnen dir konkret aus, was du sparst — und ob es sich lohnt. Kein Verkaufsgespräch. Wenn KI für deinen Betrieb keinen Sinn ergibt, sagen wir das.</p>
+        <div class="actions">
+          <a class="btn btn-lg" href={CALENDLY} target="_blank" rel="noopener noreferrer">Kostenloses Erstgespräch buchen <span class="arrow">→</span></a>
+        </div>
+      </div>
+      <div class="cta-meta">
+        <span>— KOSTENLOS · UNVERBINDLICH</span>
+        <span>30 MIN.</span>
+      </div>
+    </div>
+  </section>
+
+  <LandingFooter />
+  <ChatbotTooltip />
+</LandingLayout>
+
+<script>
+  // Reveal-on-scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Steps active aside (Sektion „Drei Szenen")
+  const stepsObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const target = e.target as HTMLElement;
+        const id = target.dataset.step;
+        if (!id) return;
+        document.querySelectorAll<HTMLElement>('.step-link').forEach(l => {
+          l.classList.toggle('active', l.dataset.step === id);
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.step[data-step]').forEach(s => stepsObs.observe(s));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-q');
+    btn?.addEventListener('click', () => {
+      const open = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  });
+  // Open first by default
+  document.querySelector('.faq-item')?.classList.add('open');
+  document.querySelector('.faq-item .faq-q')?.setAttribute('aria-expanded', 'true');
+</script>
