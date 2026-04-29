@@ -1,5 +1,21 @@
 # MarkMade Cream-Look — Style Reference
 
+> ## ⚠️ Geltungsbereich
+>
+> Diese Reference gilt **ausschließlich** für den **Cream-Look** der markmade.de-Webpräsenz. Aktuell nutzen drei Seiten dieses System:
+>
+> - `/` (Startseite)
+> - `/ki-steuerberater`
+> - `/ki-automatisierung-workflow`
+>
+> Alle anderen ~33 Seiten der Webseite (Branchenseiten wie ki-aerzte, ki-handwerker, ki-kanzlei; Service-Seiten wie ki-telefonassistent, ki-email, ki-social-media; Webdesign-Seiten; Ratgeber-Seiten; Legal-Seiten) verwenden den **Original-Look** über `BaseLayout` + `src/styles/global.css`.
+>
+> Der Original-Look hat ein eigenes Farbsystem (Material-Style-Tokens wie `--surface`, `--primary`, `--secondary`, `--on-surface`) das NICHT in dieser Reference dokumentiert ist. Wer eine Original-Look-Seite bearbeitet oder neu baut, schaut in `src/styles/global.css` direkt nach.
+>
+> **Aktueller Stand (April 2026):** Beide Systeme bleiben parallel im Einsatz. Eine Migration ist nicht beschlossen.
+
+---
+
 Single source of truth für alle Cream-Look-Landingpages (analog zu `src/pages/index.astro` und `src/pages/ki-steuerberater.astro`). Wer eine neue Branchenseite baut, soll diese Datei lesen statt in `landing.css` zu graben.
 
 **Scope:** Cream-Look v2 Design. Lebt in `src/styles/landing.css` und wird ausschließlich von `src/layouts/LandingLayout.astro` geladen. `global.css` und alle Subpages via `BaseLayout` sind davon NICHT betroffen.
