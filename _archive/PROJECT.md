@@ -1,5 +1,18 @@
 # MarkMade – Projektstruktur
 
+> ## ⚠️ ARCHIVIERT (April 2026)
+>
+> Diese Datei beschreibt den ursprünglichen Workflow der Webseite vor dem Cream-Look-Redesign. Die Anweisungen hier — insbesondere "BaseLayout importieren" für neue Seiten — gelten nicht mehr für Cream-Look-Landingpages.
+>
+> **Aktuelle Quellen:**
+> - Projekt-Übersicht und neue Seiten anlegen → `PROJECT_OVERVIEW.md`
+> - Cream-Look-Patterns und Tokens → `STYLE-REFERENCE.md`
+> - Original-Look-Tokens → `DESIGN.md` (mit Hinweis-Block)
+>
+> Datei archiviert, weil sie aktiv irreführend war. Inhalt zur historischen Referenz erhalten.
+>
+> ---
+
 ## Neue Seite hinzufügen
 1. Neue Datei in src/pages/ anlegen
 2. BaseLayout importieren und verwenden
