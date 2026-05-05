@@ -7,8 +7,6 @@
   <div class="chatbot-tooltip-arrow"></div>
 </div>
 
-<div id="chatbot-notification-dot" class="chatbot-notification-dot" aria-hidden="true"></div>
-
 <style>
   .chatbot-tooltip {
     position: fixed;
@@ -73,26 +71,6 @@
     color: #fff;
   }
 
-  /* Notification-Dot direkt über dem Chatbot-Button (separates Element) */
-  .chatbot-notification-dot {
-    position: fixed;
-    right: 22px;
-    bottom: 62px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #A8174D;
-    border: 2px solid #F5F1EA;
-    z-index: 9997;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  .chatbot-notification-dot.visible {
-    opacity: 1;
-  }
-
   @media (max-width: 760px) {
     .chatbot-tooltip {
       right: 72px;
@@ -109,11 +87,6 @@
     .chatbot-tooltip-text-mobile {
       display: block;
     }
-
-    .chatbot-notification-dot {
-      right: 18px;
-      bottom: 54px;
-    }
   }
 </style>
 
@@ -125,13 +98,9 @@
 
   function init() {
     const tooltip = document.getElementById('chatbot-tooltip');
-    const dot = document.getElementById('chatbot-notification-dot');
     const closeBtn = tooltip ? tooltip.querySelector('.chatbot-tooltip-close') : null;
 
-    if (!tooltip || !dot) return;
-
-    // Notification-Dot immer zeigen
-    setTimeout(() => dot.classList.add('visible'), 1200);
+    if (!tooltip) return;
 
     // Tooltip nur beim ersten Besuch
     let alreadyShown = false;
@@ -161,7 +130,6 @@
       const w = window.innerWidth, h = window.innerHeight;
       if (x > w - 80 && y > h - 80) {
         tooltip.classList.remove('visible');
-        dot.classList.remove('visible');
       }
     });
   }
