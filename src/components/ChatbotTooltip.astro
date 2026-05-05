@@ -7,11 +7,17 @@
   <div class="chatbot-tooltip-arrow"></div>
 </div>
 
+<div id="chatbot-pills" class="chatbot-pills" aria-hidden="true">
+  <button class="chatbot-pill" data-question="Was würde KI bei mir übernehmen?">Was würde KI bei mir übernehmen?</button>
+  <button class="chatbot-pill" data-question="Wie schnell läuft das?">Wie schnell läuft das?</button>
+  <button class="chatbot-pill" data-question="Beispiele zeigen">Beispiele zeigen</button>
+</div>
+
 <style>
   .chatbot-tooltip {
     position: fixed;
     right: 80px;
-    bottom: 28px;
+    bottom: 160px;
     z-index: 9998;
     max-width: 280px;
     background: #1A1814;
@@ -71,7 +77,60 @@
     color: #fff;
   }
 
-  @media (max-width: 760px) {
+  /* Quick-Reply-Pills (Desktop only) */
+  .chatbot-pills {
+    position: fixed;
+    right: 88px;
+    bottom: 28px;
+    z-index: 9997;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+    pointer-events: auto;
+  }
+
+  .chatbot-pill {
+    background: #fbf9f6;
+    color: #292f1b;
+    border: 1px solid rgba(41, 47, 27, 0.15);
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.4s ease, transform 0.4s ease,
+                background 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .chatbot-pill.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .chatbot-pill.hidden,
+  .chatbot-pills.hidden .chatbot-pill {
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+  }
+
+  .chatbot-pill:hover {
+    background: #f5f3f0;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .chatbot-pill:nth-child(1) { transition-delay: 0s; }
+  .chatbot-pill:nth-child(2) { transition-delay: 0.15s; }
+  .chatbot-pill:nth-child(3) { transition-delay: 0.3s; }
+
+  @media (max-width: 767px) {
     .chatbot-tooltip {
       right: 72px;
       bottom: 24px;
@@ -87,33 +146,40 @@
     .chatbot-tooltip-text-mobile {
       display: block;
     }
+
+    .chatbot-pills { display: none !important; }
   }
 </style>
 
 <script is:inline>
 (function() {
   const TOOLTIP_SHOWN_KEY = 'mm-chatbot-tooltip-shown';
-  const TOOLTIP_DELAY_MS = 8000;
+  const CTA_TOOLTIP_KEY = 'mm-cta-tooltip-shown';
+  const TOOLTIP_DELAY_MS = 4000;
   const TOOLTIP_AUTOHIDE_MS = 6000;
+  const TTL_MS = 14 * 24 * 60 * 60 * 1000; // 14 Tage
+  const PILLS_DELAY_MS = 1000;
 
   function init() {
     const tooltip = document.getElementById('chatbot-tooltip');
     const closeBtn = tooltip ? tooltip.querySelector('.chatbot-tooltip-close') : null;
+    const pills = document.querySelectorAll('.chatbot-pill');
 
     if (!tooltip) return;
 
-    // Tooltip nur beim ersten Besuch
-    let alreadyShown = false;
+    // Initial-Tooltip — nur wenn die letzte Anzeige > 14 Tage her ist
+    let recentlyShown = false;
     try {
-      alreadyShown = localStorage.getItem(TOOLTIP_SHOWN_KEY) === '1';
+      const stored = localStorage.getItem(TOOLTIP_SHOWN_KEY);
+      recentlyShown = stored && (Date.now() - parseInt(stored, 10)) < TTL_MS;
     } catch (e) {
-      alreadyShown = true;
+      recentlyShown = true;
     }
 
-    if (!alreadyShown) {
+    if (!recentlyShown) {
       setTimeout(() => {
         tooltip.classList.add('visible');
-        try { localStorage.setItem(TOOLTIP_SHOWN_KEY, '1'); } catch (e) {}
+        try { localStorage.setItem(TOOLTIP_SHOWN_KEY, Date.now().toString()); } catch (e) {}
         setTimeout(() => tooltip.classList.remove('visible'), TOOLTIP_AUTOHIDE_MS);
       }, TOOLTIP_DELAY_MS);
     }
@@ -132,6 +198,79 @@
         tooltip.classList.remove('visible');
       }
     });
+
+    // CTA-Trigger: bei Sichtbarkeit der finalen CTA-Sektion (#cta) Tooltip-Text wechseln
+    const ctaSection = document.querySelector('#cta');
+    if (ctaSection && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.intersectionRatio >= 0.5 && !sessionStorage.getItem(CTA_TOOLTIP_KEY)) {
+            // Skip wenn Tooltip gerade sichtbar — Observer bleibt aktiv, feuert beim nächsten Scroll erneut
+            if (tooltip.classList.contains('visible')) return;
+
+            const desktopText = tooltip.querySelector('.chatbot-tooltip-text-desktop');
+            const mobileText = tooltip.querySelector('.chatbot-tooltip-text-mobile');
+            if (desktopText) desktopText.textContent = 'Noch unsicher? Frag mich kurz.';
+            if (mobileText) mobileText.textContent = 'Noch unsicher?';
+            tooltip.classList.add('visible');
+            try { sessionStorage.setItem(CTA_TOOLTIP_KEY, '1'); } catch (e) {}
+            setTimeout(() => tooltip.classList.remove('visible'), TOOLTIP_AUTOHIDE_MS);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      observer.observe(ctaSection);
+    }
+
+    // Quick-Reply-Pills: erst einblenden wenn der Chatbot-FAB im DOM ist.
+    // Wenn der Chatbot wegen fehlendem Cookie-Consent nicht lädt, erscheinen Pills nie.
+    const pillsContainer = document.getElementById('chatbot-pills');
+    if (pills.length && pillsContainer) {
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          const question = pill.dataset.question;
+          window.dispatchEvent(new CustomEvent('mm-chatbot-prompt', {
+            detail: { question }
+          }));
+          const fab = document.querySelector('#mm-chat-widget .mm-fab-chat');
+          if (fab) fab.click();
+        });
+      });
+
+      const attachChatStateObserver = (chatWindow) => {
+        const chatStateObserver = new MutationObserver(() => {
+          if (chatWindow.classList.contains('mm-open')) {
+            pillsContainer.classList.add('hidden');
+          } else {
+            pillsContainer.classList.remove('hidden');
+          }
+        });
+        chatStateObserver.observe(chatWindow, { attributes: true, attributeFilter: ['class'] });
+      };
+
+      const revealPillsAndWatch = () => {
+        setTimeout(() => {
+          pills.forEach(p => p.classList.add('visible'));
+        }, PILLS_DELAY_MS);
+
+        const chatWindow = document.querySelector('#mm-window');
+        if (chatWindow) attachChatStateObserver(chatWindow);
+      };
+
+      // Sofort prüfen falls der Chatbot bereits geladen ist (z.B. bei Navigation),
+      // sonst auf DOM-Mutation warten.
+      if (document.querySelector('#mm-chat-widget .mm-fab-chat')) {
+        revealPillsAndWatch();
+      } else {
+        const fabObserver = new MutationObserver((_, obs) => {
+          if (document.querySelector('#mm-chat-widget .mm-fab-chat')) {
+            revealPillsAndWatch();
+            obs.disconnect();
+          }
+        });
+        fabObserver.observe(document.body, { childList: true, subtree: true });
+      }
+    }
   }
 
   if (document.readyState === 'loading') {
