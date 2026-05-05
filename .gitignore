@@ -34,3 +34,14 @@ PLAN.md
 /logos/
 Content Auto/
 _design/
+
+# Working directories (Frame-Generation, temp output, etc.)
+.work/
+**/.work/
+*.frames/
+
+# OS-Müll
+Thumbs.db
+
+# IDE
+.vscode/
