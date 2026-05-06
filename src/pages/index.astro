@@ -9,6 +9,101 @@ import Principle from '../components/Principle.astro';
 import LandingFaq from '../components/LandingFaq.astro';
 import LandingCta from '../components/LandingCta.astro';
 import LandingFooter from '../components/LandingFooter.astro';
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://markmade.de/#organization",
+  "name": "MarkMade",
+  "description": "KI-Beratung und KI-Agentur in Stuttgart. Wir entwickeln eigene KI-Anwendungen und übersetzen sie in Lösungen für deinen Betrieb. DSGVO-konform und sofort einsatzbereit.",
+  "url": "https://markmade.de",
+  "telephone": "[TELEFON_PLATZHALTER]",
+  "email": "[EMAIL_PLATZHALTER]",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "[ADRESSE_STRASSE_PLATZHALTER]",
+    "postalCode": "[ADRESSE_PLZ_PLATZHALTER]",
+    "addressLocality": "Stuttgart",
+    "addressRegion": "Baden-Württemberg",
+    "addressCountry": "DE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "[GEO_LATITUDE_PLATZHALTER]",
+    "longitude": "[GEO_LONGITUDE_PLATZHALTER]"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Stuttgart" },
+    { "@type": "AdministrativeArea", "name": "Baden-Württemberg" },
+    { "@type": "Country", "name": "Deutschland" }
+  ],
+  "priceRange": "€€",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "sameAs": [
+    "[INSTAGRAM_PLATZHALTER]",
+    "[LINKEDIN_PLATZHALTER]"
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was kann man alles mit KI bearbeiten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Telefon. E-Mails. Angebote. Social Media. Kundenanfragen. Termine. Dokumente. Grob gesagt: Alles was sich wiederholt. Was du nicht mehr selbst machen willst, kann KI übernehmen — wenn sie richtig eingerichtet ist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie hilft mir das tatsächlich in meinem Alltag?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du hast Freitag Abend nicht mehr 40 offene Mails. Du schreibst keine Angebote mehr in 2 Stunden. Du nimmst nicht mehr jedes Telefonat an. Du machst die Arbeit für die man dich bezahlt — den Rest macht KI."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ich bin kein Technik-Experte — geht das trotzdem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Genau dafür gibt's uns. Du musst KI nicht verstehen. Du musst nur wissen wie du arbeitest. Den Rest übersetzen wir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie läuft die Wartung? Was wenn sich was ändert?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir bleiben dran. Wenn sich bei dir was ändert — neue Leistung, andere Preise, neuer Mitarbeiter — passen wir die KI an. Das ist kein Zusatzservice, das gehört dazu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was unterscheidet euch von anderen KI-Anbietern?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Andere verkaufen dir Software. Wir verkaufen dir keine Software — wir optimieren deine Prozesse. Und wir verschwinden nicht nach der Einrichtung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert wenn ich jetzt nichts tue?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Deine Konkurrenz wird schneller. In einem Jahr schafft sie in einer Woche was du in fünf brauchst. Wer nicht mitzieht, verliert den Anschluss — nicht dramatisch, aber unumkehrbar."
+      }
+    }
+  ]
+};
 ---
 
 <LandingLayout
@@ -24,6 +119,9 @@ import LandingFooter from '../components/LandingFooter.astro';
   <LandingFaq />
   <LandingCta />
   <LandingFooter />
+
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 </LandingLayout>
 
 <script>
