@@ -859,3 +859,17 @@ footer{
   }
 }
 
+/* ============ CTA-PROMISE (Phase 1 Commit 5) ============ */
+/* Mikrocopy zwischen Subline und Button. Italic-dezent, KEIN Bordeaux
+   (Bordeaux ist für Headlines reserviert). Negativer Top-Margin rückt
+   die Promise näher an die Subline, sodass sie als Anhang wirkt
+   und nicht als eigene Aussage. */
+.cta-grid .cta-promise{
+  font-family:var(--serif-italic);
+  font-style:italic;
+  font-size:15px;
+  color:var(--ink-2);
+  max-width:50ch;
+  margin:-8px 0 0;
+}
+
