@@ -854,8 +854,8 @@ footer{
 }
 
 /* ============ SERVICES (Phase 1 Commit 3) ============ */
-/* Editorial vertikale Liste (Phase 2 Re-Design). Reuse von .step-Pattern
-   aus dem alten LandingWasKiMacht. Modifier .step--service:
+/* Editorial vertikale Liste (Phase 2 Re-Design). Reuse vom .step-Pattern
+   (.steps-list/.step Klassen weiter in landing.css). Modifier .step--service:
    - Numeral kleiner (Magazin-TOC-Style „Nº 01" statt giant 01)
    - Rechte Spalte breiter für Capability-Liste + Mehr-Link
    - .meta-Slot ohne Caps/Bordeaux-Tracking, normales Body-Text
