@@ -977,15 +977,21 @@ footer{
   margin:-8px 0 0;
 }
 
-/* ============ MOBILE NAV FIX (Phase 1C) ============ */
-/* Auf <=480px wird der Header zu schmal: Brand (22px serif w800) + Gap +
-   Button "Gespräch buchen" überschreitet das Viewport und wird durch
-   body{overflow-x:hidden} unsichtbar gecroppt. Fix: Skala beider Elemente
-   proportional reduzieren, damit Brand UND Button sichtbar bleiben.
+/* ============ MOBILE NAV (Phase 2 Fix) ============ */
+/* Header-Button visuell ausgewogen mit Logo (markmade. ~18px serif)
+   auf <=480px:
+   - Pfeil weggelassen → schlanker
+   - Padding/Schrift kompakter
+   - min-height sichert Touch-Target ≥36px
 */
 @media (max-width: 480px){
-  .nav-inner{ padding:12px 16px; gap:12px; }
+  .nav-inner{ padding:10px 16px; gap:12px; }
   .brand{ font-size:18px; }
-  .nav-right .btn{ padding:9px 14px; font-size:13px; gap:8px; }
+  .nav-right .btn{
+    padding:9px 12px; font-size:12px; gap:0;
+    min-height:36px;
+    letter-spacing:0;
+  }
+  .nav-right .btn .arrow{ display:none; }
 }
 
