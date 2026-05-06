@@ -669,3 +669,27 @@ footer{
     display: flex !important;
   }
 }
+
+/* ============ HERO REFACTOR (Phase 1 Commit 1) ============ */
+/* Override .hero-meta grid (war für <hr>/.tag/<hr>) auf zentrierten Flex */
+.hero-meta{
+  display:flex; justify-content:center;
+}
+.hero-h1-subtitle{
+  display:block;
+  font-family:var(--sans);
+  font-size:clamp(13px, 1vw, 15px);
+  font-weight:500;
+  line-height:1.4;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-top:18px;
+}
+.hero-scroll-link{
+  font-size:13px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--muted); border-bottom:1px solid var(--rule-2);
+  padding-bottom:2px; transition:color .2s, border-color .2s;
+}
+.hero-scroll-link:hover{ color:var(--bordeaux); border-color:var(--bordeaux); }
+
