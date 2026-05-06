@@ -684,10 +684,12 @@ footer{
 
 /* ============ PROJECTS (Phase 1 Commit 2) ============ */
 .projects{ background:var(--cream); }
-/* Head-Pool: Projects + Services teilen identische Head-Geometrie (Mark-Approval Commit 3) */
-.projects-head, .services-head{ text-align:center; max-width:720px; margin:0 auto clamp(48px,6vw,80px); }
-.projects-head .kicker, .services-head .kicker{ justify-content:center; margin:0 auto 18px; }
-.projects-head .lead, .services-head .lead{ color:var(--ink-2); margin:14px auto 0; max-width:42ch; }
+/* Head: Projects bleibt zunächst zentriert — wird in Commit 3 (Re-Design Eigene Projekte)
+   auf left-aligned umgestellt. Pool mit .services-head ist aufgelöst, da die beiden Sektionen
+   nicht mehr dieselbe Geometrie teilen. */
+.projects-head{ text-align:center; max-width:720px; margin:0 auto clamp(48px,6vw,80px); }
+.projects-head .kicker{ justify-content:center; margin:0 auto 18px; }
+.projects-head .lead{ color:var(--ink-2); margin:14px auto 0; max-width:42ch; }
 
 .projects-grid{
   display:grid;
@@ -741,67 +743,65 @@ footer{
 .project-link:hover{ color:var(--bordeaux-deep); }
 
 /* ============ SERVICES (Phase 1 Commit 3) ============ */
-/* Editorial 2x2 mit diagonaler Asymmetrie:
-   Position 1 (Telefon, large) | Position 2 (E-Mail, minimal)
-   Position 3 (Chatbot, minimal) | Position 4 (Custom, large)
-   Mobile (<760px): 1-Spalten-Stack in DOM-Reihenfolge.
+/* Editorial vertikale Liste (Phase 2 Re-Design). Reuse von .step-Pattern
+   aus dem alten LandingWasKiMacht. Modifier .step--service:
+   - Numeral kleiner (Magazin-TOC-Style „Nº 01" statt giant 01)
+   - Rechte Spalte breiter für Capability-Liste + Mehr-Link
+   - .meta-Slot ohne Caps/Bordeaux-Tracking, normales Body-Text
 */
 .services{
-  background:var(--cream-2);
-  border-top:1px solid var(--rule);
-  border-bottom:1px solid var(--rule);
+  background:var(--cream);  /* zurück zu cream — keine cream-2 Tile-Sektion-Optik */
 }
+.services-head{
+  text-align:left; max-width:720px; margin:0 0 clamp(48px,6vw,80px);
+}
+.services-head .kicker{ margin-bottom:18px; }
+.services-head .zone-h2{
+  font-size: clamp(30px, 4.2vw, 52px);
+  max-width: 30ch;
+  line-height:1.08;
+}
+.services-head .lead{ color:var(--ink-2); margin:18px 0 0; max-width:54ch; font-size:15px; }
 
-.services-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:clamp(20px, 2.5vw, 32px);
+.step--service{
+  grid-template-columns: 100px 1fr 280px;
 }
-@media (min-width: 760px){
-  .services-grid{
-    grid-template-columns:1fr 1fr 1fr;
-    grid-template-areas:
-      "telefon telefon email"
-      "chatbot custom custom";
-  }
-  .services-grid > :nth-child(1){ grid-area:telefon; }
-  .services-grid > :nth-child(2){ grid-area:email; }
-  .services-grid > :nth-child(3){ grid-area:chatbot; }
-  .services-grid > :nth-child(4){ grid-area:custom; }
+.step--service .index{
+  font-size: clamp(20px, 1.8vw, 28px);
+  align-self:flex-start;
+  padding-top: 8px;
 }
-
-.service-tile{
-  display:flex;
-  flex-direction:column;
+.step--service .meta{
+  text-align:left;
+  font-size:14px;
+  letter-spacing:0;
+  text-transform:none;
+  color:var(--ink-2);
   gap:14px;
-  background:var(--cream);
-  border:1px solid var(--rule);
-  border-radius:18px;
-  padding:clamp(22px, 2.4vw, 30px);
-  padding-bottom:clamp(46px, 4vw, 60px);
-  position:relative;
-  transition:border-color .2s, transform .2s;
-}
-.service-tile:hover{
-  border-color:var(--bordeaux);
-  transform:translateY(-2px);
+  align-items:flex-start;
 }
 
-.service-tile--large{
-  padding:clamp(28px, 3vw, 40px);
-  padding-bottom:clamp(52px, 4.5vw, 68px);
-  gap:18px;
+@media (max-width: 760px){
+  .step--service{
+    grid-template-columns: 60px 1fr;
+    gap:18px 18px;
+  }
+  .step--service .index{
+    font-size:18px;
+    grid-column:1;
+    grid-row:1;
+    padding-top:6px;
+  }
+  .step--service .body{
+    grid-column:2;
+    grid-row:1;
+  }
+  .step--service .meta{
+    grid-column:1 / -1;
+    grid-row:2;
+    padding-top:6px;
+  }
 }
-
-.service-tile .arrow{
-  position:absolute;
-  right:clamp(22px, 2.4vw, 30px);
-  bottom:clamp(22px, 2.4vw, 30px);
-  font-size:18px;
-  color:var(--bordeaux);
-  transition:transform .25s;
-}
-.service-tile:hover .arrow{ transform:translateX(3px); }
 
 /* ============ LEDGER-RICH (Phase 1 Commit 4) ============ */
 /* Editorial-Variante des bestehenden 3-Spalten-Ledgers: pro Cell H3 + Erklärung
