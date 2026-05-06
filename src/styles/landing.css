@@ -776,6 +776,35 @@ footer{
 }
 .hero-scroll-link:hover{ color:var(--bordeaux); border-color:var(--bordeaux); }
 
+/* Hero Trust-Bar (Phase 2 Inhalts-Fix). Dezente Mikrocopy unter den
+   Buttons mit drei Datenschutz-Statements + ·-Trennern. Olive-muted
+   statt Bordeaux — Brand Foundation Prinzip 3 (Bordeaux nur für
+   Conversion-Momente, nicht für 9-Wörter-Mikrocopy).
+   Auf Mobile <=480px: vertikal gestackt ohne Trenn-Punkte. */
+.hero-trust{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap: 4px 12px;
+  font-size:13px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-top: -8px;
+}
+.hero-trust-dot{
+  color:var(--rule-2);
+  user-select:none;
+}
+@media (max-width: 480px){
+  .hero-trust{
+    flex-direction:column;
+    align-items:flex-start;
+    gap: 6px;
+  }
+  .hero-trust-dot{ display:none; }
+}
+
 /* ============ PROJECTS (Phase 1 Commit 2) ============ */
 .projects{ background:var(--cream-2); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
 .projects-head{ text-align:left; max-width:720px; margin:0 0 clamp(48px,6vw,80px); }
