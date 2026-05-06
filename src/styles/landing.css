@@ -761,26 +761,6 @@ footer{
   }
 }
 
-/* ============ HERO REFACTOR (Phase 2 Re-Design) ============ */
-/* .hero-meta wurde im Hero-Block-Refactor (oben) auf flex-start umgestellt.
-   Dieser Block setzt die SEO-Subtitle und Scroll-Link Klassen. */
-.hero-h1-subtitle{
-  display:block;
-  font-family:var(--sans);
-  font-size:clamp(12px, 1vw, 14px);
-  font-weight:500;
-  line-height:1.5;
-  letter-spacing:0.16em;
-  text-transform:uppercase;
-  color:var(--muted);
-  margin-top:18px;
-  max-width:50ch;
-}
-@media (max-width: 600px){
-  .hero-h1-subtitle{
-    letter-spacing:0.1em;
-  }
-}
 .hero-scroll-link{
   font-size:13px; letter-spacing:0.14em; text-transform:uppercase;
   color:var(--muted); border-bottom:1px solid var(--rule-2);
