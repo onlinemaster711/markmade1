@@ -2,14 +2,14 @@
 import LandingLayout from '../layouts/LandingLayout.astro';
 import Nav from '../components/Nav.astro';
 import LandingHero from '../components/LandingHero.astro';
-import LandingProjects from '../components/LandingProjects.astro';
 import LandingServices from '../components/LandingServices.astro';
+import LandingProjects from '../components/LandingProjects.astro';
 import Principle from '../components/Principle.astro';
 import LandingFaq from '../components/LandingFaq.astro';
 import LandingCta from '../components/LandingCta.astro';
 import LandingFooter from '../components/LandingFooter.astro';
-// LandingWasKiMacht wird in der neuen Reihenfolge nicht mehr eingebunden.
-// Datei bleibt im Repo (src/components/LandingWasKiMacht.astro) — keine Löschung.
+// LandingWasKiMacht in der neuen Reihenfolge nicht eingebunden — Datei
+// bleibt im Repo bis Commit 9 (optionaler Delete).
 ---
 
 <LandingLayout
@@ -18,8 +18,8 @@ import LandingFooter from '../components/LandingFooter.astro';
 >
   <Nav />
   <LandingHero />
-  <LandingProjects />
   <LandingServices />
+  <LandingProjects />
   <Principle />
   <LandingFaq />
   <LandingCta />
@@ -27,7 +27,7 @@ import LandingFooter from '../components/LandingFooter.astro';
 </LandingLayout>
 
 <script>
-  // Reveal-on-scroll
+  // Reveal-on-scroll für alle .reveal-Elemente
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -37,20 +37,4 @@ import LandingFooter from '../components/LandingFooter.astro';
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // Steps active aside (legacy: betraf .step-Elemente in LandingWasKiMacht)
-  // Bleibt drin — querySelectorAll auf nicht vorhandene .step-Elemente ist no-op.
-  // Aufräumen in Phase 2 Visual Cleanup.
-  const stepsObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const target = e.target as HTMLElement;
-        const id = target.dataset.step;
-        document.querySelectorAll<HTMLElement>('.step-link').forEach(l => {
-          l.classList.toggle('active', l.dataset.step === id);
-        });
-      }
-    });
-  }, { threshold: 0.5 });
-  document.querySelectorAll('.step').forEach(s => stepsObs.observe(s));
 </script>
