@@ -1066,6 +1066,11 @@ footer{
   margin: 0 auto;
   max-width:50ch;
 }
+.trust-emphasis{
+  font-weight:600;
+  color:var(--bordeaux);
+  font-style:italic; /* erbt vom .trust-body, explizit hier um sicher zu gehen */
+}
 
 /* Trust-Grid (Phase 2 Inhalts-Fix 3): drei Trust-Punkte unter dem
    Section-Head. KEINE Cards, KEIN Tile-Look — nur vertikale Hairlines
