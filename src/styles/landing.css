@@ -695,9 +695,10 @@ footer{
 
 /* ============ PROJECTS (Phase 1 Commit 2) ============ */
 .projects{ background:var(--cream); }
-.projects-head{ text-align:center; max-width:720px; margin:0 auto clamp(48px,6vw,80px); }
-.projects-head .kicker{ justify-content:center; margin:0 auto 18px; }
-.projects-head .lead{ color:var(--ink-2); margin:14px auto 0; max-width:42ch; }
+/* Head-Pool: Projects + Services teilen identische Head-Geometrie (Mark-Approval Commit 3) */
+.projects-head, .services-head{ text-align:center; max-width:720px; margin:0 auto clamp(48px,6vw,80px); }
+.projects-head .kicker, .services-head .kicker{ justify-content:center; margin:0 auto 18px; }
+.projects-head .lead, .services-head .lead{ color:var(--ink-2); margin:14px auto 0; max-width:42ch; }
 
 .projects-grid{
   display:grid;
@@ -749,4 +750,67 @@ footer{
   font-size:14px; font-weight:500; color:var(--bordeaux); display:inline-flex; gap:6px;
 }
 .project-link:hover{ color:var(--bordeaux-deep); }
+
+/* ============ SERVICES (Phase 1 Commit 3) ============ */
+/* Editorial 2x2 mit diagonaler Asymmetrie:
+   Position 1 (Telefon, large) | Position 2 (E-Mail, minimal)
+   Position 3 (Chatbot, minimal) | Position 4 (Custom, large)
+   Mobile (<760px): 1-Spalten-Stack in DOM-Reihenfolge.
+*/
+.services{
+  background:var(--cream-2);
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(20px, 2.5vw, 32px);
+}
+@media (min-width: 760px){
+  .services-grid{
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-areas:
+      "telefon telefon email"
+      "chatbot custom custom";
+  }
+  .services-grid > :nth-child(1){ grid-area:telefon; }
+  .services-grid > :nth-child(2){ grid-area:email; }
+  .services-grid > :nth-child(3){ grid-area:chatbot; }
+  .services-grid > :nth-child(4){ grid-area:custom; }
+}
+
+.service-tile{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  background:var(--cream);
+  border:1px solid var(--rule);
+  border-radius:18px;
+  padding:clamp(22px, 2.4vw, 30px);
+  padding-bottom:clamp(46px, 4vw, 60px);
+  position:relative;
+  transition:border-color .2s, transform .2s;
+}
+.service-tile:hover{
+  border-color:var(--bordeaux);
+  transform:translateY(-2px);
+}
+
+.service-tile--large{
+  padding:clamp(28px, 3vw, 40px);
+  padding-bottom:clamp(52px, 4.5vw, 68px);
+  gap:18px;
+}
+
+.service-tile .arrow{
+  position:absolute;
+  right:clamp(22px, 2.4vw, 30px);
+  bottom:clamp(22px, 2.4vw, 30px);
+  font-size:18px;
+  color:var(--bordeaux);
+  transition:transform .25s;
+}
+.service-tile:hover .arrow{ transform:translateX(3px); }
 
