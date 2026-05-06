@@ -185,6 +185,13 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer}
 .hero-cta{
   display:flex; flex-wrap:wrap; gap:18px; justify-content:flex-start; align-items:center;
 }
+@media (max-width: 720px){
+  .hero-cta .btn-lg{
+    padding:12px 20px;
+    font-size:14px;
+    min-height:44px;
+  }
+}
 .hero-stats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
