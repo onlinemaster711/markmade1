@@ -997,6 +997,47 @@ footer{
   margin:-8px 0 0;
 }
 
+/* ============ TRUST (Phase 2 Inhalts-Fix 4) ============ */
+/* Mini-Sektion zwischen Projects und Principle. Editorial-Statement,
+   bewusst zentriert (Alignment-Bruch wie CTA — Closing-Moment-Logik
+   überträgt sich auf Trust als „Intermission-Moment"). Hintergrund
+   --cream-3 differenziert sich von Projects (cream-2) davor und
+   Principle (cream) danach. Generöses Padding signalisiert Statement-
+   Charakter laut Brand-Foundation Prinzip 1 (Whitespace ist Luxus). */
+.trust{
+  background:var(--cream-3);
+  padding-top: clamp(96px, 12vw, 180px);
+  padding-bottom: clamp(96px, 12vw, 180px);
+}
+.trust-block{
+  max-width:720px;
+  margin:0 auto;
+  text-align:center;
+}
+.trust-block .kicker{
+  justify-content:center;
+  margin: 0 auto 24px;
+}
+.trust-h2{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:clamp(32px, 4.5vw, 52px);
+  line-height:1.1;
+  letter-spacing:-0.02em;
+  margin: 0 auto 28px;
+  color:var(--ink);
+  max-width:18ch;
+}
+.trust-body{
+  font-family:var(--serif-italic);
+  font-style:italic;
+  font-size:clamp(18px, 2vw, 22px);
+  line-height:1.5;
+  color:var(--ink-2);
+  margin: 0 auto;
+  max-width:50ch;
+}
+
 /* ============ MOBILE NAV (Phase 2 Fix) ============ */
 /* Header-Button visuell ausgewogen mit Logo (markmade. ~18px serif)
    auf <=480px:
