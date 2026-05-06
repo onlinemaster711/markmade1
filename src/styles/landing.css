@@ -5,7 +5,7 @@
    alle Unterseiten via BaseLayout.astro mit dem alten Token-Set.
    ===================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
 
 /* ============ TOKENS ============ */
 :root{
@@ -22,9 +22,9 @@
   --sage:#D4DDB8;
   --olive:#9C9678;
 
-  --serif: "Roboto Slab", Georgia, serif;
-  --serif-italic: "Instrument Serif", Georgia, serif;
-  --sans: "Inter", system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
+  --serif: "Noto Serif", Georgia, serif;
+  --serif-italic: "Noto Serif", Georgia, serif;  /* Italic via font-style:italic — Noto Serif hat eigenes Italic-Schnitt */
+  --sans: "Manrope", system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
 
   --max:1280px;
   --gutter: clamp(20px, 4vw, 56px);
