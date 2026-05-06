@@ -820,7 +820,27 @@ footer{
   font-size:clamp(36px, 4.5vw, 56px);
   line-height:1;
   letter-spacing:-0.025em;
-  margin:0; color:var(--ink);
+  margin:0 0 4px; color:var(--ink);
+}
+
+/* Mini-Label-Blöcke "Was es macht" / "Was KI daran ist" (Phase 2 Fix 4).
+   Klare Strukturierung der Project-Beschreibung in zwei semantische
+   Ebenen — was das Tool tut + was die KI-Komponente ist. */
+.proj-block{
+  display:flex; flex-direction:column; gap:8px;
+}
+.proj-label{
+  font-size:11px; letter-spacing:0.18em; text-transform:uppercase;
+  color:var(--bordeaux); font-weight:600;
+}
+.proj-block-text{
+  font-family:var(--sans);
+  font-size:17px;
+  font-weight:500;
+  line-height:1.5;
+  color:var(--ink);
+  margin:0;
+  max-width:54ch;
 }
 
 .project-pitch{ color:var(--ink-2); font-size:17px; margin:0; max-width:50ch; line-height:1.55; }
