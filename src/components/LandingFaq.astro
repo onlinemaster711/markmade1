@@ -3,17 +3,15 @@
 <section class="zone faq">
   <div class="container">
     <div class="faq-head reveal">
-      <div>
-        <div class="kicker"><span class="rule"></span><span class="num">04</span><span>Häufige Fragen</span></div>
-        <h2 class="zone-h2">Häufige Fragen</h2>
-      </div>
+      <div class="kicker"><span class="rule"></span><span>Häufige Fragen</span></div>
+      <h2 class="zone-h2">Häufige Fragen.</h2>
       <p class="lead">Sechs Fragen, die wir in fast jedem Erstgespräch hören. Wenn deine fehlt — frag uns einfach.</p>
     </div>
 
     <div class="faq-list">
       <div class="faq-item reveal">
         <button class="faq-q" aria-expanded="false">
-          <span class="qnum">01</span>
+          <span class="qnum">Nº 01</span>
           <span class="qtxt">Was kann man alles mit KI bearbeiten?</span>
           <span class="icon" aria-hidden="true"></span>
         </button>
@@ -22,7 +20,7 @@
 
       <div class="faq-item reveal">
         <button class="faq-q" aria-expanded="false">
-          <span class="qnum">02</span>
+          <span class="qnum">Nº 02</span>
           <span class="qtxt">Wie hilft mir das tatsächlich in meinem Alltag?</span>
           <span class="icon" aria-hidden="true"></span>
         </button>
@@ -31,7 +29,7 @@
 
       <div class="faq-item reveal">
         <button class="faq-q" aria-expanded="false">
-          <span class="qnum">03</span>
+          <span class="qnum">Nº 03</span>
           <span class="qtxt">Ich bin kein Technik-Experte — geht das trotzdem?</span>
           <span class="icon" aria-hidden="true"></span>
         </button>
@@ -40,7 +38,7 @@
 
       <div class="faq-item reveal">
         <button class="faq-q" aria-expanded="false">
-          <span class="qnum">04</span>
+          <span class="qnum">Nº 04</span>
           <span class="qtxt">Wie läuft die Wartung? Was wenn sich was ändert?</span>
           <span class="icon" aria-hidden="true"></span>
         </button>
@@ -49,7 +47,7 @@
 
       <div class="faq-item reveal">
         <button class="faq-q" aria-expanded="false">
-          <span class="qnum">05</span>
+          <span class="qnum">Nº 05</span>
           <span class="qtxt">Was unterscheidet euch von anderen KI-Anbietern?</span>
           <span class="icon" aria-hidden="true"></span>
         </button>
@@ -58,7 +56,7 @@
 
       <div class="faq-item reveal">
         <button class="faq-q" aria-expanded="false">
-          <span class="qnum">06</span>
+          <span class="qnum">Nº 06</span>
           <span class="qtxt">Was passiert wenn ich jetzt nichts tue?</span>
           <span class="icon" aria-hidden="true"></span>
         </button>
@@ -76,7 +74,6 @@
       btn.setAttribute('aria-expanded', String(open));
     });
   });
-  // Open first by default
-  document.querySelector('.faq-item')?.classList.add('open');
-  document.querySelector('.faq-item .faq-q')?.setAttribute('aria-expanded', 'true');
+  // Default-Open entfernt — alle Fragen starten geschlossen.
+  // Vermeidet permanenten "Bordeaux-Hervorhebungs-Eindruck" beim Laden.
 </script>
