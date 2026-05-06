@@ -683,42 +683,53 @@ footer{
 .hero-scroll-link:hover{ color:var(--bordeaux); border-color:var(--bordeaux); }
 
 /* ============ PROJECTS (Phase 1 Commit 2) ============ */
-.projects{ background:var(--cream); }
-/* Head: Projects bleibt zunächst zentriert — wird in Commit 3 (Re-Design Eigene Projekte)
-   auf left-aligned umgestellt. Pool mit .services-head ist aufgelöst, da die beiden Sektionen
-   nicht mehr dieselbe Geometrie teilen. */
-.projects-head{ text-align:center; max-width:720px; margin:0 auto clamp(48px,6vw,80px); }
-.projects-head .kicker{ justify-content:center; margin:0 auto 18px; }
-.projects-head .lead{ color:var(--ink-2); margin:14px auto 0; max-width:42ch; }
+.projects{ background:var(--cream-2); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+.projects-head{ text-align:left; max-width:720px; margin:0 0 clamp(48px,6vw,80px); }
+.projects-head .kicker{ margin-bottom:18px; }
+.projects-head .zone-h2{
+  font-size: clamp(30px, 4.2vw, 52px);
+  max-width: 30ch;
+  line-height:1.08;
+}
+.projects-head .lead{ color:var(--ink-2); margin:18px 0 0; max-width:54ch; font-size:15px; }
 
-.projects-grid{
+/* Re-Design: Magazin-Feature-Spread (Phase 2). Zwei Projekte als
+   alternierende Bild-Text-Spreads. Keine Cards, keine Borders, keine
+   uniformen Padding-Boxes — Editorial-Komposition statt Tile-Grid.
+*/
+.proj-spread{
   display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:clamp(24px, 3vw, 40px);
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap:clamp(28px, 4vw, 64px);
+  align-items:center;
+  padding: clamp(40px, 5vw, 72px) 0;
+  border-top:1px solid var(--rule-2);
 }
-@media (max-width: 760px){ .projects-grid{ grid-template-columns:1fr; } }
+.proj-spread:last-of-type{ border-bottom:1px solid var(--rule-2); }
+.proj-spread--mirror .project-media{ order:2; }
+.proj-spread--mirror .proj-body{ order:1; }
 
-.project-card{
-  background:var(--cream-2);
-  border:1px solid var(--rule);
-  border-radius:20px;
-  padding:clamp(20px, 2.5vw, 28px);
-  display:flex; flex-direction:column; gap:14px;
-}
 .project-media{
   border-radius:14px; overflow:hidden;
   background:var(--cream-3); aspect-ratio: 16/10;
 }
 .project-media img{ width:100%; height:100%; object-fit:cover; display:block; }
-.project-tag{
+
+.proj-body{ display:flex; flex-direction:column; gap:18px; }
+.proj-meta{
+  display:flex; flex-wrap:wrap; align-items:center; gap:12px;
   font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted);
 }
-.project-name{
+.proj-tagline{ color:var(--muted); }
+.proj-feature-name{
   font-family:var(--serif); font-weight:700;
-  font-size:clamp(24px, 2.6vw, 32px); letter-spacing:-0.02em;
+  font-size:clamp(36px, 4.5vw, 56px);
+  line-height:1;
+  letter-spacing:-0.025em;
   margin:0; color:var(--ink);
 }
-.project-pitch{ color:var(--ink-2); font-size:15.5px; margin:0; max-width:50ch; }
+
+.project-pitch{ color:var(--ink-2); font-size:15.5px; margin:0; max-width:50ch; line-height:1.55; }
 .project-caps{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:6px; }
 .project-caps li{
   font-size:14px; color:var(--ink-2);
@@ -727,10 +738,7 @@ footer{
 .project-caps li::before{
   content:""; position:absolute; left:0; top:9px; width:8px; height:1px; background:var(--bordeaux);
 }
-.project-foot{
-  display:flex; justify-content:space-between; align-items:center; gap:12px;
-  margin-top:auto; padding-top:14px; border-top:1px solid var(--rule);
-}
+
 .project-status{
   font-size:11px; letter-spacing:0.16em; text-transform:uppercase;
   padding:4px 10px; border-radius:999px;
@@ -739,8 +747,19 @@ footer{
 .status-beta{ background:var(--cream-3); color:var(--muted); }
 .project-link{
   font-size:14px; font-weight:500; color:var(--bordeaux); display:inline-flex; gap:6px;
+  align-self:flex-start;
 }
 .project-link:hover{ color:var(--bordeaux-deep); }
+
+@media (max-width: 760px){
+  .proj-spread, .proj-spread--mirror{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+  /* Mobile: Bild immer oben, Body immer unten — keine Alternation */
+  .proj-spread--mirror .project-media{ order:0; }
+  .proj-spread--mirror .proj-body{ order:1; }
+}
 
 /* ============ SERVICES (Phase 1 Commit 3) ============ */
 /* Editorial vertikale Liste (Phase 2 Re-Design). Reuse von .step-Pattern
