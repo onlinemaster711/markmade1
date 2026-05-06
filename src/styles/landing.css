@@ -814,3 +814,48 @@ footer{
 }
 .service-tile:hover .arrow{ transform:translateX(3px); }
 
+/* ============ LEDGER-RICH (Phase 1 Commit 4) ============ */
+/* Editorial-Variante des bestehenden 3-Spalten-Ledgers: pro Cell H3 + Erklärung
+   + Dauer-Akzent. Hairlines und 3-Spalten-Grid bleiben (Cream-Look-DNA),
+   Inhalts-Hierarchie wird editorial: links-aligned, Numeral größer,
+   Meta-Akzent unten in Bordeaux. Mobile (<720px): Stack mit horizontalen
+   Hairlines statt vertikalen.
+*/
+.ledger-rich > .ledger-step{
+  padding:36px 28px;
+  gap:14px;
+  align-items:flex-start;
+  text-align:left;
+}
+.ledger-rich .step-num{
+  font-size:18px;
+}
+.ledger-rich .ledger-step h3{
+  font-family:var(--serif); font-weight:700;
+  font-size:clamp(18px, 1.8vw, 22px); letter-spacing:-0.015em;
+  margin:0; color:var(--ink); line-height:1.25;
+}
+.ledger-rich .ledger-step p{
+  font-family:var(--sans);
+  font-size:14.5px; color:var(--ink-2);
+  margin:0; line-height:1.5;
+}
+.ledger-rich .ledger-meta{
+  font-family:var(--sans);
+  font-size:11px; letter-spacing:0.16em; text-transform:uppercase;
+  color:var(--bordeaux); margin-top:auto; padding-top:8px;
+}
+
+@media (max-width: 720px){
+  .ledger-rich{
+    grid-template-columns:1fr;
+  }
+  .ledger-rich > .ledger-step{
+    border-right:0;
+    border-bottom:1px solid var(--rule);
+  }
+  .ledger-rich > .ledger-step:last-child{
+    border-bottom:0;
+  }
+}
+
