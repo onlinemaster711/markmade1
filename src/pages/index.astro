@@ -2,20 +2,26 @@
 import LandingLayout from '../layouts/LandingLayout.astro';
 import Nav from '../components/Nav.astro';
 import LandingHero from '../components/LandingHero.astro';
-import LandingWasKiMacht from '../components/LandingWasKiMacht.astro';
+import LandingProjects from '../components/LandingProjects.astro';
+import LandingServices from '../components/LandingServices.astro';
 import Principle from '../components/Principle.astro';
 import LandingFaq from '../components/LandingFaq.astro';
 import LandingCta from '../components/LandingCta.astro';
 import LandingFooter from '../components/LandingFooter.astro';
+// LandingWasKiMacht wird in der neuen Reihenfolge nicht mehr eingebunden.
+// Datei bleibt im Repo (src/components/LandingWasKiMacht.astro) — keine Löschung.
 ---
 
 <LandingLayout
-  title="markmade — KI macht dich besser."
-  description="KI-Agentur für KMU & Selbstständige in Stuttgart. Eine Person mit KI schlägt ein Team ohne. Einmal bezahlt, dauerhaft im Einsatz."
+  title="[TITLE_TAG_PLATZHALTER]"
+  description="[META_DESCRIPTION_PLATZHALTER]"
 >
+  {/* Aktuell: title="markmade — KI macht dich besser." */}
+  {/* Aktuell: description="KI-Agentur für KMU & Selbstständige in Stuttgart. Eine Person mit KI schlägt ein Team ohne. Einmal bezahlt, dauerhaft im Einsatz." */}
   <Nav />
   <LandingHero />
-  <LandingWasKiMacht />
+  <LandingProjects />
+  <LandingServices />
   <Principle />
   <LandingFaq />
   <LandingCta />
@@ -34,7 +40,9 @@ import LandingFooter from '../components/LandingFooter.astro';
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Steps active aside
+  // Steps active aside (legacy: betraf .step-Elemente in LandingWasKiMacht)
+  // Bleibt drin — querySelectorAll auf nicht vorhandene .step-Elemente ist no-op.
+  // Aufräumen in Phase 2 Visual Cleanup.
   const stepsObs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
