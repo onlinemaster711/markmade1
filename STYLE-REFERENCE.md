@@ -712,3 +712,123 @@ LandingLayout setzt automatisch:
 ---
 
 *Letzte Aktualisierung: April 2026. Wenn `landing.css` oder eine Landing*-Komponente sich ändert, dieses Dokument auch.*
+
+---
+
+## ⚡ Phase-2-Update (Mai 2026) — Editorial Re-Design der Startseite
+
+Die Startseite (`/`) hat im Mai 2026 ein komplettes Re-Design erhalten (PLAN_REDESIGN_STARTSEITE.md). Neue Editorial-Patterns ergänzen das Cream-Look-System. **Die ki-steuerberater.astro und ki-automatisierung-workflow.astro Pages bleiben unverändert** und nutzen weiter die ursprünglichen Patterns (Stat-Bar-Hero, .ledger 3-Spalten, `.steps`-Sticky-Sidebar, etc.).
+
+**Update der Goldenen Regel:**
+> Goldene Regel (Phase 2): Keine willkürlichen neuen CSS-Klassen erfinden. Aber: das Klassen-Lexikon wurde im Mai 2026 um Editorial-Patterns erweitert — siehe Liste unten. Eigene neue Klassen für ein neues Pattern sind erlaubt, **wenn das bestehende Pattern strukturell nicht passt**. Begründung in jedem Commit.
+
+### Neue Klassen-Liste (Phase 2)
+
+#### Hero — asymmetrisch links
+
+| Klasse | Status | Verwendung |
+|---|---|---|
+| `.hero-h1-subtitle` | **NEU Phase 1A** | Sichtbarer SEO-Subtitle innerhalb der `<h1>` (Stuttgart-Signal) |
+| `.hero-scroll-link` | **NEU Phase 1A** | Dezenter Inline-Scroll-Link unter Primary-CTA |
+| `.hero-grid` | **MODIFIED Phase 2** | jetzt flex column align-items:flex-start (war grid 1fr center) |
+| `.hero-h1` | **MODIFIED Phase 2** | font-size clamp(36, 5.2vw, 80) (war clamp 40, 6vw, 96), text-align:left (war center) |
+| `.hero-sub` | **MODIFIED Phase 2** | block max-width:50ch (war grid mit hr-Flanken) |
+| `.hero-meta` | **MODIFIED Phase 2** | flex justify-content:flex-start (war grid mit hr-Flanken zentriert) |
+| `.hero-cta` | **MODIFIED Phase 2** | justify-content:flex-start (war center) |
+
+`.hero-stats` und `.stat`-Klassen existieren weiter in landing.css als legacy-Code (genutzt von ki-steuerberater + ki-automatisierung-workflow). Werden aber NICHT mehr in der Startseite verwendet.
+
+#### Standard-Services — Editorial-Liste
+
+| Klasse | Status | Verwendung |
+|---|---|---|
+| `.step--service` | **NEU Phase 2** | Modifier auf `.step` für Service-Listen-Variant. grid-template-columns 100px 1fr 280px (statt 120px 1fr auto). Kleineres Numeral, breitere Capability-Spalte rechts. |
+| `.services-head` | **NEU Phase 2** | Left-aligned Section-Head Container mit Override für `.zone-h2` (clamp 30, 4.2vw, 52, max-width 30ch) und `.lead` |
+| `.services` | **MODIFIED Phase 2** | background var(--cream) (war cream-2 mit borders) |
+
+Reuse: `.steps-list`, `.step`, `.step .index`, `.step .body h3`, `.step .body p`, `.step .meta` (mit Override-Styles via `.step--service`), `.project-caps`, `.project-link`, `.arrow`.
+
+Nicht mehr verwendet (legacy in landing.css als dead code für Phase-3-Cleanup): `.services-grid`, `.service-tile`, `.service-tile--large`, `.service-tile .arrow`.
+
+**Editorial Numerale-Format:** Inhalte der `.step--service .index` als "Nº 01 / Nº 02 / Nº 03" (Magazin-TOC-Style) — kleinere Schrift als das alte `.step .index` (clamp 20-28 statt 48-72), passt zum schmaleren 100px-Slot.
+
+#### Eigene Projekte — Magazin-Spread
+
+| Klasse | Status | Verwendung |
+|---|---|---|
+| `.proj-spread` | **NEU Phase 2** | Magazin-Feature-Spread-Container, 2-Spalten 5fr/7fr, Hairline-Border oben |
+| `.proj-spread--mirror` | **NEU Phase 2** | Modifier — Bild rechts, Body links (für alternierendes Zig-Zag-Layout) |
+| `.proj-body` | **NEU Phase 2** | Vertical Flex Body-Container für Project-Inhalt |
+| `.proj-meta` | **NEU Phase 2** | Inline Eyebrow-Zeile mit Status-Badge + Tagline (Caps + muted) |
+| `.proj-tagline` | **NEU Phase 2** | Tagline-Span (z. B. "KI-Tool für Content-Creator") |
+| `.proj-feature-name` | **NEU Phase 2** | Display-Headline für Project-Name (clamp 36, 4.5vw, 56) |
+| `.projects-head` | **MODIFIED Phase 2** | left-aligned, eigenes h2-Override (clamp 30, 4.2vw, 52, max-width 30ch) |
+| `.projects` | **MODIFIED Phase 2** | background var(--cream-2) mit border-top/bottom (war cream) |
+
+Reuse: `.project-media`, `.project-pitch`, `.project-caps` + `::before`, `.project-status`, `.status-live`, `.status-beta`, `.project-link`, `.arrow`.
+
+Nicht mehr verwendet (legacy in landing.css für Phase-3-Cleanup): `.projects-grid`, `.project-card`, `.project-tag`, `.project-name`, `.project-foot`.
+
+Mobile-Verhalten: `.proj-spread, .proj-spread--mirror` auf < 760px stackt 1-spaltig, Bild immer oben.
+
+#### Wie wir arbeiten — Editorial-Liste (Process)
+
+| Klasse | Status | Verwendung |
+|---|---|---|
+| `.principle-head` | **NEU Phase 2** | Left-aligned Section-Head mit eigenem h2-Override (clamp 30, 4.2vw, 52, max-width 30ch). Spezifität gleich zu `.principle h2`, gewinnt durch späteren Cascade-Position |
+| `.principle-list` | **NEU Phase 2** | Vertical flex container mit top-Hairline |
+| `.principle-row` | **NEU Phase 2** | 3-Spalten Grid (Numeral 80px / Body 1fr / Duration auto), bordered-bottom-Hairline |
+| `.principle-num` | **NEU Phase 2** | italic Instrument Serif olive Numeral (clamp 22, 2vw, 30) — größer als legacy `.ledger .step-num` 14px |
+| `.principle-body` | **NEU Phase 2** | h3 + p Container mit max-widths |
+| `.principle-meta` | **NEU Phase 2** | Bordeaux Caps Marginalia (Duration), padding-top:10px |
+
+**Wichtig:** `.principle`, `.principle .kicker`, `.principle h2`, `.principle .ledger`, `.ledger > div`, `.ledger .step-num`, `.ledger .step-text` BLEIBEN UNVERÄNDERT. Diese Klassen werden weiter genutzt von `ki-automatisierung-workflow.astro`. Die neuen `.principle-*` Klassen (Phase 2) leben PARALLEL und werden nur von der neuen Principle.astro verwendet.
+
+Mobile-Verhalten: `.principle-row` auf < 720px stackt zu 2-Row Grid (Numeral+Body Row 1, Meta Row 2 full-width).
+
+#### FAQ — single-column head
+
+| Klasse | Status | Verwendung |
+|---|---|---|
+| `.faq-head` | **MODIFIED Phase 2** | display:block max-width:720px (war 2-col grid) |
+| `.faq-head .zone-h2` | **NEU Phase 2** | h2-Override im Head (clamp 30, 4.2vw, 52, max-width 30ch) |
+| `.faq-head .lead` | **MODIFIED Phase 2** | margin-top:18px (war justify-self:end im Grid) |
+| `.faq-q` | **MODIFIED Phase 2** | grid-template-columns 76px 1fr 32px (war 56px), Numerale-Format "Nº 01" |
+| `.faq-q .qnum` | **MODIFIED Phase 2** | font-size 18 (war 20), white-space:nowrap |
+| `.faq-a-inner` | **MODIFIED Phase 2** | grid-template-columns 76px 1fr 32px (war 56px) — Konsistenz mit .faq-q |
+| `.faq` | **MODIFIED Phase 2** | background var(--cream) (war cream-2) |
+
+Markup-Änderung in `LandingFaq.astro`:
+- Eyebrow `<span class="num">04</span>` entfernt (Konsistenz mit anderen Sektionen)
+- qnum-Inhalt von "01" auf "Nº 01" Format
+- Default-Open-Script entfernt (vermeidet "permanenten Bordeaux-Eindruck" auf erster Frage)
+- Head-Wrapper `<div>` entfernt (war für 2-col-Grid)
+
+#### CTA — Type-Reduktion
+
+| Klasse | Status | Verwendung |
+|---|---|---|
+| `.cta-grid h2` | **MODIFIED Phase 2** | font-size clamp(34, 4.8vw, 60) (war clamp 40, 6vw, 80), max-width 18ch (war 14ch) |
+| `.cta-grid p` | **MODIFIED Phase 2** | font-size 16 (war 17) |
+| `.cta-promise` | **NEU Phase 1A** | italic-mikrocopy zwischen Subline und Button (Pre-Delivery-Promise) |
+
+CTA bleibt das einzige zentrierte Section-Layout (intentional "closing moment" durch Sage-Card-Frame).
+
+### Editorial-Direction-Disziplin (Phase 2)
+
+| Regel | Anwendung |
+|---|---|
+| Konsistente Alignment-Disziplin | Hero, Sektionen 2–5 alle left-aligned. Sektion 6 (CTA) bewusst centered durch Sage-Card-Frame |
+| Whitespace ist Luxus | Section-Padding `--section-pad: clamp(72, 10vw, 160)` unverändert. Aber Content-Spalten max-width 720px, Body max-widths 50-54ch |
+| Texte kleiner | H1 -17 % max, H2 -19 % max, CTA-H2 -25 % max — editorial heißt feiner, nicht fetter |
+| Bordeaux sparsam | Bordeaux nur für `.btn`, italic-em in Headlines, `.kicker .rule`, Eyebrow-Numerale `Nº 01` (+ `.faq-q .qnum`), `.principle-meta` |
+| Asymmetrie statt Symmetrie | Hero asymmetrisch links, `.proj-spread--mirror` alternierender Zig-Zag, `.step--service` 3-Spalten-Editorial-Liste statt Tile-Grid |
+| Editorial Numerale "Nº 01" | Magazin-TOC-Style — verwendet in `.step--service .index` und `.faq-q .qnum`. Nicht in `.principle-num` (dort bleiben i. ii. iii. als Cream-Look-DNA) |
+
+### Diskrepanz Brand-Foundation vs. landing.css (offen)
+
+Die `MarkMade_Brand_Foundation.md` v1.0 nennt **Noto Serif** + **Manrope** als Headline- und Body-Schriften. Die tatsächliche `landing.css` lädt aber **Roboto Slab** + **Inter** + **Instrument Serif**. Das Phase-2-Re-Design ändert diese Schrift-Wahl NICHT. Eine Migration auf Brand-Foundation-Schriften ist als separates Phase-3-Projekt zu betrachten und würde gleichzeitig die Brand-Foundation, dieses Dokument und DESIGN.md aktualisieren.
+
+---
+
+*Letzte Aktualisierung: Mai 2026. Phase-2-Re-Design der Startseite. Wenn `landing.css` oder eine Landing*-Komponente sich ändert, dieses Dokument auch.*
