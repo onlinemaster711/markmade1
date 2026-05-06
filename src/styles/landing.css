@@ -1067,6 +1067,57 @@ footer{
   max-width:50ch;
 }
 
+/* Trust-Grid (Phase 2 Inhalts-Fix 3): drei Trust-Punkte unter dem
+   Section-Head. KEINE Cards, KEIN Tile-Look — nur vertikale Hairlines
+   zwischen den Spalten als editorial-Magazin-Frame. Mobile <720px:
+   1-Spalten-Stack mit horizontalen Hairlines. */
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  margin-top: clamp(56px, 7vw, 96px);
+  border-top: 1px solid var(--rule-2);
+  border-bottom: 1px solid var(--rule-2);
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.trust-point{
+  padding: clamp(28px, 3.5vw, 44px) clamp(20px, 2.4vw, 32px);
+  border-right: 1px solid var(--rule-2);
+}
+.trust-point:last-child{ border-right: 0; }
+.trust-point-label{
+  font-family:var(--sans);
+  font-size:13px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--bordeaux);
+  font-weight:600;
+  margin: 0 0 14px;
+}
+.trust-point-body{
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.55;
+  color:var(--ink-2);
+  margin: 0;
+  max-width: 32ch;
+}
+
+@media (max-width: 720px){
+  .trust-grid{
+    grid-template-columns: 1fr;
+    border-top: 1px solid var(--rule-2);
+    border-bottom: 1px solid var(--rule-2);
+  }
+  .trust-point{
+    border-right: 0;
+    border-bottom: 1px solid var(--rule-2);
+    padding: 28px 0;
+  }
+  .trust-point:last-child{ border-bottom: 0; }
+}
+
 /* ============ MOBILE NAV (Phase 2 Fix) ============ */
 /* Header-Button visuell ausgewogen mit Logo (markmade. ~18px serif)
    auf <=480px:
